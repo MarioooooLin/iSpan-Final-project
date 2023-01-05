@@ -36,6 +36,42 @@ namespace vue.Controllers
             return View();
         }
 
+        public IActionResult memberCenter()
+        {
+            return View();
+        }
+
+        public IActionResult memberApply()
+        {
+            return View();
+        }
+
+        public IActionResult memberFocus()
+        {
+            return View();
+        }
+
+        public IActionResult memberVacancies()
+        {
+            return View();
+        }
+
+        public IActionResult memberBlacklist()
+        {
+            return View();
+        }
+
+        public IActionResult memberDetail()
+        {
+            return View();
+        }
+
+        //企業端
+        public IActionResult enterpriseIndex()
+        {
+            return View();
+        }
+
         //論壇
         public IActionResult platform()
         {
@@ -53,7 +89,23 @@ namespace vue.Controllers
         }
 
         //課程
+        public IActionResult courseShop()
+        {
+            return View();
+        }
+
         public IActionResult courseManage()
+        {
+            return View();
+        }
+
+        public IActionResult courseDetail()
+        {
+            return View();
+        }
+
+        //履歷
+        public IActionResult CV()
         {
             return View();
         }

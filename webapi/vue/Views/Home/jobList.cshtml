@@ -158,7 +158,7 @@
                                         <div>信箱:</div>
                                         <div class="item text-end align-content-end mb-0">
                                             <div class="text-right mr-3 fw-bold">
-                                                <a href="#">修改會員資料 <i class="fa-solid fa-chevron-right"></i></a>
+                                                 <a asp-controller="Home" asp-action="memberDetail">修改會員資料 <i class="fa-solid fa-chevron-right"></i></a>
                                             </div>
                                         </div>
                                         <hr />
@@ -179,7 +179,7 @@
                                         </div>
                                         <div class="d-block text-right">
                                             <div class="text-right mr-3 fw-bold">
-                                                <a href="#">
+                                                <a asp-controller="Home" asp-action="CV">
                                                     瀏覽所有履歷 <i class="fa-solid fa-chevron-right"></i>
                                                 </a>
                                             </div>
@@ -195,7 +195,7 @@
                                         <li class="text-left">前往課程頁面學習更多</li>
                                         <div class="w-100 text-center">
                                             <button class="h-50 w-auto btn slide-button btn-lg">
-                                                <a href="/cause_control.html" class="">課程管理</a>
+                                                <a asp-controller="Home" asp-action="courseManage" class="">課程管理</a>
                                             </button>
                                         </div>
                                     </ul>
