@@ -60,19 +60,19 @@
 								<a  class="h4 active" asp-area="" asp-controller="Home" asp-action="jobList">找工作</a>
 							</li>
 							<li class="has-children">
-								<a href="job-listings.html" class="h4 active">資源</a>
+								<a class="h4 active" asp-area="" asp-controller="Home" asp-action="source">資源</a>
 								<ul class="dropdown">
-									<li><a  class="h4 active" asp-area="" asp-controller="Home" asp-action="source">資源</a></li>
-									<li><a href="post-job.html">Post a Job</a></li>
-									
+									<li><a  class="h4 active" asp-area="" asp-controller="Home" asp-action="source">文章分享</a></li>
+									<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="psychologicalTest">適性分析</a></li>
+									<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="mockInterview">模擬面試</a></li>
 								</ul>
 							</li>
-							<li class="has-children">
-								<a href="" class="h4 active">商城</a>
-								<ul class="dropdown">
+							<li @*class="has-children"*@>
+								<a class="h4 active" asp-area="" asp-controller="Home" asp-action="courseShop">線上課程</a>
+								@*<ul class="dropdown">
 									<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="courseShop">線上課程</a></li>
-								
-								</ul>
+
+                                </ul>*@
 							</li>
 							<li>
 								<a class="h4 active" asp-area="" asp-controller="Home" asp-action="platform">討論區</a>

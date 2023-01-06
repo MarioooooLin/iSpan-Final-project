@@ -24,7 +24,29 @@ namespace vue.Controllers
             return View();
         }
 
-        
+        public IActionResult sourcePage()
+        {
+            return View();
+        }
+
+        public IActionResult psychologicalTest()
+        {
+            return View();
+        }
+
+        public IActionResult testResult()
+        {
+            return View();
+        }
+
+        public IActionResult mockInterview()
+        {
+            return View();
+        }
+
+
+
+
         //會員中心
         public IActionResult memberLogin()
         {
@@ -74,6 +96,16 @@ namespace vue.Controllers
 
         //論壇
         public IActionResult platform()
+        {
+            return View();
+        }
+
+        public IActionResult platformPost()
+        {
+            return View();
+        }
+
+        public IActionResult platformArticle()
         {
             return View();
         }
