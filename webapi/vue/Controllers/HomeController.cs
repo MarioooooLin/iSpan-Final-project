@@ -39,7 +39,7 @@ namespace vue.Controllers
             return View();
         }
 
-        public IActionResult mockInterview()
+        public IActionResult aboutUs()
         {
             return View();
         }

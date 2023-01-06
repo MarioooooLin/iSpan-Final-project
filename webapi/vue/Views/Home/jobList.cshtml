@@ -48,13 +48,15 @@
             </div>
             <div class="col-lg-1 col-md-1 col-sm-2">
                 <div>
-                    <a href="#"><i class="fa-solid x-mark">×</i></a>
+                    <a href="#">
+                        <p class="fa-solid x-mark">×</p>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 mt-lg-3 mt-md-2 text-sm-right">
                 <div>
                     <span class="fw-bold text-white">
-                        <a href="#" class="text-decoration-none text-white">
+                        <a asp-controller="Home" asp-action="memberDetail" class="text-decoration-none text-white">
                             修改會員資料<i class="fa-solid fa-chevron-right"></i>
                         </a>
                     </span>
@@ -64,10 +66,151 @@
     </div>
 </section>
 <!-- home end -->
+
 <!-- content start -->
-<section class="site-section block__18514 pt-4" id="next-section">
+<section class="site-section block__18514 pt-4" id="appVue">
     <div class="container h-100">
-        <div class="row">
+        <div class="d-lg-flex row">
+            <div class="col-lg-8 mt-lg-5 mt-3 order-lg-1 order-2">
+                <!-- leftslide start -->
+                <div class="row">
+                    <!-- 一個card start -->
+                    <div class="card context row p-3 mb-4 mx-1" v-for="data in datas">
+                        <div class="d-lg-flex sm-row justify-content-between">
+                            <div class="left col-lg-9 col-12 d-sm-flex xs-row">
+                                <div class="img col-xs-12">
+                                    <img :src="data.img" alt="">
+                                </div>
+                                <div class="job-context">
+                                    <ul class="list-unstyled block__47528 mb-0 ">
+                                        <li class="ml-3 d-flex row mt-2">
+                                            {{data.companyName}}
+                                        </li>
+                                        <li class="ml-3 font-weight-bold active">
+                                            {{data.workName}}
+                                        </li>
+                                    </ul>
+                                    <p class="ml-3 card-text">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime,
+                                        corrupti
+                                        distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="right col-lg-3 col-12 mt-3 ml-2 ml-lg-o ml-sm-4 xs-row">
+                                <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                                    <i class="fa-solid fa-user"></i><span class="fs-6 ml-2">全職</span>
+                                </div>
+                                <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                                    <i class="fa-solid fa-location-dot"></i><span class="fs-6 ml-2">{{data.workPlace}}</span>
+                                </div>
+                                <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                                    <i class="fa-solid fa-sack-dollar"></i><span class="fs-6 ml-2">{{data.salary}}</span>
+                                </div>
+                                <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                                    <i class="fa-solid fa-briefcase"></i><span class="fs-6 ml-2">不限年資</span>
+                                </div>
+                                <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                                    <i class="fa-solid fa-share-nodes"></i><span class="fs-6 ml-2">需輪班</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-lg-flex sm-row mt-3">
+                            <div class="d-lg-flex ml-sm-2 mt-md-1 col-lg-6 col-12">
+                                <div class="pl-5">
+                                    <i class="fa-regular fa-clock"></i><span class="fs-6 ml-2">幾小時前更新</span>
+                                </div>
+                                <div class="pl-5">
+                                    <i class="fa-regular fa-eye"></i><span class="fs-6 ml-2">1000+</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 text-right">
+                                <a href="#">
+                                    <button class="btn btn-dark px-4 mx-1">
+                                        <i class="fa-regular fa-bookmark"></i><span class="ml-2">儲存</span>
+                                    </button>
+                                </a>
+                                <a href="#">
+                                    <button class="btn btn-primary mx-1">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="ml-2">立即應徵</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一個card end -->
+                    @*<!-- 一個card start -->
+                    <div class="card context row p-3 mb-4 mx-1">
+                    <div class="d-lg-flex sm-row justify-content-between">
+                    <div class="left col-lg-9 col-12 d-sm-flex xs-row">
+                    <div class="img col-xs-12">
+                    <img src="/images/job_logo_4.jpg" alt="">
+                    </div>
+                    <div class="job-context">
+                    <ul class="list-unstyled block__47528 mb-0 ">
+                    <li class="ml-3 d-flex row mt-2">
+                    Google Taiwan
+                    </li>
+                    <li class="ml-3 font-weight-bold active">
+                    Lorem ipsum dolor sit amet consectetur adipisicingelit
+                    </li>
+                    </ul>
+                    <p class="ml-3 card-text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime,
+                    corrupti
+                    distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
+                    </p>
+                    </div>
+                    </div>
+                    <div class="right col-lg-3 col-12 mt-3 ml-2 ml-lg-o ml-sm-4 xs-row">
+                    <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                    <i class="fa-solid fa-user"></i><span class="fs-6 ml-2">全職</span>
+                    </div>
+                    <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                    <i class="fa-solid fa-location-dot"></i><span class="fs-6 ml-2">新北市</span>
+                    </div>
+                    <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                    <i class="fa-solid fa-sack-dollar"></i><span class="fs-6 ml-2">35000</span>
+                    </div>
+                    <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                    <i class="fa-solid fa-briefcase"></i><span class="fs-6 ml-2">不限年資</span>
+                    </div>
+                    <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
+                    <i class="fa-solid fa-share-nodes"></i><span class="fs-6 ml-2">需輪班</span>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="d-lg-flex sm-row mt-3">
+                    <div class="d-lg-flex ml-sm-2 mt-md-1 col-lg-6 col-12">
+                    <div class="pl-5">
+                    <i class="fa-regular fa-clock"></i><span class="fs-6 ml-2">幾小時前更新</span>
+                    </div>
+                    <div class="pl-5">
+                    <i class="fa-regular fa-eye"></i><span class="fs-6 ml-2">1000+</span>
+                    </div>
+                    </div>
+                    <div class="col-lg-6 col-12 text-right">
+                    <a href="#">
+                    <button class="btn btn-dark px-4 mx-1">
+                    <i class="fa-regular fa-bookmark"></i><span class="ml-2">儲存</span>
+                    </button>
+                    </a>
+                    <a href="#">
+                    <button class="btn btn-primary mx-1">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="ml-2">立即應徵</span>
+                    </button>
+                    </a>
+                    </div>
+                    </div>
+                    </div>
+                    <!-- 一個card end -->*@
+                </div>
+                <!-- leftslide end -->
+            </div>
+            <!-- Below is sidebar -->
+
+<!-- home end -->
+<!-- content start -->
             <!-- leftslide start -->
             <div class="col-lg-8 mt-lg-5 mt-3 order-lg-1 order-2">
                 <!-- 一個card start -->
@@ -227,4 +370,47 @@
         </div>
     </div>
 </section>
+
 <!-- content end -->
+@section Scripts{
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+        <script>
+            const webApi = "https://localhost:7240"
+            const appVue = new Vue({
+                el: "#appVue",
+                name: "appVue",
+                data: {
+                    datas: [],
+                    address: null,
+                    category: null,
+                    companyName: null,
+                    fullPartTim: null,
+                    info: null,
+                    salary: null,
+                    seniority: null,
+                    shift: null,
+                    workContent: null,
+                    workName: null,
+                    workPlace: null,
+                },
+                mounted: function () {
+                    let _this = this;
+                    _this.Vacancy();
+                },
+                methods: {
+                    Vacancy: function () {
+                        let _this = this;
+                        axios.get(`${webApi}/api/Vacancies`)
+                            .then(response => {
+                                appVue.datas = response.data;
+                                console.log(_this.datas)
+                            })
+                            .catch(err => console.log(err))
+                            .finally(console.log('完成'))
+                    },
+                }
+            })
+        </script>
+    }
