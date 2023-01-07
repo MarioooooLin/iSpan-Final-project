@@ -45,7 +45,7 @@
 					<div class="site-logo col-6 col-lg-4">
 						<a asp-area="" asp-controller="Home" asp-action="index" class="">
 							<div class="mt-lg-5 mr-5">
-                                <img src="~/images/triangle_logo-removebg-preview.png"
+								<img src="~/images/triangle_logo-removebg-preview.png"
 									 alt="Triangle"
 									 class="mt-sm-1 col-sm-9 mt-md-5 col-md-6 mt-lg-0 col-lg-6" />
 							</div>
@@ -57,27 +57,28 @@
 								<a asp-area="" asp-controller="Home" asp-action="index" class="nav-link active fs-3 h4">首頁</a>
 							</li>
 							<li>
-								<a  class="h4 active" asp-area="" asp-controller="Home" asp-action="jobList">找工作</a>
+								<a class="h4 active" asp-area="" asp-controller="Home" asp-action="jobList">找工作</a>
 							</li>
 							<li class="has-children">
 								<a class="h4 active" asp-area="" asp-controller="Home" asp-action="source">資源</a>
 								<ul class="dropdown">
-									<li><a  class="h4 active" asp-area="" asp-controller="Home" asp-action="source">文章分享</a></li>
+									<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="source">文章分享</a></li>
 									<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="psychologicalTest">適性分析</a></li>
+									<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="mockInterview">模擬面試</a></li>
 								</ul>
 							</li>
 							<li @*class="has-children"*@>
 								<a class="h4 active" asp-area="" asp-controller="Home" asp-action="courseShop">線上課程</a>
 								@*<ul class="dropdown">
-									<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="courseShop">線上課程</a></li>
+								<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="courseShop">線上課程</a></li>
 
-                                </ul>*@
+								</ul>*@
 							</li>
 							<li>
 								<a class="h4 active" asp-area="" asp-controller="Home" asp-action="platform">討論區</a>
 							</li>
 							<li>
-								<a  asp-area="" asp-controller="Home" asp-action="aboutUs" class="h4 active">關於我們</a>
+								<a href="contact.html" class="h4 active">聯絡我們</a>
 							</li>
 							<li class="d-lg-none">
 								<a href="post-job.html"><span class="mr-2">+</span> 信箱</a>
@@ -100,7 +101,7 @@
 			</div>
 		</header>
 
-            @RenderBody()
+		@RenderBody()
 
 
 		<footer class="site-footer pt-5 pb-3">
@@ -190,21 +191,22 @@
 			</div>
 		</footer>
 
-	<!-- SCRIPTS -->
-	<script src="~/js/jquery.min.js"></script>
-	<script src="~/js/bootstrap.bundle.min.js"></script>
-	<script src="~/js/isotope.pkgd.min.js"></script>
-	<script src="~/js/stickyfill.min.js"></script>
-	<script src="~/js/jquery.fancybox.min.js"></script>
-	<script src="~/js/jquery.easing.1.3.js"></script>
+		<!-- SCRIPTS -->
+		<script src="~/js/jquery.min.js"></script>
+		<script src="~/js/bootstrap.bundle.min.js"></script>
+		<script src="~/js/isotope.pkgd.min.js"></script>
+		<script src="~/js/stickyfill.min.js"></script>
+		<script src="~/js/jquery.fancybox.min.js"></script>
+		<script src="~/js/jquery.easing.1.3.js"></script>
 
-	<script src="~/js/jquery.waypoints.min.js"></script>
-	<script src="~/js/jquery.animateNumber.min.js"></script>
-	<script src="~/js/owl.carousel.min.js"></script>
+		<script src="~/js/jquery.waypoints.min.js"></script>
+		<script src="~/js/jquery.animateNumber.min.js"></script>
+		<script src="~/js/owl.carousel.min.js"></script>
 
-	<script src="~/js/bootstrap-select.min.js"></script>
+		<script src="~/js/bootstrap-select.min.js"></script>
 
-	<script src="~/js/custom.js"></script>
+		<script src="~/js/custom.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
 		@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
