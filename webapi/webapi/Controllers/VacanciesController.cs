@@ -45,7 +45,8 @@ namespace webapi.Controllers
                 UniformNumbers = etp.UniformNumbers
 
             });
-            
+
+            return await Task.FromResult(result);
             /*var result = from van in _context.Vacancy
                          join etp in _context.Enterprise
                          on van.EnterpriseId equals etp.EnterpriseId
@@ -58,7 +59,6 @@ namespace webapi.Controllers
                              WorkContent = van.WorkContent,
                              Seniority = van.Seniority,
                          };*/
-            return result;
             /*return _context.Vacancy.Select(x => new VacancyDTO
             {
                 
