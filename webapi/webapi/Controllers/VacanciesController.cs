@@ -25,7 +25,7 @@ namespace webapi.Controllers
 
         // GET: api/Vacancies
         [HttpGet]
-        public async Task<IEnumerable<VacancyDTO>> GetVacancy()
+        public async Task<IEnumerable<VacancyDTO>> Get()
         {
             var result = _context.Vacancy.Join(_context.Enterprise, x => x.VacancyId, y => y.EnterpriseId, (van, etp) => new VacancyDTO
             {
@@ -45,8 +45,8 @@ namespace webapi.Controllers
                 UniformNumbers = etp.UniformNumbers
 
             });
-
             return await Task.FromResult(result);
+
             /*var result = from van in _context.Vacancy
                          join etp in _context.Enterprise
                          on van.EnterpriseId equals etp.EnterpriseId
@@ -64,19 +64,20 @@ namespace webapi.Controllers
                 
             });*/
         }
-
         // GET: api/Vacancies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Vacancy>> GetVacancy(int id)
+        public string Get(string id)
         {
-            var vacancy = await _context.Vacancy.FindAsync(id);
+            return id;
+           /* var vacancy = await _context.Vacancy.FindAsync(id);
 
             if (vacancy == null)
             {
                 return NotFound();
             }
 
-            return vacancy;
+            return vacancy;*/
+           //凱哥寫程式 3分56
         }
 
         // PUT: api/Vacancies/5
