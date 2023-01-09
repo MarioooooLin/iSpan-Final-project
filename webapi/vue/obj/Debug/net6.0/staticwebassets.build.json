@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PRFSNI7BOujbMdznzXCGYmUiDFLGLPoelVuI0QbosMY=",
+  "Hash": "WNNbVdBRhBdV0PTEPsqDT+VaEO4Yeg/EI7RAubYTJos=",
   "Source": "vue",
   "BasePath": "_content/vue",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "vue\\wwwroot",
       "Source": "vue",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\css\\site.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\css\\site.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\favicon.ico",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\favicon.ico",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\js\\site.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\js\\site.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\js\\site.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -473,13 +473,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -490,13 +490,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -507,13 +507,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -524,13 +524,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -541,13 +541,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -558,13 +558,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -575,13 +575,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -626,13 +626,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -643,13 +643,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -677,13 +677,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -694,13 +694,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -711,13 +711,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -728,13 +728,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -745,13 +745,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -762,13 +762,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -779,13 +779,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -796,13 +796,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -813,13 +813,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -830,13 +830,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -847,13 +847,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -864,13 +864,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -881,13 +881,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -898,13 +898,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -915,13 +915,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -932,13 +932,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -949,13 +949,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -966,13 +966,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1000,13 +1000,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1017,13 +1017,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1034,13 +1034,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.10\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\bundle\\vue.styles.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\bundle\\vue.styles.css",
       "SourceId": "vue",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/vue",
       "RelativePath": "vue.styles.css",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\bundle\\vue.styles.css"
+      "OriginalItemSpec": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\bundle\\vue.styles.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\vue.bundle.scp.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\vue.bundle.scp.css",
       "SourceId": "vue",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/vue",
       "RelativePath": "vue.bundle.scp.css",
       "AssetKind": "All",
@@ -1068,13 +1068,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\vue.bundle.scp.css"
+      "OriginalItemSpec": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\vue.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\animate.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\animate.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/animate.min.css",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\css\\animate.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\bootstrap-select.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\bootstrap-select.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/bootstrap-select.min.css",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap-select.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\custom-bs.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\custom-bs.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/custom-bs.css",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\css\\custom-bs.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\custom-bs.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\custom-bs.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/custom-bs.css.map",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\css\\custom-bs.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\jquery.fancybox.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\jquery.fancybox.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/jquery.fancybox.min.css",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\css\\jquery.fancybox.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\owl.carousel.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\owl.carousel.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/owl.carousel.min.css",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\css\\owl.carousel.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\quill.snow.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\quill.snow.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/quill.snow.css",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\css\\quill.snow.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\site.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\site.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\style.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\css\\style.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\favicon.ico",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\favicon.ico",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\demo.html",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\demo.html",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/demo.html",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\demo.html"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\demo-files\\demo.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\demo-files\\demo.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/demo-files/demo.css",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\demo-files\\demo.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\demo-files\\demo.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\demo-files\\demo.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/demo-files/demo.js",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\demo-files\\demo.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.eot",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.eot",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/fonts/icomoon.eot",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\fonts\\icomoon.eot"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/fonts/icomoon.svg",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\fonts\\icomoon.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.ttf",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.ttf",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/fonts/icomoon.ttf",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\fonts\\icomoon.ttf"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.woff",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.woff",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/fonts/icomoon.woff",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\fonts\\icomoon.woff"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\Read Me.txt",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\Read Me.txt",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/Read Me.txt",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\Read Me.txt"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\selection.json",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\selection.json",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/selection.json",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\selection.json"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\style.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\icomoon\\style.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/icomoon/style.css",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\icomoon\\style.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\demo.html",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\demo.html",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/demo.html",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\demo.html"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\demo-files\\demo.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\demo-files\\demo.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/demo-files/demo.css",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\demo-files\\demo.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\demo-files\\demo.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\demo-files\\demo.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/demo-files/demo.js",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\demo-files\\demo.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.eot",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.eot",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/fonts/icomoon.eot",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\fonts\\icomoon.eot"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/fonts/icomoon.svg",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\fonts\\icomoon.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.ttf",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.ttf",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/fonts/icomoon.ttf",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\fonts\\icomoon.ttf"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.woff",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\fonts\\icomoon.woff",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/fonts/icomoon.woff",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\fonts\\icomoon.woff"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\Read Me.txt",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\Read Me.txt",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/Read Me.txt",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\Read Me.txt"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\selection.json",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\selection.json",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/selection.json",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\selection.json"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\style.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\fonts\\line-icons\\style.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "fonts/line-icons/style.css",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\line-icons\\style.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\991223.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\991223.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/991223.jpg",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\images\\991223.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\apps.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\apps.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/apps.png",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\images\\apps.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\btn-back.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\btn-back.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/btn-back.png",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\images\\btn-back.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\btn-next.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\btn-next.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/btn-next.png",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\images\\btn-next.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\carousel_01.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\carousel_01.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/carousel_01.jpg",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\images\\carousel_01.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\carousel_02.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\carousel_02.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/carousel_02.jpg",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\images\\carousel_02.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\carousel_03.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\carousel_03.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/carousel_03.jpg",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\images\\carousel_03.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\hero_1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\hero_1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/hero_1.jpg",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\images\\hero_1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\hero_1-1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\hero_1-1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/hero_1-1.jpg",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\images\\hero_1-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/img_1.jpg",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_2.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_2.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/img_2.jpg",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_2.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_3.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_3.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/img_3.jpg",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_3.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_3-1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_3-1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/img_3-1.jpg",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_3-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_4.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\img_4.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/img_4.jpg",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\images\\img_4.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/job_logo_1.jpg",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\images\\job_logo_1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_2.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_2.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/job_logo_2.jpg",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\images\\job_logo_2.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_3.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_3.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/job_logo_3.jpg",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\images\\job_logo_3.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_4.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_4.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/job_logo_4.jpg",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\images\\job_logo_4.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_5.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_logo_5.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/job_logo_5.jpg",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\images\\job_logo_5.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_single_img_1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\job_single_img_1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/job_single_img_1.jpg",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\images\\job_single_img_1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_airbnb.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_airbnb.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_airbnb.svg",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_airbnb.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_apple.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_apple.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_apple.svg",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_apple.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_mailchimp.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_mailchimp.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_mailchimp.svg",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_mailchimp.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_paypal.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_paypal.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_paypal.svg",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_paypal.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_sony.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_sony.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_sony.svg",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_sony.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_stripe.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_stripe.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_stripe.svg",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_stripe.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_tinder.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_tinder.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_tinder.svg",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_tinder.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_visa.svg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\logo_visa.svg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/logo_visa.svg",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo_visa.svg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_1.jpg",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_2.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_2.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_2.jpg",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_2.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_3.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_3.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_3.jpg",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_3.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_4.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_4.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_4.jpg",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_4.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_5.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_5.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_5.jpg",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_5.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_6.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_6.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_6.jpg",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_6.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_transparent.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_transparent.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_transparent.png",
       "AssetKind": "All",
@@ -2176,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_transparent.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_transparent_2.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\person_transparent_2.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/person_transparent_2.png",
       "AssetKind": "All",
@@ -2193,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\images\\person_transparent_2.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\quote.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\quote.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/quote.png",
       "AssetKind": "All",
@@ -2210,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\images\\quote.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_1.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_1.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_1.jpg",
       "AssetKind": "All",
@@ -2227,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_1.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_10.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_10.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_10.jpg",
       "AssetKind": "All",
@@ -2244,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_10.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_11.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_11.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_11.jpg",
       "AssetKind": "All",
@@ -2261,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_11.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_12.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_12.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_12.jpg",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_12.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_13.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_13.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_13.jpg",
       "AssetKind": "All",
@@ -2295,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_13.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_2.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_2.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_2.jpg",
       "AssetKind": "All",
@@ -2312,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_2.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_3.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_3.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_3.jpg",
       "AssetKind": "All",
@@ -2329,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_3.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_4.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_4.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_4.jpg",
       "AssetKind": "All",
@@ -2346,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_4.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_5.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_5.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_5.jpg",
       "AssetKind": "All",
@@ -2363,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_5.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_6.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_6.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_6.jpg",
       "AssetKind": "All",
@@ -2380,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_6.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_7.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_7.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_7.jpg",
       "AssetKind": "All",
@@ -2397,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_7.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_8.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_8.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_8.jpg",
       "AssetKind": "All",
@@ -2414,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_8.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_9.jpg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\sq_img_9.jpg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/sq_img_9.jpg",
       "AssetKind": "All",
@@ -2431,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sq_img_9.jpg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\Triangle_LOGO.jpeg",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\Triangle_LOGO.jpeg",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/Triangle_LOGO.jpeg",
       "AssetKind": "All",
@@ -2448,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Triangle_LOGO.jpeg"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\Triangle_LOGO-removebg-preview.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\Triangle_LOGO-removebg-preview.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/Triangle_LOGO-removebg-preview.png",
       "AssetKind": "All",
@@ -2465,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Triangle_LOGO-removebg-preview.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\WordisBIG.png",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\images\\WordisBIG.png",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "images/WordisBIG.png",
       "AssetKind": "All",
@@ -2482,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\images\\WordisBIG.png"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\bootstrap.bundle.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2499,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\bootstrap-select.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\bootstrap-select.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/bootstrap-select.min.js",
       "AssetKind": "All",
@@ -2516,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\js\\bootstrap-select.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\custom.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\custom.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/custom.js",
       "AssetKind": "All",
@@ -2533,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\js\\custom.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\isotope.pkgd.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\isotope.pkgd.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/isotope.pkgd.min.js",
       "AssetKind": "All",
@@ -2550,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\js\\isotope.pkgd.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.animateNumber.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.animateNumber.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/jquery.animateNumber.min.js",
       "AssetKind": "All",
@@ -2567,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.animateNumber.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.easing.1.3.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.easing.1.3.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/jquery.easing.1.3.js",
       "AssetKind": "All",
@@ -2584,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.easing.1.3.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.fancybox.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.fancybox.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/jquery.fancybox.min.js",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.fancybox.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/jquery.min.js",
       "AssetKind": "All",
@@ -2618,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.waypoints.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\jquery.waypoints.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/jquery.waypoints.min.js",
       "AssetKind": "All",
@@ -2635,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.waypoints.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\owl.carousel.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\owl.carousel.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/owl.carousel.min.js",
       "AssetKind": "All",
@@ -2652,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\js\\owl.carousel.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\quill.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\quill.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/quill.min.js",
       "AssetKind": "All",
@@ -2669,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\js\\quill.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\site.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\site.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -2686,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\stickyfill.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\js\\stickyfill.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "js/stickyfill.min.js",
       "AssetKind": "All",
@@ -2703,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\js\\stickyfill.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2720,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2737,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2754,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2771,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2788,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2805,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2822,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2839,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2856,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2873,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2890,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2907,10 +2907,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2941,10 +2941,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2958,10 +2958,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2975,10 +2975,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2992,10 +2992,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -3009,10 +3009,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -3026,10 +3026,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -3043,10 +3043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -3060,10 +3060,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -3077,10 +3077,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -3094,10 +3094,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -3111,10 +3111,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -3128,10 +3128,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -3145,10 +3145,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -3162,10 +3162,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -3179,10 +3179,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -3196,10 +3196,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -3213,10 +3213,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -3230,10 +3230,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -3247,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -3264,10 +3264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -3281,10 +3281,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -3298,10 +3298,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -3315,10 +3315,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -3332,10 +3332,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -3349,10 +3349,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -3366,10 +3366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -3383,10 +3383,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -3400,10 +3400,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -3417,10 +3417,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -3434,10 +3434,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -3451,10 +3451,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -3468,10 +3468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -3485,10 +3485,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -3502,10 +3502,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -3519,10 +3519,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -3536,10 +3536,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -3553,10 +3553,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -3570,10 +3570,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -3587,10 +3587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -3604,10 +3604,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -3621,10 +3621,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -3638,10 +3638,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -3655,10 +3655,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -3672,10 +3672,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\_custom-variables.scss",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\_custom-variables.scss",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "scss/_custom-variables.scss",
       "AssetKind": "All",
@@ -3689,10 +3689,10 @@
       "OriginalItemSpec": "wwwroot\\scss\\_custom-variables.scss"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\_site-navbar.scss",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\_site-navbar.scss",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "scss/_site-navbar.scss",
       "AssetKind": "All",
@@ -3706,10 +3706,10 @@
       "OriginalItemSpec": "wwwroot\\scss\\_site-navbar.scss"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\custom-bs.scss",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\custom-bs.scss",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "scss/custom-bs.scss",
       "AssetKind": "All",
@@ -3723,10 +3723,10 @@
       "OriginalItemSpec": "wwwroot\\scss\\custom-bs.scss"
     },
     {
-      "Identity": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\style.scss",
+      "Identity": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\scss\\style.scss",
       "SourceId": "vue",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iSpan\\Desktop\\新增資料夾\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
+      "ContentRoot": "E:\\資展全端班\\期末專題\\iSpan-Final-project\\webapi\\vue\\wwwroot\\",
       "BasePath": "_content/vue",
       "RelativePath": "scss/style.scss",
       "AssetKind": "All",

@@ -59,7 +59,7 @@ namespace webapi.Models
 
                 entity.Property(e => e.Keyword).HasMaxLength(200);
 
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Title).HasMaxLength(50);
 
                 entity.Property(e => e.UpdateTime).HasColumnType("date");
             });
