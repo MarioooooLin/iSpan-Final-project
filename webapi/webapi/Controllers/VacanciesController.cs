@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using webapi.Models;
+using static System.Net.WebRequestMethods;
 
 namespace webapi.Controllers
 {
@@ -27,7 +28,7 @@ namespace webapi.Controllers
         [HttpGet]
         public async Task<IEnumerable<VacancyDTO>> Get()
         {
-            var result = _context.Vacancy.Join(_context.Enterprise, x => x.VacancyId, y => y.EnterpriseId, (van, etp) => new VacancyDTO
+            var result = _context.Vacancy.Join(_context.Enterprise, x => x.EnterpriseId, y => y.EnterpriseId, (van, etp) => new VacancyDTO
             {
                 WorkName = van.WorkName,
                 WorkPlace = van.WorkPlace,
@@ -63,22 +64,36 @@ namespace webapi.Controllers
             {
                 
             });*/
-        }
+        } //完成
+
         // GET: api/Vacancies/5
-        [HttpGet("{id}")]
-        public string Get(string id)
+        [HttpGet("{name}")]
+        public async Task<IEnumerable<VacancyDTO>> Getsearch(string name)
         {
-            return id;
-           /* var vacancy = await _context.Vacancy.FindAsync(id);
-
-            if (vacancy == null)
+            var result = _context.Vacancy.Join(_context.Enterprise, x => x.VacancyId, y => y.EnterpriseId, (van, etp) => new VacancyDTO
             {
-                return NotFound();
-            }
+                WorkName = van.WorkName,
+                WorkPlace = van.WorkPlace,
+                Salary = van.Salary,
+                FullPartTime = van.FullPartTime,
+                Shift = van.Shift,
+                WorkContent = van.WorkContent,
+                updatetime = van.Updatetime,
+                Seniority = van.Seniority,
+                Category = van.Category,
+                CompanyName = etp.CompanyName,
+                Address = etp.Address,
+                Info = etp.Info,
+                img = etp.Img,
+                UniformNumbers = etp.UniformNumbers
 
-            return vacancy;*/
-           //凱哥寫程式 3分56
-        }
+            });
+            if (!string.IsNullOrWhiteSpace(name)) 
+            {
+                result = result.Where(a => a.WorkName.Contains(name) || a.CompanyName.Contains(name));
+            }
+            return result;
+        } //完成
 
         // PUT: api/Vacancies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
