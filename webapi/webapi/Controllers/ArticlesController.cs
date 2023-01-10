@@ -30,7 +30,10 @@ namespace webapi.Controllers
             var result = _context.Article.Select(x => new ArticleDTO
             {
                 Title = x.Title,
-                ArticleContent = x.ArticleContent
+                ArticleContent = x.ArticleContent,
+                Img = x.img,
+                UpdateTime = x.UpdateTime,
+                Author = x.AuthorId
             });
             return result;
         }
