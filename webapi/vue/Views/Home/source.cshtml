@@ -114,63 +114,18 @@
 
                 <section class="site-section col-lg-8 content mt-3 pt-lg-0 mt-lg-5 pb-2">
                     <div class="container ">
-                        <div class="row mb-5 " v-for="data in datas">
+                        <div class="row mb-5  ">
                             <!--The first article-->
-                            <div class="col-md-6 col-lg-4 mb-5">
-                                <a asp-controller="Home" asp-action="sourcePage"><img src="~{{data.img}}" alt="Image" class="img-fluid rounded mb-4" /></a>
+                            <div class="col-md-6 col-lg-4 mb-5 " v-for="data in datas">
+                                <a asp-controller="Home" asp-action="sourcePage"><img :src="data.img" alt="Image" class="img-fluid rounded mb-4" /></a>
 
                                 </a>
                                 <h3>
                                     <a href="blog-single.html" class="text-black">{{data.title}}</a>
                                 </h3>
-                                <div>{{data.updateTime}} <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
+                                <div>{{data.updateTime}} <span class="mx-2">|</span> <a href="#">{{data.author}}</a></div>
                             </div>
                             <!--Article finish-->
-                            <div class="col-md-6 col-lg-4 mb-5">
-                                <a asp-controller="Home" asp-action="sourcePage"><img src="~/images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4" /></a>
-
-                                </a>
-                                <h3>
-                                    <a href="blog-single.html" class="text-black">How to Write a Creative Cover Letter</a>
-                                </h3>
-                                <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 mb-5">
-                                <a asp-controller="Home" asp-action="sourcePage"><img src="~/images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4" /></a>
-
-                                </a>
-                                <h3>
-                                    <a href="blog-single.html" class="text-black">The Right Way to Quit a Job You Started</a>
-                                </h3>
-                                <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 mb-5">
-                                <a asp-controller="Home" asp-action="sourcePage"><img src="~/images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4" /></a>
-
-                                </a>
-                                <h3>
-                                    <a href="blog-single.html" class="text-black">7 Factors for Choosing Between Two Jobs</a>
-                                </h3>
-                                <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 mb-5">
-                                <a asp-controller="Home" asp-action="sourcePage"><img src="~/images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4" /></a>
-
-                                </a>
-                                <h3>
-                                    <a href="blog-single.html" class="text-black">How to Write a Creative Cover Letter</a>
-                                </h3>
-                                <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-                            </div>
-                            <div class="col-md-6 col-lg-4 mb-5">
-                                <a asp-controller="Home" asp-action="sourcePage"><img src="~/images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4" /></a>
-
-                                </a>
-                                <h3>
-                                    <a href="blog-single.html" class="text-black">The Right Way to Quit a Job You Started</a>
-                                </h3>
-                                <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
-                            </div>
                         </div>
                         <div class="row pagination-wrap mt-5">
                             <div class="col-md-12 text-center">

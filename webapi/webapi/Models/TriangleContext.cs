@@ -53,7 +53,7 @@ namespace webapi.Models
 
             modelBuilder.Entity<Article>(entity =>
             {
-                entity.Property(e => e.Img)
+                entity.Property(e => e.img)
                     .HasMaxLength(100)
                     .HasColumnName("img");
 

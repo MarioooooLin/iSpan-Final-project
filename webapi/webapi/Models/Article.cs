@@ -7,14 +7,14 @@ namespace webapi.Models
 {
     public partial class Article
     {
-        public int ArticleId { get; set; }
-        public string Title { get; set; }
-        
 
-        public int? AuthorId { get; set; }
+        public string Title { get; set; }
+
         public DateTime? UpdateTime { get; set; }
         public string Keyword { get; set; }
-        public string Img { get; set; }
+        public string img { get; set; }
         public string ArticleContent { get;  set; }
+        public int? AuthorId { get;  set; }
+        public int ArticleId { get; set; }
     }
 }

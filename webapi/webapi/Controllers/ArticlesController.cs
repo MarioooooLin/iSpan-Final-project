@@ -31,8 +31,9 @@ namespace webapi.Controllers
             {
                 Title = x.Title,
                 ArticleContent = x.ArticleContent,
-                Img = x.Img,
+                Img = x.img,
                 UpdateTime = x.UpdateTime,
+                Author = x.AuthorId
             });
             return result;
         }
