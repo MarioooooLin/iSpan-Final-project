@@ -16,5 +16,9 @@ namespace webapi.Models
         public string Website { get; set; }
         public string Img { get; set; }
         public string Keyword { get; set; }
+        public string CourseReqire { get; set; }
+        public string CourseIntro { get; set; }
+        
+
     }
 }

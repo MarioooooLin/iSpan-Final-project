@@ -24,17 +24,12 @@ namespace webapi.Controllers
 
         // GET: api/Courses
         [HttpGet]
-        public async Task<IEnumerable<Course>> GetCourse()
+        public async Task<IEnumerable<CourseDTO>> GetCourse()
         {
-            return _context.Course.Join(_context.Teacher, x=>x.TeacherId ,y => y.TeacherId,(cou,tea)=>new CourseDetailDTO
+            return _context.Course.Select(x => new CourseDTO
             {
-                cou.Name,
-                cou.TeacherName,
-                x.Price,
-                x.CourseReqire,
-                x.CourseIntro
-
-            })
+                 Name = x.Name,
+            });
         }
 
         // GET: api/Courses/5
