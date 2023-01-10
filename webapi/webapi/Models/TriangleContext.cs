@@ -106,7 +106,7 @@ namespace webapi.Models
             {
                 entity.Property(e => e.Addedtime).HasColumnType("date");
 
-                entity.Property(e => e.Img)
+                entity.Property(e => e.img)
                     .HasMaxLength(200)
                     .HasColumnName("img");
 
@@ -114,7 +114,7 @@ namespace webapi.Models
                     .HasMaxLength(500)
                     .HasColumnName("keyword");
 
-                entity.Property(e => e.Name).HasMaxLength(10);
+                entity.Property(e => e.CourseName).HasMaxLength(10);
 
                 entity.Property(e => e.TeacherId).HasColumnName("TeacherID");
 

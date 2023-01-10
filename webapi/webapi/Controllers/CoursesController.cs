@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using webapi.DTO;
 using webapi.Models;
 
 namespace webapi.Controllers
@@ -24,12 +25,22 @@ namespace webapi.Controllers
 
         // GET: api/Courses
         [HttpGet]
-        public async Task<IEnumerable<CourseDTO>> GetCourse()
+        public async Task<IEnumerable<CourseDetailDTO>> GetCourse()
         {
-            return _context.Course.Select(x => new CourseDTO
+            var result = _context.Course.Join(_context.Teacher, x => x.TeacherId, y => y.TeacherId, (cou, tea) => new CourseDetailDTO
             {
-                 Name = x.Name,
+                CourseName = cou.CourseName,
+                Price = cou.Price,
+                TeacherName = tea.Name,
+                TeacherImg = tea.Img,
+                Intro = tea.Intro,
+                CourseReqire = cou.CourseReqire,
+                CourseIntro = cou.CourseIntro,
+                CourseLength = cou.CourseLength,
+                CourseImg = cou.img,
+
             });
+            return result;
         }
 
         // GET: api/Courses/5
