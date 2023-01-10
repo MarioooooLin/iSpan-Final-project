@@ -1,4 +1,5 @@
 ﻿
+<div id="appVue">
 <section class="py-5 bg-image fixed overlay film-image" id="next-section"
          style="position: relative;  overflow: hidden;">
     <img src="~/images/hero_1-1.jpg" style="top: 0; position: absolute;height: 100%; filter: blur(5px)" class="w-100 video-bg">
@@ -117,3 +118,37 @@
         </div>
     </div>
 </section>
+
+</div>
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const webApi = "https://localhost:7240"
+        const appVue = new Vue({
+            el: "#appVue", // 綁定位置
+            name: "appVue",
+            data: {
+                datas: [],
+            },
+            mounted: function () {
+                let _this = this;
+                _this.course();
+            },
+            methods: {
+                course: function () {
+                    let _this = this;
+                    axios.get(`${webApi}/api/Courses`) //地址
+                        .then(response => {
+                            appVue.datas = response.data;
+                            console.log(_this.datas)
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+                },
+            }
+        })
+    </script>
+}
