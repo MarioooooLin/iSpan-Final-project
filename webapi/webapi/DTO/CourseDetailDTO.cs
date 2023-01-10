@@ -13,3 +13,4 @@
         public string? CourseImg { get; set; }
         public string? img { get; set; }
     }
+}

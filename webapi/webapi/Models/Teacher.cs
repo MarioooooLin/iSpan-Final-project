@@ -13,7 +13,7 @@ namespace webapi.Models
         public DateTime? EntryTime { get; set; }
         public string Experience { get; set; }
         public bool? Working { get; set; }
-        public string Img { get; set; }
+        public string img { get; set; }
         public string Intro { get; set; }
     }
 }

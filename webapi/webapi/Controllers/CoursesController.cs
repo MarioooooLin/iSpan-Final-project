@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using webapi.DTO;
+//using webapi.DTO;
 using webapi.Models;
 
 namespace webapi.Controllers
@@ -32,7 +32,7 @@ namespace webapi.Controllers
                 CourseName = cou.CourseName,
                 Price = cou.Price,
                 TeacherName = tea.Name,
-                TeacherImg = tea.Img,
+                TeacherImg = tea.img,
                 Intro = tea.Intro,
                 CourseReqire = cou.CourseReqire,
                 CourseIntro = cou.CourseIntro,

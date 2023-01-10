@@ -35,25 +35,25 @@
 <section class="site-section">
     <div class="container" id="appVue">
         <div class="row mb-5" v-for="data in datas">
-            <div class="col-md-6 col-lg-3 mb-5">
+            <div class="card-group col-md-6 col-lg-3 mb-5">
                 <div class="card">
                     <a asp-controller="Home" asp-action="courseDetail">
-                        <img src="" alt="Image" class="img-fluid rounded mb-3">
+                        <img :src="data.courseImg" alt="Image" class="img-fluid rounded mb-3">
                     </a>
                     <div class="card-body">
-                        <h4><a asp-controller="Home" asp-action="courseDetail" class="text-black">ASP.Net Core6.0 從放棄到堅持放棄</a></h4>
+                        <h4><a asp-controller="Home" asp-action="courseDetail" class="text-black">{{data.courseName}}</a></h4>
                         <div class="card-contentstyle">
-                            <p class="text-content">時數600小時</p>
+                            <p class="text-content">時數{{data.courseLength}}小時</p>
                             <p class="text-content">同學49人</p>
                             <div class="teacher-content">
                                 <a href="#">
                                     <div>
-                                        <img src="/images/img_2.jpg" alt="" class="img-littlelogo">
-                                        <span class="teacher-name">Liao</span>
+                                        <img :src="data.teacherImg" alt="" class="img-littlelogo">
+                                        <span class="teacher-name">{{data.teacherName}}</span>
                                     </div>
                                 </a>
                                 <div class="price-content">
-                                    <p>NT$ 4900</p>
+                                    <p>NT$ {{data.price}}</p>
                                 </div>
                             </div>
                         </div>
