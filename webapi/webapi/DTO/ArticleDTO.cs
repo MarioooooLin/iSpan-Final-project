@@ -6,6 +6,6 @@
         public string ArticleContent { get; internal set; }
         public string Img { get; internal set; }
         public DateTime? UpdateTime { get; set; }
-        public int? Author { get; internal set; }
+        public string? Author { get; internal set; }
     }
 }

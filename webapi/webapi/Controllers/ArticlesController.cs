@@ -27,15 +27,27 @@ namespace webapi.Controllers
         [HttpGet]
         public async Task<IEnumerable<ArticleDTO>> GetArticle()
         {
-            var result = _context.Article.Select(x => new ArticleDTO
+            var result = _context.Article.Join(_context.Teacher, x => x.ArticleId, y => y.TeacherId, (article, teacher) => new ArticleDTO
             {
-                Title = x.Title,
-                ArticleContent = x.ArticleContent,
-                Img = x.img,
-                UpdateTime = x.UpdateTime,
-                Author = x.AuthorId
+                      Title = article.Title,
+                     ArticleContent = article.ArticleContent,
+                   Img = article.img,
+                 UpdateTime = article.UpdateTime,
+                 Author = (teacher.Name)
+
             });
+
             return result;
+
+
+            //       var result = _context.Article.Select(x => new ArticleDTO
+            //     {
+            //       Title = x.Title,
+            //     ArticleContent = x.ArticleContent,
+            //   Img = x.img,
+            // UpdateTime = x.UpdateTime,
+            // Author = x.AuthorId
+            //  });
         }
 
         // GET: api/Articles/5
