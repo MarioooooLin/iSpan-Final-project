@@ -12,7 +12,7 @@ using static System.Net.WebRequestMethods;
 
 namespace webapi.Controllers
 {
-    [EnableCors("AllowAny")]
+    [EnableCors("AllowAny")] 
     [Route("api/[controller]")]
     [ApiController]
     public class VacanciesController : ControllerBase
