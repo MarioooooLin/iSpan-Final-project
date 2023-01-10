@@ -28,23 +28,21 @@
             <div class="row mt-1 job-row2 d-flex justify-content-center">
                 <div class="col-lg-3 col-md-6 ">
                     <div class="form-group">
-                        <select name="cause-category" class="form-control cause-category">
-                            <option value="0">行業別</option>
-                            <option value="1">服務業</option>
-                            <option value="2">商業</option>
-                            <option value="3">科技</option>
-                            <option value="4">製造</option>
-                            <option value="5">法律保險</option>
-                            <option value="6">藝文</option>
-                            <option value="7">餐飲</option>
-                            <option value="8">農林漁牧</option>
+                        <select name="cause-category" class="form-control cause-category" v-model="selectedCategory">
+                            <option value="">行業別</option>
+                            <option value="服務">服務</option>
+                            <option value="科技">科技</option>
+                            <option value="藝文">藝文</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="form-group">
-                        <select name="cause-category" class="form-control cause-category">
-                            <option value="0">地區</option>
+                        <select name="cause-category" class="form-control cause-category" v-model="selectedArea">
+                            <option value="">地區</option>
+                            <option value="台北">台北</option>
+                            <option value="新北">新北</option>
+                            <option value="高雄">高雄</option>
                         </select>
                     </div>
                 </div>
@@ -317,7 +315,9 @@
                 datas: [],
                 inputvalue: "", //第八行
                 picked: "職缺",
-                boolean: false
+                boolean: false,
+                selectedCategory: "",
+                selectedArea: ""
             },
             mounted: function () {
                 let _this = this;
@@ -338,7 +338,7 @@
                     const _this = this;
                     if (this.inputvalue) {
                         let name = _this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                        axios.get(`${webApi}/api/vacancies/${name}`)
+                        axios.get(`${webApi}/api/vacancies?name=${name}`)
                             .then(res => {
                                 appVue.datas = [];
                                 appVue.datas = res.data;
@@ -348,26 +348,23 @@
                         $('input').blur();
                     }
                 },
-                Enterprise: function () {
+                search() {
                     let _this = this;
-                    axios.get(`${webApi}/api/vacancies`)
-                        .then(response => {
-                            appVue.datas = response.data;
-                            console.log(_this.datas);
+                    let name = _this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                    let category = _this.selectedCategory;
+                    let adress = _this.selectedArea;
+                    let url = `${webApi}/api/vacancies?name=${name}&category=${category}&adress=${adress}`;
+                    if (this.inputvalue == "" && this.selectedCategory == "" && this.selectedArea == "") {
+                        _this.Vacancy();
+                    }
+                    axios.get(url)
+                        .then(res => {
+                            appVue.datas = [];
+                            appVue.datas = res.data;
                         })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'))
                 },
             },
             watch: {
-                inputvalue: {
-                    handler(newval) {
-                        if (appVue.inputvalue == "") {
-                            this.Vacancy();
-                        }
-                    },
-                    deep: true
-                },
                 picked: {
                     handler(newval) {
                         if (newval == '公司') {
@@ -376,8 +373,26 @@
                             this.boolean = false;
                         }
                     }
-                }
+                },
+                inputvalue: {
+                    handler(newval) {
+                        this.search();
+                    },
+                    deep: true
+                },
+                selectedCategory: {
+                    handler(newval) {
+                        this.search();
+                    },
+                    deep: true
+                },
+                selectedArea: {
+                    handler(newval) {
+                        this.search();
+                    },
+                    deep: true
+                },
             }
         })
     </script>
-    }
+}
