@@ -7,8 +7,7 @@ namespace webapi.Models
 {
     public partial class VacancySkill
     {
-        public int Id { get; set; }
-        public int? VacancyId { get; set; }
-        public int? NeedSkillId { get; set; }
+        public int VacancyId { get; set; }
+        public int NeedSkillId { get; set; }
     }
 }

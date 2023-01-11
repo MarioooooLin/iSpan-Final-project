@@ -14,5 +14,6 @@ namespace webapi.Models
         public string Experience { get; set; }
         public bool? Working { get; set; }
         public string Img { get; set; }
+        public string Intro { get; set; }
     }
 }
