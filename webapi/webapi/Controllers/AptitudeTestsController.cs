@@ -28,6 +28,7 @@ namespace webapi.Controllers
         {
             var result = _context.AptitudeTest.Select(x => new AptitudeTest
             {
+                QuestionId = x.QuestionId,
                 Question = x.Question,
             });
             return result;
