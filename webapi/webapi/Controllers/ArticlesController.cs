@@ -31,7 +31,7 @@ namespace webapi.Controllers
             {
                 Title = article.Title,
                 ArticleContent = article.ArticleContent,
-                Img = article.img,
+                Img = article.Img,
                 Update = article.UpdateTime.Value.ToString("yyyy-MM-dd"),
                 Author = teacher.Name,
                 UpdateTime = article.UpdateTime
