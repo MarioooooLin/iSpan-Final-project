@@ -329,7 +329,7 @@
                     axios.get(`${webApi}/api/vacancies`)
                         .then(response => {
                             appVue.datas = response.data;
-                            console.log(_this.datas);
+                            console.log(appVue.datas);
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
