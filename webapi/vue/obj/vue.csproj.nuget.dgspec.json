@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iSpan\\Desktop\\期末專題\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {}
+    "C:\\Users\\iSpan\\Documents\\GitHub\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iSpan\\Desktop\\期末專題\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {
+    "C:\\Users\\iSpan\\Documents\\GitHub\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\期末專題\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
+        "projectUniqueName": "C:\\Users\\iSpan\\Documents\\GitHub\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
         "projectName": "vue",
-        "projectPath": "C:\\Users\\iSpan\\Desktop\\期末專題\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
+        "projectPath": "C:\\Users\\iSpan\\Documents\\GitHub\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
         "packagesPath": "C:\\Users\\iSpan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iSpan\\Desktop\\期末專題\\iSpan-Final-project\\webapi\\vue\\obj\\",
+        "outputPath": "C:\\Users\\iSpan\\Documents\\GitHub\\iSpan-Final-project\\webapi\\vue\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
