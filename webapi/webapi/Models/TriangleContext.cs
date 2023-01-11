@@ -28,6 +28,7 @@ namespace webapi.Models
         public virtual DbSet<CourseOrder> CourseOrder { get; set; }
         public virtual DbSet<Cv> Cv { get; set; }
         public virtual DbSet<Enterprise> Enterprise { get; set; }
+        public virtual DbSet<Interest> Interest { get; set; }
         public virtual DbSet<InterestedArticle> InterestedArticle { get; set; }
         public virtual DbSet<InterestedCourse> InterestedCourse { get; set; }
         public virtual DbSet<InterestedCv> InterestedCv { get; set; }
@@ -53,7 +54,9 @@ namespace webapi.Models
 
             modelBuilder.Entity<Article>(entity =>
             {
-                entity.Property(e => e.img)
+                entity.Property(e => e.ArticleContent).HasMaxLength(1000);
+
+                entity.Property(e => e.Img)
                     .HasMaxLength(100)
                     .HasColumnName("img");
 
@@ -78,6 +81,8 @@ namespace webapi.Models
 
                 entity.Property(e => e.Education).HasMaxLength(30);
 
+                entity.Property(e => e.Email).HasMaxLength(30);
+
                 entity.Property(e => e.IdCard).HasMaxLength(10);
 
                 entity.Property(e => e.Img).HasMaxLength(100);
@@ -85,8 +90,6 @@ namespace webapi.Models
                 entity.Property(e => e.Name).HasMaxLength(10);
 
                 entity.Property(e => e.Password).HasMaxLength(12);
-
-                entity.Property(e => e.Telephone).HasMaxLength(10);
             });
 
             modelBuilder.Entity<CandidateCv>(entity =>
@@ -106,6 +109,16 @@ namespace webapi.Models
             {
                 entity.Property(e => e.Addedtime).HasColumnType("date");
 
+                entity.Property(e => e.Category).HasMaxLength(50);
+
+                entity.Property(e => e.CourseIntro).HasMaxLength(1000);
+
+                entity.Property(e => e.CourseName).HasMaxLength(50);
+
+                entity.Property(e => e.CourseReqire).HasMaxLength(1000);
+
+                entity.Property(e => e.CourseVideo).HasMaxLength(100);
+
                 entity.Property(e => e.Img)
                     .HasMaxLength(200)
                     .HasColumnName("img");
@@ -114,20 +127,13 @@ namespace webapi.Models
                     .HasMaxLength(500)
                     .HasColumnName("keyword");
 
-                entity.Property(e => e.Name).HasMaxLength(10);
-
                 entity.Property(e => e.TeacherId).HasColumnName("TeacherID");
-
-                entity.Property(e => e.TeacherName).HasMaxLength(10);
-
-                entity.Property(e => e.Website)
-                    .HasMaxLength(20)
-                    .HasColumnName("website");
             });
 
             modelBuilder.Entity<CourseDetail>(entity =>
             {
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.HasKey(e => new { e.CourseId, e.SkillId })
+                    .HasName("PK__CourseDe__A4D778BF12CFB334");
             });
 
             modelBuilder.Entity<CourseOrder>(entity =>
@@ -162,6 +168,10 @@ namespace webapi.Models
 
                 entity.Property(e => e.Email).HasMaxLength(20);
 
+                entity.Property(e => e.Employee)
+                    .HasMaxLength(10)
+                    .HasColumnName("employee");
+
                 entity.Property(e => e.Fax).HasMaxLength(10);
 
                 entity.Property(e => e.Img)
@@ -177,6 +187,21 @@ namespace webapi.Models
                 entity.Property(e => e.Telephone).HasMaxLength(10);
 
                 entity.Property(e => e.UniformNumbers).HasMaxLength(10);
+
+                entity.Property(e => e.Welfare).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<Interest>(entity =>
+            {
+                entity.HasKey(e => new { e.CandidateId, e.EnterpriseId });
+
+                entity.Property(e => e.CandidateId).HasColumnName("candidateId");
+
+                entity.Property(e => e.EnterpriseId).HasColumnName("enterpriseId");
+
+                entity.Property(e => e.Status).HasColumnName("status");
+
+                entity.Property(e => e.VacancyId).HasColumnName("vacancyId");
             });
 
             modelBuilder.Entity<InterestedArticle>(entity =>
@@ -273,7 +298,7 @@ namespace webapi.Models
 
             modelBuilder.Entity<Teacher>(entity =>
             {
-                entity.Property(e => e.Categories).HasMaxLength(50);
+                entity.Property(e => e.Categories).HasMaxLength(30);
 
                 entity.Property(e => e.EntryTime).HasColumnType("date");
 
@@ -283,24 +308,34 @@ namespace webapi.Models
                     .HasMaxLength(100)
                     .HasColumnName("img");
 
-                entity.Property(e => e.Name).HasMaxLength(10);
+                entity.Property(e => e.Intro).HasMaxLength(1000);
+
+                entity.Property(e => e.Name).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Vacancy>(entity =>
             {
                 entity.Property(e => e.Category).HasMaxLength(10);
 
-                entity.Property(e => e.Shift).HasMaxLength(10);
+                entity.Property(e => e.Shift).HasMaxLength(20);
 
-                entity.Property(e => e.Updatetime)
-                    .HasColumnType("date")
-                    .HasColumnName("updatetime");
+                entity.Property(e => e.Updatetime).HasColumnType("date");
 
-                entity.Property(e => e.WorkContent).HasMaxLength(50);
+                entity.Property(e => e.WorkContent).HasMaxLength(1000);
 
-                entity.Property(e => e.WorkName).HasMaxLength(50);
+                entity.Property(e => e.WorkName).HasMaxLength(100);
 
-                entity.Property(e => e.WorkPlace).HasMaxLength(50);
+                entity.Property(e => e.WorkPlace).HasMaxLength(100);
+
+                entity.Property(e => e.WorkReqire).HasMaxLength(1000);
+
+                entity.Property(e => e.WorkTime).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<VacancySkill>(entity =>
+            {
+                entity.HasKey(e => new { e.VacancyId, e.NeedSkillId })
+                    .HasName("PK__VacancyS__81F22C8AF46E7077");
             });
 
             OnModelCreatingPartial(modelBuilder);

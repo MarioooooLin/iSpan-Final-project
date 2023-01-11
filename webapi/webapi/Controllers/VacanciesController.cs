@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using webapi.Models;
+using static System.Net.WebRequestMethods;
 
 namespace webapi.Controllers
 {
-    [EnableCors("AllowAny")]
+    [EnableCors("AllowAny")] 
     [Route("api/[controller]")]
     [ApiController]
     public class VacanciesController : ControllerBase
@@ -25,10 +26,11 @@ namespace webapi.Controllers
 
         // GET: api/Vacancies
         [HttpGet]
-        public async Task<IEnumerable<VacancyDTO>> GetVacancy()
+        public async Task<IEnumerable<VacancyDTO>> Get(string? name, string? category, string? workplace)
         {
-            var result = _context.Vacancy.Join(_context.Enterprise, x => x.VacancyId, y => y.EnterpriseId, (van, etp) => new VacancyDTO
+            var result = _context.Vacancy.Join(_context.Enterprise, x => x.EnterpriseId, y => y.EnterpriseId, (van, etp) => new VacancyDTO
             {
+                VacancyId = van.VacancyId,
                 WorkName = van.WorkName,
                 WorkPlace = van.WorkPlace,
                 Salary = van.Salary,
@@ -42,10 +44,24 @@ namespace webapi.Controllers
                 Address = etp.Address,
                 Info = etp.Info,
                 img = etp.Img,
-                UniformNumbers = etp.UniformNumbers
-
+                UniformNumbers = etp.UniformNumbers,
+                Employee = etp.Employee
             });
-            
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                result = result.Where(a => a.WorkName.Contains(name) || a.CompanyName.Contains(name));
+            }
+            if (!string.IsNullOrWhiteSpace(category)) 
+            {
+                result = result.Where(a => a.Category.Contains(category));
+            }
+            if (!string.IsNullOrWhiteSpace(workplace)) 
+            {
+                result = result.Where(a => a.WorkPlace.Contains(workplace));
+            }
+
+            return await Task.FromResult(result);
+
             /*var result = from van in _context.Vacancy
                          join etp in _context.Enterprise
                          on van.EnterpriseId equals etp.EnterpriseId
@@ -58,26 +74,40 @@ namespace webapi.Controllers
                              WorkContent = van.WorkContent,
                              Seniority = van.Seniority,
                          };*/
-            return result;
             /*return _context.Vacancy.Select(x => new VacancyDTO
             {
                 
             });*/
-        }
+        } //完成
 
         // GET: api/Vacancies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Vacancy>> GetVacancy(int id)
+        public async Task<ActionResult<VacancyDTO>> Get(int id)
         {
-            var vacancy = await _context.Vacancy.FindAsync(id);
-
-            if (vacancy == null)
-            {
-                return NotFound();
-            }
-
-            return vacancy;
-        }
+            var result = from van in _context.Vacancy
+                         join etp in _context.Enterprise
+                         on van.EnterpriseId equals etp.EnterpriseId
+                         where van.VacancyId == id
+                         select new VacancyDTO {
+                             VacancyId = van.VacancyId,
+                             WorkName = van.WorkName,
+                             WorkPlace = van.WorkPlace,
+                             Salary = van.Salary,
+                             FullPartTime = van.FullPartTime,
+                             Shift = van.Shift,
+                             WorkContent = van.WorkContent,
+                             updatetime = van.Updatetime,
+                             Seniority = van.Seniority,
+                             Category = van.Category,
+                             CompanyName = etp.CompanyName,
+                             Address = etp.Address,
+                             Info = etp.Info,
+                             img = etp.Img,
+                             UniformNumbers = etp.UniformNumbers,
+                             Employee = etp.Employee
+                         };
+            return result.SingleOrDefault();
+        } //完成
 
         // PUT: api/Vacancies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
