@@ -53,13 +53,13 @@ namespace webapi.Models
 
             modelBuilder.Entity<Article>(entity =>
             {
-                entity.Property(e => e.Img)
+                entity.Property(e => e.img)
                     .HasMaxLength(100)
                     .HasColumnName("img");
 
                 entity.Property(e => e.Keyword).HasMaxLength(200);
 
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Title).HasMaxLength(50);
 
                 entity.Property(e => e.UpdateTime).HasColumnType("date");
             });
