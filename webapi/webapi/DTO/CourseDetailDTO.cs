@@ -12,5 +12,6 @@
         public int? CourseLength { get; set; }
         public string? CourseImg { get; set; }
         public string? img { get; set; }
+        public int? CourseId { get; set; }
     }
 }

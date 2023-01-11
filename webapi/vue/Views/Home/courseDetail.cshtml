@@ -7,7 +7,7 @@
             <div class="container" >
                 <div class="row mb-5 mt-lg-3 mg-md-5 pt-5 justify-content-left">
                     <div class="col-lg-4 col-md-7 text-lg-left mt-5 mb-2">
-                        <h2 class="text-white video-title">{{data.courseName}}</h2>
+                        <h2 class="text-white video-title">{{ dataList.courseName }}</h2>
                     </div>
                     <div class="col-12 mt-2 videobox">
                         <div style="float: left;" class="col-lg-8 col-md-12">
@@ -18,11 +18,12 @@
                         <div class="col-lg-4 col-md-12 pt-3 film-intro">
                             <h3>課程簡介</h3><hr>
                             <h5>
-                                {{data.courseIntro}}
+                                {{ dataList.courseIntro }}
                             </h5>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- 購買導覽列 start -->
@@ -41,8 +42,7 @@
                         <div class="film-number" data-number="54"><i class="fa-regular fa-clock"></i></div>
                     </div>
                     <span class="caption">
-                        上課時長{{data.courseLength
-                        }}分鐘
+                        上課時長{{ dataList.courseLength }}分鐘
                     </span>
                 </div>
 
@@ -61,15 +61,11 @@
                 </div>
                 <div class="col-lg-2 col-md-6 fw-bold important-mess" style="border-left:#656565 1px solid;">
                     <p class="mt-3">年終倒數優惠中</p>
-                    <h2>NT$ {{data.price}}</h2>
+                    <h2>NT$ {{ dataList.price }}</h2>
                 </div>
-                <div class="col-lg-3 col-md-6 fw-bold buy-mess d-flex" style="border-left:#656565 1px solid;">
-                    <a href="pay-page.html">
-                        <button class="btn btn-primary px-5 my-5 mx-1">立即購買</button>
-                    </a>
-                    <a href="">
-                        <button class="btn btn-secondary px-4 my-5 mx-1"><i class="fa-solid fa-cart-shopping"></i></button>
-                    </a>
+                <div class="col-lg-3 col-md-6 fw-bold buy-mess d-flex justify-content-center" style="border-left:#656565 1px solid;">
+                    <a href="pay-page.html" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>
+                    <a href="" class="btn btn-secondary w-25 my-5 mx-1 text-center"><i class="fa-solid fa-thumbtack"></i></a>
                 </div>
 
             </div>
@@ -105,7 +101,7 @@
                         </div>
                         <div class="cause-need" style="width: 95%;">
                             <div class="title">上課需求</div>
-                            <p class="lead ml-4">{{data.courseReqire}}</p>
+                            <p class="lead ml-4">{{ dataList.courseReqire }}</p>
                         </div>
                     </div>
                     <div class="col-lg-4 ml-auto cause-title">
@@ -113,8 +109,8 @@
                         <div class="ml-4 my-2">
                             <img src="/images/991223.jpg" class="img-littlelogo mb-lg-3" style="height: 150px;width: 150px;">
                         </div>
-                        <p class="lead ml-3">{{data.teacherName}}</p>
-                        <p class="lead ml-3">{{data.intro}}</p>
+                        <p class="lead ml-3">{{ dataList.teacherName }}</p>
+                        <p class="lead ml-3">{{ dataList.teacherIntro }}</p>
                     </div>
                     <div class="col-12 cause-need" style="height: 50px;">
                     </div>
@@ -134,19 +130,23 @@
             el: "#appVue", // 綁定位置
             name: "appVue",
             data: {
-                datas: [],
+                dataList: [],
+                
             },
             mounted: function () {
-                let _this = this;
+                const _this = this;
                 _this.course();
             },
             methods: {
                 course: function () {
-                    let _this = this;
-                    axios.get(`${webApi}/api/Courses`) //地址
+                    const _this = this;
+                    //let getUrlString = location.href;
+                    //let url = new URL(getUrlString);
+                    const courseId = new URL(location.href).searchParams.get('id');
+                    axios.get(`${webApi}/api/Courses/${courseId}`) 
                         .then(response => {
-                            _this.datas = response.data;
-                            console.log(_this.datas)
+                            _this.dataList = response.data[0];
+                            console.log(_this.dataList)
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))

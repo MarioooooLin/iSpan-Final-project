@@ -29,6 +29,7 @@ namespace webapi.Controllers
         {
             var result = _context.Course.Join(_context.Teacher, x => x.TeacherId, y => y.TeacherId, (cou, tea) => new CourseDetailDTO
             {
+                CourseId = cou.CourseId,
                 CourseName = cou.CourseName,
                 Price = cou.Price,
                 TeacherName = tea.Name,
@@ -45,16 +46,24 @@ namespace webapi.Controllers
 
         // GET: api/Courses/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Course>> GetCourse(int id)
+        public async Task<IEnumerable<CourseDetailDTO>> GetCourse(int id)
         {
-            var course = await _context.Course.FindAsync(id);
-
-            if (course == null)
+            var result = _context.Course.Join(_context.Teacher, x => x.TeacherId, y => y.TeacherId, (cou, tea) => new CourseDetailDTO
             {
-                return NotFound();
-            }
+                CourseId = cou.CourseId,
+                CourseName = cou.CourseName,
+                Price = cou.Price,
+                TeacherName = tea.Name,
+                TeacherImg = tea.img,
+                Intro = tea.Intro,
+                CourseReqire = cou.CourseReqire,
+                CourseIntro = cou.CourseIntro,
+                CourseLength = cou.CourseLength,
+                CourseImg = cou.img,
 
-            return course;
+            }).Where(x=>x.CourseId==id);
+
+            return result;
         }
 
         // PUT: api/Courses/5
