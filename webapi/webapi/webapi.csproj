@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\EnterprisesController.cs" />
-    <Compile Remove="DTO\EnterpriseDTO.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Controllers\.gitattributes" />
   </ItemGroup>
 
