@@ -32,12 +32,12 @@ namespace webapi.Controllers
                 Title = article.Title,
                 ArticleContent = article.ArticleContent,
                 Img = article.img,
-                UpdateTime = article.UpdateTime,
-                Author = teacher.Name
-
+                Update = article.UpdateTime.Value.ToString("yyyy-MM-dd"),
+                Author = teacher.Name,
+                UpdateTime = article.UpdateTime
             });
-
-            return result;
+            
+            return await Task.FromResult(result);
 
 
             //       var result = _context.Article.Select(x => new ArticleDTO

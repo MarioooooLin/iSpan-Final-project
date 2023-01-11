@@ -16,5 +16,6 @@ namespace webapi.Models
         public string ArticleContent { get;  set; }
         public int? AuthorId { get;  set; }
         public int ArticleId { get; set; }
+        public string Update { get; set; }
     }
 }
