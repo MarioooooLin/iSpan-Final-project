@@ -12,11 +12,13 @@
         public string? Shift { get; set; }
         public string? WorkContent { get; set; }
         public int? Seniority { get; set; }
-        public string Account { get; internal set; }
-        public string Category { get; internal set; }
-        public string CompanyName { get; internal set; }
-        public string Address { get; internal set; }
-        public string Info { get; internal set; }
-        public string UniformNumbers { get; internal set; }
+        public string? Account { get; set; }
+        public string? Category { get; set; }
+        public string? CompanyName { get; set; }
+        public string? Address { get; set; }
+        public string? Info { get; set; }
+        public string? UniformNumbers { get; set; }
+        public string? Employee { get; set; }
+        public int VacancyId { get; set; }
     }
 }

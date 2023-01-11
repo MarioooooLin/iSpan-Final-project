@@ -55,6 +55,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Interest]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[InterestedArticle]",
          "ObjectType": 0
       },

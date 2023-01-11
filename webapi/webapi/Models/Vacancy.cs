@@ -10,14 +10,16 @@ namespace webapi.Models
         public int VacancyId { get; set; }
         public string WorkName { get; set; }
         public int? EnterpriseId { get; set; }
+        public string Category { get; set; }
         public string WorkPlace { get; set; }
-        public TimeSpan? WorkTime { get; set; }
+        public string WorkTime { get; set; }
         public int? Salary { get; set; }
         public bool? FullPartTime { get; set; }
         public string Shift { get; set; }
-        public string WorkContent { get; set; }
-        public DateTime? Updatetime { get; set; }
         public int? Seniority { get; set; }
-        public string Category { get; set; }
+        public string WorkContent { get; set; }
+        public string WorkReqire { get; set; }
+        public DateTime? Updatetime { get; set; }
+        public bool? Valid { get; set; }
     }
 }

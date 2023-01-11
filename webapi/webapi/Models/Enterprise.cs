@@ -23,5 +23,7 @@ namespace webapi.Models
         public string Email { get; set; }
         public string Info { get; set; }
         public string Img { get; set; }
+        public string Welfare { get; set; }
+        public string Employee { get; set; }
     }
 }

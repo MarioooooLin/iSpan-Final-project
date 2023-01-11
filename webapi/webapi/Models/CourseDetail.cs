@@ -7,8 +7,7 @@ namespace webapi.Models
 {
     public partial class CourseDetail
     {
-        public int Id { get; set; }
-        public int? CourseId { get; set; }
-        public int? SkillId { get; set; }
+        public int CourseId { get; set; }
+        public int SkillId { get; set; }
     }
 }
