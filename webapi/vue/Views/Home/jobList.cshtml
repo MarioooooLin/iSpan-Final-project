@@ -48,16 +48,7 @@
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-2">
                     <div>
-                        <a href="#"><i class="fa-solid x-mark">×</i></a>******
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 mt-lg-3 mt-md-2 text-sm-right">
-                    <div>
-                        <span class="fw-bold text-white">
-                            <a class="text-decoration-none text-white" asp-controller="Home" asp-action="memberDetail">
-                                修改會員資料 <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </span>
+                        <a href="#" @@click="clear"><i class="fa-solid x-mark">×</i></a>
                     </div>
                 </div>
             </div>
@@ -384,9 +375,10 @@
                             appVue.datas = res.data;
                         })
                 },
-                clearall() {
+                clear() {
                     this.selectedCategory = '';
                     this.selectedArea = '';
+                    this.inputvalue = '';
                 },
             },
             watch: {
