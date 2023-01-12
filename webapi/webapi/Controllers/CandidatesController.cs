@@ -25,19 +25,27 @@ namespace webapi.Controllers
         }
 
         // GET: api/Candidates
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Candidate>>> GetCandidate()
+        [HttpGet("Id{Id}")]
+        public async Task<IEnumerable<CandidateDTO>> GetInterest(int Id)
         {
-            return await _context.Candidate.ToListAsync();
+            return _context.Candidate.Where(c => c.CandidateId == Id).Join(_context.Interest, c => c.CandidateId, i => i.CandidateId, (c, i) => new CandidateDTO
+            {
+                CandidateId = c.CandidateId,
+                //會員中心內容(關注、感興趣...)
+                EnterpriseId = i.EnterpriseId,
+                VacancyId = i.VacancyId,
+                interestStatus = i.InterestStatus,
+
+            });
         }
 
         // GET: api/Candidates/5
         [HttpGet("{id}")]
-        public async Task<IEnumerable<CandidateDTO>> GetCandidate(int id)
+        public async Task<IEnumerable<Candidate>> GetCandidate(int id)
         {
 
 
-            return _context.Candidate.Where(c => c.CandidateId == id).Select(c => new CandidateDTO
+            return _context.Candidate.Where(c => c.CandidateId == id).Select(c => new Candidate
             {
                 CandidateId = c.CandidateId,
                 Account = c.Account,
@@ -51,26 +59,8 @@ namespace webapi.Controllers
                 Seniority = c.Seniority,
                 Img = c.Img,
                 Autobiography = c.Autobiography,
-
-                //會員中心內容(關注、感興趣...)
-                //EnterpriseId = i.EnterpriseId,
-                //VacancyId = i.VacancyId,
-                //Status = i.Status,
             });
 
-            //.Join(_context.Interest, c => c.CandidateId, i => i.CandidateId, (c, i)
-
-
-
-
-            //var candidate = await _context.Candidate.FindAsync(id);
-
-            //if (candidate == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return candidate;
         }
 
         // PUT: api/Candidates/5

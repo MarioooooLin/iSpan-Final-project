@@ -120,7 +120,7 @@
                     </div>
                     <hr>
                     <div class="item pb-0">
-                        {{datas[0].name}}   
+                        {{datas[0].name}}
                     </div>
 
                 </div>
@@ -216,14 +216,16 @@
             name: "appVue",
             data: {
                 datas: [],
+                interestDatas:[],
                 Id: sessionStorage.getItem("Id"),
             },
             mounted: function () {
                 let _this = this;
+                _this.Login();
                 _this.Information();
             },
             methods: {
-                Information: function () {
+                Login: function () {
                     let _this = this;
 
                     axios.get(`${webApi}/api/Candidates/${this.Id}`)
@@ -231,7 +233,18 @@
                             _this.datas = res.data;
                             console.log(_this.datas[0]);
                         })
-                        .catch(err=>console.log(err))
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+                },
+                Information: function () {
+                    let _this = this;
+                    let request = _this.Id;
+                    axios.get(`${webApi}/api/Candidates/Id${this.Id}`)
+                        .then(response => {
+                            _this.interestDatas = response.data;
+                            console.log(_this.interestDatas);
+                        })
+                        .catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
             },

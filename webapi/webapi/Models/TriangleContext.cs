@@ -193,13 +193,11 @@ namespace webapi.Models
 
             modelBuilder.Entity<Interest>(entity =>
             {
-                entity.HasKey(e => new { e.CandidateId, e.EnterpriseId });
-
                 entity.Property(e => e.CandidateId).HasColumnName("candidateId");
 
                 entity.Property(e => e.EnterpriseId).HasColumnName("enterpriseId");
 
-                entity.Property(e => e.Status).HasColumnName("status");
+                entity.Property(e => e.InterestStatus).HasColumnName("interestStatus");
 
                 entity.Property(e => e.VacancyId).HasColumnName("vacancyId");
             });
@@ -272,13 +270,13 @@ namespace webapi.Models
 
                 entity.Property(e => e.ArticleName).HasMaxLength(10);
 
-                entity.Property(e => e.Contents).HasMaxLength(500);
-
                 entity.Property(e => e.UpdateTime).HasColumnType("date");
             });
 
             modelBuilder.Entity<Reply>(entity =>
             {
+                entity.Property(e => e.ArticleName).HasMaxLength(10);
+
                 entity.Property(e => e.ReplyTime).HasColumnType("date");
             });
 

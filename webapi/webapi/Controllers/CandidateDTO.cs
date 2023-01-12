@@ -14,8 +14,8 @@
         public int? Seniority { get; set; }
         public string? Img { get; set; }
         public string? Autobiography { get; set; }
-        //public int? EnterpriseId { get; set; }
-        //public int? VacancyId { get; set; }
-        //public int? Status { get; set; }
+        public int? EnterpriseId { get; set; }
+        public int? VacancyId { get; set; }
+        public int? interestStatus { get; set; }
     }
 }
