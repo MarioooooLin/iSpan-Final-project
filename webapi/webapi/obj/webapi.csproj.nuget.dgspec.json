@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iSpan\\Desktop\\雲端\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {}
+    "C:\\Users\\iSpan\\Desktop\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iSpan\\Desktop\\雲端\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {
+    "C:\\Users\\iSpan\\Desktop\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\雲端\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
+        "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\iSpan\\Desktop\\雲端\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
+        "projectPath": "C:\\Users\\iSpan\\Desktop\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\iSpan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iSpan\\Desktop\\雲端\\iSpan-Final-project\\webapi\\webapi\\obj\\",
+        "outputPath": "C:\\Users\\iSpan\\Desktop\\iSpan-Final-project\\webapi\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -47,7 +47,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
