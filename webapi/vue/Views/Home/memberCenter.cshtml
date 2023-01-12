@@ -220,53 +220,14 @@
 
             },
             methods: {
-                Signup: function () {
-                    let _this = this;
-                    var inf = {};
-                    inf.Id = 0;
-                    inf.account = _this.account;
-                    inf.password = _this.password;
-                    inf.email = _this.email;
-                    inf.phone = _this.phone;
-                    axios.post(`${webApi}/api/LoginInformations`, inf)
-                        .then(response => {
 
-                            if (response.data == "此帳號已登入") {
-                                alert(response.data);
-                            }
-                            else {
-
-                                window.location = "/Home/memberLogin";
-
-                            }
-
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'))
-                },
-            }
-
-
-                            const app = new Vue({
-                el: "#app",
-                name: "app",
-                data: {
-                    Id: sessionStorage.getItem("Id"),
-                    Name: sessionStorage.getItem("Name"),
-                },
-
-            })
-                            const vue = new Vue({
-                el: "#vue",
-                name: "vue",
-                data: {
-                    Id: sessionStorage.getItem("Id"),
-                    Name: sessionStorage.getItem("Name"),
-                },
-
-            })
-
+            },
         })
+
+
+     
+
+
     </script>
     }
 

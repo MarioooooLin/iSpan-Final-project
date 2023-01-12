@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,16 +33,44 @@ namespace webapi.Controllers
 
         // GET: api/Candidates/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Candidate>> GetCandidate(int id)
+        public async Task<IEnumerable<CandidateDTO>> GetCandidate(int id)
         {
-            var candidate = await _context.Candidate.FindAsync(id);
 
-            if (candidate == null)
+
+            return _context.Candidate.Where(c => c.CandidateId == id).Select(c => new CandidateDTO
             {
-                return NotFound();
-            }
+                CandidateId = c.CandidateId,
+                Account = c.Account,
+                Password = c.Password,
+                Name = c.Name,
+                Email = c.Email,
+                Cellphone = c.Cellphone,
+                Birth = c.Birth,
+                Address = c.Address,
+                Education = c.Education,
+                Seniority = c.Seniority,
+                Img = c.Img,
+                Autobiography = c.Autobiography,
 
-            return candidate;
+                //會員中心內容(關注、感興趣...)
+                //EnterpriseId = i.EnterpriseId,
+                //VacancyId = i.VacancyId,
+                //Status = i.Status,
+            });
+
+            //.Join(_context.Interest, c => c.CandidateId, i => i.CandidateId, (c, i)
+
+
+
+
+            //var candidate = await _context.Candidate.FindAsync(id);
+
+            //if (candidate == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //return candidate;
         }
 
         // PUT: api/Candidates/5
