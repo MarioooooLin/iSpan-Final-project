@@ -330,6 +330,7 @@
             },
             methods: {
                 Vacancy: function () {
+                    this.tempitem = 0;
                     axios.get(`${webApi}/api/vacancies`)
                         .then(response => {
                             appVue.datas = response.data;
@@ -355,6 +356,7 @@
                 },
                 add() {
                     if (this.inputvalue) {
+                        this.tempitem = 0;
                         let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
                         axios.get(`${webApi}/api/vacancies?name=${name}`)
                             .then(res => {
@@ -378,6 +380,7 @@
                     }
                 },
                 search() {
+                    this.tempitem = 0;
                     let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
                     let category = this.selectedCategory;
                     let workplace = this.selectedArea;
