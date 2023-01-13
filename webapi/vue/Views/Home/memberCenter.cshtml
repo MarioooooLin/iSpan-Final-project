@@ -12,7 +12,7 @@
 <!-- home end -->
 
 <section class="site-section block__18514 pt-4" id="next-section">
-    <div class="container h-100">
+    <div class="container h-100" id="appVue">
         <div class="row">
             <!-- Below is sidebar -->
             <div class="col-xs-12 col-md-10 col-lg-4 mt-lg-5">
@@ -207,25 +207,32 @@
             el: "#appVue",
             name: "appVue",
             data: {
-                datas: [],
                 Id: null,
-                account: null,
-                password: null,
-                email: null,
-                phone: null,
+                interestDatas: [],
+                Id: sessionStorage.getItem("Id"),
 
             },
             mounted: function () {
                 let _this = this;
-
+                _this.Information();
             },
             methods: {
-
+                Information: function () {
+                    let _this = this;
+                    let request = _this.Id;
+                    axios.get(`${webApi}/api/Candidates/Id${this.Id}`)
+                        .then(response => {
+                            _this.interestDatas = response.data;
+                            console.log(_this.interestDatas);
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+                },
             },
         })
 
 
-     
+
 
 
     </script>

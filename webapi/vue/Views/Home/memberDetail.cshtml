@@ -30,13 +30,15 @@
                                 <div class="head"></div>
                                 <div class="mb-3 border navbar-nav box">
                                     <div class="p-3 w-100">
-                                        <figure class="figure ml-2">
-                                            <img src="https://picsum.photos/250/250/?random=10"
-                                                 class="figure-img img-fuild rounded-circle  w-50  ">
-                                            <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                        <figure class="figure ml-2 ">
+                                            <div style="object-fit:cover;width:100px;height:100px;">
+                                                <img :src="datas[0].img"
+                                                     class="figure-img img-fuild rounded-circle h-100 w-100">
+                                            </div>
+                                            <h3 class="display-6 slide-h3 mt-1">{{datas[0].name}} 您好</h3>
                                         </figure>
-                                        <div>手機:</div>
-                                        <div>信箱:</div>
+                                        <div>手機: {{datas[0].cellphone}}</div>
+                                        <div>信箱: {{datas[0].email}}</div>
                                         <div class="item text-end align-content-end mb-0">
                                             <div class="text-right mr-3 fw-bold">
                                                 <a asp-controller="Home" asp-action="memberDetail">
@@ -113,14 +115,47 @@
                 <!-- Above is sidebar -->
 
             </div>
-            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5">
+            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5" v-if="datas.Edit == false">
                 <div class="context border  w-100 p-3 mb-4">
                     <div class="item row pt-2">
                         <h2 class="display-5 fw-bolder mb-2 col-6">個人資訊</h2>
                     </div>
                     <hr>
-                    <div class="item pb-0">
-                        {{datas[0].name}}
+                    <div class="row mt-2">
+                        <div class="col-3 text-left pr-4">
+                            <div class="item pb-0 ml-2">
+                                姓名
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                生日
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                信箱
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                手機
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                就業狀態
+                            </div>
+                        </div>
+                        <div class="col-9 text-left">
+                            <div class="item pb-0 ml-2">
+                                {{datas[0].name}}
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                {{birth}}
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                {{datas[0].email}}
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                {{datas[0].cellphone}}
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                {{datas[0].status}}
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -129,16 +164,14 @@
                         <h2 class="display-5 fw-bolder mb-2 col-6">工作經歷</h2>
                         <figure class="w-100 ml-3">
                             <hr>
-                            <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                            <img src="https://picsum.photos/140/140/?random=10" class="float-left mr-3">
                             <figcaption>
-
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Maxime, corrupti
-                                distinctio dolore repellat corporis nulla consequuntur nostrum
-                                laboriosam
-                                molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                atque dicta,
-                                ullam necessitatibus exercitationem.
+                                <div class="h3">
+                                    {{datas[0].workexname}}
+                                </div>
+                                <div>
+                                    {{datas[0].workexperience}}
+                                </div>
                             </figcaption>
                     </div>
 
@@ -149,61 +182,176 @@
                         <h2 class="display-5 fw-bolder mb-2 col-6">學歷</h2>
                         <figure class="w-100 ml-3">
                             <hr>
-                            <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                            <img src="https://picsum.photos/140/140/?random=10" class="float-left mr-3">
                             <figcaption>
-
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Maxime, corrupti
-                                distinctio dolore repellat corporis nulla consequuntur nostrum
-                                laboriosam
-                                molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                atque dicta,
-                                ullam necessitatibus exercitationem.
+                                <div class="h3">
+                                    {{datas[0].schoolname}}
+                                </div>
+                                <div>
+                                    {{datas[0].education}}
+                                </div>
                             </figcaption>
 
                     </div>
 
                 </div>
-                <div class="context border w-100 p-3 mb-4">
+                <div class="context border w-100 p-3 mb-4 ">
                     <div class="item row pt-2">
                         <h2 class="display-5 fw-bolder mb-2 col-6">技能</h2>
 
                     </div>
                     <hr>
                     <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
-                    </div>
-
-                </div>
-                <div class="context border w-100 p-3 mb-4">
-                    <div class="item row pt-2">
-                        <h2 class="display-5 fw-bolder mb-2 col-6">求職條件</h2>
-                    </div>
-                    <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                        <div class="d-flex">
+                            <div v-for="item in skillName">
+                                <div class="w-auto mx-2">
+                                    <div class="border px-2 rounded">{{item}}</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
                 <div class="context border w-100 p-3 mb-4">
                     <div class="item row pt-2">
                         <h2 class="display-5 fw-bolder mb-2 col-6">自傳</h2>
                     </div>
                     <hr>
                     <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                        {{datas[0].autobiography}}
                     </div>
                 </div>
-                <div class="d-flex justify-content-end mb-4">
-                    <button class="btn px-4 slide-button m-2 w-25"><a>編輯資料</a></button>
+            </div>
+
+
+
+            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5" v-else>
+                <div class="context border  w-100 p-3 mb-4">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">個人資訊</h2>
+                    </div>
+                    <hr>
+                    <div class="row mt-2">
+                        <div class="col-3 text-left pr-4">
+                            <div class="item pb-0 ml-2">
+                                姓名
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                生日
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                信箱
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                手機
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                就業狀態
+                            </div>
+                        </div>
+                        <div class="col-9 text-left">
+                            <div class="item pb-0 ml-2">
+                                <input type="text" v-model="datas[0].name" />
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                <input type="text" v-model="birth" />
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                <input type="text" v-model="datas[0].email" />
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                <input type="text" v-model="datas[0].cellphone" />
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                <input type="text" v-model="datas[0].status" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="context border  w-100 p-3 mb-4">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">工作經歷</h2>
+                        <figure class="w-100 ml-3">
+                            <hr>
+                            <img src="https://picsum.photos/140/140/?random=10" class="float-left mr-3">
+                            <figcaption>
+                                <div class="h3">
+                                    <input type="text" v-model="datas[0].workexname" />
+                                </div>
+                                <div>
+                                    <input type="text" v-model="datas[0].workexperience" />
+                                </div>
+                            </figcaption>
+                    </div>
+
+
+                </div>
+                <div class="context border w-100 p-3 mb-4">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">學歷</h2>
+                        <figure class="w-100 ml-3">
+                            <hr>
+                            <img src="https://picsum.photos/140/140/?random=10" class="float-left mr-3">
+                            <figcaption>
+                                <div class="h3">
+                                    <input type="text" v-model="datas[0].schoolname" />
+                                </div>
+                                <div>
+                                    <input type="text" v-model="datas[0].education" />
+                                </div>
+                            </figcaption>
+
+                    </div>
+
+                </div>
+                <div class="context border w-100 p-3 mb-4 ">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">技能</h2>
+
+                    </div>
+                    <hr>
+                    <div class="item pb-0">
+                        <div class="d-flex">
+                            <div v-for="item in skillName">
+                                <div class="w-auto mx-2">
+                                    <div class="border px-2 rounded">{{item}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="context border w-100 p-3 mb-4">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">自傳</h2>
+                    </div>
+                    <hr>
+                    <div class="item pb-0">
+                        <input type="text" v-model="datas[0].autobiography" />
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="d-flex justify-content-end mb-4">
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Cancel">取消</button>
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Edit">編輯資料</button>
+        </div>
+
+
+
     </div>
 </section>
+
+@* <div class="context border w-100 p-3 mb-4">
+                <div class="item row pt-2">
+                <h2 class="display-5 fw-bolder mb-2 col-6">求職條件</h2>
+                </div>
+                <hr>
+                <div class="item pb-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
+                facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                </div>
+                </div>*@
 
 @section Scripts{
 
@@ -215,38 +363,77 @@
             el: "#appVue",
             name: "appVue",
             data: {
-                datas: [],
-                interestDatas:[],
+                datas: {},
+                olddatas: {},
+                skillDatas: [],
+                skillName: [],
                 Id: sessionStorage.getItem("Id"),
+
+
+                birth: null,
+
             },
             mounted: function () {
                 let _this = this;
                 _this.Login();
-                _this.Information();
+
             },
             methods: {
                 Login: function () {
                     let _this = this;
-
+                    var status = [];
                     axios.get(`${webApi}/api/Candidates/${this.Id}`)
                         .then(res => {
                             _this.datas = res.data;
-                            console.log(_this.datas[0]);
+                            _this.datas.Edit = false;
+                            _this.birth = _this.datas[0].birth.split('T', 6)[0];
+
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+
+                    axios.get(`${webApi}/api/CandidateSkills/${this.Id}`)
+                        .then(res => {
+                            _this.skillDatas = res.data;
+                            for (var i = 0; i < _this.skillDatas.length; i++) {
+                                _this.skillName.push(_this.skillDatas[i].skillName)
+                            }
+                            console.log(_this.skillName);
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
-                Information: function () {
+                Edit: function () {
                     let _this = this;
-                    let request = _this.Id;
-                    axios.get(`${webApi}/api/Candidates/Id${this.Id}`)
-                        .then(response => {
-                            _this.interestDatas = response.data;
-                            console.log(_this.interestDatas);
+                    axios.get(`${webApi}/api/Candidates/${this.Id}`)
+                        .then(res => {
+                            _this.datas = res.data;
+                            _this.birth = _this.datas[0].birth.split('T', 6)[0];
+                            _this.olddatas = _this.datas;
+                            console.log(_this.olddatas);
+                            _this.datas.Edit = true;
+
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
+
                 },
+                Cancel: function () {
+                    let _this = this;
+                    axios.get(`${webApi}/api/Candidates/${this.Id}`)
+                        .then(res => {
+                            _this.datas = res.data;
+                            _this.datas.Edit = false;
+                            _this.birth = _this.datas[0].birth.split('T', 6)[0];
+
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+
+                },
+
             },
         })
 

@@ -56,9 +56,14 @@ namespace webapi.Controllers
                 Birth = c.Birth,
                 Address = c.Address,
                 Education = c.Education,
+                Schoolname = c.Schoolname,
                 Seniority = c.Seniority,
+                Status = c.Status,
                 Img = c.Img,
                 Autobiography = c.Autobiography,
+                Workexname = c.Workexname,
+                Workexperience = c.Workexperience,
+                
             });
 
         }

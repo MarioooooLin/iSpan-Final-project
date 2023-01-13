@@ -79,7 +79,7 @@ namespace webapi.Models
 
                 entity.Property(e => e.Cellphone).HasMaxLength(10);
 
-                entity.Property(e => e.Education).HasMaxLength(30);
+                entity.Property(e => e.Education).HasMaxLength(500);
 
                 entity.Property(e => e.Email).HasMaxLength(30);
 
@@ -90,6 +90,14 @@ namespace webapi.Models
                 entity.Property(e => e.Name).HasMaxLength(10);
 
                 entity.Property(e => e.Password).HasMaxLength(12);
+
+                entity.Property(e => e.Schoolname).HasMaxLength(30);
+
+                entity.Property(e => e.Status).HasMaxLength(30);
+
+                entity.Property(e => e.Workexname).HasMaxLength(30);
+
+                entity.Property(e => e.Workexperience).HasMaxLength(500);
             });
 
             modelBuilder.Entity<CandidateCv>(entity =>
