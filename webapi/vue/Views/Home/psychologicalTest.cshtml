@@ -123,11 +123,7 @@
                         <button class="ml-3 btn-test" v-on:click="next"><i class="fa-solid fa-angle-right"></i></button>
                     </div>
                     <div class="h5 mb-3 mx-5">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aspernatur sapiente
-                        nobis eum neque ad quibusdam tenetur nostrum praesentium provident explicabo totam
-                        amet fugiat, ut iste enim eligendi? Nobis nisi sint repellat est voluptate ex esse.
-                        Atque iusto vitae perspiciatis ipsam sint, dolorem eos. At dolorem asperiores
-                        pariatur sapiente nostrum?
+                        {{this.temp[0]}}
                     </div>
                     <div class="col-12 text-center">
                         <button class="mx-lg-5 rounded-circle slide-button no-border h4 p-3">Yes</button>
@@ -140,7 +136,7 @@
             </div>
         </div>
     </div>
-    
+
 </section>
 <!-- content end -->
 @section Scripts{
@@ -155,8 +151,8 @@
             data: {
                 datas: [],
                 temp: [],
-                count: 0,
-                name: "題目",
+                count: 1,
+                name:"題目",
             },
             mounted: function () {
                 let _this = this;
@@ -180,26 +176,26 @@
                 next() {
                     // 下一題
                     this.count++;
-                    if (this.count < 4) {
+                    if (this.count < 5) {
                         for (i = this.count; i < this.count + 1; i++) {
                             this.temp[0] = this.datas[i];
                             console.log("題目內容" + this.temp[0]);
                         }
                     } else {
-                        this.count = 4;
+                        this.count = 5;
                     }
                     console.log(this.count);
                 },
                 prev() {
                     // 上一題
                     this.count--;
-                    if (this.count > 0) {
+                    if (this.count >= 1) {
                         for (i = this.count; i > this.count - 1; i--) {
                             this.temp[0] = this.datas[i];
                             console.log("題目內容" + this.temp[0]);
                         }
                     } else {
-                        this.count = 0;
+                        this.count = 1;
                     }
                     console.log(this.count);
                 },
