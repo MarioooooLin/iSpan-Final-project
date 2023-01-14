@@ -329,7 +329,7 @@
                 this.Vacancy();
             },
             methods: {
-                Vacancy: function () {
+                Vacancy () {
                     this.tempitem = 0;
                     axios.get(`${webApi}/api/vacancies`)
                         .then(response => {
@@ -354,7 +354,7 @@
                     console.log('跳轉頁面'); //從這裡開始寫
                     //window.location = "/Home/jobSingle";
                 },
-                add() {
+                add : function() {
                     if (this.inputvalue) {
                         this.tempitem = 0;
                         let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
@@ -450,7 +450,7 @@
                         })
                 },
             },
-            watch: {
+            watch: { //addeventlistener , 監聽器 data 
                 picked: {
                     handler(newval) {
                         if (newval == '公司') {
@@ -464,7 +464,9 @@
                     handler(newval) {
                         this.search();
                     },
-                    deep: true
+                    deep: true,
+                    immediate:true,
+
                 },
                 selectedCategory: {
                     handler(newval) {
