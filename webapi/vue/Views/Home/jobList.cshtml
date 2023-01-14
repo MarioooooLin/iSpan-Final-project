@@ -329,7 +329,7 @@
                 this.Vacancy();
             },
             methods: {
-                Vacancy: function () {
+                Vacancy () {
                     this.tempitem = 0;
                     axios.get(`${webApi}/api/vacancies`)
                         .then(response => {
@@ -353,7 +353,7 @@
                     //let key = window.localStorage.getItem("vanId");
                     window.location = "/Home/jobSingle";
                 },
-                add() {
+                add : function() {
                     if (this.inputvalue) {
                         let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
                         axios.get(`${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`)
@@ -449,7 +449,7 @@
                         })
                 },
             },
-            watch: {
+            watch: { //addeventlistener , 監聽器 data 
                 picked: {
                     handler(newval) {
                         if (newval == '公司') {
@@ -463,7 +463,9 @@
                     handler(newval) {
                         this.search();
                     },
-                    deep: true
+                    deep: true,
+                    immediate:true,
+
                 },
                 selectedCategory: {
                     handler(newval) {
