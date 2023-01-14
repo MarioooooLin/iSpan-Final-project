@@ -222,44 +222,6 @@
 
             },
         })
-
-        //const newVue = new Vue({
-        //    el: "#newVue",
-        //    name: "newVue",
-        //    data: {
-
-        //    },
-        //    methods: {
-
-        //    },
-        //},
-        //        })
-
-
-        const app = new Vue({
-            el: "#app",
-            name: "app",
-            data: {
-                Id: sessionStorage.getItem("Id"),
-                Name: sessionStorage.getItem("Name"),
-            },
-
-        })
-        const vue = new Vue({
-            el: "#vue",
-            name: "vue",
-            data: {
-                Id: sessionStorage.getItem("Id"),
-                Name: sessionStorage.getItem("Name"),
-            },
-            methods: {
-                signOut: function () {
-                    sessionStorage.clear();
-                    window.location = "/Home/Index";
-                },
-            },
-
-        })
     </script>
     }
 

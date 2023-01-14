@@ -24,7 +24,7 @@ namespace webapi.Controllers
 
         // GET: api/AptitudeTests
         [HttpGet]
-        public async Task<ActionResult<AptitudeTest>> GetAptitudeTest()
+        public async Task<IEnumerable<AptitudeTest>> GetAptitudeTest()
         {
             var result = _context.AptitudeTest.Select(x => new AptitudeTest
             {
