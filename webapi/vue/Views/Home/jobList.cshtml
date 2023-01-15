@@ -435,7 +435,7 @@
                 prev() {
                     let item = this.tempitem;
                     item++;
-                    if (item!= 0) {
+                    if (item != 0) {
                         item--;
                         this.changepage(item);
                     } else {
@@ -468,7 +468,6 @@
                         this.search();
                     },
                     deep: true,
-                    immediate: true,
                 },
                 selectedCategory: {
                     handler(newval) {
