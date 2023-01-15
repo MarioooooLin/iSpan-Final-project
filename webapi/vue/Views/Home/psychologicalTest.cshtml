@@ -123,7 +123,7 @@
                         <button class="ml-3 btn-test" v-on:click="next"><i class="fa-solid fa-angle-right"></i></button>
                     </div>
                     <div class="h5 mb-3 mx-5">
-                        {{questionContent}}
+                        {{}}
                     </div>
                     <div class="col-12 text-center">
                         <button class="mx-lg-5 rounded-circle slide-button no-border h4 p-3">Yes</button>
@@ -151,7 +151,7 @@
             data: {
                 datas: [],
                 temp: [],
-                count: 0,
+                index: 0,
                 name: "題目",
             },
             mounted: function () {
@@ -159,15 +159,34 @@
                 _this.GetQuestion();
             },
             methods: {
+                //GetQuestion: function () {
+                //    axios.get(`${webApi}/api/AptitudeTests`)
+                //        .then(response => {
+                //            appVue.datas = response.data;
+                //            console.log(this.datas)
+                //        })
+                //        .catch(err => console.log(err))
+                //        .finally(console.log('完成'))
+                //},
                 GetQuestion: function () {
-                    axios.get(`${webApi}/api/AptitudeTests`)
+                    this.tempitem = 0;
+                    axios.get(`${webApi}/api/vacancies`)
                         .then(response => {
                             appVue.datas = response.data;
-                            console.log(this.datas)
+                            this.temp = response.data.length;
+                            this.countpage();
+                            let arr = [];
+                            for (let i = 0; i < 5; i++) {
+                                let item = {};
+                                item = this.datas[i];
+                                arr.push(item);
+                            }
+                            this.datas = arr;
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+
             }
         })
     </script>
