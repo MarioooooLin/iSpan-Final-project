@@ -38,6 +38,7 @@ namespace webapi.Controllers
                 CandidateId = c.CandidateId,
                 SkillId = s.SkillId,
                 SkillName = s.SkillName,
+                Id = c.Id,
 
             });
         }
@@ -45,13 +46,16 @@ namespace webapi.Controllers
         // PUT: api/CandidateSkills/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCandidateSkill(int id, CandidateSkill candidateSkill)
+        public async Task<String> PutCandidateSkill(int id, CandidateSkill candidateSkill)
         {
             if (id != candidateSkill.Id)
             {
-                return BadRequest();
+                return "ID不正確";
             }
 
+            CandidateSkill cs = await _context.CandidateSkill.FindAsync(candidateSkill.Id);
+            cs.SkillId = candidateSkill.SkillId;
+            cs.CandidateId = candidateSkill.CandidateId;
             _context.Entry(candidateSkill).State = EntityState.Modified;
 
             try
@@ -62,7 +66,7 @@ namespace webapi.Controllers
             {
                 if (!CandidateSkillExists(id))
                 {
-                    return NotFound();
+                    return "找不到欲修改的紀錄!";
                 }
                 else
                 {
@@ -70,7 +74,7 @@ namespace webapi.Controllers
                 }
             }
 
-            return NoContent();
+            return "修改成功";
         }
 
         // POST: api/CandidateSkills

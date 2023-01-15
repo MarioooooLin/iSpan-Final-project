@@ -9,133 +9,133 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = vue
 build_property.RootNamespace = vue
-build_property.ProjectDir = C:\Users\iSpan\Desktop\雲端\iSpan-Final-project\webapi\vue\
+build_property.ProjectDir = C:\Users\zxcas\OneDrive\桌面\新增資料夾 (2)\iSpan-Final-project\webapi\vue\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\iSpan\Desktop\雲端\iSpan-Final-project\webapi\vue
+build_property.MSBuildProjectDirectory = C:\Users\zxcas\OneDrive\桌面\新增資料夾 (2)\iSpan-Final-project\webapi\vue
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/aboutUs.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/aboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/courseDetail.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/courseDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb3Vyc2VEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/courseManage.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/courseManage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb3Vyc2VNYW5hZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/courseShop.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/courseShop.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb3Vyc2VTaG9wLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/CV.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/CV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDVi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/Index.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/jobList.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/jobList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxqb2JMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/jobSingle.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/jobSingle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxqb2JTaW5nbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberApply.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberApply.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJBcHBseS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberBlacklist.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberBlacklist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJCbGFja2xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberCenter.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberCenter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJDZW50ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberDetail.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberFocus.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberFocus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJGb2N1cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberLogin.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberSignup.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberSignup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/memberVacancies.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/memberVacancies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW1iZXJWYWNhbmNpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/platform.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/platform.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwbGF0Zm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/platformArticle.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/platformArticle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwbGF0Zm9ybUFydGljbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/platformPost.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/platformPost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwbGF0Zm9ybVBvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/psychologicalTest.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/psychologicalTest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwc3ljaG9sb2dpY2FsVGVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/source.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/source.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzb3VyY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/sourceIndex.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/sourceIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzb3VyY2VJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/sourcePage.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/sourcePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzb3VyY2VQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Home/testResult.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Home/testResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx0ZXN0UmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Shared/Error.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/_ViewImports.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/_ViewStart.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/iSpan/Desktop/雲端/iSpan-Final-project/webapi/vue/Views/Shared/_Layout.cshtml]
+[C:/Users/zxcas/OneDrive/桌面/新增資料夾 (2)/iSpan-Final-project/webapi/vue/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1w3148dcqt

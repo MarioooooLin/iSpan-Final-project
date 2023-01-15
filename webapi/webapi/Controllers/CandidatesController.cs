@@ -71,14 +71,24 @@ namespace webapi.Controllers
         // PUT: api/Candidates/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCandidate(int id, Candidate candidate)
+        public async Task<String> PutCandidate(int id, Candidate candidate)
         {
-            if (id != candidate.CandidateId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(candidate).State = EntityState.Modified;
+            //if (id != candidate.CandidateId)
+            //{
+            //    return "ID不正確!";
+            //}
+            Candidate c =  await _context.Candidate.FindAsync(candidate.CandidateId);
+            c.Name = candidate.Name;
+            c.Email = candidate.Email;
+            c.Cellphone = candidate.Cellphone;
+            c.Birth = candidate.Birth;
+            c.Status =candidate.Status;
+            c.Workexname = candidate.Workexname;
+            c.Schoolname = candidate.Schoolname;
+            c.Education = candidate.Education;
+            c.Autobiography = candidate.Autobiography;
+            c.Workexperience = candidate.Workexperience;
+            _context.Entry(c).State = EntityState.Modified;
 
             try
             {
@@ -88,7 +98,7 @@ namespace webapi.Controllers
             {
                 if (!CandidateExists(id))
                 {
-                    return NotFound();
+                    return "找不到欲修改的記錄!";
                 }
                 else
                 {
@@ -96,7 +106,7 @@ namespace webapi.Controllers
                 }
             }
 
-            return NoContent();
+            return "修改成功!";
         }
 
         // POST: api/Candidates
