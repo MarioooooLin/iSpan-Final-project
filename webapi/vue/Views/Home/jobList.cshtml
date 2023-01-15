@@ -441,22 +441,16 @@
                 },
                 prev() {
                     let item = this.tempitem;
-                    item++;
                     if (item != 0) {
                         item--;
                         this.changepage(item);
-                    } else {
-                        item == 0
                     }
                 },
                 next() {
                     let item = this.tempitem;
                     item++;
                     if (item != this.page.length) {
-                        item++;
                         this.changepage(item);
-                    } else {
-                        item = this.page.length
                     }
                 }
             },
