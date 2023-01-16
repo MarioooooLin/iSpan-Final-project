@@ -27,7 +27,7 @@ namespace webapi.Controllers
         [HttpGet]
         public async Task<IEnumerable<ArticleDTO>> GetArticle()
         {
-            var result = _context.Article.Join(_context.Teacher, x => x.ArticleId, y => y.TeacherId, (article, teacher) => new ArticleDTO
+            var result = _context.Article.Join(_context.Teacher, x => x.AuthorId, y => y.TeacherId, (article, teacher) => new ArticleDTO
             {
                 Title = article.Title,
                 ArticleContent = article.ArticleContent,
