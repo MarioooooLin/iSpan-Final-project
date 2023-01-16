@@ -17,9 +17,7 @@
                         </div>
                         <div class="col-lg-4 col-md-12 pt-3 film-intro">
                             <h3>課程簡介</h3><hr>
-                            <h5>
-                                {{ dataList.courseIntro }}
-                            </h5>
+                            <h5 v-html="dataList.courseIntro"></h5>
                         </div>
                     </div>
                 </div>
@@ -107,10 +105,10 @@
                     <div class="col-lg-4 ml-auto cause-title">
                         <div class="title my-lg-2">關於老師</div>
                         <div class="ml-4 my-2">
-                            <img src="/images/991223.jpg" class="img-littlelogo mb-lg-3" style="height: 150px;width: 150px;">
+                            <img :src="dataList.teacherImg" class="img-littlelogo mb-lg-3" style="height: 150px;width: 150px;">
                         </div>
-                        <p class="lead ml-3">{{ dataList.teacherName }}</p>
-                        <p class="lead ml-3">{{ dataList.teacherIntro }}</p>
+                        <h3 class="lead ml-3">{{ dataList.teacherName }}</h3>
+                        <p class="lead ml-3">{{ dataList.intro }}</p>
                     </div>
                     <div class="col-12 cause-need" style="height: 50px;">
                     </div>
@@ -131,7 +129,6 @@
             name: "appVue",
             data: {
                 dataList: [],
-
             },
             mounted: function () {
                 const _this = this;
@@ -147,6 +144,7 @@
                         .then(response => {
                             _this.dataList = response.data[0];
                             console.log(_this.dataList)
+                            console.log(_this.dataList.courseIntro)
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
