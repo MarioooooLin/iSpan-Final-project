@@ -252,19 +252,19 @@
                         </div>
                         <div class="col-9 text-left">
                             <div class="item pb-0 ml-2">
-                                <input type="text" v-model="datas[0].name" class="useless" />
+                                <input type="text" v-model="datas[0].name" />
                             </div>
                             <div class="item pb-0 ml-2">
-                                <input type="text" v-model="birth" class="useless" />
+                                <input type="text" v-model="birth" />
                             </div>
                             <div class="item pb-0 ml-2">
-                                <input type="text" v-model="datas[0].email" class="useless" />
+                                <input type="text" v-model="datas[0].email" />
                             </div>
                             <div class="item pb-0 ml-2">
-                                <input type="text" v-model="datas[0].cellphone" class="useless" />
+                                <input type="text" v-model="datas[0].cellphone" />
                             </div>
                             <div class="item pb-0 ml-2">
-                                <input type="text" v-model="datas[0].status" class="useless" />
+                                <input type="text" v-model="datas[0].status" />
                             </div>
                         </div>
                     </div>
@@ -278,7 +278,7 @@
                             <img src="https://picsum.photos/140/140/?random=10" class="float-left mr-3">
                             <figcaption>
                                 <div class="h3">
-                                    <input type="text" v-model="datas[0].workexname" class="useless w-50" />
+                                    <input type="text" v-model="datas[0].workexname" class=" w-50" />
                                 </div>
                                 <div class="item pb-0">
                                     <textarea class="w-auto" cols="30" rows="5" v-model="datas[0].workexperience" style="resize:none;"></textarea>
@@ -296,7 +296,7 @@
                             <img src="https://picsum.photos/140/140/?random=10" class="float-left mr-3">
                             <figcaption>
                                 <div class="h3">
-                                    <input type="text" v-model="datas[0].schoolname" class="useless w-50" />
+                                    <input type="text" v-model="datas[0].schoolname" class=" w-50" />
                                 </div>
                                 <div class="item pb-0">
                                     <textarea class="w-auto" cols="30" rows="5" v-model="datas[0].education" style="resize:none;"></textarea>
@@ -316,14 +316,17 @@
                             <div v-for="item in skillName">
                                 <div class="w-auto mx-2">
                                     <div class="border px-2 rounded" v-if="skillEdit == false" @@click="changeSkill">{{item}}</div>
-                                    <input type="text" class="useless w-75" id="newSkill" :placeholder="item" v-else />
+                                    <input type="text" class="w-75" list="skill" :placeholder="item" v-else />
+                                    <datalist id="skill">
+                                        <option v-for="sk in skillSource" data-id="sk.skillId" :id="sk.skillId">{{sk.skillName}}</option>
+                                    </datalist>
                                 </div>
                             </div>
                             <div class="w-auto mx-2">
-                                <input type="text" class="useless w-75" v-model="newSkill" list="skill" @@keydown.enter="addNewSkill" />
+                                <input type="text" class="w-75" v-model="newSkill" list="skill" @@keydown.enter="addNewSkill" />
                                 <datalist id="skill">
-                                    <option v-for="sk in skillSource">{{sk}}</option>
-                                    </datalis>
+                                    <option v-for="sk in skillSource" :value="sk.skillId">{{sk.skillName}}</option>
+                                </datalist>
                             </div>
                         </div>
                     </div>
@@ -383,9 +386,13 @@
                 skillName: [],
                 Id: sessionStorage.getItem("Id"),
                 newSkill: null,
+                newskill: [],
                 skillSource: [],
                 birth: null,
                 skillEdit: false,
+                skillId: [],
+
+
             },
             mounted: function () {
                 let _this = this;
@@ -411,7 +418,6 @@
                             _this.skillDatas = res.data;
                             for (var i = 0; i < _this.skillDatas.length; i++) {
                                 _this.skillName.push(_this.skillDatas[i].skillName);
-                                _this.oldSkill.push(_this.skillDatas[i].skillName);
                             }
 
                         })
@@ -434,20 +440,26 @@
                 },
                 Cancel: function () {
                     let _this = this;
-                    _this.datas = _this.oldDatas;
-                    _this.skillName = _this.oldSkill;
+                    _this.datas = {};
+                    _this.skillName = [];
+                    _this.Login();
                 },
                 addNewSkill: function () {
                     _this = this;
+
                     _this.skillName.push(_this.newSkill);
+                    _this.newSkill = null;
+                    _this.Skill();
                 },
                 changeSkill: function () {
                     _this = this;
                     _this.skillEdit = true;
+
                 },
                 Save: function (item) {
                     _this = this;
                     var request = {};
+                    var skill = {};
                     request.CandidateId = _this.Id;
                     request.Name = _this.datas[0].name;
                     request.Email = _this.datas[0].email;
@@ -467,35 +479,22 @@
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
-                  
-                    //axios.put(`${webApi}/api/CandidateSkills/${this.Id}`)
-                    //    .then(res => {
-                    //        _this.skillDatas = res.data;
-                    //        for (var i = 0; i < _this.skillDatas.length; i++) {
-                    //            _this.skillName.push(_this.skillDatas[i].skillName)
-                    //        }
 
-                    //    })
-                    //    .catch(err => console.log(err))
-                    //    .finally(console.log('完成'));
+                    _this.skillEdit = false;
 
-                    //axios.post(`${webApi}/api/CandidateSkills/${this.Id}`)
-                    //    .then(res => {
-                    //        _this.skillDatas = res.data;
-                    //        for (var i = 0; i < _this.skillDatas.length; i++) {
-                    //            _this.skillName.push(_this.skillDatas[i].skillName)
-                    //        }
-
-                    //    })
-                    //    .catch(err => console.log(err))
-                    //    .finally(console.log('完成'));
                 },
                 Skill: function () {
                     _this = this;
+                    _this.skillSource = [];
                     axios.get(`${webApi}/api/Skills`)
                         .then(res => {
                             for (var i = 0; i < res.data.length; i++) {
-                                _this.skillSource.push(res.data[i].skillName);
+                                for (var j = 0; j < _this.skillName.length; j++) {
+                                    if (_this.skillName[i] != res.data[i].skillName) {
+                                        _this.skillSource.push(res.data[i]);
+                                        break;
+                                    }
+                                }
                             }
                         })
                         .catch(err => console.log(err))
