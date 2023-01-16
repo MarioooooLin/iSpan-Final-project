@@ -156,11 +156,16 @@
             name: "appVue",
             data: {
                 datas: [],
+                pagesize: 3,
+                currentpage: 1,
+                sliced: [],
+                pagelen: 0
             },
             mounted: function () {
                 let _this = this;
                 _this.Source();
             },
+
             methods: {
                 Source: function () {
                     let _this = this;
@@ -172,6 +177,9 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+                //Pagination: function () {
+                //    this.sliced = this.datas.slice((this.currentpage * this.pagesize) - this.pagesize, (this.currentpage * this.pagesize))
+                //}
             }
         })
     </script>
