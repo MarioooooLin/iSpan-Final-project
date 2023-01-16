@@ -29,18 +29,19 @@ namespace webapi.Controllers
             return await _context.Enterprise.ToListAsync();
         }
 
-        // GET: api/Enterprises/5
+        // GET:     
         [HttpGet("{id}")]
-        public async Task<ActionResult<Enterprise>> GetEnterprise(int id)
+        public async Task<IEnumerable<EnterpriseDTO>> GetEnterprise(int id)
         {
-            var enterprise = await _context.Enterprise.FindAsync(id);
-
-            if (enterprise == null)
-            {
-                return NotFound();
-            }
-
-            return enterprise;
+            var result = from van in _context.Vacancy
+                         join etp in _context.Enterprise
+                         on van.EnterpriseId equals etp.EnterpriseId
+                         where van.EnterpriseId == id
+                         select new EnterpriseDTO
+                         {
+                             VacancyId = van.VacancyId,
+                         };
+            return result;
         }
 
         // PUT: api/Enterprises/5
@@ -77,7 +78,7 @@ namespace webapi.Controllers
         // POST: api/Enterprises
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<string> PostEnterprise([FromBody]Enterprise enterprise)
+        public async Task<string> PostEnterprise([FromBody] Enterprise enterprise)
         {
             bool exists = _context.Enterprise.Any(e => e.Account == enterprise.Account);
             if (exists == true)
