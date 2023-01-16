@@ -9,5 +9,6 @@
         public string? Author { get; set; }
         public string? Update { get;  set; }
         public int? ArticleId { get;  set; }
+        public string? Expreience { get;  set; }
     }
 }

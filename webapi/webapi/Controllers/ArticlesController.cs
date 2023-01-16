@@ -64,6 +64,9 @@ namespace webapi.Controllers
                 Author = teacher.Name,
                 UpdateTime = article.UpdateTime,
                 ArticleId = article.ArticleId,
+                Expreience = teacher.Experience,
+
+
             }).Where(x => x.ArticleId == id);
 
             return result;

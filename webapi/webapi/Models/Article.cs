@@ -13,6 +13,6 @@ namespace webapi.Models
         public DateTime? UpdateTime { get; set; }
         public string Keyword { get; set; }
         public string Img { get; set; }
-        public string ArticleContent { get; set; }
+        public string? ArticleContent { get; set; }
     }
 }
