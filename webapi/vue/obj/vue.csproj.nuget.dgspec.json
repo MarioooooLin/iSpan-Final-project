@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {}
+    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {
+    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\vue\\vue.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
+        "projectUniqueName": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
         "projectName": "vue",
-        "projectPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
+        "projectPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\vue\\vue.csproj",
         "packagesPath": "C:\\Users\\zxcas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\vue\\obj\\",
+        "outputPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\vue\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zxcas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,11 +54,15 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.4.3, )"
             }
           },
           "imports": [

@@ -127,7 +127,7 @@ namespace webapi.Models
 
                 entity.Property(e => e.CourseVideo).HasMaxLength(100);
 
-                entity.Property(e => e.Img)
+                entity.Property(e => e.img)
                     .HasMaxLength(200)
                     .HasColumnName("img");
 
@@ -310,7 +310,7 @@ namespace webapi.Models
 
                 entity.Property(e => e.Experience).HasMaxLength(100);
 
-                entity.Property(e => e.Img)
+                entity.Property(e => e.img)
                     .HasMaxLength(100)
                     .HasColumnName("img");
 

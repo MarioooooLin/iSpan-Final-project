@@ -2909,3 +2909,20 @@ textarea {
     border: #A4A4A4 solid 1px;
     border-radius: 3px;
 }
+
+.btn-primary{
+    background-color:#0085ff;
+    color:#fff;
+}
+
+input {
+    caret-color: #0085ff; /* 指定色 */
+    outline: none; /* 外框效果 */
+    border: #A4A4A4 solid 1px;
+    border-radius: 3px;
+}
+
+input.useless {
+    background-color: #eee;
+    color: #898989;
+}

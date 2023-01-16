@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {}
+    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {
+    "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
+        "projectUniqueName": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
+        "projectPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\zxcas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2)\\iSpan-Final-project\\webapi\\webapi\\obj\\",
+        "outputPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zxcas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,13 +42,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.13, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.13, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
