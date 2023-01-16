@@ -10230,19 +10230,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zxcas\\.nuget\\packages\\": {}
+    "C:\\Users\\a0917\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
+      "projectUniqueName": "C:\\Users\\a0917\\OneDrive\\文件\\GitHub\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
       "projectName": "webapi",
-      "projectPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
-      "packagesPath": "C:\\Users\\zxcas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zxcas\\OneDrive\\桌面\\新增資料夾 (2) - 複製\\iSpan-Final-project\\webapi\\webapi\\obj\\",
+      "projectPath": "C:\\Users\\a0917\\OneDrive\\文件\\GitHub\\iSpan-Final-project\\webapi\\webapi\\webapi.csproj",
+      "packagesPath": "C:\\Users\\a0917\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\a0917\\OneDrive\\文件\\GitHub\\iSpan-Final-project\\webapi\\webapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\zxcas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\a0917\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
