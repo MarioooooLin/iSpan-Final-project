@@ -34,9 +34,10 @@ namespace webapi.Controllers
                 Img = article.Img,
                 Update = article.UpdateTime.Value.ToString("yyyy-MM-dd"),
                 Author = teacher.Name,
-                UpdateTime = article.UpdateTime
+                UpdateTime = article.UpdateTime,
+                ArticleId = article.ArticleId,
             });
-            
+
             return await Task.FromResult(result);
 
 
@@ -52,16 +53,20 @@ namespace webapi.Controllers
 
         // GET: api/Articles/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Article>> GetArticle(int id)
+        public async Task<IEnumerable<ArticleDTO>> GetArticle(int? id)
         {
-            var article = await _context.Article.FindAsync(id);
-
-            if (article == null)
+            var result = _context.Article.Join(_context.Teacher, x => x.AuthorId, y => y.TeacherId, (article, teacher) => new ArticleDTO
             {
-                return NotFound();
-            }
+                Title = article.Title,
+                ArticleContent = article.ArticleContent,
+                Img = article.Img,
+                Update = article.UpdateTime.Value.ToString("yyyy-MM-dd"),
+                Author = teacher.Name,
+                UpdateTime = article.UpdateTime,
+                ArticleId = article.ArticleId,
+            }).Where(x => x.ArticleId == id);
 
-            return article;
+            return result;
         }
 
         // PUT: api/Articles/5

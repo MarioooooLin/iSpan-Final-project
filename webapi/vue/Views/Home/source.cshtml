@@ -117,11 +117,11 @@
                         <div class="row mb-5  ">
                             <!--The first article-->
                             <div class="col-md-6 col-lg-4 mb-5 " v-for="data in datas">
-                                <a asp-controller="Home" asp-action="sourcePage"><img :src="data.img" alt="Image" class="img-fluid rounded mb-4" /></a>
+                                <a v-bind:href="'https://localhost:7158/Home/sourcePage?id='+data.articleId"><img :src="data.img" alt="Image" class="img-fluid rounded mb-4" /></a>
 
                                 </a>
                                 <h3>
-                                    <a href="blog-single.html" class="text-black">{{data.title}}</a>
+                                    <a v-bind:href="'https://localhost:7158/Home/sourcePage?id='+data.articleId" class="text-black">{{data.title}}</a>
                                 </h3>
                                 <div>{{data.update}} <span class="mx-2">|</span> <a href="#">{{data.author}}</a></div>
                             </div>
