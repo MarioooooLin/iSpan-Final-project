@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 //using webapi.DTO;
 using webapi.Models;
+using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 
 namespace webapi.Controllers
 {
@@ -25,7 +26,7 @@ namespace webapi.Controllers
 
         // GET: api/Courses
         [HttpGet]
-        public async Task<IEnumerable<CourseDetailDTO>> GetCourse()
+        public async Task<IEnumerable<CourseDetailDTO>> GetCourse(string? keyword,string?category)
         {
             var result = _context.Course.Join(_context.Teacher, x => x.TeacherId, y => y.TeacherId, (cou, tea) => new CourseDetailDTO
             {
@@ -33,14 +34,32 @@ namespace webapi.Controllers
                 CourseName = cou.CourseName,
                 Price = cou.Price,
                 TeacherName = tea.Name,
-                TeacherImg = tea.img,
+                TeacherImg = tea.Img,
                 Intro = tea.Intro,
                 CourseReqire = cou.CourseReqire,
                 CourseIntro = cou.CourseIntro,
                 CourseLength = cou.CourseLength,
-                CourseImg = cou.img,
-
+                CourseImg = cou.Img,
+                keyword = cou.Keyword,
+                category = cou.Category,
             });
+
+            var aaa = _context.CourseOrder.GroupBy(x => x.CourseId);
+
+            foreach(var r in result)
+            {
+                r.studentCount = aaa.First(x => x.Key == r.CourseId).Count();
+            }
+
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                result = result.Where(x=>x.keyword.Contains(keyword));
+            }
+            if (!string.IsNullOrWhiteSpace(category))
+            {
+                result = result.Where(x => x.category.Contains(category));
+            }
             return result;
         }
 
@@ -54,12 +73,14 @@ namespace webapi.Controllers
                 CourseName = cou.CourseName,
                 Price = cou.Price,
                 TeacherName = tea.Name,
-                TeacherImg = tea.img,
+                TeacherImg = tea.Img,
                 Intro = tea.Intro,
                 CourseReqire = cou.CourseReqire,
                 CourseIntro = cou.CourseIntro,
                 CourseLength = cou.CourseLength,
-                CourseImg = cou.img,
+                CourseImg = cou.Img,
+                keyword = cou.Keyword,
+                category = cou.Category,
 
             }).Where(x=>x.CourseId==id);
 

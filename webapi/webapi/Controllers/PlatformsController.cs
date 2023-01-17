@@ -26,13 +26,18 @@ namespace webapi.Controllers
 
         // GET: api/Platforms
         [HttpGet]
-        public async Task<IEnumerable<PlatformsDTO>> Get()
+        public async Task<IEnumerable<PlatformsDTO>> Get(string? name)
         {
             var result = _context.Platform.Select(x => new PlatformsDTO
             {
+                ArticleId = x.ArticleId,
                 ArticleName = x.ArticleName,
                 Contents = x.Contents,
+                //Authorld = x.Authorld,
             });
+            if (!string.IsNullOrEmpty(name)) {
+                result = result.Where(x => x.ArticleName.Contains(name));
+            }
             return result;
         }
 
@@ -115,10 +120,22 @@ namespace webapi.Controllers
 
             return NoContent();
         }
+        //[HttpPost("Filter")] //api/Platforms/Filter
+        //public async Task<IEnumerable<PlatformsDTO>> FilterPlatform([FromBody]PlatformsDTO platform)
+        //{
+        //    return _context.Platform.Where(pf => pf.ArticleName.Contains(platform.ArticleName)/*|((employees.LastName)) 增加篩選條件*/).Select(pf => new PlatformsDTO
+        //    {
+        //        ArticleName= pf.ArticleName,
+        //        Contents = pf.Contents,
+        //    });
+        //}
+
 
         private bool PlatformExists(int id)
         {
             return _context.Platform.Any(e => e.ArticleId == id);
         }
+
+
     }
 }
