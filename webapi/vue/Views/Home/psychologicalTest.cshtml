@@ -152,6 +152,7 @@
                 datas: [],
                 index: 0,
                 //name: "題目",
+                point:0,
             },
             mounted: function () {
                 let _this = this;
@@ -170,11 +171,13 @@
                 changeIndex: function (change) {
                     this.index = (this.index + change + this.datas.length) % this.datas.length
                 },
-                yes:function(){
-                
+                yes: function () {
+                    this.point+=1;
+                    console.log(this.point)
                 },
-                no:function(){
-                
+                no: function () {
+                    this.pint+=0;
+                    console.log(this.point)
                 },
 
             }
