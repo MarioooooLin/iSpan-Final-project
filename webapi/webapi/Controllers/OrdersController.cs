@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using webapi.Models;
 
 namespace webapi.Controllers
 {
+    [EnableCors("AllowAny")]
     [Route("api/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
@@ -22,23 +24,32 @@ namespace webapi.Controllers
 
         // GET: api/Orders
         [HttpGet]
-        public async Task<IEnumerable<CourseOrder>> GetCourseOrder()
+        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder()
         {
-            return await _context.CourseOrder.ToListAsync();
+            return _context.CourseOrder.Join(_context.Course,a=>a.CourseId,b=>b.CourseId,(co,c)=>new OrderDetailDTO
+            {
+                OrderId = co.OrderId,
+                CandidateId = co.CandidateId,
+                CourseId = co.CourseId,
+                CourseName = c.CourseName,
+                Price = c.Price,
+                Buyingtime = co.Buyingtime,
+            });
         }
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CourseOrder>> GetCourseOrder(int id)
+        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? id)
         {
-            var courseOrder = await _context.CourseOrder.FindAsync(id);
-
-            if (courseOrder == null)
+            return _context.CourseOrder.Where(x => x.CandidateId == id).Join(_context.Course, a => a.CourseId, b => b.CourseId, (co, c) => new OrderDetailDTO
             {
-                return NotFound();
-            }
-
-            return courseOrder;
+                OrderId = co.OrderId,
+                CandidateId = co.CandidateId,
+                CourseId = co.CourseId,
+                CourseName = c.CourseName,
+                Price = c.Price,
+                Buyingtime = co.Buyingtime,
+            });
         }
 
         // PUT: api/Orders/5
@@ -83,7 +94,6 @@ namespace webapi.Controllers
                 CourseId = courseOrder.CourseId,
                 Buyingtime = DateTime.Now,
                 Vaild = false,
-                CoursebuyId = courseOrder.CoursebuyId,
             };
             _context.CourseOrder.Add(co);
             await _context.SaveChangesAsync();

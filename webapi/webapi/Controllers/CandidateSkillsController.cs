@@ -53,10 +53,6 @@ namespace webapi.Controllers
                 return "ID不正確";
             }
 
-            CandidateSkill cs = await _context.CandidateSkill.FindAsync(candidateSkill.Id);
-            cs.SkillId = candidateSkill.SkillId;
-            cs.CandidateId = candidateSkill.CandidateId;
-            _context.Entry(candidateSkill).State = EntityState.Modified;
 
             try
             {
@@ -80,12 +76,29 @@ namespace webapi.Controllers
         // POST: api/CandidateSkills
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CandidateSkill>> PostCandidateSkill(CandidateSkill candidateSkill)
+        public async Task<ActionResult> PostCandidateSkill(UpdateSkills candidateSkill)
         {
-            _context.CandidateSkill.Add(candidateSkill);
+            var skills = _context.Skill.Where(x => candidateSkill.SkillName.Contains(x.SkillName)).ToList();
+
+            _context.CandidateSkill.RemoveRange(_context.CandidateSkill.Where(x => x.CandidateId.ToString() == candidateSkill.CandidateId));
+            await _context.SaveChangesAsync();
+            foreach (var skill in skills)
+            {
+                _context.CandidateSkill.Add(new CandidateSkill
+                {
+                    CandidateId =Int32.Parse(candidateSkill.CandidateId),
+                    SkillId = skill.SkillId,
+
+                }); 
+                
+            }
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCandidateSkill", new { id = candidateSkill.Id }, candidateSkill);
+            //_context.CandidateSkill.Remove(CandidateSkills);
+
+            return Ok();
+
+     
         }
 
         // DELETE: api/CandidateSkills/5
