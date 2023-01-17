@@ -26,13 +26,13 @@
                             <div class="row mb-2">
                                 <span class=" font-weight-bold col-4">購買人姓名</span>
                                 <div class="col-8">
-                                    <input type="text" class="useless w-75" name="name"  disabled>
+                                    <input type="text" class="useless w-75" name="name" disabled :value="buyerList.name">
                                 </div>
                             </div>
                             <div class="row mb-2">
                                 <span class=" font-weight-bold col-4">購買人帳號</span>
                                 <div class="col-8">
-                                    <input type="text" disabled class="useless w-75" name="name" disabled>
+                                    <input type="text" disabled class="useless w-75" name="name" disabled :value="buyerList.account">
                                 </div>
                             </div>
                         </ul>
@@ -40,15 +40,15 @@
                         <ul class="list-unstyled block__47528 mb-0 ml-4">
                             <div class="row">
                                 <p class="col-lg-4 col-sm-5 col-12 pt-4 pl-5">購買課程</p>
-                                <h5 class="font-weight-bold mb-0 col-sm-7 col-12 pt-4 text-right mb-4 pr-4">Vue.js從入門到入土</h5>
+                                <h5 class="font-weight-bold mb-0 col-sm-7 col-12 pt-4 text-right mb-4 pr-4">{{ courseList.courseName }}</h5>
                                 <p class="col-lg-4 col-sm-5 col-12 pl-5">單位：新台幣 NT$</p>
-                                <p class="font-weight-bold col-sm-7 col-12 text-right lead">35000 元</p>
+                                <p class="font-weight-bold col-sm-7 col-12 text-right lead">{{ courseList.price }} 元</p>
                             </div>
                         </ul>
                         <hr style="height:3px; color: #e2e2e2;background-color: #e2e2e2; " />
                         <div class="accordion col-11 justify-content-center" id="accordionExample">
                             <div class="card">
-                                <div class="card-header btn-primary" id="headingTwo" style="background-color:#0085ff">
+                                <div class="card-header btn-primary" id="headingTwo" style="background-color:#0085ff" @@click="insert">
                                     <h2 class="mb-0 ">
                                         <button class="btn btn-block text-left collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             確認訂單

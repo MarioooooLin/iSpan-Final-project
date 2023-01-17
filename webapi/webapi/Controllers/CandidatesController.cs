@@ -41,9 +41,8 @@ namespace webapi.Controllers
 
         // GET: api/Candidates/5
         [HttpGet("{id}")]
-        public async Task<IEnumerable<Candidate>> GetCandidate(int id)
+        public async Task<IEnumerable<Candidate>> GetCandidate(int? id)
         {
-
 
             return _context.Candidate.Where(c => c.CandidateId == id).Select(c => new Candidate
             {

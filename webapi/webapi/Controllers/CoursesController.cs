@@ -42,8 +42,16 @@ namespace webapi.Controllers
                 CourseImg = cou.Img,
                 keyword = cou.Keyword,
                 category = cou.Category,
-
             });
+
+            var aaa = _context.CourseOrder.GroupBy(x => x.CourseId);
+
+            foreach(var r in result)
+            {
+                r.studentCount = aaa.First(x => x.Key == r.CourseId).Count();
+            }
+
+
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 result = result.Where(x=>x.keyword.Contains(keyword));
@@ -71,6 +79,8 @@ namespace webapi.Controllers
                 CourseIntro = cou.CourseIntro,
                 CourseLength = cou.CourseLength,
                 CourseImg = cou.Img,
+                keyword = cou.Keyword,
+                category = cou.Category,
 
             }).Where(x=>x.CourseId==id);
 
