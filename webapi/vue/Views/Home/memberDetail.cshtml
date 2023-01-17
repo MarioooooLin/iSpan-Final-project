@@ -316,16 +316,16 @@
                             <div v-for="item in skillName">
                                 <div class="w-auto mx-2">
                                     <div class="border px-2 rounded" v-if="skillEdit == false" @@click="changeSkill">{{item}}</div>
-                                    <input type="text" class="w-75" list="skill" :placeholder="item" v-else />
+                                    <input type="text" class="w-75 preSkill" list="skill" :id="item" :placeholder="item" :id="item.skillId" v-else @@keydown.enter="back" />
                                     <datalist id="skill">
-                                        <option v-for="sk in skillSource" data-id="sk.skillId" :id="sk.skillId">{{sk.skillName}}</option>
+                                        <option v-for="skillName in skillDropDown" :value="skillName">{{skillName}}</option>
                                     </datalist>
                                 </div>
                             </div>
                             <div class="w-auto mx-2">
-                                <input type="text" class="w-75" v-model="newSkill" list="skill" @@keydown.enter="addNewSkill" />
-                                <datalist id="skill">
-                                    <option v-for="sk in skillSource" :value="sk.skillId">{{sk.skillName}}</option>
+                                <input type="text" class="w-75" v-model="newSkill" list="newskill" id="Skill" @@keydown.enter="addNewSkill" />
+                                <datalist id="newskill">
+                                    <option v-for="skillName in skillDropDown" :value="skillName">{{skillName}}</option>
                                 </datalist>
                             </div>
                         </div>
@@ -446,20 +446,25 @@
                 },
                 addNewSkill: function () {
                     _this = this;
-
                     _this.skillName.push(_this.newSkill);
                     _this.newSkill = null;
-                    _this.Skill();
                 },
                 changeSkill: function () {
                     _this = this;
                     _this.skillEdit = true;
 
                 },
-                Save: function (item) {
+                back: function () {
+
+
+                },
+                Save: async function (item) {
                     _this = this;
                     var request = {};
                     var skill = {};
+                    let oldSkill = [];
+                    let old;
+
                     request.CandidateId = _this.Id;
                     request.Name = _this.datas[0].name;
                     request.Email = _this.datas[0].email;
@@ -472,15 +477,53 @@
                     request.Education = _this.datas[0].education;
                     request.Autobiography = _this.datas[0].autobiography;
 
-                    axios.put(`${webApi}/api/Candidates/${this.Id}`, request)
-                        .then(res => {
-                            alert(res.data);
+                    try {
+                        let res = await axios.put(`${webApi}/api/Candidates/${this.Id}`, request)
+                        alert(res.data);
+                    }
+                    catch (err) {
+                        console.log(err);
+                    }
+                    finally {
+                        console.log('完成');
+                    }
 
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'));
 
-                    _this.skillEdit = false;
+                    // 技能修改及新增
+                    if (_this.skillEdit == true) {
+                        old = document.querySelectorAll('.preSkill');
+                        for (var i = 0; i < old.length; i++) {
+                            if (old[i].value.length > 0) {
+                                oldSkill.push(old[i].value);
+                            }
+                            else {
+                                oldSkill.push(old[i].id);
+                            }
+                        }
+                        skill.skillName = oldSkill;
+                    }
+                    else {
+                        skill.skillName = _this.skillName;
+                    }
+
+                    skill.CandidateId = _this.Id;
+
+                    console.log(skill);
+
+                    try {
+                        let resSkill = await axios.post(`${webApi}/api/CandidateSkills`, skill)
+
+                    }
+                    catch (err) {
+                        console.log(err);
+                    }
+                    finally {
+                        location.reload();
+                    }
+
+
+                    //_this.datas = {};
+                    //_this.skillName = [];
 
                 },
                 Skill: function () {
@@ -489,19 +532,40 @@
                     axios.get(`${webApi}/api/Skills`)
                         .then(res => {
                             for (var i = 0; i < res.data.length; i++) {
-                                for (var j = 0; j < _this.skillName.length; j++) {
-                                    if (_this.skillName[i] != res.data[i].skillName) {
-                                        _this.skillSource.push(res.data[i]);
-                                        break;
-                                    }
-                                }
+                                _this.skillSource.push(res.data[i]);
                             }
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
-
             },
+            computed: {
+                skillDropDown() {
+                    let sd = [];
+
+                    for (let sk of this.skillSource) {
+                        let isAdd = true;
+
+                        for (let sn of this.skillName) {
+                            if (sk.skillName == sn) {
+                                isAdd = false;
+                            }
+                        }
+
+                        if (isAdd) {
+                            sd.push(sk.skillName);
+                        }
+                    }
+                    //for (let sk of this.skillSource) {
+                    //    if (this.skillName.some(y => y == sk.skillName)) {
+                    //        sd.push(sk.skillName);
+                    //    }
+                    //}
+                    //let items = this.skillSource.map(x => x.skillName).filter(x => !this.skillName.some(y => y == x));
+                    //console.log(items);
+                    return sd;
+                }
+            }
         })
 
 
