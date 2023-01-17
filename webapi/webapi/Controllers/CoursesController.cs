@@ -34,12 +34,12 @@ namespace webapi.Controllers
                 CourseName = cou.CourseName,
                 Price = cou.Price,
                 TeacherName = tea.Name,
-                TeacherImg = tea.img,
+                TeacherImg = tea.Img,
                 Intro = tea.Intro,
                 CourseReqire = cou.CourseReqire,
                 CourseIntro = cou.CourseIntro,
                 CourseLength = cou.CourseLength,
-                CourseImg = cou.img,
+                CourseImg = cou.Img,
                 keyword = cou.Keyword,
                 category = cou.Category,
 
@@ -65,12 +65,12 @@ namespace webapi.Controllers
                 CourseName = cou.CourseName,
                 Price = cou.Price,
                 TeacherName = tea.Name,
-                TeacherImg = tea.img,
+                TeacherImg = tea.Img,
                 Intro = tea.Intro,
                 CourseReqire = cou.CourseReqire,
                 CourseIntro = cou.CourseIntro,
                 CourseLength = cou.CourseLength,
-                CourseImg = cou.img,
+                CourseImg = cou.Img,
 
             }).Where(x=>x.CourseId==id);
 

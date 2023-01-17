@@ -26,13 +26,13 @@
                             <div class="row mb-2">
                                 <span class=" font-weight-bold col-4">購買人姓名</span>
                                 <div class="col-8">
-                                    <input type="text" class="useless w-75" name="name" value="好讚讚" disabled>
+                                    <input type="text" class="useless w-75" name="name"  disabled>
                                 </div>
                             </div>
                             <div class="row mb-2">
                                 <span class=" font-weight-bold col-4">購買人帳號</span>
                                 <div class="col-8">
-                                    <input type="text" disabled class="useless w-75" name="name" value="erjgioehr168">
+                                    <input type="text" disabled class="useless w-75" name="name" disabled>
                                 </div>
                             </div>
                         </ul>
@@ -84,37 +84,44 @@
             el: "#printVue", // 綁定位置
             name: "printVue",
             data: {
-                dataList: [],
+                courseList: [],
+                buyerList:[],
 
             },
             mounted: function () {
-                const _this = this;
-                _this.course();
+                this.course();
+                this.candidate();
             },
             methods: {
                 course: function () {
-                    const _this = this;
-                    //let getUrlString = location.href;
-                    //let url = new URL(getUrlString);
                     const courseId = new URL(location.href).searchParams.get('id');
                     axios.get(`${webApi}/api/Courses/${courseId}`)
                         .then(response => {
-                            _this.dataList = response.data[0];
-                            console.log(_this.dataList)
+                            this.courseList = response.data[0];
+                            console.log(this.courseList)
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
-                ordernum() {
-                    axios.post('${webApi}/api/Courses', {
-                        
-                    })
+                candidate(){
+                    const candidateId = sessionStorage.getItem('Id')
+                    console.log(candidateId)
+                    axios.get(`${webApi}/api/Candidates/${candidateId}`)
                         .then(response => {
-                            console.log(response);
+                            this.buyerList = response.data[0];
+                            console.log(this.buyerList)
                         })
-                        .catch(err => console.log(error))
-
-                }
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+                },
+                insert: function () {
+                    var request = {};
+                    request.CandidateId = this.buyerList.candidateId;
+                    request.courseId = this.courseList.courseId;
+                    axios.post(`${webApi}/api/Orders`, request).then(response => {
+                        window.location = "/Home/Orders";
+                    });
+                },
             }
         })
     </script>
