@@ -150,7 +150,6 @@
             name: "appVue",
             data: {
                 datas: [],
-                //temp: [],
                 index: 0,
                 //name: "題目",
             },
@@ -170,7 +169,13 @@
                 },
                 changeIndex: function (change) {
                     this.index = (this.index + change + this.datas.length) % this.datas.length
-                }
+                },
+                yes:function(){
+                
+                },
+                no:function(){
+                
+                },
 
             }
         })
