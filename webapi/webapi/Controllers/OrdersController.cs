@@ -75,12 +75,20 @@ namespace webapi.Controllers
         // POST: api/Orders
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<IEnumerable<CourseOrder>> PostCourseOrder(CourseOrder courseOrder)
+        public async Task<CourseOrder> PostCourseOrder(CourseOrder courseOrder)
         {
-            _context.CourseOrder.Add(courseOrder);
+            CourseOrder co = new CourseOrder
+            {
+                CandidateId = courseOrder.CandidateId,
+                CourseId = courseOrder.CourseId,
+                Buyingtime = DateTime.Now,
+                Vaild = false,
+                CoursebuyId = courseOrder.CoursebuyId,
+            };
+            _context.CourseOrder.Add(co);
             await _context.SaveChangesAsync();
 
-            return (IEnumerable<CourseOrder>)courseOrder;
+            return co;
         }
 
         // DELETE: api/Orders/5

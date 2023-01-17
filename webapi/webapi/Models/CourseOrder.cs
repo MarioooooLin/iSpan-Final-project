@@ -12,5 +12,6 @@ namespace webapi.Models
         public int? CourseId { get; set; }
         public DateTime? Buyingtime { get; set; }
         public bool? Vaild { get; set; }
+        public long? CoursebuyId { get; set; }
     }
 }
