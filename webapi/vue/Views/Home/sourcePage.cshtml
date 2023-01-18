@@ -118,7 +118,7 @@
                         aspernatur nemo sunt, qui, harum repudiandae quisquam eaque dolore itaque quod
                         tenetur quo quos labore?
                         </p>
-                        *@                       
+                        *@
                         <p>
                             <img :src="datas.img" alt="Image" class="img-fluid rounded" />
                         </p>
@@ -261,24 +261,17 @@
                                 <h3 class="mb-5">Leave a comment</h3>
                                 <form action="#" class="">
                                     <div class="form-group">
-                                        <label for="name">Name *</label>
-                                        <input type="text" class="form-control" id="name" />
+                                        <label for="name">Nick Name *</label>
+                                        <input type="text" class="form-control" id="name" v-model="nickName" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">Email *</label>
-                                        <input type="email" class="form-control" id="email" />
+                                        <label for="message">Message *</label>
+                                        <textarea name="" id="message" cols="30" rows="10" class="form-control" v-model="message"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="website">Website</label>
-                                        <input type="url" class="form-control" id="website" />
-                                    </div>
+                                            @*                                        <input type="submit" value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
+                                        *@                                        <input value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
 
-                                    <div class="form-group">
-                                        <label for="message">Message</label>
-                                        <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Post Comment" class="btn btn-primary btn-md" />
                                     </div>
                                 </form>
                             </div>
@@ -290,8 +283,8 @@
                                 <div class="form-group">
                                     <span class="icon fa fa-search"></span>
                                     <input type="text" class="form-control form-control-lg"
-                                           placeholder="Type a keyword and hit enter" 
-                                           v-on:keyup.enter=""/>
+                                           placeholder="Type a keyword and hit enter"
+                                           v-on:keyup.enter="" />
                                 </div>
                             </form>
                         </div>
@@ -353,6 +346,8 @@
             name: "appVue",
             data: {
                 datas: [],
+                nickName: "",
+                message: ""
             },
             mounted: function () {
                 let _this = this;
@@ -370,6 +365,15 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+
+                post() {
+                    let messageContent = {};
+                    messageContent.nickName = this.nickName;
+                    messageContent.message = this.message;
+                    console.log(messageContent) //檢查留言
+
+                    axios.post(`${webApi}/api/Articles/`, messageContent)
+                }
             }
         })
     </script>
