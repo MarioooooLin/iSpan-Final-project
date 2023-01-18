@@ -130,13 +130,13 @@
                         <div class="row pagination-wrap mt-5">
                             <div class="col-md-12 text-center">
                                 <div class="custom-pagination ml-auto">
-                                    <a href="#" class="prev" >Prev</a>
+                                    <a href="#" class="prev" v-on:click="prev">Prev</a>
                                     <div class="d-inline-block" v-for="item in sliced">
                                         <!--算頁數-->
                                         <a href="#" class="active" v-if="currentpage == item" @@click="click(item)">{{item + 1}}</a>
                                         <a href="#" v-else @@click="click(item)">{{item + 1}}</a>
                                     </div>
-                                    <a href="#" class="next" >Next</a>
+                                    <a href="#" class="next" v-on:click="next">Next</a>
                                 </div>
                             </div>
                         </div>
@@ -200,8 +200,8 @@
                     }//[0,1]
                 },
                 click: function (item) {
-                    let currnetpage = item ;
-                    this.currentpage = currnetpage;
+                    let currentpage = item ;
+                    this.currentpage = currentpage;
                     axios.get(`${webApi}/api/Articles`)
                         .then(response => {
                             this.datalist = [];
@@ -210,13 +210,13 @@
                             this.PageContent();
                             let arr = [];
                             let item = {};
-                            if (this.pagesize == (currnetpage + 1)) {
-                                for (let i = currnetpage * 6; i < response.data.length; i++) {
+                            if (this.pagesize == (currentpage + 1)) {
+                                for (let i = currentpage * 6; i < response.data.length; i++) {
                                     item = response.data[i];//6筆
                                     arr.push(item);
                                 }
                             } else {
-                                for (let i = currnetpage * 6; i < (currnetpage + 1) * 6; i++) {
+                                for (let i = currentpage * 6; i < (currentpage + 1) * 6; i++) {
                                     item = response.data[i];//6筆
                                     arr.push(item);
                                 }
@@ -224,6 +224,20 @@
                             this.datalist = arr;
                             console.log(this.datalist)//6筆
                         })
+                },
+                prev(){
+                    let currpage= this.currentpage
+                    if (currpage != 0) {
+                        currpage--;
+                        this.click(currpage)
+                    }
+                },
+                next(){
+                    let currpage = this.currentpage
+                    if (currpage != this.sliced.length) {
+                        currpage++;
+                        this.click(currpage)
+                    }
                 }
                 //Pagination: function () {
                 //    this.sliced = this.datas.slice((this.currentpage * this.pagesize) - this.pagesize, (this.currentpage * this.pagesize))
