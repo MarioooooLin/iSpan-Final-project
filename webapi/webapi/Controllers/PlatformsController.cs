@@ -33,6 +33,7 @@ namespace webapi.Controllers
                 ArticleId = x.ArticleId,
                 ArticleName = x.ArticleName,
                 Contents = x.Contents,
+                UpdateTime = x.UpdateTime,
                 //Authorld = x.Authorld,
             });
             if (!string.IsNullOrEmpty(name)) {
@@ -43,16 +44,26 @@ namespace webapi.Controllers
 
         // GET: api/Platforms/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Platform>> GetPlatform(int id)
+        public async Task<IEnumerable<Platform>> GetPlatform(int? id)
         {
-            var platform = await _context.Platform.FindAsync(id);
-
-            if (platform == null)
+            var result = _context.Platform.Where(x => x.ArticleId == id).Select(x => new Platform
             {
-                return NotFound();
-            }
+                ArticleId = x.ArticleId,
+                ArticleName=x.ArticleName,
+                Contents = x.Contents,
+                UpdateTime = x.UpdateTime,
 
-            return platform;
+            });
+
+            return result;       
+            //var platform = await _context.Platform.FindAsync(id);
+
+            //if (platform == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //return platform;
         }
 
         // PUT: api/Platforms/5
