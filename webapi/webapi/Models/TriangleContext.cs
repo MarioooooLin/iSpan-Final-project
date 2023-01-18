@@ -127,7 +127,7 @@ namespace webapi.Models
 
                 entity.Property(e => e.CourseVideo).HasMaxLength(100);
 
-                entity.Property(e => e.img)
+                entity.Property(e => e.Img)
                     .HasMaxLength(200)
                     .HasColumnName("img");
 
@@ -278,11 +278,15 @@ namespace webapi.Models
 
                 entity.Property(e => e.ArticleName).HasMaxLength(10);
 
-                entity.Property(e => e.UpdateTime).HasColumnType("date");
+                entity.Property(e => e.UpdateTime)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<Reply>(entity =>
             {
+                entity.Property(e => e.ReplyId).ValueGeneratedNever();
+
                 entity.Property(e => e.ArticleName).HasMaxLength(10);
 
                 entity.Property(e => e.ReplyTime).HasColumnType("date");
@@ -310,7 +314,7 @@ namespace webapi.Models
 
                 entity.Property(e => e.Experience).HasMaxLength(100);
 
-                entity.Property(e => e.img)
+                entity.Property(e => e.Img)
                     .HasMaxLength(100)
                     .HasColumnName("img");
 
