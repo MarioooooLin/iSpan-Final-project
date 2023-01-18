@@ -130,13 +130,13 @@
                         <div class="row pagination-wrap mt-5">
                             <div class="col-md-12 text-center">
                                 <div class="custom-pagination ml-auto">
-                                    <a href="#" class="prev">Prev</a>
+                                    <a href="#" class="prev" >Prev</a>
                                     <div class="d-inline-block" v-for="item in sliced">
                                         <!--算頁數-->
-                                        <a href="#" class="active" v-if="currentpage == item" @@click="click1(item)">{{item + 1}}</a>
-                                        <a href="#" v-else @@click="click1(item)">{{item + 1}}</a>
+                                        <a href="#" class="active" v-if="currentpage == item" @@click="click(item)">{{item + 1}}</a>
+                                        <a href="#" v-else @@click="click(item)">{{item + 1}}</a>
                                     </div>
-                                    <a href="#" class="next">Next</a>
+                                    <a href="#" class="next" >Next</a>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
                         this.sliced[i] = i;
                     }//[0,1]
                 },
-                click1: function (item) {
+                click: function (item) {
                     let currnetpage = item ;
                     this.currentpage = currnetpage;
                     axios.get(`${webApi}/api/Articles`)
