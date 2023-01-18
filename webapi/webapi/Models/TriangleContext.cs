@@ -119,6 +119,8 @@ namespace webapi.Models
 
                 entity.Property(e => e.Category).HasMaxLength(50);
 
+                entity.Property(e => e.CourseImg).HasMaxLength(200);
+
                 entity.Property(e => e.CourseIntro).HasMaxLength(1000);
 
                 entity.Property(e => e.CourseName).HasMaxLength(50);
@@ -126,10 +128,6 @@ namespace webapi.Models
                 entity.Property(e => e.CourseReqire).HasMaxLength(1000);
 
                 entity.Property(e => e.CourseVideo).HasMaxLength(100);
-
-                entity.Property(e => e.Img)
-                    .HasMaxLength(200)
-                    .HasColumnName("img");
 
                 entity.Property(e => e.Keyword)
                     .HasMaxLength(500)
@@ -276,13 +274,17 @@ namespace webapi.Models
             {
                 entity.HasKey(e => e.ArticleId);
 
-                entity.Property(e => e.ArticleName).HasMaxLength(10);
+                entity.Property(e => e.ArticleName).HasMaxLength(25);
 
-                entity.Property(e => e.UpdateTime).HasColumnType("date");
+                entity.Property(e => e.UpdateTime)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<Reply>(entity =>
             {
+                entity.Property(e => e.ReplyId).ValueGeneratedNever();
+
                 entity.Property(e => e.ArticleName).HasMaxLength(10);
 
                 entity.Property(e => e.ReplyTime).HasColumnType("date");

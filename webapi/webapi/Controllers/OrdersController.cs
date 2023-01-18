@@ -39,9 +39,9 @@ namespace webapi.Controllers
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
-        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? id)
+        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? CandidateId,int? CourseId)
         {
-            return _context.CourseOrder.Where(x => x.CandidateId == id).Join(_context.Course, a => a.CourseId, b => b.CourseId, (co, c) => new OrderDetailDTO
+            var result = _context.CourseOrder.Where(x => x.CandidateId == CandidateId).Join(_context.Course, a => a.CourseId, b => b.CourseId, (co, c) => new OrderDetailDTO
             {
                 OrderId = co.OrderId,
                 CandidateId = co.CandidateId,
@@ -50,6 +50,15 @@ namespace webapi.Controllers
                 Price = c.Price,
                 Buyingtime = co.Buyingtime,
             });
+            if (CandidateId is int)
+            {
+                result = result.Where(x => x.CandidateId == CandidateId);
+            }
+            if (CourseId is int)
+            {
+                result = result.Where(x => x.CourseId == CourseId);
+            }
+            return result;
         }
 
         // PUT: api/Orders/5
