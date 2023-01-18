@@ -207,9 +207,9 @@
             el: "#appVue",
             name: "appVue",
             data: {
-                Id: null,
                 interestDatas: [],
                 Id: sessionStorage.getItem("Id"),
+                status: 0,
 
             },
             mounted: function () {
@@ -219,8 +219,12 @@
             methods: {
                 Information: function () {
                     let _this = this;
-                    let request = _this.Id;
-                    axios.get(`${webApi}/api/Candidates/Id${this.Id}`)
+                    axios.get(`${webApi}/api/Interests`, {
+                        params: {
+                            id: _this.Id,
+                            status: _this.status,
+                        }
+                    })
                         .then(response => {
                             _this.interestDatas = response.data;
                             console.log(_this.interestDatas);
@@ -228,6 +232,7 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
+
             },
         })
 

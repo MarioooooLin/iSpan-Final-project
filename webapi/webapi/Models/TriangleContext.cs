@@ -139,7 +139,7 @@ namespace webapi.Models
             modelBuilder.Entity<CourseDetail>(entity =>
             {
                 entity.HasKey(e => new { e.CourseId, e.SkillId })
-                    .HasName("PK__CourseDe__A4D778BF12CFB334");
+                    .HasName("PK__CourseDe__A4D778BF68D4D8C0");
             });
 
             modelBuilder.Entity<CourseOrder>(entity =>
@@ -231,8 +231,6 @@ namespace webapi.Models
 
                 entity.ToTable("InterestedCV");
 
-                entity.HasIndex(e => new { e.CandidateId, e.Cvid }, "IX_InterestedCV");
-
                 entity.Property(e => e.Cvid).HasColumnName("CVId");
 
                 entity.Property(e => e.Status).HasColumnName("status");
@@ -243,16 +241,12 @@ namespace webapi.Models
                 entity.HasKey(e => new { e.CandidateId, e.EnterpriseId })
                     .HasName("PK_InterestedEnterprise_1");
 
-                entity.HasIndex(e => new { e.CandidateId, e.EnterpriseId }, "IX_InterestedEnterprise");
-
                 entity.Property(e => e.Status).HasColumnName("status");
             });
 
             modelBuilder.Entity<InterestedPlatformArticle>(entity =>
             {
                 entity.HasKey(e => new { e.CandidateId, e.PlatformArticleId });
-
-                entity.HasIndex(e => new { e.CandidateId, e.PlatformArticleId }, "IX_InterestedPlatformArticle");
 
                 entity.Property(e => e.Status).HasColumnName("status");
             });
@@ -343,7 +337,7 @@ namespace webapi.Models
             modelBuilder.Entity<VacancySkill>(entity =>
             {
                 entity.HasKey(e => new { e.VacancyId, e.NeedSkillId })
-                    .HasName("PK__VacancyS__81F22C8AF46E7077");
+                    .HasName("PK__VacancyS__81F22C8A1A5BBD82");
             });
 
             OnModelCreatingPartial(modelBuilder);
