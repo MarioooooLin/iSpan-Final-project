@@ -118,7 +118,7 @@
                         aspernatur nemo sunt, qui, harum repudiandae quisquam eaque dolore itaque quod
                         tenetur quo quos labore?
                         </p>
-                        *@                       
+                        *@
                         <p>
                             <img :src="datas.img" alt="Image" class="img-fluid rounded" />
                         </p>
@@ -262,15 +262,15 @@
                                 <form action="#" class="">
                                     <div class="form-group">
                                         <label for="name">Nick Name *</label>
-                                        <input type="text" class="form-control" id="name" v-model="nickName"/>
+                                        <input type="text" class="form-control" id="name" v-model="nickName" />
                                     </div>
                                     <div class="form-group">
                                         <label for="message">Message *</label>
                                         <textarea name="" id="message" cols="30" rows="10" class="form-control" v-model="message"></textarea>
                                     </div>
                                     <div class="form-group">
-@*                                        <input type="submit" value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
-*@                                        <input  value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
+                                            @*                                        <input type="submit" value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
+                                        *@                                        <input value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
 
                                     </div>
                                 </form>
@@ -283,8 +283,8 @@
                                 <div class="form-group">
                                     <span class="icon fa fa-search"></span>
                                     <input type="text" class="form-control form-control-lg"
-                                           placeholder="Type a keyword and hit enter" 
-                                           v-on:keyup.enter=""/>
+                                           placeholder="Type a keyword and hit enter"
+                                           v-on:keyup.enter="" />
                                 </div>
                             </form>
                         </div>
@@ -346,8 +346,8 @@
             name: "appVue",
             data: {
                 datas: [],
-                nickName:"",
-                message:""
+                nickName: "",
+                message: ""
             },
             mounted: function () {
                 let _this = this;
@@ -366,13 +366,13 @@
                         .finally(console.log('完成'))
                 },
 
-                post(){                    
-                    let messageContent={};
-                    messageContent.nickName=this.nickName;
-                    messageContent.message=this.message;
+                post() {
+                    let messageContent = {};
+                    messageContent.nickName = this.nickName;
+                    messageContent.message = this.message;
                     console.log(messageContent) //檢查留言
 
-                    axios.post(`${webApi}/api/Articles/`,messageContent)
+                    axios.post(`${webApi}/api/Articles/`, messageContent)
                 }
             }
         })
