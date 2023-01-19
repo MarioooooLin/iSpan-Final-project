@@ -143,7 +143,7 @@
                                                 <a class="ml-3 font-weight-bold active" asp-area="" asp-controller="Home" asp-action="jobSingle">{{data.companyName}}</a>
                                             </li>
                                         </ul>
-                                        <p class="ml-3 card-text" style="overflow:hideen; text-overflow: ellipsis; -webkit-line-clamp: 3; white-space: nowrap;"> 在這裡修改文字長度
+                                        <p class="ml-3 card-text">
                                             {{data.info}}
                                         </p>
                                     </div>
@@ -449,6 +449,29 @@
                     if (item != this.page.length) {
                         this.changepage(item);
                     }
+                },
+                companysearch() {
+                    this.tempitem = 0;
+                    let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                    let category = this.selectedCategory;
+                    let address = this.selectedArea;
+                    let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${address}`;
+                    axios.get(url)
+                        .then(res => {
+                            this.datas = [];
+                            this.datas = res.data;
+                            this.temp = res.data.length;
+                            this.countpage();
+                            let arr = [];
+                            if (this.datas.length > 5) {
+                                for (let i = 0; i < 5; i++) {
+                                    let item = {};
+                                    item = this.datas[i];
+                                    arr.push(item);
+                                }
+                                this.datas = arr;
+                            }
+                        })
                 }
             },
             watch: {
@@ -456,8 +479,10 @@
                     handler(newval) {
                         if (newval == '公司') {
                             this.boolean = true;
+                            this.companysearch();
                         } else {
                             this.boolean = false;
+                            this.search();
                         }
                     }
                 },
