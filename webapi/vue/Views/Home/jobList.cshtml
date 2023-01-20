@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row mt-1 job-row d-flex justify-content-center">
                 <div class="col-12 col-lg-5 col-md-6 col-sm-6 text-center">
-                    <input type="text" class="form-control" placeholder="搜尋職稱、公司或任何關鍵字" v-model="inputvalue" @@keydown.enter="add" id="input">
+                    <input type="text" class="form-control" placeholder="搜尋職稱、公司或任何關鍵字" v-model="inputvalue" @@keydown.enter="search" id="input">
                 </div>
                 <div class="col-12 col-lg-1 col-md-1 col-sm-4 mr-lg-5 d-flex">
                     <a href="#">
@@ -150,7 +150,7 @@
                                 </div>
                                 <div class="right col-lg-3 col-12 mt-3 ml-2 ml-lg-o ml-sm-4 xs-row">
                                     <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
-                                        <i class="fa-solid fa-location-dot"></i><span class="fs-6 ml-2">{{data.workPlace}}</span>
+                                        <i class="fa-solid fa-location-dot"></i><span class="fs-6 ml-2">{{data.address}}</span>
                                     </div>
                                     <div class="py-1 d-lg-flex d-inline px-lg-0 px-sm-2">
                                         <i class="fa-solid fa-users"></i><span class="fs-6 ml-2">{{data.employee}}人</span>
@@ -334,60 +334,41 @@
                     //let key = window.localStorage.getItem("vanId");
                     window.location = "/Home/jobSingle";
                 },
-                add: function () {
-                    if (this.inputvalue) {
+                search() {
+                    if(!this.inputvalue){
+                        $('input').blur();
+                    }
+                    if(this.boolean){
+                        this.companysearch();
+                    }else{
                         this.tempitem = 0;
                         let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                        axios.get(`${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`)
+                        let category = this.selectedCategory;
+                        let workplace = this.selectedArea;
+                        let url = `${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`;
+                        axios.get(url)
                             .then(res => {
                                 this.datas = [];
                                 this.datas = res.data;
                                 this.temp = res.data.length;
                                 this.countpage();
                                 let arr = [];
-                                if (this.datas.length > 5) {
+                                if (this.datas.length > 5) {    
                                     for (let i = 0; i < 5; i++) {
                                         let item = {};
+                                        if (!this.datas[i].seniority) {
+                                            this.datas[i].seniority = '不限年資';
+                                        } else {
+                                            this.datas[i].seniority = this.datas[i].seniority + '年';
+                                        }
+                                        this.datas[i].info = this.datas[i].info + '...';
                                         item = this.datas[i];
                                         arr.push(item);
                                     }
                                     this.datas = arr;
                                 }
                             })
-                        $('input').blur();
-                    } else {
-                        $('input').blur();
                     }
-                },
-                search() {
-                    this.tempitem = 0;
-                    let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                    let category = this.selectedCategory;
-                    let workplace = this.selectedArea;
-                    let url = `${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`;
-                    axios.get(url)
-                        .then(res => {
-                            this.datas = [];
-                            this.datas = res.data;
-                            this.temp = res.data.length;
-                            this.countpage();
-                            let arr = [];
-                            if (this.datas.length > 5) {
-                                for (let i = 0; i < 5; i++) {
-                                    let item = {};
-                                    if (this.datas[i].seniority == 0) {
-                                        this.datas[i].seniority = '不限年資';
-                                    } else {
-                                        this.datas[i].seniority = this.datas[i].seniority + '年';
-                                    }
-                                    item = this.datas[i];
-                                    arr.push(item);
-                                }
-                                this.datas = arr;
-                            }
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'))
                 },
                 clear() {
                     this.selectedCategory = '';
@@ -406,12 +387,13 @@
                     }
                 },//計算頁數
                 changepage(item) {
-                    this.tempitem = item;
-                    let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                    let category = this.selectedCategory;
-                    let workplace = this.selectedArea;
-                    let url = `${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`;
-                    axios.get(url)
+                        this.tempitem = item;
+                        let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                        let category = this.selectedCategory;
+                        let workplace = this.selectedArea;
+                    if(this.boolean){
+                        let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
+                        axios.get(url)
                         .then(res => {
                             appVue.datas = [];
                             appVue.datas = res.data;
@@ -421,6 +403,7 @@
                             if ((item + 1) == this.page.length) {
                                 for (let i = item * 5; i < this.datas.length; i++) {
                                     let item = {};
+                                        this.datas[i].info = this.datas[i].info + '...';
                                     item = this.datas[i];
                                     arr.push(item);
                                 }
@@ -429,12 +412,52 @@
                             else {
                                 for (let i = item * 5; i < (item + 1) * 5; i++) {
                                     let item = {};
+                                        this.datas[i].info = this.datas[i].info + '...';
                                     item = this.datas[i];
                                     arr.push(item);
                                 }
                                 this.datas = arr;
                             }
                         })
+                    }else{
+                        let url = `${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`;
+                        axios.get(url)
+                            .then(res => {
+                                appVue.datas = [];
+                                appVue.datas = res.data;
+                                this.temp = res.data.length;
+                                this.countpage();
+                                let arr = [];
+                                if ((item + 1) == this.page.length) {
+                                    for (let i = item * 5; i < this.datas.length; i++) {
+                                        let item = {};
+                                        if (!this.datas[i].seniority) {
+                                            this.datas[i].seniority = '不限年資';
+                                        } else {
+                                            this.datas[i].seniority = this.datas[i].seniority + '年';
+                                        }
+                                        this.datas[i].info = this.datas[i].info + '...';
+                                        item = this.datas[i];
+                                        arr.push(item);
+                                    }
+                                    this.datas = arr;
+                                }
+                                else {
+                                    for (let i = item * 5; i < (item + 1) * 5; i++) {
+                                        let item = {};
+                                        if (!this.datas[i].seniority) {
+                                            this.datas[i].seniority = '不限年資';
+                                        } else {
+                                            this.datas[i].seniority = this.datas[i].seniority + '年';
+                                        }
+                                        this.datas[i].info = this.datas[i].info + '...';
+                                        item = this.datas[i];
+                                        arr.push(item);
+                                    }
+                                    this.datas = arr;
+                                }
+                            })
+                    }
                 },
                 prev() {
                     let item = this.tempitem;
@@ -454,8 +477,8 @@
                     this.tempitem = 0;
                     let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
                     let category = this.selectedCategory;
-                    let address = this.selectedArea;
-                    let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${address}`;
+                    let workplace = this.selectedArea; //這裡是公司地址
+                    let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
                     axios.get(url)
                         .then(res => {
                             this.datas = [];
@@ -466,6 +489,7 @@
                             if (this.datas.length > 5) {
                                 for (let i = 0; i < 5; i++) {
                                     let item = {};
+                                    this.datas[i].info = this.datas[i].info + '...';
                                     item = this.datas[i];
                                     arr.push(item);
                                 }

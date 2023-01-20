@@ -32,11 +32,11 @@ namespace webapi.Controllers
             var result = _context.Enterprise.Select(x => new EnterpriseDTO
             {
                 EnterpriseId = x.EnterpriseId,
-                Address = x.Address,
+                Address = x.Address.Substring(0,3),
                 Category = x.Category,
                 CompanyName = x.CompanyName,
                 Img = x.Img,
-                Info = x.Info,
+                Info = x.Info.Substring(0,88),
                 Employee = x.Employee
 
             });
@@ -54,7 +54,7 @@ namespace webapi.Controllers
             }
 
             return await Task.FromResult(result);
-        }
+        }//完成 by jing
 
         // GET:     
         [HttpGet("{id}")]
@@ -69,7 +69,7 @@ namespace webapi.Controllers
                              VacancyId = van.VacancyId,
                          };
             return result;
-        }
+        }//完成 by jing
 
         // PUT: api/Enterprises/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
