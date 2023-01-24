@@ -113,13 +113,13 @@
                                 <div class="col-lg-6 col-12 text-right">
                                     <a href="#">
                                         <button class="btn btn-dark px-4 mx-1">
-                                            <i class="fa-regular fa-bookmark"></i><span class="ml-2">儲存</span>
+                                            <i class="fa-regular fa-bookmark"></i><span class="ml-2" :id="data.vacancyId" @@click="post">儲存</span>
                                         </button>
                                     </a>
                                     <a href="#">
                                         <button class="btn btn-primary mx-1">
                                             <a class="text-decoration-none text-white" asp-controller="Home" asp-action="jobSingle">
-                                                <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="ml-2">立即應徵</span>
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="ml-2" :id="data.vacancyId" v-on:click="jobsingle(data.vacancyId)">立即應徵</span>
                                             </a>
                                         </button>
                                     </a>
@@ -478,6 +478,26 @@
                     let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
                     let category = this.selectedCategory;
                     let workplace = this.selectedArea; //這裡是公司地址
+                    let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
+                    axios.get(url)
+                        .then(res => {
+                            this.datas = [];
+                            this.datas = res.data;
+                            this.temp = res.data.length;
+                            this.countpage();
+                            let arr = [];
+                            if (this.datas.length > 5) {
+                                for (let i = 0; i < 5; i++) {
+                                    let item = {};
+                                    this.datas[i].info = this.datas[i].info + '...';
+                                    item = this.datas[i];
+                                    arr.push(item);
+                                }
+                                this.datas = arr;
+                            }
+                        })
+                },
+                post() {
                     let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
                     axios.get(url)
                         .then(res => {
