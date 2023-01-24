@@ -1,8 +1,8 @@
 ﻿<section class="section-hero overlay inner-page bg-image" style=" background-image:url('/images/hero_1.jpg')"
          id="home-section">
-    <div class="container" >
+    <div class="container">
         <div class="row">
-            <div class="col-md-7"> 
+            <div class="col-md-7">
                 <h1 class="text-white font-weight-bold">適性測驗</h1>
                 <div class="custom-breadcrumbs">
                     <a asp-controller="Home" asp-action="source" class="text-white">回資源頁面</a>
@@ -116,7 +116,7 @@
             </div>
 
             <!-- Below is Content -->
-            <div class="col-lg-8 content mt-3 pt-lg-0 mt-lg-5 pb-2">
+            <div id="app" class="col-lg-8 content mt-3 pt-lg-0 mt-lg-5 pb-2" >
                 <div class="context w-100 p-3 mb-4">
                     <div class="item row pt-4">
                         <h3 class="display-5 font-weight-bolder mb-0 col-6 pl-4">類型</h3>
@@ -150,3 +150,46 @@
             </div>
 </section>
 <!-- content end -->
+@section Script{
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+
+    <script>
+        const webApi = "https://localhost:7240"
+        const vm = new Vue({
+            el: "#app",
+            name: "app",
+            data: {
+                datas:[],
+            },
+            mounted: function () {
+                let _this = this;
+                _this.TestResult();
+            },
+            methods: {
+                TestResult: function(){
+                    let testResult = new URL(location.href).searchParams.get('id');
+                    axios.get(`${webApi}/api/AptitudeTests/${testResult}`)
+                    .then(res=>{this.datas=res.data[0];
+                    console.log(this.datas);
+                    })
+                    .catch(err=>console.log(err))
+                    .finally(console.log('Finish'))
+
+
+                }
+
+
+
+
+            }
+
+
+        })
+
+
+
+    </script>
+
+
+}

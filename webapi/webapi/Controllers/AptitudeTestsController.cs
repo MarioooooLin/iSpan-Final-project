@@ -36,14 +36,8 @@ namespace webapi.Controllers
 
         // GET: api/AptitudeTests/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<AptitudeTest>> GetAptitudeTest(int id)
+        public async Task<IEnumerable<AptitudeTest>> GetAptitudeTest(int id)
         {
-            var aptitudeTest = await _context.AptitudeTest.FindAsync(id);
-
-            if (aptitudeTest == null)
-            {
-                return NotFound();
-            }
 
             return aptitudeTest;
         }

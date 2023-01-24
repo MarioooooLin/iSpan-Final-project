@@ -107,15 +107,16 @@ namespace webapi.Controllers
         // POST: api/Articles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<Article> PostArticle(ArticleDTO article)
+        public async Task<Article> PostArticle([FromBody]Article test)
         {
             Article arti = new Article
             {
-                nickName = article.Author,
-                message = article.ArticleContent,
+                nickName = test.nickName,
+                message = test.message,
             };
             _context.Article.Add(arti);
             await _context.SaveChangesAsync();
+
 
             return arti;
 
