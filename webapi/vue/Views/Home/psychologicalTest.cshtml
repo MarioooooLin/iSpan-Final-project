@@ -130,8 +130,8 @@
                         <button class="mx-lg-5 rounded-circle h4 p-3 slide-button" v-on:click="no" v-if="this.answerList[this.index]==null">No</button>
                     </div>
                     <div class="text-right">
-                        @*                        <a asp-controller="Home" asp-action="testResult" v-on:click="checkResult" v-if="showResult">查看結果</a>
-                        備用*@                        <a  v-on:click="checkResult" v-if="showResult">查看結果</a>
+                        <a v-bind:href="'https://localhost:7158/Home/testResult?id='+ resultPoint" v-on:click="checkResult" v-if="showResult">查看結果</a>
+                        <a v-on:click="checkResult" v-if="showResult">查看結果</a>
 
                     </div>
                 </div>
@@ -157,7 +157,8 @@
                 answer: {},
                 answerList: [],
                 showResult: false,
-                showButton: true
+                showButton: true,
+                resultPoint:0,
             },
             mounted: function () {
                 let _this = this;
@@ -204,7 +205,8 @@
                     for (let i = 0; i < this.answerList.length; i++) {
                         resultPoint += this.answerList[i];
                     }
-                    console.log(resultPoint);
+                    this.resultPoint = resultPoint
+                    console.log(this.resultPoint);
                 }
             }
         })
