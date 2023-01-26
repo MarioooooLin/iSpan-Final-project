@@ -61,24 +61,7 @@ namespace webapi.Controllers
             }
 
             return await Task.FromResult(result);
-
-            /*var result = from van in _context.Vacancy
-                         join etp in _context.Enterprise
-                         on van.EnterpriseId equals etp.EnterpriseId
-                         select new VacancyDTO {
-                             WorkName = van.WorkName,
-                             WorkPlace = van.WorkPlace,
-                             Salary = van.Salary,
-                             FullPartTime = van.FullPartTime,
-                             Shift = van.Shift,
-                             WorkContent = van.WorkContent,
-                             Seniority = van.Seniority,
-                         };*/
-            /*return _context.Vacancy.Select(x => new VacancyDTO
-            {
-                
-            });*/
-        } //完成
+        } //完成 by jing
 
         // GET: api/Vacancies/5
         [HttpGet("{id}")]
@@ -96,10 +79,11 @@ namespace webapi.Controllers
                              Salary = van.Salary,
                              FullPartTime = van.FullPartTime,
                              Shift = van.Shift,
-                             WorkContent = van.WorkContent,
                              updatetime = van.Updatetime,
                              Seniority = van.Seniority,
                              Category = van.Category,
+                             WorkContent = van.WorkContent,
+                             WorkReqire = van.WorkReqire,
                              CompanyName = etp.CompanyName,
                              Address = etp.Address,
                              Info = etp.Info,
@@ -109,7 +93,7 @@ namespace webapi.Controllers
                              EnterpriseId = etp.EnterpriseId
                          };
             return result.SingleOrDefault();
-        } //完成
+        } //完成 by jing
 
         // PUT: api/Vacancies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

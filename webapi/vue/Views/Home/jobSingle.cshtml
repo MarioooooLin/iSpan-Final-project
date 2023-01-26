@@ -124,71 +124,34 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="mb-5 mt-5">
+                    <div class="mb-5 mt-5" v-if="workContentDatas.length > 0">
                         <h3 class="h5 d-flex align-items-center mb-4 text-primary">
-                            <span class="icon-align-left mr-3"></span>工作內容
+                            <i class="icon-align-left mr-3"></i>
+                            <span>工作內容</span>
                         </h3>
-                        <ul class="list-unstyled m-0 p-0">
+                        <ul class="list-unstyled m-0 p-0" v-for="i in workContentDatas">
                             <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                    Velit unde aliquam et voluptas reiciendis n
-                                    Velit unde aliquam et voluptas reiciendis non sapiente labore
-                                </span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit
-                                </span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                    Deleniti asperiores blanditiis nihil quia
-                                    officiis dolor
-                                </span>
+                                <!--<i class="icon-check_circle mr-2 text-muted"></i>-->
+                                <span>{{i}}</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="mb-5">
-                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><span class="icon-book mr-3"></span>條件要求</h3>
-                        <ul class="list-unstyled m-0 p-0">
+                    <div class="mb-5" v-if="workReqireDatas.length > 0">
+                        <h3 class="h5 d-flex align-items-center mb-4 text-primary"><i class="icon-book mr-3"></i>
+                            <span>條件要求</span>
+                            </h3>
+                        <ul class="list-unstyled m-0 p-0" v-for="i in workReqireDatas">
                             <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>Necessitatibus quibusdam facilis</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                    Velit unde aliquam et voluptas reiciendis non
-                                    sapiente labore
-                                </span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>Commodi quae ipsum quas est itaque</span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit
-                                </span>
-                            </li>
-                            <li class="d-flex align-items-start mb-2">
-                                <span class="icon-check_circle mr-2 text-muted"></span><span>
-                                    Deleniti asperiores blanditiis nihil quia
-                                    officiis dolor
-                                </span>
+                                <!--<span class="icon-check_circle mr-2 text-muted"></span>-->
+                                <span>{{i}}</span>
                             </li>
                         </ul>
                     </div>
-
-                    <div class="mb-5">
+                    <!--<div class="mb-5">
                         <h3 class="h5 d-flex align-items-center mb-4 text-primary">
-                            <span class="icon-turned_in mr-3"></span>公司福利
+                            <i class="icon-turned_in mr-3"></i>
+                            <span>公司福利</span>
                         </h3>
                         <ul class="list-unstyled m-0 p-0">
                             <li class="d-flex align-items-start mb-2">
@@ -216,9 +179,8 @@
                                 </span>
                             </li>
                         </ul>
-                    </div>
-
-                    <div class="mb-5">
+                    </div>-->
+                    <!--<div class="mb-5">
                         <h3 class="h5 d-flex align-items-center mb-4 text-primary"><i class="fa-solid fa-phone mr-3"></i>聯絡方式</h3>
                         <ul class="list-unstyled m-0 p-0">
                             <li class="d-flex align-items-start mb-2">
@@ -246,7 +208,7 @@
                                 </span>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
 
                 </div>
                 <div class="col-lg-4">
@@ -258,8 +220,8 @@
                             <!--<li class="mb-2"><strong class="text-black">Employment Status:</strong> Full-time</li>-->
                             <li class="mb-2"><strong class="text-black">年資:</strong>{{seniority}}</li>
                             <li class="mb-2"><strong class="text-black">工作地點:</strong>{{datas.workPlace}}</li>
-                            <li class="mb-2"><strong class="text-black">Salary:</strong>{{salary}}</li>
-                            <li class="mb-2"><strong class="text-black">Gender:</strong>不拘</li>
+                            <li class="mb-2"><strong class="text-black">薪資:</strong>{{salary}}</li>
+                            <li class="mb-2"><strong class="text-black">性別:</strong>不拘</li>
                             <!--<li class="mb-2"><strong class="text-black">Application Deadline:</strong> April 28, 2019</li>-->
                         </ul>
                     </div>
@@ -304,7 +266,9 @@
                 selectedCategory: "",
                 selectedArea: "",
                 length: 0,
-                enterprise: 0
+                enterprise: 0,
+                workContentDatas:[],
+                workReqireDatas:[]
             },
             mounted: function () {
                 this.Vacancy();
@@ -317,6 +281,10 @@
                         .then(res => {
                             this.datas = res.data;
                             this.enterprise = res.data.enterpriseId;
+                            let x = res.data.workContent.split('\r\n\r\n')
+                            for (i = 0; i < x.length; i++) { this.workContentDatas[i] = x[i]}
+                            x = res.data.workReqire.split('\r\n\r\n')
+                            for (i = 0; i < x.length; i++) { this.workReqireDatas[i] = x[i] }
                             console.log(this.datas);
                         })
                         .catch(err => console.log(err))
