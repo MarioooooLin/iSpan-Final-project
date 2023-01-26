@@ -344,9 +344,11 @@
             el: "#appVue",
             name: "appVue",
             data: {
-                datas: [],
+                datas: [], //文章本人
                 nickName: "",
-                message: ""
+                message: "",
+                title: "",
+                articleMessage: [], //文章留言
             },
             mounted: function () {
                 let _this = this;
@@ -367,7 +369,8 @@
 
                 post() {
                     let messageContent = {};
-
+                    let Time = new Date();
+                    this.articleMessage.length += 1;
 
                     //messageContent.ArticleId=0;
                     //messageContent.nickName = this.nickName;
@@ -375,15 +378,18 @@
                     //console.log(messageContent.nickName)
                     //console.log(messageContent.message)
 
-                    messageContent.NickName=this.nickName;
-                    messageContent.Message=this.message;
+                    messageContent.NickName = this.nickName;
+                    messageContent.Message = this.message;
+                    messageContent.Title = this.datas.title;
+                    messageContent.ArticleFloor = this.articleMessage.length;
+                    messageContent.UpdateTime = Time;
 
                     console.log(messageContent) //檢查留言
 
-                    axios.post(`${webApi}/api/Articles`,messageContent)
-                    .then(res=>{console.log(res)})
-                    .catch(err=>{console.log(err)})
-                    
+                    axios.post(`${webApi}/api/Articles`, messageContent)
+                        .then(res => { console.log(res) })
+                        .catch(err => { console.log(err) })
+
 
                     //axios.post(`${webApi}/api/Articles`, { params: messageContent })
                     //    .then(response => {
