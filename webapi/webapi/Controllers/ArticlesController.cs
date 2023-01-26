@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using webapi.DTO;
 using webapi.Models;
@@ -36,6 +37,10 @@ namespace webapi.Controllers
                 Author = teacher.Name,
                 UpdateTime = article.UpdateTime,
                 ArticleId = article.ArticleId,
+                ArticleFloor = article.ArticleFloor,
+                NickName = article.nickName,
+                Message = article.message,
+
             });
 
             return await Task.FromResult(result);
@@ -65,6 +70,9 @@ namespace webapi.Controllers
                 UpdateTime = article.UpdateTime,
                 ArticleId = article.ArticleId,
                 Expreience = teacher.Experience,
+                ArticleFloor = article.ArticleFloor,
+                NickName = article.nickName,
+                Message = article.message,
 
 
             }).Where(x => x.ArticleId == id);
@@ -106,12 +114,27 @@ namespace webapi.Controllers
         // POST: api/Articles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Article>> PostArticle(Article article)
+        public async Task<Article> PostArticle([FromBody] Article test)
         {
-            _context.Article.Add(article);
+            Article arti = new Article
+            {
+                nickName = test.nickName,
+                message = test.message,
+                Title = test.Title,
+                UpdateTime = test.UpdateTime,
+                ArticleFloor = test.ArticleFloor,
+            };
+            _context.Article.Add(arti);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetArticle", new { id = article.ArticleId }, article);
+
+            return arti;
+
+
+            //_context.Article.Add(article);
+            //await _context.SaveChangesAsync();
+
+            //return CreatedAtAction("GetArticle", new { id = article.ArticleId }, article);
         }
 
         // DELETE: api/Articles/5
