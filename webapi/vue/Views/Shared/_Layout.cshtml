@@ -80,16 +80,22 @@
                             <li>
                                 <a asp-area="" asp-controller="Home" asp-action="aboutUs" class="h4 active">關於我們</a>
                             </li>
-                            <li class="d-lg-none">
+@*                            <li class="d-lg-none">
                                 <a href="post-job.html"><span class="mr-2">+</span> 信箱</a>
-                            </li>
+                            </li>*@
                             <li class="d-lg-none" id="app">
-                                <div v-if="Id === null">
-                                <a class="h4 active" asp-area="" asp-controller="Home" asp-action="memberLogin">登入/註冊</a>
+                                <div v-if="Id == null && EmpId == null">
+                                    <a class="h4 active" asp-area="" asp-controller="Home" asp-action="memberLogin">登入/註冊</a>
                                 </div>
                                 <div v-else>
-                                <a class="h4 active" asp-area="" asp-controller="Home" asp-action="memberCenter">會員中心</a>
-                                <a class="h4 active" asp-area="" asp-controller="Home" asp-action="memberLogin">登出</a>
+                                    <div v-if="Id == null">
+                                        <a class="h4 active" asp-area="" asp-controller="Home" asp-action="enterpriseCenter">會員中心</a>
+                                        <a class="h4 active" asp-area="" asp-controller="Home" asp-action="memberLogin">登出</a>
+                                    </div>
+                                    <div v-else>
+                                        <a class="h4 active" asp-area="" asp-controller="Home" asp-action="memberCenter">會員中心</a>
+                                        <a class="h4 active" asp-area="" asp-controller="Home" asp-action="memberLogin">登出</a>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -99,17 +105,27 @@
                         <div class="ml-auto">
                             <div id="vue">
 
-                                <div v-if="Id == null">
+                                <div v-if="Id == null && EmpId == null">
                                     <a asp-area="" asp-controller="Home" asp-action="memberLogin" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
                                         <span class="mr-2 icon-lock_outline"></span>登入/註冊
                                     </a>
                                 </div>
                                 <div v-else>
-                                    <a asp-area="" asp-controller="Home" asp-action="memberCenter"
-                                       class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>會員中心</a>
-                                    <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" @@click="signOut">
-                                        <span class="mr-2 icon-lock_outline"></span>登出
-                                    </button>
+                                    <div v-if="Id == null">
+                                        <a asp-area="" asp-controller="Home" asp-action="enterpriseCenter"
+                                           class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>會員中心</a>
+                                        <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" @@click="signOut">
+                                            <span class="mr-2 icon-lock_outline"></span>登出
+                                        </button>
+                                    </div>
+                                    <div v-else>
+                                        <a asp-area="" asp-controller="Home" asp-action="memberCenter"
+                                           class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>會員中心</a>
+
+                                        <button class="btn btn-primary border-width-2 d-none d-lg-inline-block" @@click="signOut">
+                                            <span class="mr-2 icon-lock_outline"></span>登出
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -240,6 +256,7 @@
                 el: "#app",
                 name: "app",
                 data: {
+                    EmpId: sessionStorage.getItem("EmpId"),
                     Id: sessionStorage.getItem("Id"),
                     Name: sessionStorage.getItem("Name"),
                 },
@@ -249,6 +266,7 @@
                 el: "#vue",
                 name: "vue",
                 data: {
+                    EmpId: sessionStorage.getItem("EmpId"),
                     Id: sessionStorage.getItem("Id"),
                     Name: sessionStorage.getItem("Name"),
                 },
