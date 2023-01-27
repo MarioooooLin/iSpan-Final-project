@@ -24,6 +24,7 @@ namespace webapi.Models
         public virtual DbSet<CandidateCv> CandidateCv { get; set; }
         public virtual DbSet<CandidateSkill> CandidateSkill { get; set; }
         public virtual DbSet<Course> Course { get; set; }
+        public virtual DbSet<CourseContent> CourseContent { get; set; }
         public virtual DbSet<CourseDetail> CourseDetail { get; set; }
         public virtual DbSet<CourseOrder> CourseOrder { get; set; }
         public virtual DbSet<Cv> Cv { get; set; }
@@ -61,6 +62,10 @@ namespace webapi.Models
                     .HasColumnName("img");
 
                 entity.Property(e => e.Keyword).HasMaxLength(200);
+
+                entity.Property(e => e.Message).HasMaxLength(500);
+
+                entity.Property(e => e.NickName).HasMaxLength(50);
 
                 entity.Property(e => e.Title).HasMaxLength(50);
 
@@ -136,10 +141,20 @@ namespace webapi.Models
                 entity.Property(e => e.TeacherId).HasColumnName("TeacherID");
             });
 
+            modelBuilder.Entity<CourseContent>(entity =>
+            {
+                entity.HasKey(e => new { e.CourseId100, e.Coursechapter })
+                    .HasName("PK__CourseCo__5915244B121BD0A0");
+
+                entity.Property(e => e.ChapterName).HasMaxLength(100);
+
+                entity.Property(e => e.Video).HasMaxLength(100);
+            });
+
             modelBuilder.Entity<CourseDetail>(entity =>
             {
                 entity.HasKey(e => new { e.CourseId, e.SkillId })
-                    .HasName("PK__CourseDe__A4D778BF68D4D8C0");
+                    .HasName("PK__CourseDe__A4D778BFAB684E6B");
             });
 
             modelBuilder.Entity<CourseOrder>(entity =>
@@ -279,7 +294,11 @@ namespace webapi.Models
             {
                 entity.Property(e => e.ReplyId).ValueGeneratedNever();
 
-                entity.Property(e => e.ArticleName).HasMaxLength(10);
+                entity.Property(e => e.ArticleName)
+                    .IsRequired()
+                    .HasMaxLength(25);
+
+                entity.Property(e => e.Floor).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.ReplyTime).HasColumnType("date");
             });

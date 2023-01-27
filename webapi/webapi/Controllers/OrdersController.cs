@@ -24,9 +24,9 @@ namespace webapi.Controllers
 
         // GET: api/Orders
         [HttpGet]
-        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder()
+        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? CandidateId,bool? valid)
         {
-            return _context.CourseOrder.Join(_context.Course,a=>a.CourseId,b=>b.CourseId,(co,c)=>new OrderDetailDTO
+            var result = _context.CourseOrder.Join(_context.Course,a=>a.CourseId,b=>b.CourseId,(co,c)=>new OrderDetailDTO
             {
                 OrderId = co.OrderId,
                 CandidateId = co.CandidateId,
@@ -34,14 +34,21 @@ namespace webapi.Controllers
                 CourseName = c.CourseName,
                 Price = c.Price,
                 Buyingtime = co.Buyingtime,
-            });
+                Vaild = co.Vaild,
+            }).Where(x=>x.CandidateId== CandidateId);
+
+            if(valid is bool)
+            {
+                result= result.Where(x=>x.Vaild == valid);
+            };
+            return result;
         }
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
         public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? CandidateId,int? CourseId)
         {
-            var result = _context.CourseOrder.Where(x => x.CandidateId == CandidateId).Join(_context.Course, a => a.CourseId, b => b.CourseId, (co, c) => new OrderDetailDTO
+            var result = _context.CourseOrder.Join(_context.Course, a => a.CourseId, b => b.CourseId, (co, c) => new OrderDetailDTO
             {
                 OrderId = co.OrderId,
                 CandidateId = co.CandidateId,
@@ -49,12 +56,11 @@ namespace webapi.Controllers
                 CourseName = c.CourseName,
                 Price = c.Price,
                 Buyingtime = co.Buyingtime,
-            });
-            if (CandidateId is int)
-            {
-                result = result.Where(x => x.CandidateId == CandidateId);
-            }
-            if (CourseId is int)
+                Vaild = co.Vaild,
+
+            }).Where(x => x.CandidateId == CandidateId);
+
+            if (CourseId != null)
             {
                 result = result.Where(x => x.CourseId == CourseId);
             }
@@ -95,7 +101,7 @@ namespace webapi.Controllers
         // POST: api/Orders
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<CourseOrder> PostCourseOrder(CourseOrder courseOrder)
+        public async Task<CourseOrder> PostCourseOrder([FromBody]CourseOrder courseOrder)
         {
             CourseOrder co = new CourseOrder
             {

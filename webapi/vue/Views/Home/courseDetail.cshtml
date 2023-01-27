@@ -6,7 +6,7 @@
             <img src="~/images/hero_1-1.jpg" style="top: 0; position: absolute;height: 100%; filter: blur(5px)" class="w-100 video-bg">
             <div class="container">
                 <div class="row mb-5 mt-lg-3 mg-md-5 pt-5 justify-content-left">
-                    <div class="col-lg-4 col-md-7 text-lg-left mt-5 mb-2">
+                    <div class="col-lg-10 col-12 text-lg-left mt-5 mb-2">
                         <h2 class="text-white video-title">{{ dataList.courseName }}</h2>
                     </div>
                     <div class="col-12 mt-2 videobox">
@@ -32,7 +32,7 @@
                     <div class="d-flex align-items-center justify-content-center mb-1">
                         <div class="film-number"><i class="fa-regular fa-user"></i></div>
                     </div>
-                    <span class="caption">128位同學</span>
+                    <span class="caption">{{ dataList.studentCount }}位同學</span>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-1">
@@ -40,7 +40,7 @@
                         <div class="film-number" data-number="54"><i class="fa-regular fa-clock"></i></div>
                     </div>
                     <span class="caption">
-                        上課時長{{ dataList.courseLength }}分鐘
+                        時長{{ dataList.courseLength }}分鐘
                     </span>
                 </div>
 
@@ -62,9 +62,8 @@
                     <h2>NT$ {{ dataList.price }}</h2>
                 </div>
                 <div class="col-lg-3 col-md-6 fw-bold buy-mess d-flex justify-content-center" style="border-left:#656565 1px solid;">
-                    <a @@click="gopage" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>
-                    @*<a v-bind:href="'https://localhost:7158/Home/payPage?id='+ dataList.courseId" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>*@
-                    <a href="" class="btn btn-secondary w-25 my-5 mx-1 text-center"><i class="fa-solid fa-thumbtack"></i></a>
+                    <a @@click="goPaypage" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>
+                    <a @@click="goCollect" class="btn btn-secondary w-25 my-5 mx-1 text-center"><i class="fa-solid fa-thumbtack"></i></a>
                 </div>
 
             </div>
@@ -77,24 +76,9 @@
                 <div class="row align-items-start h-lg-50">
                     <div class="col-lg-8 mb-5 mb-lg-5 cause-title">
                         <div class="title" style="display:inline-flex;">課程章節</div>
-                        <div class="cause-intro mt-2">
-                            <div class="ml-4 mt-4">
-                                <h5>第一章</h5>
-                                <hr>
-                                <h5>第二章</h5>
-                                <p>第一節</p>
-                                <p>第二節</p>
-                                <p>第三節</p>
-                                <hr>
-                                <h5>第三章</h5>
-                                <p>第一節</p>
-                                <p>第二節</p>
-                                <p>第三節</p>
-                                <hr>
-                                <h5>第四章</h5>
-                                <p>第一節</p>
-                                <p>第二節</p>
-                                <p>第三節</p>
+                        <div class="cause-intro mt-2" >
+                            <div class="ml-4 mt-4" v-for="chapter in chapterList">
+                                <h5>第{{chapter.coursechapter}}章 &emsp; &emsp;{{ chapter.chapterName }}</h5>
                                 <hr>
                             </div>
                         </div>
@@ -130,10 +114,13 @@
             name: "appVue",
             data: {
                 dataList: [],
+                chapterList: [],
             },
             mounted: function () {
                 const _this = this;
                 _this.course();
+                _this.chapter();
+
             },
             methods: {
                 course: function () {
@@ -144,13 +131,23 @@
                     axios.get(`${webApi}/api/Courses/${courseId}`)
                         .then(response => {
                             _this.dataList = response.data[0];
-                            console.log(_this.dataList)
-                            console.log(_this.dataList.courseIntro)
+                            var temp = this.dataList.courseIntro.replace(/\n/g, '<br/>');
+                            this.dataList.courseIntro = temp
+
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
-                gopage() {
+                chapter: function () {
+                    const findChapter = new URL(location.href).searchParams.get('id');
+                    axios.get(`${webApi}/api/CourseContents?CourseId=${findChapter}`)
+                        .then(response => {
+                            this.chapterList = response.data;
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+                },
+                goPaypage: function () {
                     const candidateId = sessionStorage.getItem('Id')
                     const courseId = this.dataList.courseId
                     if (candidateId != null) {
@@ -160,6 +157,49 @@
                         location.href = 'https://localhost:7158/Home/memberLogin'
                     }
                 },
+                goCollect : function (){
+                    const thisPageCandidateId = sessionStorage.getItem('Id')
+                    const thisPageCourseId = new URL(location.href).searchParams.get('id');
+                    let collectListCourseId = "";
+                    if (thisPageCandidateId != null) {
+                        axios.get(`${webApi}/api/InterestedCourses?candidateId=${thisPageCandidateId}`)
+                            .then(response => {
+                                let arr = []
+                                for(i = 0; i < response.data.length; i++){
+                                    let item = {}
+                                    item = response.data[i].courseId
+                                    arr.push(item)
+                                }
+                                //this.collectList = arr;
+                                console.log(arr);
+                                if (arr[0]){
+                                    collectListCourseId = arr.find(item => item == thisPageCourseId)
+                                }
+                                if (thisPageCourseId == collectListCourseId) {
+                                    alert("此課程已收藏");
+                                    console.log('第二階段宣告已存在');
+
+                                } else {
+                                    var request = {
+                                        CandidateId: thisPageCandidateId,
+                                        courseId: thisPageCourseId,
+                                    };
+                                    console.log(request)
+                                    axios.post(`${webApi}/api/InterestedCourses`, request).then(response => {
+                                        console.log(response.data);
+                                        alert("已收藏此課程");
+                                    }).catch(err => console.log(err))
+                                        .finally(console.log('第二階段POST'));
+                                }
+                            })
+                            .catch(err => console.log(err))
+                            .finally(console.log('第一階段'));
+                    }else{
+                        location.href = 'https://localhost:7158/Home/memberLogin'
+                    };
+
+                },
+
             },
         })
     </script>

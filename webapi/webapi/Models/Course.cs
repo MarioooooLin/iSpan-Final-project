@@ -19,5 +19,6 @@ namespace webapi.Models
         public string CourseIntro { get; set; }
         public string Category { get; set; }
         public int? CourseLength { get; set; }
+        public int? Chapter { get; set; }
     }
 }

@@ -39,6 +39,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[CourseContent]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[CourseDetail]",
          "ObjectType": 0
       },
