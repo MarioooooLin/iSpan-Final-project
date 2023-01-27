@@ -4,7 +4,9 @@
         <div class="row">
             <div class="col-md-7">
                 <h1 class="text-white font-weight-bold">會員中心</h1>
-
+                <div class="custom-breadcrumbs ml-2">
+                    <a class="h4 active text-white" asp-area="" asp-controller="Home" asp-action="memberCenter"><strong>返回中心</strong></a>
+                </div>
             </div>
         </div>
     </div>
@@ -12,7 +14,7 @@
 <!-- home end -->
 
 <section class="site-section block__18514 pt-4" id="next-section">
-    <div class="container h-100">
+    <div class="container h-100" id="appVue">
         <div class="row">
             <!-- Below is sidebar -->
             <div class="col-xs-12 col-md-10 col-lg-4 mt-lg-5">
@@ -118,15 +120,48 @@
                         <h2 class="display-5 fw-bolder mb-2 col-6">關注工作</h2>
                     </div>
                     <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                    <div v-for="item in datas">
+                        <div class="h3">{{item.companyName}}</div>
+                        <div>{{item.workName}}</div>
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
-                    </div>
-                    <hr>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script>
+        const webApi = "https://localhost:7240"
+        const appVue = new Vue({
+            el: "#appVue",
+            name: "appVue",
+            data: {
+                datas: [],
+                Id: sessionStorage.getItem("Id"),
+            },
+            mounted: function () {
+                let _this = this;
+                _this.Information();
+            },
+            methods: {
+                Information: function () {
+                    let _this = this;
+                    axios.get(`${webApi}/api/Interests`, {
+                        params: {
+                            id: _this.Id,
+                            status: 3,
+                        }
+                    }).then(response => {
+                        _this.datas = response.data;
+
+                    }).catch(err => console.log(err))
+                        .finally(console.log('完成'));
+                },
+            },
+        });
+    </script>
+    }

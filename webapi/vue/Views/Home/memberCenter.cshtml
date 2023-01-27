@@ -5,6 +5,9 @@
         <div class="row">
             <div class="col-md-7">
                 <h1 class="text-white font-weight-bold">會員中心</h1>
+                <div class="custom-breadcrumbs ml-2">
+                    <a class="h4 active text-white" asp-area="" asp-controller="Home" asp-action="memberCenter"><strong>返回中心</strong></a>
+                </div>
             </div>
         </div>
     </div>
@@ -122,16 +125,12 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                    <div v-for = "item in application">
+                        <div class="h3">{{item.companyName}}</div>
+                        <div>{{item.workName}}</div>
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
-                    </div>
-                    <hr>
+
                 </div>
                 <div class="context w-100 p-3 mb-4">
                     <div class="item row pt-4">
@@ -141,54 +140,38 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                    <div v-for="item in focus">
+                        <div class="h3">{{item.companyName}}</div>
+                        <div>{{item.workName}}</div>
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
-                    </div>
-                    <hr>
                 </div>
                 <div class="context w-100 p-3 mb-4">
                     <div class="item row pt-4">
                         <h3 class="display-5 font-weight-bolder mb-0 col-6 pl-4">收到職缺</h3>
                         <div class="text-right col-6 pr-3">
-                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="memberVancancies" class="text-secondary">查看更多...</a></button>
+                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="memberVacancies" class="text-secondary">查看更多...</a></button>
                         </div>
                     </div>
                     <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                    <div v-for="item in vacancy">
+                        <div class="h3">{{item.companyName}}</div>
+                        <div>{{item.workName}}</div>
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
-                    </div>
-                    <hr>
                 </div>
                 <div class="context w-100 p-3 mb-4">
                     <div class="item row pt-4">
                         <h3 class="display-5 font-weight-bolder mb-0 col-6 pl-4">黑名單</h3>
                         <div class="text-right col-6 pr-3">
-                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="memberA" class="text-secondary">查看更多...</a></button>
+                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="memberBlacklist" class="text-secondary">查看更多...</a></button>
                         </div>
                     </div>
                     <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                    <div v-for="item in blackList">
+                        <div class="h3">{{item.companyName}}</div>
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="item pb-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
-                        facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
-                    </div>
-                    <hr>
                 </div>
 
 
@@ -210,7 +193,10 @@
                 interestDatas: [],
                 Id: sessionStorage.getItem("Id"),
                 status: 0,
-
+                application: [],
+                focus: [],
+                vacancy: [],
+                blackList: [],
             },
             mounted: function () {
                 let _this = this;
@@ -227,7 +213,34 @@
                     })
                         .then(response => {
                             _this.interestDatas = response.data;
-                            console.log(_this.interestDatas);
+
+                            for (var i = 0; i < _this.interestDatas.length; i++) {
+
+                                switch (_this.interestDatas[i].interestStatus) {
+                                    case 1:
+                                    if(_this.application.length<3){
+                                        _this.application.push(_this.interestDatas[i]);
+                                    }
+                                        break;
+                                    case 2:
+                                        if (_this.focus.length < 3) {
+                                        _this.focus.push(_this.interestDatas[i]);
+                                        }
+                                        break;
+                                    case 3:
+                                        if (_this.vacancy.length < 3) {
+                                        _this.vacancy.push(_this.interestDatas[i]);
+                                        }
+                                        break;
+                                    case 4:
+                                        if (_this.blackList.length < 3) {
+                                        _this.blackList.push(_this.interestDatas[i]);
+                                        }
+                                        break;
+                                    default: break;
+
+                                }
+                            }
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
