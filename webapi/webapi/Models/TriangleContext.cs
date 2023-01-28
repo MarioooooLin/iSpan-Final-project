@@ -187,6 +187,8 @@ namespace webapi.Models
 
                 entity.Property(e => e.ContactPhone).HasMaxLength(10);
 
+                entity.Property(e => e.ContactTime).HasMaxLength(20);
+
                 entity.Property(e => e.Email).HasMaxLength(20);
 
                 entity.Property(e => e.Employee)
@@ -200,6 +202,8 @@ namespace webapi.Models
                     .HasColumnName("img");
 
                 entity.Property(e => e.Info).HasMaxLength(200);
+
+                entity.Property(e => e.OpeningHours).HasMaxLength(20);
 
                 entity.Property(e => e.Password).HasMaxLength(12);
 
@@ -292,24 +296,26 @@ namespace webapi.Models
 
             modelBuilder.Entity<Reply>(entity =>
             {
-                entity.Property(e => e.ReplyId).ValueGeneratedNever();
-
                 entity.Property(e => e.ArticleName)
                     .IsRequired()
                     .HasMaxLength(25);
 
-                entity.Property(e => e.Floor).ValueGeneratedOnAdd();
-
-                entity.Property(e => e.ReplyTime).HasColumnType("date");
+                entity.Property(e => e.ReplyTime)
+                    .HasColumnType("date")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<Result>(entity =>
             {
+                entity.Property(e => e.Analysis).HasMaxLength(500);
+
                 entity.Property(e => e.AnswerTime).HasColumnType("date");
 
-                entity.Property(e => e.Result1)
-                    .HasMaxLength(500)
-                    .HasColumnName("Result");
+                entity.Property(e => e.Result1).HasColumnName("Result");
+
+                entity.Property(e => e.SuggestJob).HasMaxLength(500);
+
+                entity.Property(e => e.Type).HasMaxLength(500);
             });
 
             modelBuilder.Entity<Skill>(entity =>

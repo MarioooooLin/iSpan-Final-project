@@ -116,17 +116,19 @@ namespace webapi.Controllers
 
         // DELETE: api/InterestedCourses/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteInterestedCourse(int CandidateId, int courseId)
+        public async Task<string> DeleteInterestedCourse(int CandidateId, int courseId)
         {
             var interestedCourse = _context.InterestedCourse.Where(x => x.CourseId == courseId).Where(x => x.CandidateId == CandidateId);
 
-            if(interestedCourse.Count() > 0)
+            if(interestedCourse == null)
             {
-            _context.InterestedCourse.Remove((InterestedCourse)interestedCourse);
+                return "找不到欲刪除的記錄!";
             }
 
+            _context.InterestedCourse.Remove((InterestedCourse)interestedCourse);
             await _context.SaveChangesAsync();
-            return NoContent();
+
+            return "刪除成功!";
         }
 
         private bool InterestedCourseExists(int id)

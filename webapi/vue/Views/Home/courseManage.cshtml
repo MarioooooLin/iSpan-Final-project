@@ -209,7 +209,7 @@
                     console.log(CourseId)
                     var yes = confirm('你確定取消此收藏課程嗎?');
                     if(yes){
-                        axios.delete(`${webApi}/api/InterestedCourses?candidateId=${candidateId}&courseId=${CourseId}`)
+                        axios.delete(`${webApi}/api/InterestedCourses?candidateId=6&courseId=2`)
                             .then(response => {
                                 alert("此課程已取消收藏");
                                 candidateInterest();
