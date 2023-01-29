@@ -143,19 +143,19 @@
                         </div>
                         <div class="col-9 text-left">
                             <div class="item pb-0 ml-2">
-                                {{datas[0].name}}
+                                {{datas[0].name+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{birth}}
+                                {{birth+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].email}}
+                                {{datas[0].email+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].cellphone}}
+                                {{datas[0].cellphone+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].status}}
+                                {{datas[0].status+""}}
                             </div>
                         </div>
                     </div>
@@ -308,7 +308,6 @@
                 <div class="context border w-100 p-3 mb-4 ">
                     <div class="item row pt-2">
                         <h2 class="display-5 fw-bolder mb-2 col-6">技能</h2>
-
                     </div>
                     <hr>
                     <div class="item pb-0">
@@ -338,7 +337,7 @@
                     </div>
                     <hr>
                     <div class="item pb-0">
-                        <textarea class="w-100" cols="30" rows="10" v-model="datas[0].autobiography"></textarea>
+                        <textarea  class="w-100" rows="7" v-model="datas[0].autobiography"></textarea>
                     </div>
                 </div>
             </div>

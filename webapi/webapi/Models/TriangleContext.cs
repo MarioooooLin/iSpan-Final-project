@@ -24,10 +24,12 @@ namespace webapi.Models
         public virtual DbSet<CandidateCv> CandidateCv { get; set; }
         public virtual DbSet<CandidateSkill> CandidateSkill { get; set; }
         public virtual DbSet<Course> Course { get; set; }
+        public virtual DbSet<CourseContent> CourseContent { get; set; }
         public virtual DbSet<CourseDetail> CourseDetail { get; set; }
         public virtual DbSet<CourseOrder> CourseOrder { get; set; }
         public virtual DbSet<Cv> Cv { get; set; }
         public virtual DbSet<Enterprise> Enterprise { get; set; }
+        public virtual DbSet<EnterpriseInterest> EnterpriseInterest { get; set; }
         public virtual DbSet<Interest> Interest { get; set; }
         public virtual DbSet<InterestedArticle> InterestedArticle { get; set; }
         public virtual DbSet<InterestedCourse> InterestedCourse { get; set; }
@@ -140,6 +142,16 @@ namespace webapi.Models
                 entity.Property(e => e.TeacherId).HasColumnName("TeacherID");
             });
 
+            modelBuilder.Entity<CourseContent>(entity =>
+            {
+                entity.HasKey(e => new { e.CourseId100, e.Coursechapter })
+                    .HasName("PK__CourseCo__5915244B121BD0A0");
+
+                entity.Property(e => e.ChapterName).HasMaxLength(100);
+
+                entity.Property(e => e.Video).HasMaxLength(100);
+            });
+
             modelBuilder.Entity<CourseDetail>(entity =>
             {
                 entity.HasKey(e => new { e.CourseId, e.SkillId })
@@ -203,6 +215,17 @@ namespace webapi.Models
                 entity.Property(e => e.UniformNumbers).HasMaxLength(10);
 
                 entity.Property(e => e.Welfare).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<EnterpriseInterest>(entity =>
+            {
+                entity.Property(e => e.CandidateId).HasColumnName("candidateId");
+
+                entity.Property(e => e.EnterpriseId).HasColumnName("enterpriseId");
+
+                entity.Property(e => e.Status).HasColumnName("status");
+
+                entity.Property(e => e.VacancyId).HasColumnName("vacancyId");
             });
 
             modelBuilder.Entity<Interest>(entity =>
@@ -332,6 +355,8 @@ namespace webapi.Models
             modelBuilder.Entity<Vacancy>(entity =>
             {
                 entity.Property(e => e.Category).HasMaxLength(10);
+
+                entity.Property(e => e.Number).HasColumnName("number");
 
                 entity.Property(e => e.Shift).HasMaxLength(20);
 

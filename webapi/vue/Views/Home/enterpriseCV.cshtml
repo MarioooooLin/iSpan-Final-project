@@ -1,5 +1,4 @@
-﻿<!-- HOME start-->
-<section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg')"
+﻿<section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg')"
          id="home-section">
     <div class="container">
         <div class="row">
@@ -91,80 +90,23 @@
                     <!-- </div> -->
                 </nav>
                 <!-- Above is sidebar -->
-
             </div>
-
-
-            <div class="col-lg-8 content mt-3 pt-lg-0 mt-lg-5 pb-2">
-                <div class="context w-100 p-3 mb-4">
-                    <div class="item row pt-4">
-                        <h3 class="display-5 font-weight-bolder mb-0 col-6 pl-4">開放職缺</h3>
-                        <div class="text-right col-6 pr-3">
-                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="enterpriseVacancies" class="text-secondary">查看更多...</a></button>
-                        </div>
+            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5">
+                <div class="context border  w-100 p-3 mb-4">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">收到履歷</h2>
                     </div>
                     <hr>
-                    <div v-for="item in application">
+                    <div v-for="item in datas">
                         <div class="h3">{{item.workName}}</div>
-                        <div class="ml-2">
-                            {{item.number}}人
-                        </div>
-                        <hr>
-                    </div>
-
-                </div>
-                <div class="context w-100 p-3 mb-4">
-                    <div class="item row pt-4">
-                        <h3 class="display-5 font-weight-bolder mb-0 col-6 pl-4">收到履歷</h3>
-                        <div class="text-right col-6 pr-3">
-                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="enterpriseCV" class="text-secondary">查看更多...</a></button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div v-for="item in focus">
-                        <div class="h3">{{item.workName}}</div>
-                        <div>
-                            {{item.name}}
-                        </div>
+                        <div>{{item.name}}</div>
                         <hr>
                     </div>
                 </div>
-                <div class="context w-100 p-3 mb-4">
-                    <div class="item row pt-4">
-                        <h3 class="display-5 font-weight-bolder mb-0 col-6 pl-4">投遞邀請</h3>
-                        <div class="text-right col-6 pr-3">
-                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="enterpriseInvite" class="text-secondary">查看更多...</a></button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div v-for="item in vacancy">
-                        <div class="h3">{{item.workName}}</div>
-                        <div>
-                            {{item.name}}
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                <div class="context w-100 p-3 mb-4">
-                    <div class="item row pt-4">
-                        <h3 class="display-5 font-weight-bolder mb-0 col-6 pl-4">黑名單</h3>
-                        <div class="text-right col-6 pr-3">
-                            <button class="btn rounded-pill"><a asp-controller="Home" asp-action="enterpriseBlacklist" class="text-secondary">查看更多...</a></button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div v-for="item in blackList">
-                        <div class="h3">{{item.name}}</div>
-                        <hr>
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </div>
 </section>
-
 @section Scripts{
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
@@ -175,19 +117,13 @@
             el: "#appVue",
             name: "appVue",
             data: {
-                interestDatas: [],
+                datas: [],
                 Id: sessionStorage.getItem("EmpId"),
-                status: 0,
-                application: [],
-                focus: [],
-                vacancy: [],
-                blackList: [],
-                view:[],
+                status: 1,
             },
             mounted: function () {
                 let _this = this;
                 _this.Information();
-                _this.Vacancies();
             },
             methods: {
                 Information: function () {
@@ -197,62 +133,13 @@
                             id: _this.Id,
                             status: _this.status,
                         }
-                    })
-                        .then(response => {
-                            _this.interestDatas = response.data;
-                            console.log(_this.interestDatas);
-                            for (var i = 0; i < _this.interestDatas.length; i++) {
+                    }).then(response => {
+                        _this.datas = response.data;
 
-                                switch (_this.interestDatas[i].status) {
-                                    case 1:
-                                        if (_this.focus.length < 3) {
-                                            _this.focus.push(_this.interestDatas[i]);
-                                        }
-                                        break;
-                                    case 2:
-                                        if (_this.vacancy.length < 3) {
-                                            _this.vacancy.push(_this.interestDatas[i]);
-                                        }
-                                        break;
-                                    case 3:
-                                        if (_this.blackList.length < 3) {
-                                            _this.blackList.push(_this.interestDatas[i]);
-                                        }
-                                        break;
-                                    default: break;
-
-                                }
-                            }
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'));
-                },
-                Vacancies: function(){
-                    let _this =this;
-                    axios.get(`${webApi}/api/Vacancies/view`, {
-                        params: {
-                            id: _this.Id,
-                        }
-                    })
-                        .then(response => {
-                           
-                            for(var i=0;i<3;i++)
-                            {
-                                _this.application.push(response.data[i]);
-                            }
-                            console.log(_this.application);
-
-                        })
-                        .catch(err => console.log(err))
+                    }).catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
             },
-        })
-
-
-
-
-
+        });
     </script>
     }
-

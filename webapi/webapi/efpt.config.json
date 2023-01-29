@@ -39,6 +39,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[CourseContent]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[CourseDetail]",
          "ObjectType": 0
       },
@@ -52,6 +56,10 @@
       },
       {
          "Name": "[dbo].[Enterprise]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EnterpriseInterest]",
          "ObjectType": 0
       },
       {

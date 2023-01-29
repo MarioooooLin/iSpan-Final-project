@@ -209,7 +209,7 @@
                         .then(response => {
                             if (response.data.length > 0) {
                                 sessionStorage.setItem("EmpId", response.data[0].enterpriseId);
-                                sessionStorage.setItem("Name", response.data[0].name);
+                                sessionStorage.setItem("Name", response.data[0].principal);
                                 window.location = "/Home/Index";
                             }
                             else {

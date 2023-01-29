@@ -1,5 +1,145 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg')"
+         id="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="text-white font-weight-bold">會員中心</h1>
+                <div class="custom-breadcrumbs ml-2">
+                    <a class="h4 active text-white" asp-area="" asp-controller="Home" asp-action="enterpriseCenter"><strong>返回中心</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home end -->
+
+<section class="site-section block__18514 pt-4" id="next-section">
+    <div class="container h-100" id="appVue">
+        <div class="row">
+            <!-- Below is sidebar -->
+            <div class="col-xs-12 col-md-10 col-lg-4 mt-lg-5">
+                <nav class="navbar navbar-expand-lg navbar-light pl-lg-5 py-0">
+                    <!-- <a class="navbar-brand" href="#">Liya rescue</a> -->
+                    <button class="navbar-toggler mb-2" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto flex-column">
+                            <li class="nav-item px-1 mx-1">
+                                <div class="head"></div>
+                                <div class="mb-3 border navbar-nav box">
+                                    <div class="p-3 w-100">
+                                        <figure class="figure ml-2">
+                                            <img src="https://picsum.photos/250/250/?random=10"
+                                                 class="figure-img img-fuild rounded-circle  w-50  ">
+                                            <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                        </figure>
+                                        <div>手機:</div>
+                                        <div>信箱:</div>
+                                        <div class="item text-end align-content-end mb-0">
+                                            <div class="text-right mr-3 fw-bold">
+                                                <a asp-controller="Home" asp-action="enterpriseDetail">
+                                                    修改會員資料 <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div>職缺：</div>
+                                        <div class="d-block text-right">
+                                            <div class="text-right mr-3 fw-bold">
+                                                <a asp-controller="Home" asp-action="CV">
+                                                    管理所有職缺<i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="d-block text-right">
+                                            <div class="text-right mr-3 fw-bold">
+                                                <a asp-controller="Home" asp-action="CV">
+                                                    查看所有通訊紀錄 <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item px-1 mx-1 mb-5">
+                                <div class="head mt-4"></div>
+                                <div class="border p-4 box mb-6 h-auto">
+                                    <ul class="list-unstyled block__47528 ">
+                                        <li><span class="active h2">廣告</span></li>
+                                        <figure class="w-100">
+                                            <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                            <figcaption>
+                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                                Maxime, corrupti
+                                                distinctio dolore repellat corporis nulla consequuntur nostrum
+                                                laboriosam
+                                                molestiae doloribus perspiciatis totam esse veritatis expedita,
+                                                atque dicta,
+                                                ullam necessitatibus exercitationem.
+                                            </figcaption>
+                                        </figure>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- </div> -->
+                </nav>
+                <!-- Above is sidebar -->
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5">
+                <div class="context border  w-100 p-3 mb-4">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">黑名單</h2>
+                    </div>
+                    <hr>
+                    <div v-for="item in datas">
+                        <div class="h3">{{item.name}}</div>
+                        <div>{{item.workName}}</div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script>
+        const webApi = "https://localhost:7240"
+        const appVue = new Vue({
+            el: "#appVue",
+            name: "appVue",
+            data: {
+                datas: [],
+                Id: sessionStorage.getItem("EmpId"),
+                status: 3,
+            },
+            mounted: function () {
+                let _this = this;
+                _this.Information();
+            },
+            methods: {
+                Information: function () {
+                    let _this = this;
+                    axios.get(`${webApi}/api/EnterpriseInterests`, {
+                        params: {
+                            id: _this.Id,
+                            status: _this.status,
+                        }
+                    }).then(response => {
+                        _this.datas = response.data;
+
+                    }).catch(err => console.log(err))
+                        .finally(console.log('完成'));
+                },
+            },
+        });
+    </script>
+    }
