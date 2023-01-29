@@ -42,36 +42,21 @@
                         </div>
                         <hr>
                         <div id="replyVue">
-                            <div class="col-12">
+                            <div class="col-12" v-for="data in ReplyDTOs">
                                 <span>
                                     <p>
                                         @*此公司的特色就是:年年虧損, 離職率高, 什麼都想做甚麼都不奇怪*@
-                                        {{datas.ReplyMessage}}
+                                        {{data.replyMessage}}
                                     </p>
-                                    <p>time</p>
+                                    <p>{{data.replyTime}}</p>
                                 </span>
-                                <div>{{datas.Floor}}</div>
+                                <div>{{data.floor}}</div>
                                 <hr>
-                                <span>
-                                    <p>
-                                        好奇 年年虧怎麼還沒倒XD
-                                    </p>
-                                    <p>time</p>
-                                </span>
-                                <div>2樓</div>
-                                <hr>
-                                <span>
-                                    <p>
-                                        沒倒是因為2021有個中華電信出資入股，還有新聞很風光，聽說3年要IPO
-                                        現在兩年過去了,還有一年可以拚,呵呵
-                                    </p>
-                                </span>
-                                <div>3樓</div>
                             </div>
                             <hr>
                             <div class="input-group col-12 my-4">
-                                <textarea  type="text" name="userid" class="form-control mx-2" placeholder="留下你的想法..."></textarea>
-                                <button type="submit" class="btn btn-primary b2" @@click="insert"wdawdawdAWd awdAWdAWd AWd >發送</button>
+                                <textarea type="text" name="userid" class="form-control mx-2" placeholder="留下你的想法..."></textarea>
+                                <button type="submit" class="btn btn-primary b2" @*@@click="insert"*@>發送</button>
                             </div>
                         </div>
                     </div>
@@ -95,13 +80,18 @@
             name: "appVue",
             data: {
                 datas: {},
-                articleName: "",
-                contents: "",
+                //articleName: "",
+                //contents: "",
                 updateTime: "",
+                ReplyDTOs: [],
+                //ReplyMessage: null,
+                //Floor: "",
+                ReplyTime: "",
             },
             mounted: function () {
                 var _this = this;
                 _this.course();
+                _this.getreply();
             },
             methods: {
                 course: function () {
@@ -118,18 +108,57 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+                getreply: function () {
+                    let _this = this;
+                    let ArticleId = new URL(location.href).searchParams.get('id');
+                    axios.get(`${webApi}/api/Reply/${ArticleId}`)
+                        .then(response => {
+                            _this.ReplyDTOs = response.data;
+                            var ReplyList = [];
+                            for (var i = 0; i < _this.ReplyDTOs.length; i++) {
+                                let item = {};
+                                item = _this.ReplyDTOs[i];
+                                item.ReplyTime = moment(item.ReplyTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                ReplyList.push(item);
+                            }
+                            _this.ReplyDTOs = ReplyList;
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+                },
+                //getreply: function () {
+                //    let _this = this;
+                //    let ArticleId = new URL(location.href).searchParams.get('id');
+                //    axios.get(`${webApi}/api/Reply/${ArticleId}`)
+                //        .then(response => {
+                //            _this.ReplyDTOs = response.data;
+                //            var ReplyList = [];
+                //            for (var i = 0; i < _this.ReplyDTOs.length; i++) {
+                //                let item = {};
+                //                item = _this.ReplyDTOs[i];
+                //                item.ReplyTime = moment(item.ReplyTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                //                ReplyList.push(item);
+                //            }
+                //            _this.ReplyDTOs = ReplyList;
+                //        })
+                //        .catch(err => console.log(err))
+                //        .finally(console.log('完成'))
+                //},
             }
         })
     </script>
-    <script>
+
+
+    @*<script>
         const localhost = "https://localhost:7240"
         const replyVue = new Vue({
             el: "#replyVue", // 綁定位置
             name: "replyVue",
             data: {
-                ReplyDTOs:[],
-                ReplyMessage: null,
-                Floor:"",
+                ReplyDTOs: [],
+                //ReplyMessage: null,
+                //Floor: "",
+                //ReplyTime: "",
             },
             mounted: function () {
                 var _this = this;
@@ -141,8 +170,18 @@
                     let ArticleId = new URL(location.href).searchParams.get('id');
                     axios.get(`${webApi}/api/Reply/${ArticleId}`)
                         .then(response => {
-                            console.log(response.data)
+                            _this.ReplyDTOs = response.data;
+                            var ReplyList = [];
+                            for (var i = 0; i < _this.ReplyDTOs.length; i++) {
+                                let item = {};
+                                item = _this.ReplyDTOs[i];
+                                item.ReplyTime = moment(item.ReplyTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                ReplyList.push(item);
+                            }
+                            _this.ReplyDTOs = ReplyList;
                         })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
                 },
                 //reply: function () {
                 //    let _this = this;
@@ -160,5 +199,5 @@
                 //},
             }
         })
-    </script>
+    </script>*@
     }

@@ -161,72 +161,102 @@
 <!-- content end -->
 @section Scripts{
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script>
-        const webApi = "https://localhost:7240"
-        const appVue = new Vue({
-            el: "#appVue",
-            name: "appVue",
-            data: {
-                PostDTOs:[],
-                datas: [],
-                inputvalue: "",
-                updateTime: "",
-                //selectedArticleName: "",
-                //selectedKeyword: "",
-                //PlatformDTOes:[],
-                //Filter: "",
-            },
-            mounted: function () {
-                let _this = this;
-                _this.Platforms();
-            },
-            methods: {
-                Platforms: function () {
-                    let _this = this;
-                    axios.get(`${webApi}/api/Platforms`)
-                        .then(response => {
-                            _this.PostDTOs = response.data;
-                            var PostList = [];
-                            for (var i = 0; i < _this.PostDTOs.length; i++) {
-                                let item = {};
-                                item = _this.PostDTOs[i];
-                                item.updateTime = moment(item.updateTime).add(8,"hour").format('YYYY/MM/DD h:mm a')
-                                PostList.push(item);
-                            }
-                            _this.PostDTOs =PostList;
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'))
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script>
+            const webApi = "https://localhost:7240"
+            const appVue = new Vue({
+                el: "#appVue",
+                name: "appVue",
+                data: {
+                    PostDTOs: [],
+                    datas: [],
+                    inputvalue: "",
+                    updateTime: "",
+                    //selectedArticleName: "",
+                    //selectedKeyword: "",
+                    //PlatformDTOes:[],
+                    //Filter: "",
                 },
-                search: function () {
-                    //alert('你好繼宣');
-                    if (this.inputvalue) {
-                        let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                        //let ArticleName = this.selectedArticleName;
-                        axios.get(`${webApi}/api/Platforms?name=${name}`)
+                mounted: function () {
+                    let _this = this;
+                    _this.Platforms();
+                },
+                methods: {
+                    Platforms: function () {
+                        let _this = this;
+                        axios.get(`${webApi}/api/Platforms`)
                             .then(response => {
-                                this.datas = response.data;
-                                console.log(response.data)
+                                _this.PostDTOs = response.data;
+                                var PostList = [];
+                                for (var i = 0; i < _this.PostDTOs.length; i++) {
+                                    let item = {};
+                                    item = _this.PostDTOs[i];
+                                    item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                    PostList.push(item);
+                                }
+                                _this.PostDTOs = PostList;
                             })
                             .catch(err => console.log(err))
                             .finally(console.log('完成'))
-                    } else {
-                        _this.Platforms();
-                        $('input').blur();
-                    }
-                },
-            },
-            watch: {
-                inputvalue: {
-                    handler(newval) {
-                        this.Platforms();
                     },
-                    deep: true
-                },
-            }
-        })
-    </script>
+                    //    search: function () {
+                    //        //alert('你好繼宣');
+                    //        let _this = this;
+                    //        if (_this.inputvalue) {
+                    //            let name = _this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                    //            //let ArticleName = this.selectedArticleName;
+                    //            axios.get(`${webApi}/api/Platforms?name=${name}`)
+                    //                .then(response => {
+                    //                    _this.PostDTOs = response.data;
+                    //                    var searchList = [];
+                    //                    for (var i = 0; i < _this.datas.lenght;i++){
+                    //                         let item = {};
+                    //                        item = _this.PostDTOs[i];
+                    //                        searchList.push(item);
+                    //                    }
+                    //                    _this.PostDTOs = searchList;
+                    //                    console.log(_this.datas)
+                    //                })
+                    //                .catch(err => console.log(err))
+                    //                .finally(console.log('完成'))
+                    //        } else {
+                    //            _this.Platforms();
+                    //            $('input').blur();
+                    //        }
+                    //    },
+                    //},
+                    //watch: {
+                    //    inputvalue: {
+                    //        handler(newval) {
+                    //            this.Platforms();
+                    //        },
+                    //        deep: true
+                    //    },
+                    //}
+                    search: function () {
+                        //alert('你好繼宣');
+                        let _this = this;
+                        var request = {};
+                        request.ArticleName = _this.inputvalue;
+                        axios.post(`${webApi}/api/Platforms/Filter`, request).then(
+                            response => {
+                                _this.PostDTOs = response.data;
+                                var searchList = [];
+                                for (var i = 0; i < _this.PostDTOs.length; i++) {
+                                    var item = {};
+                                    item = _this.PostDTOs[i];
+                                    item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                    searchList.push(item);
+                                }
+                                _this.PostDTOs = searchList;
+
+                            }
+                        );
+
+                    },
+                }
+            })
+        </script>
     }
