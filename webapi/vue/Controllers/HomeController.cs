@@ -160,6 +160,10 @@ namespace vue.Controllers
         {
             return View();
         }
+        public IActionResult jobApply()
+        {
+            return View();
+        }
 
         //課程
         public IActionResult courseShop()

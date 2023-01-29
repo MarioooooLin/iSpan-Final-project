@@ -35,8 +35,6 @@ namespace webapi.Controllers
                     InterestStatus = x.x.i.InterestStatus,
                     CompanyName = x.x.e.CompanyName,
                     WorkName = x.v.WorkName,
-
-
                 });
 
 
@@ -61,14 +59,21 @@ namespace webapi.Controllers
 
 
 
-        // GET: api/Interests/5
-        //[HttpGet("{id}")]
-        //public async Task<IEnumerable<Interest>> GetInterest(int id)
-        //{
-        //    //var interest = _context.Interest.Where(x=> x.CandidateId == id);
-        //    //interest = interest.Where(x => x.InterestStatus == status);
-        //    //return interest;
-        //}
+        //GET: api/Interests/5
+        [HttpGet("{id}")]
+        public async Task<IEnumerable<Interest>> Get(int id)
+        {
+            var result = _context.Interest.Select(x => new Interest
+            {
+                CandidateId = x.CandidateId,
+                VacancyId = x.VacancyId
+            });
+            if (id is int) 
+            {
+                result = result.Where(x => x.CandidateId == id);
+            }
+            return result;
+        }
 
         // PUT: api/Interests/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -104,12 +109,23 @@ namespace webapi.Controllers
         // POST: api/Interests
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Interest>> PostInterest(Interest interest)
+        public async Task<Interest> PostInterest([FromBody] Interest interest)
         {
-            _context.Interest.Add(interest);
+            //_context.Interest.Add(interest);
+            //await _context.SaveChangesAsync();
+
+            //return CreatedAtAction("GetInterest", new { id = interest.Id }, interest);
+
+            Interest ic = new Interest
+            {
+                CandidateId = interest.CandidateId,
+                VacancyId = interest.VacancyId,
+                EnterpriseId = interest.EnterpriseId,
+            };
+            _context.Interest.Add(ic);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetInterest", new { id = interest.Id }, interest);
+            return ic;
         }
 
         // DELETE: api/Interests/5

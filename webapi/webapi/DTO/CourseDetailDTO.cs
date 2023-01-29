@@ -17,5 +17,6 @@
         public string? category { get; set; }
         public int? studentCount { get; set; }
         public int? TeacherId { get; set; }
+        public DateTime? Addedtime { get; set; }
     }
 }

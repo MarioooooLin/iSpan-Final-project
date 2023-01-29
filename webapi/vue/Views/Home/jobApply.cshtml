@@ -1,0 +1,172 @@
+﻿    <!-- HOME start-->
+<div id="appVue">
+    <section class="section-hero overlay inner-page bg-image " style="background-image: url('/images/hero_1.jpg');"
+             id="home-section">
+        <div class="container">
+            <div class="row mt-1 job-row d-flex justify-content-center">
+                <div class="col-12 col-lg-5 col-md-6 col-sm-6 text-center">
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-12 col-lg-1 col-md-1 col-sm-4 mr-lg-5 d-flex">
+                    <a href="#">
+                        <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass ml-4 mr-4"></i></button>
+                    </a>
+                </div>
+                <div class="wrapper col-12 col-lg-3 d-flex col-md-6 justify-content-center text-center">
+                    <input type="radio" name="select" id="option-1" checked>
+                    <input type="radio" name="select" id="option-2">
+                    <label for="option-1" class="option option-1">
+                        <div class="dot"></div>
+                        <span>職缺</span>
+                    </label>
+                    <label for="option-2" class="option option-2">
+                        <div class="dot"></div>
+                        <span>公司</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row mt-1 job-row2 d-flex justify-content-center">
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="form-group">
+                        <select name="cause-category" class="form-control cause-category" v-model="selectedCategory">
+                            <option value="">行業別</option>
+                            <option value="服務">服務</option>
+                            <option value="科技">科技</option>
+                            <option value="藝文">藝文</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="form-group">
+                        <select name="cause-category" class="form-control cause-category" v-model="selectedArea">
+                            <option value="">地區</option>
+                            <option value="台北">台北</option>
+                            <option value="新北">新北</option>
+                            <option value="高雄">高雄</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-2">
+                    <div>
+                        <a href="#">
+                            <p class="fa-solid x-mark">×</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 mt-lg-3 mt-md-2 text-sm-right">
+                    <div>
+                        <span class="fw-bold text-white">
+                            <a asp-controller="Home" asp-action="memberDetail" class="text-decoration-none text-white">
+                                修改會員資料<i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- home end -->
+
+    <section class="site-section" id="next-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 mb-10 mb-lg-0">
+                    <div class="job-context mt-3 col-xs-12 mb-4">
+                        <h3 class="slide-h3 active">{{datas.workName}}</h3>
+                        <h4 class="ml-1d-flex row mt-2 ml-1">{{datas.companyName}}</h4>
+                        <p class="h5 text-black">{{salary}}</p>
+                    </div>
+
+                    <form action="#" class="">
+                        <div class="form-group">
+                            <div class="col-12 mt-4">
+                                <h5 class="my-3">選擇履歷</h5>
+                            </div>
+                            <div class="ml-2 d-lg-flex row">
+                                <div class="form-check col-md-4 col-12">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        履歷一:工程師
+                                    </label>
+                                </div>
+                                <div class="form-check col-md-4 col-12">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        履歷二:前端
+                                    </label>
+                                </div>
+                                <div class="form-check col-md-4 col-12">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        履歷三:行政
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group my-3">
+                            <div class="col-md-12">
+                                <h5 class="my-3">求職訊息</h5>
+                                <textarea name="message" id="message" cols="30" rows="8" class="form-control"
+                                          placeholder="Write your notes or questions here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row form-group my-3">
+                            <div class="col-md-12">
+                                <h5 class="my-3">推薦信</h5>
+                                <textarea name="message" id="message" cols="30" rows="8" class="form-control"
+                                          placeholder="Write your notes or questions here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center mt-5">
+                            <div class="col-md-12 text-center">
+                                <input type="submit" value="應徵" class="btn btn-primary btn-md text-white w-50" style="height: 48px;width: 150px;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+@section Scripts{
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script>
+        const webApi = "https://localhost:7240"
+        const appVue = new Vue({
+            el: "#appVue",
+            name: "appVue",
+            data: {
+                datas: [],
+                selectedCategory: "",
+                selectedArea: "",
+            },
+            mounted: function () {
+                this.Vacancy();
+            },
+            methods: {
+                Vacancy: function () {
+                    // 雲端暫存資料 , vanId => id;
+                    let key = window.localStorage.getItem("vanId")
+                    axios.get(`${webApi}/api/vacancies/${key}`)
+                        .then(res => {
+                            this.datas = res.data;
+                            this.enterprise = res.data.enterpriseId;
+                            console.log(this.datas)
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+                },
+            },
+            computed: {
+                salary: function () {
+                    return this.datas.salary + ' / 月';
+                },
+            },
+        })
+    </script>
+}

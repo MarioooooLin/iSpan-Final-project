@@ -115,14 +115,16 @@
                         .finally(console.log('完成'))
                 },
                 insert: function () {
-                    var request = {};
-                    request.CandidateId = this.buyerList.candidateId;
-                    request.courseId = this.courseList.courseId;
+                    var request = {
+                        CandidateId: this.buyerList.candidateId,
+                        courseId: this.courseList.courseId,
+                    };
+                    console.log(request)
                     axios.post(`${webApi}/api/Orders`, request).then(response => {
-                        window.location = "/Home/Orders";
-                    });
+                        console.log(response.data);
+                    }).catch(err => console.log(err));
                 },
-            }
+            },
         })
     </script>
     <script>
