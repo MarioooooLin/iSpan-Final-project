@@ -111,9 +111,9 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12 text-right">
-                                    <a href="#">
+                                    <a>
                                         <button class="btn btn-dark px-4 mx-1" @@click="deposition(data.vacancyId)">
-                                            <i class="fa-regular fa-bookmark"></i><span class="ml-2" :id="data.vacancyId">儲存</span>
+                                            <i class="fa-regular fa-bookmark"></i><span class="ml-2 van" :id="data.vacancyId">儲存</span>
                                         </button>
                                     </a>
                                     <a href="#">
@@ -324,9 +324,11 @@
                 tempitem: 0,
                 page: [],
                 userdata: [],
+                arrdeposition: []
             },
             mounted: function () {
                 this.search();
+                this.checkdeposition()
                 this.user();
             },
             methods: {
@@ -503,7 +505,7 @@
                 deposition(id) {
                     let candidateId = window.sessionStorage.getItem("Id")
                     if (!candidateId) {
-                        window.location = "/Home/memberLogin"
+                        alert('尚未登入 , 請先登入')
                     }
                     axios.get(`${webApi}/api/Interests/${candidateId}`)
                         .then(res => {
@@ -520,21 +522,42 @@
                             if (bool) {
                                 alert('已收藏過')
                             } else {
-                                id % 5 ? id = id % 5 - 1 : id = 4
+                                let i;
+                                for (i = 0; i < this.datas.length; i++) {
+                                    if(this.datas[i].vacancyId == id){
+                                        break
+                                    }
+                                }
                                 var postdata = {
                                     CandidateId: parseInt(window.sessionStorage.getItem("Id")),
-                                    VacancyId: this.datas[id].vacancyId,
-                                    EnterpriseId: this.datas[id].enterpriseId
+                                    VacancyId: this.datas[i].vacancyId,
+                                    EnterpriseId: this.datas[i].enterpriseId
                                 }
                                 console.log(postdata)
-                                axios.post(`${webApi}/api/Interests`,postdata)
-                                .then(res => {
-                                    console.log(res.data)
-                                    let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[id].lastChild
-                                    x.innerHTML = '已儲存';
-                                })
+                                axios.post(`${webApi}/api/Interests`, postdata)
+                                    .then(res => {
+                                        console.log(res.data)
+                                        let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[i].lastChild
+                                        x.innerHTML = '已儲存';
+                                    })
                             }
                         })
+                },
+                checkdeposition() {
+                    let candidateId = window.sessionStorage.getItem("Id")
+                    if (!candidateId) {
+                        return false;
+                    }
+                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                        .then(res => {
+                            for (i = 0; i < res.data.length; i++) {
+                                this.arrdeposition[i] = res.data[i].vacancyId
+                            }
+                            this.arrdeposition.sort(function (a, b) {
+                                return a - b;
+                            })
+                        })
+                    console.log(this.arrdeposition)
                 },
                 user() {
                     let userid = window.sessionStorage.getItem('Id')
