@@ -46,7 +46,8 @@ namespace webapi.Controllers
                              c.CourseLength,
                              c.CourseImg,
                              c.Keyword,
-                             c.Category
+                             c.Category,
+                             c.Addedtime,
                          } into g
                          select new CourseDetailDTO()
                          {
@@ -63,9 +64,10 @@ namespace webapi.Controllers
                              CourseImg = g.Key.CourseImg,
                              keyword = g.Key.Keyword,
                              category = g.Key.Category,
+                             Addedtime = g.Key.Addedtime,
                              studentCount = g.Count()
                          };
-
+            result = result.OrderByDescending(x => x.Addedtime);
 
             if (!string.IsNullOrWhiteSpace(keyword))
             {

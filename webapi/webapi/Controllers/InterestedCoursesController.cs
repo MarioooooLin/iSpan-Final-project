@@ -48,8 +48,8 @@ namespace webapi.Controllers
         }
 
         // GET: api/InterestedCourses/5
-        [HttpGet("{id}")]
-        public async Task<IEnumerable<InterestedCourse>> GetInterestedCourseId(int? CandidateId,int? courseId)
+        [HttpGet("{CandidateId}/{CourseId}")]
+        public async Task<IEnumerable<InterestedCourse>> GetInterestedCourseId(int? CandidateId,int? CourseId)
         {
             var result = _context.InterestedCourse.Select(x => new InterestedCourse
             {
@@ -58,9 +58,9 @@ namespace webapi.Controllers
 
             }).Where(x => x.CandidateId == CandidateId);
 
-            if (courseId is int)
+            if (CourseId is int)
             {
-                return result.Where(x => x.CourseId == courseId);
+                return result.Where(x => x.CourseId == CourseId);
             }
             return result;
 
@@ -115,20 +115,21 @@ namespace webapi.Controllers
         }
 
         // DELETE: api/InterestedCourses/5
-        [HttpDelete("{id}")]
-        public async Task<string> DeleteInterestedCourse(int CandidateId, int courseId)
+        [HttpDelete("{CandidateId}/{CourseId}")]
+        public async Task<string> DeleteInterestedCourse(int? CandidateId, int? CourseId)
         {
-            var interestedCourse = _context.InterestedCourse.Where(x => x.CourseId == courseId).Where(x => x.CandidateId == CandidateId);
+            var interestedCourse = await _context.InterestedCourse.FindAsync(CandidateId, CourseId);
 
             if(interestedCourse == null)
             {
                 return "找不到欲刪除的記錄!";
             }
-
-            _context.InterestedCourse.Remove((InterestedCourse)interestedCourse);
+ 
+            _context.InterestedCourse.Remove(interestedCourse);
             await _context.SaveChangesAsync();
 
             return "刪除成功!";
+
         }
 
         private bool InterestedCourseExists(int id)

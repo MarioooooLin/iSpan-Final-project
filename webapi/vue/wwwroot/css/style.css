@@ -2564,7 +2564,8 @@ h1, h2, h3, h4 {
     background-color: rgb(0, 0, 0,0.47);
     border-radius: 0px 20px 20px 0px;
     margin-left: -15px;
-    height: 97.5%;
+    height: 355px !important;
+    overflow-y: overlay;
 }
 
     .film-intro h3, .film-intro h5 {
@@ -2636,7 +2637,7 @@ h1, h2, h3, h4 {
 
 @media screen and (max-width:1199px) {
     .film-intro {
-        height: 84.5%;
+        height: 295px !important;
         overflow-y: overlay;
     }
 

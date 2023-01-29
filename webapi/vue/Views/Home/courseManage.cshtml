@@ -183,7 +183,7 @@
             methods: {
                 candidateBuy: function () {
                     const _this = this;
-                    const candidateId = sessionStorage.getItem('Id')
+                    let candidateId = sessionStorage.getItem('Id')
                     axios.get(`${webApi}/api/Orders?candidateId=${candidateId}&vaild=true`)
                         .then(response => {
                             _this.buyList = response.data;
@@ -194,7 +194,7 @@
                 },
                 candidateInterest: function () {
                     const _this = this;
-                    const candidateId = sessionStorage.getItem('Id')
+                    let candidateId = sessionStorage.getItem('Id')
                     axios.get(`${webApi}/api/InterestedCourses?candidateId=${candidateId}`)
                         .then(response => {
                             _this.interestList = response.data;
@@ -204,15 +204,19 @@
                         .finally(console.log('完成'))
                 },
                 deleteInterestCourse :function (e) {
-                    const candidateId = sessionStorage.getItem('Id')
-                    const CourseId = e.target.id;
+                    let candidateId = sessionStorage.getItem('Id')
+                    let CourseId = e.target.id;
                     console.log(CourseId)
                     var yes = confirm('你確定取消此收藏課程嗎?');
                     if(yes){
-                        axios.delete(`${webApi}/api/InterestedCourses?candidateId=6&courseId=2`)
+                        axios.delete(`${webApi}/api/InterestedCourses/${candidateId}/${CourseId}`)
                             .then(response => {
                                 alert("此課程已取消收藏");
-                                candidateInterest();
+                                axios.get(`${webApi}/api/InterestedCourses?candidateId=${candidateId}`)
+                                    .then(response => {
+                                        this.interestList = response.data;
+                                        console.log(this.interestList);
+                                    })
                             }).catch(err => console.log(err))
                             .finally(console.log('完成'))
                     }

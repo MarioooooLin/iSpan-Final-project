@@ -15,7 +15,7 @@
                                 <source src="~/video/videoplayback.mp4">
                             </video>
                         </div>
-                        <div class="col-lg-4 col-md-12 pt-3 film-intro">
+                        <div class="col-lg-4 col-md-12 pt-3 film-intro" style="overflow-y:overlay">
                             <h3>課程簡介</h3><hr>
                             <h5 v-html="dataList.courseIntro"></h5>
                         </div>
@@ -189,7 +189,7 @@
                                         console.log(response.data);
                                         alert("已收藏此課程");
                                     }).catch(err => console.log(err))
-                                        .finally(console.log('第二階段POST'));
+                                      .finally(console.log('第二階段POST'));
                                 }
                             })
                             .catch(err => console.log(err))
