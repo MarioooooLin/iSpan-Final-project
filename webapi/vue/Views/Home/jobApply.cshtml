@@ -72,9 +72,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 mb-10 mb-lg-0">
                     <div class="job-context mt-3 col-xs-12 mb-4">
-                        <h3 class="slide-h3 active">Firmware Engineer, Battery and Charging, Google Pixel</h3>
-                        <h4 class="ml-1d-flex row mt-2 ml-1">Google Taiwan</h4>
-                        <p class="h5 text-black">NT$ 35000-38000</p>
+                        <h3 class="slide-h3 active">{{datas.workName}}</h3>
+                        <h4 class="ml-1d-flex row mt-2 ml-1">{{datas.companyName}}</h4>
+                        <p class="h5 text-black">{{salary}}</p>
                     </div>
 
                     <form action="#" class="">
@@ -144,10 +144,6 @@
                 datas: [],
                 selectedCategory: "",
                 selectedArea: "",
-                length: 0,
-                enterprise: 0,
-                workContentDatas: [],
-                workReqireDatas: []
             },
             mounted: function () {
                 this.Vacancy();
@@ -160,43 +156,17 @@
                         .then(res => {
                             this.datas = res.data;
                             this.enterprise = res.data.enterpriseId;
-                            let x = res.data.workContent.split('\r\n\r\n')
-                            for (i = 0; i < x.length; i++) { this.workContentDatas[i] = x[i] }
-                            x = res.data.workReqire.split('\r\n\r\n')
-                            for (i = 0; i < x.length; i++) { this.workReqireDatas[i] = x[i] }
-                            console.log(this.datas);
+                            console.log(this.datas)
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
-                },
-                post: function () {
-                    let key = window.localStorage.getItem("vanId");
-                    alert(key)
                 },
             },
             computed: {
                 salary: function () {
                     return this.datas.salary + ' / 月';
                 },
-                seniority: function () {
-                    if (this.datas.seniority > 0) {
-                        return this.datas.seniority + ' 年';
-                    } else {
-                        return '不限年資';
-                    }
-                }
             },
-            watch: {
-                enterprise: {
-                    handler(newval) {
-                        axios.get(`${webApi}/api/Enterprises/` + newval)
-                            .then(res => {
-                                this.length = res.data.length + '個';
-                            })
-                    }
-                },
-            }
-
         })
     </script>
 }

@@ -111,14 +111,9 @@
                             </button>
                         </div>
                         <div class="my-2">
-                            @*<a href="job-apply.html">
-                                <button class="btn btn-primary mx-1 btn-JS" @@click="post">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="ml-2">立即應徵</span>
-                                </button>
-                            </a>*@
-                            <a class="btn btn-primary mx-1 btn-JS">
-                                <i class="fa-solid fa-arrow-up-right-from-square pr-2 mt-1"></i>立即應徵
-                            </a>
+                            <button class="btn btn-primary mx-1 btn-JS" @@click="post">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="ml-2">立即應徵</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -277,7 +272,6 @@
             },
             methods: {
                 Vacancy: function () {
-                    // 雲端暫存資料 , vanId => id;
                     let key = window.localStorage.getItem("vanId")
                     axios.get(`${webApi}/api/vacancies/${key}`)
                         .then(res => {
@@ -295,6 +289,7 @@
                 post: function () {
                     let key = window.localStorage.getItem("vanId");
                     alert(key)
+                    window.location = "/Home/jobApply";
                 },
             },
             computed: {
