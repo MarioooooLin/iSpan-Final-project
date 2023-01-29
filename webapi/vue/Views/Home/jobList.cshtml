@@ -323,7 +323,7 @@
                 temp: 0,
                 tempitem: 0,
                 page: [],
-                userdata:[],
+                userdata: [],
             },
             mounted: function () {
                 this.search();
@@ -337,12 +337,12 @@
                     window.location = "/Home/jobSingle";
                 },
                 search() {
-                    if(!this.inputvalue){
+                    if (!this.inputvalue) {
                         $('input').blur();
                     }
-                    if(this.boolean){
+                    if (this.boolean) {
                         this.companysearch();
-                    }else{
+                    } else {
                         this.tempitem = 0;
                         let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
                         let category = this.selectedCategory;
@@ -355,7 +355,7 @@
                                 this.temp = res.data.length;
                                 this.countpage();
                                 let arr = [];
-                                if (this.datas.length > 5) {    
+                                if (this.datas.length > 5) {
                                     for (let i = 0; i < 5; i++) {
                                         let item = {};
                                         if (!this.datas[i].seniority) {
@@ -369,6 +369,7 @@
                                     }
                                     this.datas = arr;
                                 }
+                                console.log(this.datas)
                             })
                     }
                 },
@@ -389,39 +390,39 @@
                     }
                 },//計算頁數
                 changepage(item) {
-                        this.tempitem = item;
-                        let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                        let category = this.selectedCategory;
-                        let workplace = this.selectedArea;
-                    if(this.boolean){
+                    this.tempitem = item;
+                    let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                    let category = this.selectedCategory;
+                    let workplace = this.selectedArea;
+                    if (this.boolean) {
                         let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
                         axios.get(url)
-                        .then(res => {
-                            appVue.datas = [];
-                            appVue.datas = res.data;
-                            this.temp = res.data.length;
-                            this.countpage();
-                            let arr = [];
-                            if ((item + 1) == this.page.length) {
-                                for (let i = item * 5; i < this.datas.length; i++) {
-                                    let item = {};
+                            .then(res => {
+                                appVue.datas = [];
+                                appVue.datas = res.data;
+                                this.temp = res.data.length;
+                                this.countpage();
+                                let arr = [];
+                                if ((item + 1) == this.page.length) {
+                                    for (let i = item * 5; i < this.datas.length; i++) {
+                                        let item = {};
                                         this.datas[i].info = this.datas[i].info + '...';
-                                    item = this.datas[i];
-                                    arr.push(item);
+                                        item = this.datas[i];
+                                        arr.push(item);
+                                    }
+                                    this.datas = arr;
                                 }
-                                this.datas = arr;
-                            }
-                            else {
-                                for (let i = item * 5; i < (item + 1) * 5; i++) {
-                                    let item = {};
+                                else {
+                                    for (let i = item * 5; i < (item + 1) * 5; i++) {
+                                        let item = {};
                                         this.datas[i].info = this.datas[i].info + '...';
-                                    item = this.datas[i];
-                                    arr.push(item);
+                                        item = this.datas[i];
+                                        arr.push(item);
+                                    }
+                                    this.datas = arr;
                                 }
-                                this.datas = arr;
-                            }
-                        })
-                    }else{
+                            })
+                    } else {
                         let url = `${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`;
                         axios.get(url)
                             .then(res => {
@@ -500,27 +501,42 @@
                         })
                 },
                 deposition(id) {
-                    alert(id)
-                    //let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
-                    //axios.get(url)
-                    //    .then(res => {
-                    //        this.datas = [];
-                    //        this.datas = res.data;
-                    //        this.temp = res.data.length;
-                    //        this.countpage();
-                    //        let arr = [];
-                    //        if (this.datas.length > 5) {
-                    //            for (let i = 0; i < 5; i++) {
-                    //                let item = {};
-                    //                this.datas[i].info = this.datas[i].info + '...';
-                    //                item = this.datas[i];
-                    //                arr.push(item);
-                    //            }
-                    //            this.datas = arr;
-                    //        }
-                    //    })
-                }, //抄潘冠資料
-                user(){
+                    let candidateId = window.sessionStorage.getItem("Id")
+                    if (!candidateId) {
+                        window.location = "/Home/memberLogin"
+                    }
+                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                        .then(res => {
+                            let bool = false
+                            console.log(res.data)
+                            for (i = 0; i < res.data.length; i++) {
+                                if (id == res.data[i].vacancyId) {
+                                    bool = true
+                                    break;
+                                } else {
+                                    continue;
+                                }
+                            }
+                            if (bool) {
+                                alert('已收藏過')
+                            } else {
+                                id % 5 ? id = id % 5 - 1 : id = 4
+                                var postdata = {
+                                    CandidateId: parseInt(window.sessionStorage.getItem("Id")),
+                                    VacancyId: this.datas[id].vacancyId,
+                                    EnterpriseId: this.datas[id].enterpriseId
+                                }
+                                console.log(postdata)
+                                axios.post(`${webApi}/api/Interests`,postdata)
+                                .then(res => {
+                                    console.log(res.data)
+                                    let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[id].lastChild
+                                    x.innerHTML = '已儲存';
+                                })
+                            }
+                        })
+                },
+                user() {
                     let userid = window.sessionStorage.getItem('Id')
                     let url = `${webApi}/api/Candidates/6`;
                     axios.get(url)
