@@ -80,6 +80,27 @@ namespace webapi.Controllers
             return result;
         }
 
+        // GET: api/Articles/5
+        //[HttpGet("{title}")]
+        //public async Task<IEnumerable<Article>> GetArticleMessage(string? title)
+        //{
+        //    var result = _context.Article.Select(x =>  new Article
+        //    {
+        //        Title = x.Title,
+        //        UpdateTime = x.UpdateTime,
+        //        ArticleId = x.ArticleId,
+        //        ArticleFloor = x.ArticleFloor,
+        //        nickName = x.nickName,
+        //        message = x.message,
+
+
+        //    }).Where(x => x.Title == title);
+
+        //    return result;
+        //}
+
+
+
         // PUT: api/Articles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -123,6 +144,7 @@ namespace webapi.Controllers
                 Title = test.Title,
                 UpdateTime = test.UpdateTime,
                 ArticleFloor = test.ArticleFloor,
+                AuthorId = test.AuthorId,
             };
             _context.Article.Add(arti);
             await _context.SaveChangesAsync();
