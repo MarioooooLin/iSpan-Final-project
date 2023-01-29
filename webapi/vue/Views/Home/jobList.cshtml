@@ -216,8 +216,8 @@
                                                          class="figure-img img-fuild rounded-circle  w-50  ">
                                                     <h3 class="display-6 slide-h3 mt-1" @@click="user">使用者! 你好</h3>
                                                 </figure>
-                                                <div>手機:</div>
-                                                <div>信箱:</div>
+                                                <div>手機:&nbsp; {{userdata.cellphone}}</div>
+                                                <div>信箱:&nbsp; {{userdata.email}}</div>
                                                 <div class="item text-end align-content-end mb-0">
                                                     <div class="text-right mr-3 fw-bold">
                                                         <a href="#">
@@ -235,7 +235,7 @@
                                                             <div class="input-group-prepend ">
                                                                 <input type="radio" name="CV" id="CVON"><span class="font-weight-normal text-body">開放履歷</span>
                                                             </div>
-                                                            <div class="input-group-prepend ">
+                                                            <div class="input-group-prepend " checked>
                                                                 <input type="radio" name="CV" id="CVOFF"><span class="font-weight-normal text-body">關閉履歷</span>
                                                             </div>
                                                         </div>
@@ -322,7 +322,8 @@
                 selectedArea: "",
                 temp: 0,
                 tempitem: 0,
-                page: []
+                page: [],
+                userdata:[],
             },
             mounted: function () {
                 this.search();
@@ -521,10 +522,13 @@
                 }, //抄潘冠資料
                 user(){
                     let userid = window.sessionStorage.getItem('Id')
-                    let url = `${webApi}/api/Candidates/${userid}`;
+                    let url = `${webApi}/api/Candidates/6`;
                     axios.get(url)
                         .then(res => {
-                            console.log(res.data)
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
                         })
                 }
             },
