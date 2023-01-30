@@ -95,7 +95,41 @@ namespace vue.Controllers
         }
 
         //企業端
-        public IActionResult enterpriseIndex()
+        public IActionResult enterpriseCenter()
+        {
+            return View();
+        }
+
+        public IActionResult enterpriseVacancies()
+        {
+            return View();
+        }
+        public IActionResult enterpriseCV()
+        {
+            return View();
+        }
+        public IActionResult enterpriseInvite()
+        {
+            return View();
+        }
+        public IActionResult enterpriseBlacklist ()
+        {
+            return View();
+        }
+
+        public IActionResult vacancyManage()
+        {
+            return View();
+        }
+
+
+        public IActionResult enterpriseDetail()
+        {
+            return View();
+        }
+
+
+        public IActionResult application()
         {
             return View();
         }
@@ -123,6 +157,10 @@ namespace vue.Controllers
             return View();
         }
         public IActionResult jobSingle()
+        {
+            return View();
+        }
+        public IActionResult jobApply()
         {
             return View();
         }

@@ -21,5 +21,6 @@ namespace webapi.Models
         public string WorkReqire { get; set; }
         public DateTime? Updatetime { get; set; }
         public bool? Valid { get; set; }
+        public int? Number { get; set; }
     }
 }

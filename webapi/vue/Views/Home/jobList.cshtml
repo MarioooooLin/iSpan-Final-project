@@ -111,9 +111,9 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12 text-right">
-                                    <a href="#">
-                                        <button class="btn btn-dark px-4 mx-1">
-                                            <i class="fa-regular fa-bookmark"></i><span class="ml-2" :id="data.vacancyId" @@click="post">儲存</span>
+                                    <a>
+                                        <button class="btn btn-dark px-4 mx-1" @@click="deposition(data.vacancyId)">
+                                            <i class="fa-regular fa-bookmark"></i><span class="ml-2 van" :id="data.vacancyId">儲存</span>
                                         </button>
                                     </a>
                                     <a href="#">
@@ -214,10 +214,10 @@
                                                 <figure class="figure ml-2">
                                                     <img src="https://picsum.photos/250/250/?random=10"
                                                          class="figure-img img-fuild rounded-circle  w-50  ">
-                                                    <h3 class="display-6 slide-h3 mt-1">使用者! 你好</h3>
+                                                    <h3 class="display-6 slide-h3 mt-1" @@click="user">使用者! 你好</h3>
                                                 </figure>
-                                                <div>手機:</div>
-                                                <div>信箱:</div>
+                                                <div>手機:&nbsp; {{userdata.cellphone}}</div>
+                                                <div>信箱:&nbsp; {{userdata.email}}</div>
                                                 <div class="item text-end align-content-end mb-0">
                                                     <div class="text-right mr-3 fw-bold">
                                                         <a href="#">
@@ -235,7 +235,7 @@
                                                             <div class="input-group-prepend ">
                                                                 <input type="radio" name="CV" id="CVON"><span class="font-weight-normal text-body">開放履歷</span>
                                                             </div>
-                                                            <div class="input-group-prepend ">
+                                                            <div class="input-group-prepend " checked>
                                                                 <input type="radio" name="CV" id="CVOFF"><span class="font-weight-normal text-body">關閉履歷</span>
                                                             </div>
                                                         </div>
@@ -322,10 +322,14 @@
                 selectedArea: "",
                 temp: 0,
                 tempitem: 0,
-                page: []
+                page: [],
+                userdata: [],
+                arrdeposition: []
             },
             mounted: function () {
                 this.search();
+                this.checkdeposition()
+                this.user();
             },
             methods: {
                 jobsingle: function (vacancyId) {
@@ -335,12 +339,12 @@
                     window.location = "/Home/jobSingle";
                 },
                 search() {
-                    if(!this.inputvalue){
+                    if (!this.inputvalue) {
                         $('input').blur();
                     }
-                    if(this.boolean){
+                    if (this.boolean) {
                         this.companysearch();
-                    }else{
+                    } else {
                         this.tempitem = 0;
                         let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
                         let category = this.selectedCategory;
@@ -353,7 +357,7 @@
                                 this.temp = res.data.length;
                                 this.countpage();
                                 let arr = [];
-                                if (this.datas.length > 5) {    
+                                if (this.datas.length > 5) {
                                     for (let i = 0; i < 5; i++) {
                                         let item = {};
                                         if (!this.datas[i].seniority) {
@@ -367,6 +371,7 @@
                                     }
                                     this.datas = arr;
                                 }
+                                console.log(this.datas)
                             })
                     }
                 },
@@ -387,39 +392,39 @@
                     }
                 },//計算頁數
                 changepage(item) {
-                        this.tempitem = item;
-                        let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                        let category = this.selectedCategory;
-                        let workplace = this.selectedArea;
-                    if(this.boolean){
+                    this.tempitem = item;
+                    let name = this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                    let category = this.selectedCategory;
+                    let workplace = this.selectedArea;
+                    if (this.boolean) {
                         let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
                         axios.get(url)
-                        .then(res => {
-                            appVue.datas = [];
-                            appVue.datas = res.data;
-                            this.temp = res.data.length;
-                            this.countpage();
-                            let arr = [];
-                            if ((item + 1) == this.page.length) {
-                                for (let i = item * 5; i < this.datas.length; i++) {
-                                    let item = {};
+                            .then(res => {
+                                appVue.datas = [];
+                                appVue.datas = res.data;
+                                this.temp = res.data.length;
+                                this.countpage();
+                                let arr = [];
+                                if ((item + 1) == this.page.length) {
+                                    for (let i = item * 5; i < this.datas.length; i++) {
+                                        let item = {};
                                         this.datas[i].info = this.datas[i].info + '...';
-                                    item = this.datas[i];
-                                    arr.push(item);
+                                        item = this.datas[i];
+                                        arr.push(item);
+                                    }
+                                    this.datas = arr;
                                 }
-                                this.datas = arr;
-                            }
-                            else {
-                                for (let i = item * 5; i < (item + 1) * 5; i++) {
-                                    let item = {};
+                                else {
+                                    for (let i = item * 5; i < (item + 1) * 5; i++) {
+                                        let item = {};
                                         this.datas[i].info = this.datas[i].info + '...';
-                                    item = this.datas[i];
-                                    arr.push(item);
+                                        item = this.datas[i];
+                                        arr.push(item);
+                                    }
+                                    this.datas = arr;
                                 }
-                                this.datas = arr;
-                            }
-                        })
-                    }else{
+                            })
+                    } else {
                         let url = `${webApi}/api/vacancies?name=${name}&category=${category}&workplace=${workplace}`;
                         axios.get(url)
                             .then(res => {
@@ -497,24 +502,72 @@
                             }
                         })
                 },
-                post() {
-                    let url = `${webApi}/api/Enterprises?name=${name}&category=${category}&address=${workplace}`;
+                deposition(id) {
+                    let candidateId = window.sessionStorage.getItem("Id")
+                    if (!candidateId) {
+                        alert('尚未登入 , 請先登入')
+                    }
+                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                        .then(res => {
+                            let bool = false
+                            console.log(res.data)
+                            for (i = 0; i < res.data.length; i++) {
+                                if (id == res.data[i].vacancyId) {
+                                    bool = true
+                                    break;
+                                } else {
+                                    continue;
+                                }
+                            }
+                            if (bool) {
+                                alert('已收藏過')
+                            } else {
+                                let i;
+                                for (i = 0; i < this.datas.length; i++) {
+                                    if(this.datas[i].vacancyId == id){
+                                        break
+                                    }
+                                }
+                                var postdata = {
+                                    CandidateId: parseInt(window.sessionStorage.getItem("Id")),
+                                    VacancyId: this.datas[i].vacancyId,
+                                    EnterpriseId: this.datas[i].enterpriseId
+                                }
+                                console.log(postdata)
+                                axios.post(`${webApi}/api/Interests`, postdata)
+                                    .then(res => {
+                                        console.log(res.data)
+                                        let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[i].lastChild
+                                        x.innerHTML = '已儲存';
+                                    })
+                            }
+                        })
+                },
+                checkdeposition() {
+                    let candidateId = window.sessionStorage.getItem("Id")
+                    if (!candidateId) {
+                        return false;
+                    }
+                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                        .then(res => {
+                            for (i = 0; i < res.data.length; i++) {
+                                this.arrdeposition[i] = res.data[i].vacancyId
+                            }
+                            this.arrdeposition.sort(function (a, b) {
+                                return a - b;
+                            })
+                        })
+                    console.log(this.arrdeposition)
+                },
+                user() {
+                    let userid = window.sessionStorage.getItem('Id')
+                    let url = `${webApi}/api/Candidates/6`;
                     axios.get(url)
                         .then(res => {
-                            this.datas = [];
-                            this.datas = res.data;
-                            this.temp = res.data.length;
-                            this.countpage();
-                            let arr = [];
-                            if (this.datas.length > 5) {
-                                for (let i = 0; i < 5; i++) {
-                                    let item = {};
-                                    this.datas[i].info = this.datas[i].info + '...';
-                                    item = this.datas[i];
-                                    arr.push(item);
-                                }
-                                this.datas = arr;
-                            }
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
                         })
                 }
             },

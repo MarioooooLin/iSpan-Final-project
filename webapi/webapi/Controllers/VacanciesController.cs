@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using webapi.Models;
 using static System.Net.WebRequestMethods;
 
@@ -45,7 +46,8 @@ namespace webapi.Controllers
                 Info = etp.Info,
                 img = etp.Img,
                 UniformNumbers = etp.UniformNumbers,
-                Employee = etp.Employee
+                Employee = etp.Employee,
+                EnterpriseId = etp.EnterpriseId
             });
             if (!string.IsNullOrWhiteSpace(name))
             {
@@ -94,6 +96,17 @@ namespace webapi.Controllers
                          };
             return result.SingleOrDefault();
         } //完成 by jing
+
+        //企業端 職缺新增、檢視
+        [HttpGet("view")]
+        public async Task<IEnumerable<Vacancy>> VacanciesView(int id)
+        {        
+            return _context.Vacancy.Where(v=>v.EnterpriseId== id && v.Valid == true);
+
+        }
+
+
+
 
         // PUT: api/Vacancies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

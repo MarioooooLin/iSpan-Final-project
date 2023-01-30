@@ -39,6 +39,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[CourseContent]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[CourseDetail]",
          "ObjectType": 0
       },
@@ -52,6 +56,10 @@
       },
       {
          "Name": "[dbo].[Enterprise]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EnterpriseInterest]",
          "ObjectType": 0
       },
       {
@@ -115,6 +123,7 @@
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": true,
    "UseHandleBars": false,

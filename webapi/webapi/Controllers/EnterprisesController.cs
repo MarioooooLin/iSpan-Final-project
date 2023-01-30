@@ -74,33 +74,37 @@ namespace webapi.Controllers
         // PUT: api/Enterprises/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEnterprise(int id, Enterprise enterprise)
+        public async Task<string> PutEnterprise(int id, Enterprise enterprise)
         {
-            if (id != enterprise.EnterpriseId)
-            {
-                return BadRequest();
-            }
 
-            _context.Entry(enterprise).State = EntityState.Modified;
+            Enterprise emp = await _context.Enterprise.FindAsync(id);
+            emp.CompanyName = enterprise.CompanyName;
+                emp.Category = enterprise.Category;
+                emp.OpeningHours = enterprise.OpeningHours;
+                emp.Welfare = enterprise.Welfare;
+                emp.Telephone = enterprise.Telephone;
+                emp.Info = enterprise.Info;
+                emp.Email = enterprise.Email;
+                emp.Employee = enterprise.Employee;
+                emp.Address = enterprise.Address;
+                emp.ContactPhone = enterprise.ContactPhone;
+                emp.Fax = enterprise.Fax;
+                emp.ContactTime = enterprise.ContactTime;
+                emp.Principal = enterprise.Principal;
+                emp.UniformNumbers = enterprise.UniformNumbers;
+            _context.Entry(emp).State = EntityState.Modified;
 
-            try
-            {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EnterpriseExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return "修改成功!";
         }
+
+        [HttpGet("Id{Id}")]
+        public async Task<IEnumerable<Enterprise>> EnterpriseDetails(int Id)
+        {
+
+            return _context.Enterprise.Where(x=>x.EnterpriseId== Id);
+        }
+
 
         // POST: api/Enterprises
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

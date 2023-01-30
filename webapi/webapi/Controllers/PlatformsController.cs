@@ -36,7 +36,8 @@ namespace webapi.Controllers
                 UpdateTime = x.UpdateTime,
                 //Authorld = x.Authorld,
             });
-            if (!string.IsNullOrEmpty(name)) {
+            if (!string.IsNullOrEmpty(name))
+            {
                 result = result.Where(x => x.ArticleName.Contains(name));
             }
             return result;
@@ -49,13 +50,13 @@ namespace webapi.Controllers
             var result = _context.Platform.Where(x => x.ArticleId == id).Select(x => new Platform
             {
                 ArticleId = x.ArticleId,
-                ArticleName=x.ArticleName,
+                ArticleName = x.ArticleName,
                 Contents = x.Contents,
                 UpdateTime = x.UpdateTime,
 
             });
 
-            return result;       
+            return result;
             //var platform = await _context.Platform.FindAsync(id);
 
             //if (platform == null)
@@ -131,15 +132,19 @@ namespace webapi.Controllers
 
             return NoContent();
         }
-        //[HttpPost("Filter")] //api/Platforms/Filter
-        //public async Task<IEnumerable<PlatformsDTO>> FilterPlatform([FromBody]PlatformsDTO platform)
-        //{
-        //    return _context.Platform.Where(pf => pf.ArticleName.Contains(platform.ArticleName)/*|((employees.LastName)) 增加篩選條件*/).Select(pf => new PlatformsDTO
-        //    {
-        //        ArticleName= pf.ArticleName,
-        //        Contents = pf.Contents,
-        //    });
-        //}
+
+        [HttpPost("Filter")] //api/Platforms/Filter
+        public async Task<IEnumerable<PlatformsDTO>> FilterPlatform([FromBody] PlatformsDTO Article)
+        {
+            //var ArticleName = _context.Platform.Where()
+            return _context.Platform.Where(
+                emp => emp.ArticleName.Contains(Article.ArticleName)).Select(emp => new PlatformsDTO
+                {
+                    ArticleName = emp.ArticleName,
+                    Contents = emp.Contents,
+                    UpdateTime = emp.UpdateTime,
+                });
+        }
 
 
         private bool PlatformExists(int id)

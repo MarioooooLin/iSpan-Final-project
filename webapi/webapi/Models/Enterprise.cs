@@ -15,11 +15,11 @@ namespace webapi.Models
         public string UniformNumbers { get; set; }
         public string Telephone { get; set; }
         public string Fax { get; set; }
-        public TimeSpan? OpeningHours { get; set; }
+        public string OpeningHours { get; set; }
         public string Address { get; set; }
         public string Principal { get; set; }
         public string ContactPhone { get; set; }
-        public TimeSpan? ContactTime { get; set; }
+        public string ContactTime { get; set; }
         public string Email { get; set; }
         public string Info { get; set; }
         public string Img { get; set; }

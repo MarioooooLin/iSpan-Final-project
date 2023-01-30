@@ -24,10 +24,12 @@ namespace webapi.Models
         public virtual DbSet<CandidateCv> CandidateCv { get; set; }
         public virtual DbSet<CandidateSkill> CandidateSkill { get; set; }
         public virtual DbSet<Course> Course { get; set; }
+        public virtual DbSet<CourseContent> CourseContent { get; set; }
         public virtual DbSet<CourseDetail> CourseDetail { get; set; }
         public virtual DbSet<CourseOrder> CourseOrder { get; set; }
         public virtual DbSet<Cv> Cv { get; set; }
         public virtual DbSet<Enterprise> Enterprise { get; set; }
+        public virtual DbSet<EnterpriseInterest> EnterpriseInterest { get; set; }
         public virtual DbSet<Interest> Interest { get; set; }
         public virtual DbSet<InterestedArticle> InterestedArticle { get; set; }
         public virtual DbSet<InterestedCourse> InterestedCourse { get; set; }
@@ -61,6 +63,10 @@ namespace webapi.Models
                     .HasColumnName("img");
 
                 entity.Property(e => e.Keyword).HasMaxLength(200);
+
+                entity.Property(e => e.Message).HasMaxLength(500);
+
+                entity.Property(e => e.NickName).HasMaxLength(50);
 
                 entity.Property(e => e.Title).HasMaxLength(50);
 
@@ -136,10 +142,20 @@ namespace webapi.Models
                 entity.Property(e => e.TeacherId).HasColumnName("TeacherID");
             });
 
+            modelBuilder.Entity<CourseContent>(entity =>
+            {
+                entity.HasKey(e => new { e.CourseId100, e.Coursechapter })
+                    .HasName("PK__CourseCo__5915244B121BD0A0");
+
+                entity.Property(e => e.ChapterName).HasMaxLength(100);
+
+                entity.Property(e => e.Video).HasMaxLength(100);
+            });
+
             modelBuilder.Entity<CourseDetail>(entity =>
             {
                 entity.HasKey(e => new { e.CourseId, e.SkillId })
-                    .HasName("PK__CourseDe__A4D778BF68D4D8C0");
+                    .HasName("PK__CourseDe__A4D778BFAB684E6B");
             });
 
             modelBuilder.Entity<CourseOrder>(entity =>
@@ -172,6 +188,8 @@ namespace webapi.Models
 
                 entity.Property(e => e.ContactPhone).HasMaxLength(10);
 
+                entity.Property(e => e.ContactTime).HasMaxLength(20);
+
                 entity.Property(e => e.Email).HasMaxLength(20);
 
                 entity.Property(e => e.Employee)
@@ -186,6 +204,8 @@ namespace webapi.Models
 
                 entity.Property(e => e.Info).HasMaxLength(200);
 
+                entity.Property(e => e.OpeningHours).HasMaxLength(20);
+
                 entity.Property(e => e.Password).HasMaxLength(12);
 
                 entity.Property(e => e.Principal).HasMaxLength(10);
@@ -195,6 +215,17 @@ namespace webapi.Models
                 entity.Property(e => e.UniformNumbers).HasMaxLength(10);
 
                 entity.Property(e => e.Welfare).HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<EnterpriseInterest>(entity =>
+            {
+                entity.Property(e => e.CandidateId).HasColumnName("candidateId");
+
+                entity.Property(e => e.EnterpriseId).HasColumnName("enterpriseId");
+
+                entity.Property(e => e.Status).HasColumnName("status");
+
+                entity.Property(e => e.VacancyId).HasColumnName("vacancyId");
             });
 
             modelBuilder.Entity<Interest>(entity =>
@@ -277,20 +308,26 @@ namespace webapi.Models
 
             modelBuilder.Entity<Reply>(entity =>
             {
-                entity.Property(e => e.ReplyId).ValueGeneratedNever();
+                entity.Property(e => e.ArticleName)
+                    .IsRequired()
+                    .HasMaxLength(25);
 
-                entity.Property(e => e.ArticleName).HasMaxLength(10);
-
-                entity.Property(e => e.ReplyTime).HasColumnType("date");
+                entity.Property(e => e.ReplyTime)
+                    .HasColumnType("date")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<Result>(entity =>
             {
+                entity.Property(e => e.Analysis).HasMaxLength(500);
+
                 entity.Property(e => e.AnswerTime).HasColumnType("date");
 
-                entity.Property(e => e.Result1)
-                    .HasMaxLength(500)
-                    .HasColumnName("Result");
+                entity.Property(e => e.Result1).HasColumnName("Result");
+
+                entity.Property(e => e.SuggestJob).HasMaxLength(500);
+
+                entity.Property(e => e.Type).HasMaxLength(500);
             });
 
             modelBuilder.Entity<Skill>(entity =>
@@ -318,6 +355,8 @@ namespace webapi.Models
             modelBuilder.Entity<Vacancy>(entity =>
             {
                 entity.Property(e => e.Category).HasMaxLength(10);
+
+                entity.Property(e => e.Number).HasColumnName("number");
 
                 entity.Property(e => e.Shift).HasMaxLength(20);
 
