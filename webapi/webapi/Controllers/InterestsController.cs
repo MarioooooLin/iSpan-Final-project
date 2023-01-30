@@ -130,19 +130,20 @@ namespace webapi.Controllers
 
         // DELETE: api/Interests/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteInterest(int id)
+        public async Task<string> DeleteInterest(int id)
         {
             var interest = await _context.Interest.FindAsync(id);
             if (interest == null)
             {
-                return NotFound();
+                return "找不到欲刪除的記錄!";
             }
 
             _context.Interest.Remove(interest);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return "刪除成功!";
         }
+
 
         private bool InterestExists(int id)
         {

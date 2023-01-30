@@ -324,7 +324,8 @@
                 tempitem: 0,
                 page: [],
                 userdata: [],
-                arrdeposition: []
+                arrdeposition: [],
+                interestId:0
             },
             mounted: function () {
                 this.search();
@@ -520,7 +521,22 @@
                                 }
                             }
                             if (bool) {
-                                alert('已收藏過')
+                                let i;
+                                for (i = 0; i < this.datas.length; i++) {
+                                    if (res.data[i].vacancyId == id) {
+                                        this.interestId = res
+                                        break
+                                    }
+                                }
+                                let vanid = res.data[i].id
+                                console.log(vanid)
+                                axios.delete(`${webApi}/api/Interests/${vanid}`)
+                                    .then(res => {
+                                        let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[i].lastChild
+                                        x.innerHTML = '儲存';
+                                    })
+                                    .catch(err => console.log(err))
+                                    .finally(console.log('刪除'))
                             } else {
                                 let i;
                                 for (i = 0; i < this.datas.length; i++) {
