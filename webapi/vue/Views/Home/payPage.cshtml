@@ -48,7 +48,7 @@
                         <hr style="height:3px; color: #e2e2e2;background-color: #e2e2e2; " />
                         <div class="accordion col-11 justify-content-center" id="accordionExample">
                             <div class="card">
-                                <div class="card-header btn-primary" id="headingTwo" style="background-color:#0085ff" @@click="insert">
+                                <div class="card-header btn-primary" id="headingTwo" style="background-color:#0085ff">
                                     <h2 class="mb-0 ">
                                         <button class="btn btn-block text-left collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             確認訂單
@@ -58,7 +58,7 @@
                                 <div id="collapseTwo" class="collapse pt-3" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="row justify-content-right">
-                                            <div class="col-12" id="payment-button"></div>
+                                            <button onclick="requestPayment()" class="btn text-center"> Line Pay 付款</button>
                                         </div>
                                     </div>
                                 </div>
@@ -114,40 +114,61 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
-                insert: function () {
-                    var request = {
-                        CandidateId: this.buyerList.candidateId,
-                        courseId: this.courseList.courseId,
-                    };
-                    console.log(request)
-                    axios.post(`${webApi}/api/Orders`, request).then(response => {
-                        console.log(response.data);
-                    }).catch(err => console.log(err));
-                },
+                //insert: function () {
+                //    var request = {
+                //        CandidateId: this.buyerList.candidateId,
+                //        courseId: this.courseList.courseId,
+                //    };
+                //    console.log(request)
+                //    axios.post(`${webApi}/api/Orders`, request).then(response => {
+                //        console.log(response.data);
+                //    }).catch(err => console.log(err));
+                //}, 
             },
         })
     </script>
     <script>
-        // Render the PayPal button into #paypal-button-container
-        paypal.Buttons({
-            // Set up the transaction
-            createOrder: function (data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '88.44'
-                        }
-                    }]
-                });
-            },
+        let baseLoginPayUrl = 'https://localhost:7240/api/LinePay/';
+        function requestPayment() {
+            // 交易訂單假資料
+            payment = {
+                amount: 3998,
+                currency: "TWD",
+                orderId: Date.now().toString(), //使用 Timestamp 當作 orderId
+                packages: [
+                    {
+                        id: "20191011I001",
+                        amount: 3998,
+                        name: "測試",
+                        products: [
+                            {
+                                name: "測試商品",
+                                imageUrl: "https://static.accupass.com/org/2011051025162614811630.jpg",
+                                quantity: 2,
+                                price: 1999,
+                            }
+                        ]
+                    },
+                ],
+                RedirectUrls: {
+                    ConfirmUrl: "https://1806-59-125-142-166.jp.ngrok.io/confirm.html",
+                    CancelUrl: "https://c4f0-61-63-154-173.jp.ngrok.io/api/LinePay/Cancel",
+                },
+            };
 
-            // Finalize the transaction
-            onApprove: function (data, actions) {
-                return actions.order.capture().then(function (orderData) {
-                    console.log('Capture result', orderData,
-                        JSON.stringify(orderData, null, 2));
-                });
-            }
-        }).render('#payment-button');
+            // 送出 交易申請至商家 server
+            $.post({
+                url: baseLoginPayUrl + "Create",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(payment),
+                success: (res) => {
+                    window.location = res.info.paymentUrl.web;
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            })
+        }
     </script>
 }

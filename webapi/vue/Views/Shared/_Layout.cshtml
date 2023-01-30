@@ -67,11 +67,10 @@
                                     @*	<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="mockInterview">模擬面試</a></li>*@
                                 </ul>
                             </li>
-                            <li class="has-children">
+                            <li class="has-children" id="LoginVue">
                                 <a class="h4 active" asp-area="" asp-controller="Home" asp-action="courseShop">線上課程</a>
                                 <ul class="dropdown">
-                                    <li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="courseManage">課程管理</a></li>
-
+                                    <li><a class="h4 active" @@click="goLogin">課程管理</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -274,6 +273,34 @@
                     signOut: function () {
                         sessionStorage.clear();
                         window.location = "/Home/Index";
+                    },
+                    goLogin: function () {
+                        //let candidateId = sessionStorage.getItem('Id')
+                        if (this.Id != null) {
+                            location.href = 'https://localhost:7158/Home/courseManage'
+                        }
+                        else {
+                            location.href = 'https://localhost:7158/Home/memberLogin'
+                        }
+                    },
+                },
+
+            })
+            const LoginVue = new Vue({
+                el: "#LoginVue",
+                name: "LoginVue",
+                data: {
+                    Id: sessionStorage.getItem("Id"),
+                },
+                methods: {
+                    goLogin: function () {
+                        //let candidateId = sessionStorage.getItem('Id')
+                        if (this.Id != null) {
+                            location.href = 'https://localhost:7158/Home/courseManage'
+                        }
+                        else {
+                            location.href = 'https://localhost:7158/Home/memberLogin'
+                        }
                     },
                 },
 
