@@ -66,7 +66,8 @@ namespace webapi.Controllers
             var result = _context.Interest.Select(x => new Interest
             {
                 CandidateId = x.CandidateId,
-                VacancyId = x.VacancyId
+                VacancyId = x.VacancyId,
+                Id = x.Id
             });
             if (id is int) 
             {
