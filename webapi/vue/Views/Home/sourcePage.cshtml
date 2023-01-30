@@ -118,7 +118,7 @@
                         aspernatur nemo sunt, qui, harum repudiandae quisquam eaque dolore itaque quod
                         tenetur quo quos labore?
                         </p>
-                        *@                       
+                        *@
                         <p>
                             <img :src="datas.img" alt="Image" class="img-fluid rounded" />
                         </p>
@@ -138,207 +138,105 @@
                         <div id="little-button"></div>
 
                         <div class="pt-5">
-                            <h3 class="mb-5">6 Comments</h3>
+                            <h3 class="mb-5">{{this.articleMessage.length}} Comments</h3>
                             <ul class="comment-list">
+                                <div v-for="data in articleMessage">
                                 <li class="comment">
                                     <div class="vcard bio">
-                                        <img src="/images/person_2.jpg" alt="Image placeholder" />
+                                        <img src="https://picsum.photos/250/250/?random=10" alt="Image placeholder" />
                                     </div>
+
                                     <div class="comment-body">
-                                        <h3>Jacob Smith</h3>
-                                        <div class="meta">January 9, 2018 at 2:21pm</div>
+                                        <h3>{{data.nickName}}</h3>
+                                        <div class="meta">{{data.updateTime}}</div>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            Pariatur quidem laborum necessitatibus, ipsam impedit vitae
-                                            autem, eum officia, fugiat saepe enim sapiente iste iure! Quam
-                                            voluptas earum impedit necessitatibus, nihil?
+                                            {{data.message}}
                                         </p>
-                                        <p><a href="#" class="reply">Reply</a></p>
-                                    </div>
-                                </li>
-
-                                <li class="comment">
-                                    <div class="vcard bio">
-                                        <img src="/images/person_3.jpg" alt="Image placeholder" />
-                                    </div>
-                                    <div class="comment-body">
-                                        <h3>Chris Meyer</h3>
-                                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            Pariatur quidem laborum necessitatibus, ipsam impedit vitae
-                                            autem, eum officia, fugiat saepe enim sapiente iste iure! Quam
-                                            voluptas earum impedit necessitatibus, nihil?
-                                        </p>
-                                        <p><a href="#" class="reply">Reply</a></p>
-                                    </div>
-
-                                    <ul class="children">
-                                        <li class="comment">
-                                            <div class="vcard bio">
-                                                <img src="/images/person_5.jpg" alt="Image placeholder" />
-                                            </div>
-                                            <div class="comment-body">
-                                                <h3>Chintan Patel</h3>
-                                                <div class="meta">January 9, 2018 at 2:21pm</div>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                    elit. Pariatur quidem laborum necessitatibus, ipsam
-                                                    impedit vitae autem, eum officia, fugiat saepe enim
-                                                    sapiente iste iure! Quam voluptas earum impedit
-                                                    necessitatibus, nihil?
-                                                </p>
-                                                <p><a href="#" class="reply">Reply</a></p>
-                                            </div>
-
-                                            <ul class="children">
-                                                <li class="comment">
-                                                    <div class="vcard bio">
-                                                        <img src="/images/person_1.jpg" alt="Image placeholder" />
-                                                    </div>
-                                                    <div class="comment-body">
-                                                        <h3>Jean Doe</h3>
-                                                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur
-                                                            adipisicing elit. Pariatur quidem laborum
-                                                            necessitatibus, ipsam impedit vitae autem, eum
-                                                            officia, fugiat saepe enim sapiente iste iure!
-                                                            Quam voluptas earum impedit necessitatibus,
-                                                            nihil?
-                                                        </p>
-                                                        <p><a href="#" class="reply">Reply</a></p>
-                                                    </div>
-
-                                                    <ul class="children">
-                                                        <li class="comment">
-                                                            <div class="vcard bio">
-                                                                <img src="/images/person_4.jpg" alt="Image placeholder" />
-                                                            </div>
-                                                            <div class="comment-body">
-                                                                <h3>Ben Afflick</h3>
-                                                                <div class="meta">
-                                                                    January 9, 2018 at 2:21pm
-                                                                </div>
-                                                                <p>
-                                                                    Lorem ipsum dolor sit amet, consectetur
-                                                                    adipisicing elit. Pariatur quidem
-                                                                    laborum necessitatibus, ipsam impedit
-                                                                    vitae autem, eum officia, fugiat saepe
-                                                                    enim sapiente iste iure! Quam voluptas
-                                                                    earum impedit necessitatibus, nihil?
-                                                                </p>
-                                                                <p><a href="#" class="reply">Reply</a></p>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="comment">
-                                    <div class="vcard bio">
-                                        <img src="/images/person_1.jpg" alt="Image placeholder" />
-                                    </div>
-                                    <div class="comment-body">
-                                        <h3>Jean Doe</h3>
-                                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            Pariatur quidem laborum necessitatibus, ipsam impedit vitae
-                                            autem, eum officia, fugiat saepe enim sapiente iste iure! Quam
-                                            voluptas earum impedit necessitatibus, nihil?
-                                        </p>
-                                        <p><a href="#" class="reply">Reply</a></p>
+                                        <hr>
+                                                @*                                        <p><a href="#" class="reply">Reply</a></p>
+                                        *@
                                     </div>
                                 </li>
                             </ul>
-                            <!-- END comment-list -->
-
-                            <div class="comment-form-wrap pt-5">
-                                <h3 class="mb-5">Leave a comment</h3>
-                                <form action="#" class="">
-                                    <div class="form-group">
-                                        <label for="name">Name *</label>
-                                        <input type="text" class="form-control" id="name" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email *</label>
-                                        <input type="email" class="form-control" id="email" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="website">Website</label>
-                                        <input type="url" class="form-control" id="website" />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="message">Message</label>
-                                        <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Post Comment" class="btn btn-primary btn-md" />
-                                    </div>
-                                </form>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 sidebar pl-lg-5">
-                        <div class="sidebar-box">
-                            <form action="#" class="search-form">
+
+                        
+                        <!-- END comment-list -->
+
+                        <div class="comment-form-wrap pt-5">
+                            <h3 class="mb-5">Leave a comment</h3>
+                            <form action="#" class="">
                                 <div class="form-group">
-                                    <span class="icon fa fa-search"></span>
-                                    <input type="text" class="form-control form-control-lg"
-                                           placeholder="Type a keyword and hit enter" 
-                                           v-on:keyup.enter=""/>
+                                    <label for="name">Nick Name *</label>
+                                    <input type="text" class="form-control" id="name" v-model="nickName" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea name="" id="message" cols="30" rows="10" class="form-control" v-model="message"></textarea>
+                                </div>
+                                <div class="form-group">
+                                            @* <input type="submit" value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />*@                                        <input value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
+
                                 </div>
                             </form>
                         </div>
-                        <div class="sidebar-box">
-                            <img src="/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
-                            <h3>{{datas.author}}</h3>
-                            <p>
-                                {{datas.expreience}}
-                            </p>
-                            <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                        </div>
-
-                        <div class="sidebar-box">
-                            <div class="categories">
-                                <h3>Categories</h3>
-                                <li>
-                                    <a href="#">Creatives <span>(12)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">News <span>(22)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Design <span>(37)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">HTML <span>(42)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Web Development <span>(14)</span></a>
-                                </li>
+                    </div>
+                </div>
+                <div class="col-xl-4 sidebar pl-lg-5">
+                    <div class="sidebar-box">
+                        <form action="#" class="search-form">
+                            <div class="form-group">
+                                <span class="icon fa fa-search"></span>
+                                <input type="text" class="form-control form-control-lg"
+                                       placeholder="Type a keyword and hit enter"
+                                       v-on:keyup.enter="" />
                             </div>
-                        </div>
+                        </form>
+                    </div>
+                    <div class="sidebar-box">
+                        <img src="/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
+                        <h3>{{datas.author}}</h3>
+                        <p>
+                            {{datas.expreience}}
+                        </p>
+                        <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
+                    </div>
 
-                        <div class="sidebar-box">
-                            <h3>Paragraph</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque,
-                                autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam
-                                vero culpa sapiente consectetur similique, inventore eos fugit cupiditate
-                                numquam!
-                            </p>
+                    <div class="sidebar-box">
+                        <div class="categories">
+                            <h3>Categories</h3>
+                            <li>
+                                <a href="#">Creatives <span>(12)</span></a>
+                            </li>
+                            <li>
+                                <a href="#">News <span>(22)</span></a>
+                            </li>
+                            <li>
+                                <a href="#">Design <span>(37)</span></a>
+                            </li>
+                            <li>
+                                <a href="#">HTML <span>(42)</span></a>
+                            </li>
+                            <li>
+                                <a href="#">Web Development <span>(14)</span></a>
+                            </li>
                         </div>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h3>Paragraph</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque,
+                            autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam
+                            vero culpa sapiente consectetur similique, inventore eos fugit cupiditate
+                            numquam!
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
     </div>
+    </section>
+</div>
 </div>
 </div>
 
@@ -352,11 +250,16 @@
             el: "#appVue",
             name: "appVue",
             data: {
-                datas: [],
+                datas: [], //文章本人
+                nickName: "",
+                message: "",
+                title: "",
+                articleMessage: [], //文章留言
             },
             mounted: function () {
                 let _this = this;
                 _this.Article();
+                _this.getMessage();
             },
             methods: {
                 Article: function () {
@@ -370,6 +273,61 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+
+                post() {
+                    let messageContent = {};
+                    let Time = new Date();
+                    this.articleMessage.length += 1;
+
+                    //messageContent.ArticleId=0;
+                    //messageContent.nickName = this.nickName;
+                    //messageContent.message = this.message;
+                    //console.log(messageContent.nickName)
+                    //console.log(messageContent.message)
+
+                    messageContent.NickName = this.nickName;
+                    messageContent.Message = this.message;
+                    messageContent.Title = this.datas.title;
+                    messageContent.ArticleFloor = this.articleMessage.length;
+                    messageContent.UpdateTime = Time;
+                    messageContent.AuthorId = this.datas.articleId;
+
+                    console.log(messageContent) //檢查留言
+
+                    axios.post(`${webApi}/api/Articles`, messageContent)
+                        .then(res => { console.log(res) })
+                        .catch(err => { console.log(err) })
+
+                    document.getElementById("name").value="";
+                    document.getElementById("message").value="";
+
+
+                    //axios.post(`${webApi}/api/Articles`, { params: messageContent })
+                    //    .then(response => {
+                    //        console.log(response)
+                    //    })
+                    //    .catch(err => console.log(err))
+                    //    .finally(console.log('完成'))
+                },
+                getMessage() {
+                    let _this = this;
+                    axios.get(`${webApi}/api/Articles`)
+                        .then(res => {
+                            console.log(res.data)
+                            for (let i = 0; i < res.data.length; i++) {
+                                if (res.data[i].title == this.datas.title && res.data[i].img == null) {
+                                    let message = {};
+                                    console.log(res.data[i]);
+                                    message = res.data[i];
+                                    this.articleMessage.push(message);
+                                    console.log(this.articleMessage);
+                                }
+                            }
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+
+                }
             }
         })
     </script>

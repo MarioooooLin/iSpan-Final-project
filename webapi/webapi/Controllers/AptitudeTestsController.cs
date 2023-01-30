@@ -35,17 +35,20 @@ namespace webapi.Controllers
         }
 
         // GET: api/AptitudeTests/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<AptitudeTest>> GetAptitudeTest(int id)
+        [HttpGet("{Result1}")]
+        public async Task<IEnumerable<Result>> GetResult(int Result1)
         {
-            var aptitudeTest = await _context.AptitudeTest.FindAsync(id);
-
-            if (aptitudeTest == null)
+            var result = _context.Result.Select(x => new Result
             {
-                return NotFound();
+                Result1 = x.Result1,
+                Type = x.Type,
+                Analysis = x.Analysis,
+                SuggestJob = x.SuggestJob,
+            });
+            if (Result1 is int) {
+                result = result.Where(x => x.Result1 == Result1);
             }
-
-            return aptitudeTest;
+            return result;
         }
 
         // PUT: api/AptitudeTests/5

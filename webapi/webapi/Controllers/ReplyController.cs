@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using webapi.DTO;
 using webapi.Models;
 
 namespace webapi.Controllers
@@ -70,12 +71,18 @@ namespace webapi.Controllers
         // POST: api/Reply
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Reply>> PostReply(Reply reply)
+        //public async Task<ActionResult<Reply>> PostReply(Reply reply)
+        public async Task<Reply> PostReply(ReplyDTO reply)
         {
-            _context.Reply.Add(reply);
+            Reply rp = new Reply
+            {
+                ReplyMessage = reply.ReplyMessage,
+            };
+            _context.Reply.Add(rp);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetReply", new { id = reply.ReplyId }, reply);
+            return rp;
+            //return CreatedAtAction("GetReply", new { id = reply.ReplyId }, reply);
         }
 
         // DELETE: api/Reply/5

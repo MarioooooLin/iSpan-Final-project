@@ -64,9 +64,9 @@ namespace webapi.Models
 
                 entity.Property(e => e.Keyword).HasMaxLength(200);
 
-                entity.Property(e => e.Message).HasMaxLength(500);
+                entity.Property(e => e.message).HasMaxLength(500);
 
-                entity.Property(e => e.NickName).HasMaxLength(50);
+                entity.Property(e => e.nickName).HasMaxLength(50);
 
                 entity.Property(e => e.Title).HasMaxLength(50);
 

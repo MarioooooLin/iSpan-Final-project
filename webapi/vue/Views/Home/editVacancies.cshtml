@@ -1,4 +1,5 @@
-﻿<section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg')"
+﻿
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg')"
          id="home-section">
     <div class="container">
         <div class="row">
@@ -34,15 +35,15 @@
                                     <div class="p-3 w-100">
                                         <figure class="figure ml-2 ">
                                             <div style="object-fit:cover;width:100px;height:100px;">
-                                                <img :src="datas[0].img"
+                                                <img :src="datas.img"
                                                      class="figure-img img-fuild rounded-circle h-100 w-100">
                                             </div>
-                                            <h3 class="display-6 slide-h3 mt-1" v-once>{{datas[0].principal}} 您好</h3>
+                                            <h3 class="display-6 slide-h3 mt-1" v-once>{{datas.principal}} 您好</h3>
                                         </figure>
                                         <div>
-                                            手機:<br>{{datas[0].contactPhone }}
+                                            手機:<br>{{datas.contactPhone }}
                                         </div>
-                                        <div>信箱: {{datas[0].email}}</div>
+                                        <div>信箱: {{datas.email}}</div>
                                         <hr>
                                         <div class="item text-end align-content-end mb-0">
                                             <div class="text-right mr-3 fw-bold">
@@ -106,217 +107,93 @@
                 <!-- Above is sidebar -->
 
             </div>
-            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5" v-if="datas.Edit == false">
+            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5">
                 <div class="context border  w-100 p-3 mb-4">
                     <div class="item row pt-2">
-                        <h2 class="display-5 fw-bolder mb-2 col-6">個人資訊</h2>
-                    </div>
-                    <hr>
-                    <div class="row mt-2">
-                        <div class="col-3 text-left pr-4">
-                            <div class="item pb-0 ml-2">
-                                公司名稱
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                產業類別
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                地址
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                公司電話
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                統一編號
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                傳真號碼
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                公司人數
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                營業時間
-                            </div>
-
-                            <div class="item pb-0 ml-2">
-                                負責人
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                負責人電話
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                聯絡信箱
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                可連絡時間
-                            </div>
-                        </div>
-                        <div class="col-9 text-left">
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].companyName+""}}
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].category+""}} 
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].address+""}}
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].telephone+""}} 
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].uniformNumbers+""}}
-                            </div>
-                            <div class="item pb-0 ml-2"> 
-                                {{datas[0].fax+""}}
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].employee+""}}
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].openingHours+""}}
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].principal+""}} 
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].contactPhone+""}} 
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].email+""}} 
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                {{datas[0].contactTime+""}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="context border  w-100 p-3 mb-4">
-                    <div class="item row pt-2 mb-2">
-                        <h2 class="display-5 fw-bolder mb-1 col-6">公司簡介</h2>
-                    </div>
-                    <hr>
-                    <div class="px-4">
-                        {{datas[0].info}}
-                    </div>
-                </div>
-
-                <div class="context border  w-100 p-3 mb-4">
-                    <div class="item row pt-2 mb-2">
-                        <h2 class="display-5 fw-bolder mb-1 col-6">員工福利</h2>
-                    </div>
-                    <hr>
-                    <div class="px-4">
-                        {{datas[0].welfare}}
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5" v-else>
-                <div class="context border  w-100 p-3 mb-4">
-                    <div class="item row pt-2">
-                        <h2 class="display-5 fw-bolder mb-2 col-6">個人資訊</h2>
+                        <h2 class="display-5 fw-bolder mb-2 col-6">修改職缺</h2>
                     </div>
                     <hr>
                     <div class="row mt-2">
                         <div class="col-3 text-left pr-4">
                             <div class="item pb-1 ml-2">
-                                公司名稱
+                                工作名稱
                             </div>
                             <div class="item pb-1 ml-2">
-                                產業類別
+                                工作類別
                             </div>
                             <div class="item pb-0 ml-2">
-                                地址
+                                工作地點
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                工作時間
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                薪資
                             </div>
                             <div class="item pb-1 ml-2">
-                                公司電話
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                統一編號
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                傳真號碼
+                                全/兼職
                             </div>
                             <div class="item pb-1 ml-2">
-                                公司人數
+                                輪班
                             </div>
                             <div class="item pb-0 ml-2">
-                                營業時間
-                            </div>
-                            <div class="item pb-1 ml-2">
-                                負責人
+                                需求年資
                             </div>
                             <div class="item pb-0 ml-2">
-                                負責人電話
-                            </div>
-                            <div class="item pb-1 ml-2">
-                                聯絡信箱
-                            </div>
-                            <div class="item pb-0 ml-2">
-                                可連絡時間
+                                應徵人數
                             </div>
                         </div>
                         <div class="col-9 text-left">
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].companyName" />
+                                <input type="text" v-model="datas.workName" />
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].category" />
+                                <input type="text" v-model="datas.category" />
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].address" />
+                                <input type="text" v-model="datas.workPlace" />
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].telephone" />
+                                <input type="text" v-model="datas.workTime" />
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].uniformNumbers" />
+                                <input type="text" v-model="datas.salary" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4 d-flex wrap" id="fpTime">
+                                <input type="radio" name="fpTime" id="part" value="false" />兼職&ensp;
+                                <input type="radio" name="fpTime" id="full" value="true" />全職
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].fax" />
+                                <input type="text" v-model="datas.shift" />
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].employee" />
+                                <input type="text" v-model="datas.seniority" />
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].openingHours" />
+                                <input type="text" v-model="datas.number" />
                             </div>
-                            <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].principal" />
-                            </div>
-                            <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].contactPhone" />
-                            </div>
-                            <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].email" />
-                            </div>
-                            <div class="item pb-1 ml-2 mb-4">
-                                <input type="text" v-model="datas[0].contactTime" />
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="context border  w-100 p-3 mb-4">
                     <div class="item row pt-2 mb-2">
-                        <h2 class="display-5 fw-bolder mb-1 col-6">公司簡介</h2>
+                        <h2 class="display-5 fw-bolder mb-1 col-6">工作要求</h2>
                     </div>
                     <hr>
                     <div class="item pb-0">
-                        <textarea class="w-100" rows="7" v-model="datas[0].info" style="resize:none;"></textarea>
+                        <textarea class="w-100" rows="7" v-model="datas.workReqire" style="resize:none;"></textarea>
                     </div>
 
                 </div>
 
                 <div class="context border  w-100 p-3 mb-4">
                     <div class="item row pt-2 mb-2">
-                        <h2 class="display-5 fw-bolder mb-1 col-6">員工福利</h2>
+                        <h2 class="display-5 fw-bolder mb-1 col-6">工作內容</h2>
                     </div>
                     <hr>
                     <div class="item pb-0">
-                        <textarea class="w-100" rows="7" v-model="datas[0].welfare" style="resize:none;"></textarea>
+                        <textarea class="w-100" rows="7" v-model="datas.workContent" style="resize:none;"></textarea>
                     </div>
 
                 </div>
@@ -324,11 +201,7 @@
             </div>
         </div>
 
-
-        <div class="d-flex justify-content-end mb-4" v-if="datas.Edit == false">
-            <button class="btn px-4 slide-button m-2 w-25" @@click="Edit">編輯資料</button>
-        </div>
-        <div class="d-flex justify-content-end mb-4" v-else>
+        <div class="d-flex justify-content-end mb-4">
             <button class="btn px-4 slide-button m-2 w-25" @@click="Cancel">取消</button>
             <button class="btn px-4 slide-button m-2 w-25" @@click="Save">修改完成</button>
         </div>
@@ -362,70 +235,69 @@
             data: {
                 Id: sessionStorage.getItem("EmpId"),
                 datas: [],
-                oldDatas: [],
-
+                empDatas: [],
+                part: null,
+                full: null,
+                vId: sessionStorage.getItem("vId"),
             },
             mounted: function () {
                 let _this = this;
-                _this.Login();
 
+                _this.loading();
             },
             methods: {
-                Login: function () {
+                loading: function () {
                     let _this = this;
-                    axios.get(`${webApi}/api/Enterprises/Id${this.Id}`)
+                    let vId = parseInt(_this.vId);
+                    axios.get(`${webApi}/api/Vacancies/edit${vId}`)
                         .then(res => {
-                            _this.datas = res.data;
-                            _this.datas.Edit = false;
-                            _this.oldDatas = _this.datas;
-                            console.log(_this.datas);
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'));
-                },
-                Edit: function () {
-                    let _this = this;
-                    _this.newSkill = null;
-                    axios.get(`${webApi}/api/Enterprises/Id${this.Id}`)
-                        .then(res => {
-                            _this.datas = res.data;
-                            _this.datas.Edit = true;
+                            _this.datas = res.data[0];
+                            if(res.data[0].fullPartTime == true){
+                                document.getElementById("full").checked = true;
+                            }
+                            else{
+                                document.getElementById("part").checked = true;
+                            }
 
                         })
                         .catch(err => console.log(err))
-                        .finally(console.log('完成'));
+                        .finally(console.log("完成"));
 
                 },
+
                 Cancel: function () {
-                    let _this = this;
-                    _this.datas = {};
-                    _this.Login();
+                    window.location = "/Home/vacancyManage";
                 },
                 Save: function () {
-                    _this = this;
+                    let _this = this;
                     var request = {};
-                    request.CompanyName = _this.datas[0].companyName;
-                    request.Category = _this.datas[0].category;
-                    request.Address = _this.datas[0].address;
-                    request.Telephone = _this.datas[0].telephone;
-                    request.UniformNumbers = _this.datas[0].uniformNumbers;
-                    request.Fax = _this.datas[0].fax;
-                    request.employee = _this.datas[0].employee;
-                    request.OpeningHours = _this.datas[0].openingHours;
-                    request.Principal = _this.datas[0].principal;
-                    request.ContactPhone = _this.datas[0].contactPhone;
-                    request.Email = _this.datas[0].email;
-                    request.ContactTime = _this.datas[0].contactTime;
-                    request.Info = _this.datas[0].info;
-                    request.Welfare = _this.datas[0].welfare;
-                    axios.put(`${webApi}/api/Enterprises/${this.Id}`,request)
+                    let vId = parseInt(_this.vId);
+                    let day = new Date().toISOString();
+                    day = day.split("T");
+                    request.VacancyId = vId;
+                    request.WorkName = _this.datas.workName;
+                    request.Category = _this.datas.category;
+                    request.WorkPlace = _this.datas.workPlace;
+                    request.WorkTime = _this.datas.workTime;
+                    request.Salary = _this.datas.salary;
+                    request.FullPartTime = document.getElementById("full").checked;
+                    request.Shift = _this.datas.shift;
+                    request.Seniority = _this.datas.seniority;
+                    request.WorkContent = _this.datas.workContent;
+                    request.WorkReqire = _this.datas.workReqire;
+                    request.UpdateTime = day[0];
+                    request.Valid = true;
+                    request.number = _this.datas.number;
+
+                    console.log(request);
+                    axios.put(`${webApi}/api/Vacancies/${vId}`, request)
                         .then(res => {
                             console.log(res.data);
 
                         })
                         .catch(err => console.log(err))
-                        .finally(location.reload());
-              
+                        .finally(window.location = "/Home/vacancyManage");
+
                 },
             },
 
@@ -435,3 +307,4 @@
 
     </script>
                 }
+
