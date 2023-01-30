@@ -134,6 +134,16 @@ namespace vue.Controllers
             return View();
         }
 
+        public IActionResult postVacancies()
+        {
+            return View();
+        }
+        public IActionResult editVacancies()
+        {
+            return View();
+        }
+
+
         //論壇
         public IActionResult platform()
         {

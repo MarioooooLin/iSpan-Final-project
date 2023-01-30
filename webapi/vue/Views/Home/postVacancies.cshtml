@@ -1,0 +1,290 @@
+﻿
+<section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg')"
+         id="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="text-white font-weight-bold">個人資料</h1>
+                <div class="custom-breadcrumbs ml-2">
+                    <a class="h4 active text-white" asp-area="" asp-controller="Home" asp-action="enterpriseCenter"><strong>返回中心</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- home end -->
+
+<section class="site-section block__18514 pt-4" id="next-section">
+    <div class="container h-100" id="appVue">
+        <div class="row">
+            <!-- Below is sidebar -->
+            <div class="col-xs-12 col-md-10 col-lg-4 mt-lg-5">
+                <nav class="navbar navbar-expand-lg navbar-light pl-lg-5 py-0">
+                    <!-- <a class="navbar-brand" href="#">Liya rescue</a> -->
+                    <button class="navbar-toggler mb-2" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto flex-column">
+                            <li class="nav-item px-1 mx-1">
+                                <div class="head"></div>
+                                <div class="mb-3 border navbar-nav box">
+                                    <div class="p-3 w-100">
+                                        <figure class="figure ml-2 ">
+                                            <div style="object-fit:cover;width:100px;height:100px;">
+                                                <img :src="datas.img"
+                                                     class="figure-img img-fuild rounded-circle h-100 w-100">
+                                            </div>
+                                            <h3 class="display-6 slide-h3 mt-1" v-once>{{datas.principal}} 您好</h3>
+                                        </figure>
+                                        <div>
+                                            手機:<br>{{datas.contactPhone }}
+                                        </div>
+                                        <div>信箱: {{datas.email}}</div>
+                                        <hr>
+                                        <div class="item text-end align-content-end mb-0">
+                                            <div class="text-right mr-3 fw-bold">
+                                                <a asp-controller="Home" asp-action="enterpriseDetail">
+                                                    修改會員資料 <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div>履歷總數：</div>
+                                        <div class="d-block text-right">
+                                            <div class="text-right mr-3 fw-bold">
+                                                <a asp-controller="Home" asp-action="CV">
+                                                    瀏覽所有履歷 <i class="fa-solid fa-chevron-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item px-1 mx-1">
+                                <div class="head mt-4 "></div>
+                                <div class="border p-4 box mb-6">
+                                    <ul class="list-unstyled block__47528 ">
+                                        <li><span class="active h2 ">購買課程</span></li>
+                                        <li class="text-left">前往課程頁面學習更多</li>
+                                        <div class="w-100 text-center">
+                                            <button class="h-50 w-auto btn slide-button btn-lg">
+                                                <a asp-controller="Home" asp-action="courseManage" class="">課程管理</a>
+                                            </button>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item px-1 mx-1 mb-5">
+                                <div class="head mt-4"></div>
+                                <div class="border p-4 box mb-6 h-auto">
+                                    <ul class="list-unstyled block__47528 ">
+                                        <li><span class="active h2">廣告</span></li>
+                                        <figure class="w-100">
+                                            <img src="https://picsum.photos/100/100/?random=10"
+                                                 class="float-left mr-3">
+                                            <figcaption>
+                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                                Maxime, corrupti
+                                                distinctio dolore repellat corporis nulla consequuntur nostrum
+                                                laboriosam
+                                                molestiae doloribus perspiciatis totam esse veritatis expedita,
+                                                atque dicta,
+                                                ullam necessitatibus exercitationem.
+                                            </figcaption>
+                                        </figure>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- </div> -->
+                </nav>
+
+                <!-- Above is sidebar -->
+
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-8 mt-lg-5">
+                <div class="context border  w-100 p-3 mb-4">
+                    <div class="item row pt-2">
+                        <h2 class="display-5 fw-bolder mb-2 col-6">新職缺</h2>
+                    </div>
+                    <hr>
+                    <div class="row mt-2">
+                        <div class="col-3 text-left pr-4">
+                            <div class="item pb-1 ml-2">
+                                工作名稱
+                            </div>
+                            <div class="item pb-1 ml-2">
+                                工作類別
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                工作地點
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                工作時間
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                薪資
+                            </div>
+                            <div class="item pb-1 ml-2">
+                                全/兼職
+                            </div>
+                            <div class="item pb-1 ml-2">
+                                輪班
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                需求年資
+                            </div>
+                            <div class="item pb-0 ml-2">
+                                應徵人數
+                            </div>
+                        </div>
+                        <div class="col-9 text-left">
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.workName" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.category" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.workPlace" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.workTime" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.salary" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4 d-flex wrap" id="fpTime">
+                                <input type="radio" name="fpTime"  id="part" value="false"  checked/>兼職&ensp;
+                                <input type="radio" name="fpTime"  id="full" value="true"/>全職
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.workShift" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.seniority" />
+                            </div>
+                            <div class="item pb-1 ml-2 mb-4">
+                                <input type="text" v-model="datas.number" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="context border  w-100 p-3 mb-4">
+                    <div class="item row pt-2 mb-2">
+                        <h2 class="display-5 fw-bolder mb-1 col-6">工作要求</h2>
+                    </div>
+                    <hr>
+                    <div class="item pb-0">
+                        <textarea class="w-100" rows="7" v-model="datas.workReqire" style="resize:none;"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="context border  w-100 p-3 mb-4">
+                    <div class="item row pt-2 mb-2">
+                        <h2 class="display-5 fw-bolder mb-1 col-6">工作內容</h2>
+                    </div>
+                    <hr>
+                    <div class="item pb-0">
+                        <textarea class="w-100" rows="7" v-model="datas.workContent" style="resize:none;"></textarea>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end mb-4">
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Cancel">取消</button>
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Save">發布職缺</button>
+        </div>
+
+
+
+    </div>
+</section>
+
+@* <div class="context border w-100 p-3 mb-4">
+                <div class="item row pt-2">
+                <h2 class="display-5 fw-bolder mb-2 col-6">求職條件</h2>
+                </div>
+                <hr>
+                <div class="item pb-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eum quam
+                facilis eos odio beatae illum, perspiciatis id molestiae voluptatem?
+                </div>
+                </div>*@
+
+@section Scripts{
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+
+    <script>
+        const webApi = "https://localhost:7240"
+        const appVue = new Vue({
+            el: "#appVue",
+            name: "appVue",
+            data: {
+                Id: sessionStorage.getItem("EmpId"),
+                datas: [],
+                empDatas: [],
+                part: null,
+                full: null,
+            },
+            mounted: function () {
+                let _this = this;
+
+
+            },
+            methods: {
+
+                Cancel: function () {
+                    window.location = "/Home/vacancyManage";
+                },
+                Save: function () {
+                    _this = this;
+                    var request = {};
+                    let day = new Date().toISOString();                  
+                    day = day.split("T");
+                    request.VacancyId = 0;
+                    request.WorkName = _this.datas.workName;
+                    request.EnterpriseId = _this.Id;
+                    request.Category = _this.datas.category;
+                    request.WorkPlace = _this.datas.workPlace;
+                    request.WorkTime = _this.datas.workTime;
+                    request.Salary = _this.datas.salary;
+                    request.FullPartTime = document.getElementById("part").checked;
+                    request.Shift = _this.datas.workShift;
+                    request.Seniority = _this.datas.seniority;
+                    request.WorkContent = _this.datas.workContent;
+                    request.WorkReqire = _this.datas.workReqire;
+                    request.UpdateTime = day[0];
+                    request.Valid = true;
+                    request.number = _this.datas.number;
+
+                    console.log(request);
+                    axios.post(`${webApi}/api/Vacancies`, request)
+                        .then(res => {
+                            console.log(res.data);
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(window.location = "/Home/vacancyManage");
+
+                },
+            },
+
+
+        })
+
+
+    </script>
+                }

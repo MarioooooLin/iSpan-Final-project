@@ -101,43 +101,67 @@ namespace webapi.Controllers
         [HttpGet("view")]
         public async Task<IEnumerable<Vacancy>> VacanciesView(int id)
         {        
-            return _context.Vacancy.Where(v=>v.EnterpriseId== id && v.Valid == true);
+            return _context.Vacancy.Where(v=>v.EnterpriseId== id);
+        }
 
+        [HttpGet("edit{id}")]
+        public async Task<IEnumerable<Vacancy>> VacanciesEdit(int id)
+        {
+            return _context.Vacancy.Where(v => v.VacancyId == id);
         }
 
 
 
-
+        //職缺修改
         // PUT: api/Vacancies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutVacancy(int id, Vacancy vacancy)
+        public async Task<string> PutVacancy(int id, Vacancy vacancy)
         {
-            if (id != vacancy.VacancyId)
-            {
-                return BadRequest();
-            }
+            Vacancy v = await _context.Vacancy.FindAsync(vacancy.VacancyId);
+            v.WorkName = vacancy.WorkName;
+            v.WorkPlace = vacancy.WorkPlace;
+            v.WorkReqire = vacancy.WorkReqire;
+            v.Category = vacancy.Category;
+            v.Number = vacancy.Number;
+            v.Shift = vacancy.Shift;
+            v.FullPartTime = vacancy.FullPartTime;
+            v.Salary = vacancy.Salary;
+            v.WorkContent= vacancy.WorkContent;
+            v.Seniority = vacancy.Seniority;
+            v.Updatetime= vacancy.Updatetime;
+            v.WorkTime= vacancy.WorkTime;
+            _context.Entry(v).State = EntityState.Modified;
+            
+            await _context.SaveChangesAsync();
 
-            _context.Entry(vacancy).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!VacancyExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return "修改成功!";
         }
+
+        [HttpPut("down")]
+        public async Task<string> ChangeVacancy(Status status)
+        {
+            Vacancy v = await _context.Vacancy.FindAsync(status.id);
+            if(status.status == "true")
+            {
+                v.Valid = true;
+            }
+            else
+            {
+                v.Valid = false;
+            }
+
+
+            _context.Entry(v).State = EntityState.Modified;
+
+            await _context.SaveChangesAsync();
+
+
+            return "修改成功!";
+        }
+
+
 
         // POST: api/Vacancies
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
