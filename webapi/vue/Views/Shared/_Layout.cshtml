@@ -59,11 +59,11 @@
                             <li>
                                 <a class="h4 active" asp-area="" asp-controller="Home" asp-action="jobList">找工作</a>
                             </li>
-                            <li class="has-children">
+                            <li class="has-children" id="vue1">
                                 <a class="h4 active" asp-area="" asp-controller="Home" asp-action="sourceIndex">資源</a>
                                 <ul class="dropdown">
                                     <li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="source">文章分享</a></li>
-                                    <li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="psychologicalTest">適性分析</a></li>
+                                    <li><a class="h4 active" @@click="checkMember">適性分析</a></li>
                                     @*	<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="mockInterview">模擬面試</a></li>*@
                                 </ul>
                             </li>
@@ -274,6 +274,28 @@
                     signOut: function () {
                         sessionStorage.clear();
                         window.location = "/Home/Index";
+                    },
+                },
+
+            })
+            const vue1 = new Vue({
+                el: "#vue1",
+                name: "vue1",
+                data: {
+                    //EmpId: sessionStorage.getItem("EmpId"),
+                    Id: sessionStorage.getItem("Id"),
+                    //Name: sessionStorage.getItem("Name"),
+                },
+                methods: {
+                    checkMember: function () {
+                        if (this.Id!=null){
+                            location.href = 'https://localhost:7158/Home/psychologicalTest';
+
+                        }else{
+                            location.href = 'https://localhost:7158/Home/memberLogin';
+                        }
+                        //sessionStorage.clear();
+                        //window.location = "/Home/Index";
                     },
                 },
 
