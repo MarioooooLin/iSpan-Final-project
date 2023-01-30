@@ -138,7 +138,6 @@
                                         <div>
                                             <p>
                                                 <span>
-                                                    @*time*@
                                                     <i class="un">{{data.updateTime}}</i>
                                                 </span>
                                                 <span class="fly-list-hint">
@@ -152,6 +151,21 @@
                             </div>
                         </div>
                     </div>
+                    @*換頁條*@
+                    <div class="row pagination-wrap mt-5">
+                        <div class="col-md-12 text-center">
+                            <div class="custom-pagination ml-auto">
+                                <a href="#" class="prev" v-on:click="prev">Prev</a>
+                                <div class="d-inline-block" v-for="item in sliced">
+                                    <!--算頁數-->
+                                    <a href="#" class="active" v-if="currentpage == item" @@click="click(item)">{{item + 1}}</a>
+                                    <a href="#" v-else @@click="click(item)">{{item + 1}}</a>
+                                </div>
+                                <a href="#" class="next" v-on:click="next">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                    @*------------------------------------*@
                 </div>
             </div>
         </div>
@@ -161,102 +175,179 @@
 <!-- content end -->
 @section Scripts{
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-        <script>
-            const webApi = "https://localhost:7240"
-            const appVue = new Vue({
-                el: "#appVue",
-                name: "appVue",
-                data: {
-                    PostDTOs: [],
-                    datas: [],
-                    inputvalue: "",
-                    updateTime: "",
-                    //selectedArticleName: "",
-                    //selectedKeyword: "",
-                    //PlatformDTOes:[],
-                    //Filter: "",
-                },
-                mounted: function () {
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script>
+        const webApi = "https://localhost:7240"
+        const appVue = new Vue({
+            el: "#appVue",
+            name: "appVue",
+            data: {
+                PostDTOs: [],
+                datas: [],
+                inputvalue: "",
+                updateTime: "",
+                //---
+                //datalist: [],
+                pageData: [],
+                dataLength: 0,//資料長度
+                pagesize: 0, //頁數
+                sliced: [], //切分頁
+                currentpage: 0
+                //selectedArticleName: "",
+                //selectedKeyword: "",
+                //PlatformDTOes:[],
+                //Filter: "",
+            },
+            mounted: function () {
+                let _this = this;
+                _this.Platforms();
+            },
+            methods: {
+                Platforms: function () {
                     let _this = this;
-                    _this.Platforms();
-                },
-                methods: {
-                    Platforms: function () {
-                        let _this = this;
-                        axios.get(`${webApi}/api/Platforms`)
-                            .then(response => {
-                                _this.PostDTOs = response.data;
-                                var PostList = [];
-                                for (var i = 0; i < _this.PostDTOs.length; i++) {
-                                    let item = {};
-                                    item = _this.PostDTOs[i];
-                                    item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
-                                    PostList.push(item);
-                                }
-                                _this.PostDTOs = PostList;
-                            })
-                            .catch(err => console.log(err))
-                            .finally(console.log('完成'))
-                    },
-                    //    search: function () {
-                    //        //alert('你好繼宣');
-                    //        let _this = this;
-                    //        if (_this.inputvalue) {
-                    //            let name = _this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
-                    //            //let ArticleName = this.selectedArticleName;
-                    //            axios.get(`${webApi}/api/Platforms?name=${name}`)
-                    //                .then(response => {
-                    //                    _this.PostDTOs = response.data;
-                    //                    var searchList = [];
-                    //                    for (var i = 0; i < _this.datas.lenght;i++){
-                    //                         let item = {};
-                    //                        item = _this.PostDTOs[i];
-                    //                        searchList.push(item);
-                    //                    }
-                    //                    _this.PostDTOs = searchList;
-                    //                    console.log(_this.datas)
-                    //                })
-                    //                .catch(err => console.log(err))
-                    //                .finally(console.log('完成'))
-                    //        } else {
-                    //            _this.Platforms();
-                    //            $('input').blur();
-                    //        }
-                    //    },
-                    //},
-                    //watch: {
-                    //    inputvalue: {
-                    //        handler(newval) {
-                    //            this.Platforms();
-                    //        },
-                    //        deep: true
-                    //    },
-                    //}
-                    search: function () {
-                        //alert('你好繼宣');
-                        let _this = this;
-                        var request = {};
-                        request.ArticleName = _this.inputvalue;
-                        axios.post(`${webApi}/api/Platforms/Filter`, request).then(
-                            response => {
-                                _this.PostDTOs = response.data;
-                                var searchList = [];
-                                for (var i = 0; i < _this.PostDTOs.length; i++) {
-                                    var item = {};
-                                    item = _this.PostDTOs[i];
-                                    item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
-                                    searchList.push(item);
-                                }
-                                _this.PostDTOs = searchList;
+                    let item = 0;
+                    axios.get(`${webApi}/api/Platforms`)
+                        .then(response => {
+                            //------------------------------------
+                            _this.dataLength = response.data.length;
+                            console.log(response.data); //8筆
+                            _this.PageContent();
+                            let arr = [];
 
+                            for (let i = item * 15; i < (item + 1) * 15; i++) {
+                                let item = {};
+                                item = response.data[i];//6筆
+                                item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                arr.push(item);
                             }
-                        );
+                            _this.PostDTOs = arr;
+                            console.log(_this.PostDTOs)//6筆
+                            //------------------------------------
+                            //時間
+                            //_this.PostDTOs = response.data; //重複response了
+                            //var PostList = [];
+                            //for (var i = 0; i < _this.PostDTOs.length; i++) {
+                            //    let item = {};
+                            //    item = _this.PostDTOs[i];
+                            //    item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                            //    PostList.push(item);
+                            //}
+                            //_this.PostDTOs = PostList;
 
-                    },
-                }
-            })
-        </script>
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+                },
+                //------------------------------------
+                PageContent: function () { // 頁數長度
+                    this.pagesize = Math.ceil(this.dataLength / 15); //無條件進位
+                    for (let i = 0; i < this.pagesize; i++) {
+                        this.sliced[i] = i;
+                    }//[0,1]
+                },
+                click: function (item) {
+                    let currentpage = item;
+                    this.currentpage = currentpage;
+                    axios.get(`${webApi}/api/Platforms`)
+                        .then(response => {
+                            this.PostDTOs = [];
+                            this.dataLength = response.data.length;
+                            console.log(response.data); //8筆
+                            this.PageContent();
+                            let arr = [];
+                            let item = {};
+                            if (this.pagesize == (currentpage + 1)) {
+                                for (let i = currentpage * 15; i < response.data.length; i++) {
+                                    item = response.data[i];//6筆
+                                    item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                    arr.push(item);
+                                }
+                            } else {
+                                for (let i = currentpage * 15; i < (currentpage + 1) * 15; i++) {
+                                    item = response.data[i];//6筆
+                                    item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                    arr.push(item);
+                                }
+                            }
+                            this.PostDTOs = arr;
+                            console.log(this.PostDTOs)//6筆
+                        })
+                },
+                prev() {
+                    let currpage = this.currentpage
+                    if (currpage != 0) {
+                        currpage--;
+                        this.click(currpage)
+                        item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                    }
+                },
+                next() {
+                    let currpage = this.currentpage;
+                        currpage++;
+                    if (currpage != this.sliced.length) {
+                        this.click(currpage)
+                        item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                    }
+                },
+                //------------------------------------
+                //    search: function () {
+                //        //alert('你好繼宣');
+                //        let _this = this;
+                //        if (_this.inputvalue) {
+                //            let name = _this.inputvalue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                //            //let ArticleName = this.selectedArticleName;
+                //            axios.get(`${webApi}/api/Platforms?name=${name}`)
+                //                .then(response => {
+                //                    _this.PostDTOs = response.data;
+                //                    var searchList = [];
+                //                    for (var i = 0; i < _this.datas.lenght;i++){
+                //                         let item = {};
+                //                        item = _this.PostDTOs[i];
+                //                        searchList.push(item);
+                //                    }
+                //                    _this.PostDTOs = searchList;
+                //                    console.log(_this.datas)
+                //                })
+                //                .catch(err => console.log(err))
+                //                .finally(console.log('完成'))
+                //        } else {
+                //            _this.Platforms();
+                //            $('input').blur();
+                //        }
+                //    },
+                //},
+                //watch: {
+                //    inputvalue: {
+                //        handler(newval) {
+                //            this.Platforms();
+                //        },
+                //        deep: true
+                //    },
+                //}
+                search: function () {
+                    //alert('你好繼宣');
+                    let _this = this;
+                    var request = {};
+                    request.ArticleName = _this.inputvalue;
+                    axios.post(`${webApi}/api/Platforms/Filter`, request).then(
+                        response => {
+                            _this.PostDTOs = response.data;
+                            var searchList = [];
+                            for (var i = 0; i < _this.PostDTOs.length; i++) {
+                                var item = {};
+                                item = _this.PostDTOs[i];
+                                item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                searchList.push(item);
+                            }
+                            _this.PostDTOs = searchList;
+
+                        }
+                    );
+
+                },
+            }
+        })
+    </script>
     }

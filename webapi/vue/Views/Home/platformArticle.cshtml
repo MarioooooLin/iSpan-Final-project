@@ -50,13 +50,13 @@
                                     </p>
                                     <p>{{data.replyTime}}</p>
                                 </span>
-                                <div>{{data.floor}}</div>
+                                <div>{{data.floor}}樓</div>
                                 <hr>
                             </div>
                             <hr>
                             <div class="input-group col-12 my-4">
-                                <textarea type="text" name="userid" class="form-control mx-2" placeholder="留下你的想法..."></textarea>
-                                <button type="submit" class="btn btn-primary b2" @*@@click="insert"*@>發送</button>
+                                <textarea type="text" name="userid" class="form-control mx-2" placeholder="留下你的想法..." v-model="ReplyMessage"></textarea>
+                                <button type="submit" class="btn btn-primary b2" @@click="insert">發送</button>
                             </div>
                         </div>
                     </div>
@@ -84,9 +84,9 @@
                 //contents: "",
                 updateTime: "",
                 ReplyDTOs: [],
-                //ReplyMessage: null,
+                ReplyMessage: null,
                 //Floor: "",
-                ReplyTime: "",
+                replyTime: "",
             },
             mounted: function () {
                 var _this = this;
@@ -118,7 +118,7 @@
                             for (var i = 0; i < _this.ReplyDTOs.length; i++) {
                                 let item = {};
                                 item = _this.ReplyDTOs[i];
-                                item.ReplyTime = moment(item.ReplyTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                item.replyTime = moment(item.replyTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
                                 ReplyList.push(item);
                             }
                             _this.ReplyDTOs = ReplyList;
@@ -126,26 +126,17 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
-                //getreply: function () {
-                //    let _this = this;
-                //    let ArticleId = new URL(location.href).searchParams.get('id');
-                //    axios.get(`${webApi}/api/Reply/${ArticleId}`)
-                //        .then(response => {
-                //            _this.ReplyDTOs = response.data;
-                //            var ReplyList = [];
-                //            for (var i = 0; i < _this.ReplyDTOs.length; i++) {
-                //                let item = {};
-                //                item = _this.ReplyDTOs[i];
-                //                item.ReplyTime = moment(item.ReplyTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
-                //                ReplyList.push(item);
-                //            }
-                //            _this.ReplyDTOs = ReplyList;
-                //        })
-                //        .catch(err => console.log(err))
-                //        .finally(console.log('完成'))
-                //},
+                insert: function () {
+                    let _this = this;
+                    var request = {};
+                    request.ReplyMessage = _this.ReplyMessage;
+                    axios.post(`${webApi}/api/Reply/${ArticleId}`, request)
+                    .then(response => {
+                        window.location = "/Home/platformArticle";
+                    });
+                },   
             }
-        })
+    })
     </script>
 
 
