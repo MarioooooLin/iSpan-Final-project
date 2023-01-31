@@ -1,8 +1,12 @@
-﻿using webapi.Providers;
+﻿using System;
+using webapi.Providers;
 using webapi.Domain;
 using Microsoft.AspNetCore.Mvc;
 using webapi.LinePaymentDTO;
 using Microsoft.AspNetCore.Cors;
+using System.ComponentModel.DataAnnotations;
+using System.Net.Mime;
+
 
 namespace webapi.Controllers
 {
@@ -36,3 +40,4 @@ namespace webapi.Controllers
         }
     }
 }
+

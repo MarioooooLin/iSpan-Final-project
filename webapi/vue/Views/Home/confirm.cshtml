@@ -1,0 +1,93 @@
+﻿<!-- HOME start-->
+<section class="section-hero overlay inner-page bg-image " style="background-image: url('images/hero_1.jpg');"
+         id="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="text-white font-weight-bold">購買完成</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home end -->
+<!-- content start -->
+<section class="site-section block__18514 pt-4" id="next-section">
+    <div class="container h-100">
+        <div class="row">
+            <!-- leftslide start -->
+            <div class="col-lg-7 pay-content mt-5 pt-5 pt-lg-0 mt-lg-0 pb-2">
+                <div class="context  w-100 p-3 mb-4">
+                    <div class="item row pt-4">
+                        <h3 class="display-5 fw-bolder mb-0 col-12 ml-3">回報訂單</h3>
+                        <hr>
+                        <h5 class="display-5 font-weight-bold mb-0 col-12 ml-3 pt-4"> 測試商品 </h5>
+                    </div>
+                    <ul class="list-unstyled block__47528 mb-0 ml-4">
+                        <div class="row">
+                            <p class="col-11 text-right">單位：新台幣 NT$</p>
+                            <p class="font-weight-bold col-11 text-right lead">35000</p>
+                        </div>
+                    </ul>
+                    <hr style="height:2px;color: #e2e2e2;background-color: #e2e2e2; " />
+                    <div class="row justify-content-center">
+                        <button onclick="confirmPayment()" class="btn btn-primary btn-lg w-75"> 確認付款</button>
+                    </div>
+                </div>
+                <div>
+                    <a id="paymentStatus">交易狀態 : 交易已授權，等待確認<a>
+                </div>
+            </div>
+            <!-- leftslide end -->
+        </div>
+    </div>
+</section>
+<!-- content end -->
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ab4yDn4BMS6wkUCy-BZqqV0fw_NM9UPmGc1IeZsn5N51HjT98IzI5Ha4bXbzX_n4qVPcbsVwJyENYyk3"></script>
+    <script>
+        let baseLoginPayUrl = 'https://localhost:7240/api/LinePay/';
+        let transactionId = "";
+        let orderId = "";
+
+        window.onload = () => {
+            // 取出 query parameter 中的 transactionId & orderId
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+
+            transactionId = params.transactionId;
+            orderId = params.orderId;
+        }
+
+        function confirmPayment() {
+            // 交易訂單假資料
+            payment = {
+                amount: 3998,
+                currency: "TWD",
+            };
+            //  送出確認交易
+            $.post({
+                url: baseLoginPayUrl + `Confirm?transactionId=${transactionId}&orderId=${orderId}`,
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(payment),
+                success: (res) => {
+                    $("#paymentStatus").text("交易狀態 : 成功")
+                    console.log(res);
+
+                    setTimeout(() => {
+                        window.location = "https://cccf-61-63-154-173.jp.ngrok.io/products.html";
+                    }, 2000);
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            })
+        }
+    </script>
+
+
+}

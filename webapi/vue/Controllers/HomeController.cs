@@ -194,6 +194,10 @@ namespace vue.Controllers
         {
             return View();
         }
+        public IActionResult confirm()
+        {
+            return View();
+        }
 
         //履歷
         public IActionResult CV()
