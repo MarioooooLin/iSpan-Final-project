@@ -27,7 +27,7 @@
                 <div class="container h-100">
                     <div class="row">
                         <!-- leftslide start -->
-                        <div class="mr-auto">
+                        <div class="mr-auto ml-xl-5">
                             <div class="head"></div>
                             <div class="border p-4 box pb-0 ">
                                 <ul class="list-unstyled block__47528 mb-0">
@@ -193,7 +193,7 @@
                             </form>
                         </div>
                         <div class="sidebar-box">
-                            <img src="/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
+                            <img :src=datas.teacherPhoto alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
                             <h3>{{datas.author}}</h3>
                             <p>
                                 {{datas.expreience}}
@@ -255,7 +255,7 @@
                 message: "",
                 title: "",
                 articleMessage: [], //文章留言
-                title:''
+                title: ''
             },
             mounted: function () {
                 let _this = this;
@@ -276,6 +276,28 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+
+                getMessage() {
+                    let _this = this;
+                    let articleId = new URL(location.href).searchParams.get('id');
+                    axios.get(`${webApi}/api/Articles/id`)
+                        .then(res => {
+                            console.log(res.data)
+                            for (let i = 0; i < res.data.length; i++) {
+                                if (res.data[i].title == this.title && res.data[i].img == null) {
+                                    let message = {};
+                                    console.log(res.data[i]);
+                                    message = res.data[i];
+                                    this.articleMessage.push(message);
+                                    console.log(this.articleMessage);
+                                }
+                            }
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+
+                },
+
 
                 post() {
                     let messageContent = {};
@@ -304,35 +326,15 @@
                     document.getElementById("name").value = "";
                     document.getElementById("message").value = "";
 
-                    //this.getMessage();
+                    this.getMessage();
 
                     //axios.post(`${webApi}/api/Articles`, { params: messageContent })
                     //    .then(response => {
                     //        console.log(response)
                     //    })
                     //    .catch(err => console.log(err))
-                    //    .finally(console.log('完成'))
-                },
-                getMessage() {
-                    let _this = this;
-                    let articleId = new URL(location.href).searchParams.get('id');
-                    axios.get(`${webApi}/api/Articles/id`)
-                        .then(res => {
-                            console.log(res.data)
-                            for (let i = 0; i < res.data.length; i++) {
-                                if (res.data[i].title == this.title && res.data[i].img == null) {
-                                    let message = {};
-                                    console.log(res.data[i]);
-                                    message = res.data[i];
-                                    this.articleMessage.push(message);
-                                    console.log(this.articleMessage);
-                                }
-                            }
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'))
 
-                }
+                },
             }
         })
     </script>

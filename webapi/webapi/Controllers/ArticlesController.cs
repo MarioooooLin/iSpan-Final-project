@@ -80,7 +80,7 @@ namespace webapi.Controllers
                 ArticleFloor = article.ArticleFloor,
                 NickName = article.nickName,
                 Message = article.message,
-
+                TeacherPhoto= teacher.Img,
 
             }).Where(x => x.ArticleId == id);
 
@@ -103,7 +103,7 @@ namespace webapi.Controllers
                 ArticleFloor = article.ArticleFloor,
                 NickName = article.nickName,
                 Message = article.message,
-
+                TeacherPhoto = teacher.Img,
 
             });
 
