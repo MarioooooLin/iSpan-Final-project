@@ -147,13 +147,13 @@
                                     </div>
 
                                     <div class="comment-body">
-                                        <h3>{{data.nickName}}</h3>
-                                        <div class="meta">{{data.updateTime}}</div>
+                                        <h3>{{data.nickName}}</h3> 
+                                        <div class="meta">{{data.update}}</div>
                                         <p>
                                             {{data.message}}
                                         </p>
                                         <hr>
-                                                @*<p><a href="#" class="reply">Reply</a></p>*@
+                                                <p><a v-on:click="deleteMessage" class="delete">Delete</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -335,6 +335,11 @@
                     //    .catch(err => console.log(err))
 
                 },
+
+                deleteMessage(){
+                    axios.delete(`${webApi}/api/Articles`)
+                    .then(res => { console.log(res) })
+                }
             }
         })
     </script>

@@ -97,7 +97,7 @@ namespace webapi.Controllers
                 Img = article.Img,
                 Update = article.UpdateTime.Value.ToString("yyyy-MM-dd"),
                 Author = teacher.Name,
-                UpdateTime = article.UpdateTime,
+                //UpdateTime = article.UpdateTime,
                 ArticleId = article.ArticleId,
                 Expreience = teacher.Experience,
                 ArticleFloor = article.ArticleFloor,
