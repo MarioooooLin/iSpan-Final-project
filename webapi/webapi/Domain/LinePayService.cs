@@ -14,15 +14,13 @@ namespace webapi.Domain
             _jsonProvider = new JsonProvider();
         }
 
-        private readonly string channelId = "{1657859945}";
-        private readonly string channelSecretKey = "{3b7d055c552accfd5338bb3b265488aa}";
-
+        private readonly string channelId = "1657859945";
+        private readonly string channelSecretKey = "3b7d055c552accfd5338bb3b265488aa";
 
         private readonly string linePayBaseApiUrl = "https://sandbox-api-pay.line.me";
 
         private static HttpClient client;
         private readonly JsonProvider _jsonProvider;
-
 
         // 送出建立交易請求至 Line Pay Server
         public async Task<PaymentResponseDto> SendPaymentRequest(PaymentRequestDto dto)
@@ -76,15 +74,11 @@ namespace webapi.Domain
             var responseDto = _jsonProvider.Deserialize<PaymentConfirmResponseDto>(await response.Content.ReadAsStringAsync());
             return (PaymentConfirmResponseDto)responseDto;
         }
+
         public async void TransactionCancel(string transactionId)
         {
             //使用者取消交易則會到這裏。
             Console.WriteLine($"訂單 {transactionId} 已取消");
         }
-
-
-
-
     }
-
 }

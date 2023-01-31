@@ -2,27 +2,27 @@
 {
     public class PaymentRequestDto
     {
-        public int Amount { get; set; }
-        public string Currency { get; set; }
-        public string OrderId { get; set; }
-        public List<PackageDto> Packages { get; set; }
-        public RedirectUrlsDto RedirectUrls { get; set; }
+        public int? Amount { get; set; }
+        public string? Currency { get; set; }
+        public string? OrderId { get; set; }
+        public List<PackageDto>? Packages { get; set; }
+        public RedirectUrlsDto? RedirectUrls { get; set; }
         public RequestOptionDto? Options { get; set; }
     }
     public class PackageDto
     {
-        public string Id { get; set; }
-        public int Amount { get; set; }
-        public string Name { get; set; }
-        public List<LinePayProductDto> Products { get; set; }
+        public string? Id { get; set; }
+        public int? Amount { get; set; }
+        public string? Name { get; set; }
+        public List<LinePayProductDto>? Products { get; set; }
         public int? UserFee { get; set; }
 
     }
     public class LinePayProductDto
     {
-        public string Name { get; set; }
-        public int Quantity { get; set; }
-        public int Price { get; set; }
+        public string? Name { get; set; }
+        public int? Quantity { get; set; }
+        public int? Price { get; set; }
         public string? Id { get; set; }
         public string? ImageUrl { get; set; }
         public int? OriginalPrice { get; set; }
@@ -30,8 +30,8 @@
 
     public class RedirectUrlsDto
     {
-        public string ConfirmUrl { get; set; }
-        public string CancelUrl { get; set; }
+        public string? ConfirmUrl { get; set; }
+        public string? CancelUrl { get; set; }
         public string? AppPackageName { get; set; }
         public string? ConfirmUrlType { get; set; }
     }
@@ -70,7 +70,7 @@
         public string? City { get; set; }
         public string? Detail { get; set; }
         public string? Optional { get; set; }
-        public ShippingAddressRecipientDto Recipient { get; set; }
+        public ShippingAddressRecipientDto? Recipient { get; set; }
     }
 
     public class ShippingAddressRecipientDto
