@@ -62,7 +62,8 @@ namespace webapi.Controllers
             {
                 return result.Where(x => x.CourseId == CourseId);
             }
-            return result;
+            return await Task.FromResult(result);
+
 
         }
 

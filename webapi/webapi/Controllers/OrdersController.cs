@@ -24,7 +24,7 @@ namespace webapi.Controllers
 
         // GET: api/Orders
         [HttpGet]
-        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? CandidateId,bool? valid)
+        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? CandidateId,bool? vaild)
         {
             var result = _context.CourseOrder.Join(_context.Course,a=>a.CourseId,b=>b.CourseId,(co,c)=>new OrderDetailDTO
             {
@@ -37,16 +37,22 @@ namespace webapi.Controllers
                 Vaild = co.Vaild,
             }).Where(x=>x.CandidateId== CandidateId);
 
-            if(valid is bool)
+            if(vaild == true)
             {
-                result= result.Where(x=>x.Vaild == valid);
-            };
-            return result;
+                result= result.Where(x=>x.Vaild == true);
+            }
+            else
+            {
+                result = result.Where(x => x.Vaild == false);
+
+            }
+            return await Task.FromResult(result);
+
         }
 
         // GET: api/Orders/5
-        [HttpGet("{id}")]
-        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? CandidateId,int? CourseId)
+        [HttpGet("{CandidateId}/{CourseId}")]
+        public async Task<IEnumerable<OrderDetailDTO>> GetCourseOrder(int? CandidateId, int? CourseId)
         {
             var result = _context.CourseOrder.Join(_context.Course, a => a.CourseId, b => b.CourseId, (co, c) => new OrderDetailDTO
             {
@@ -58,13 +64,9 @@ namespace webapi.Controllers
                 Buyingtime = co.Buyingtime,
                 Vaild = co.Vaild,
 
-            }).Where(x => x.CandidateId == CandidateId);
+            }).Where(x => x.CandidateId == CandidateId).Where(x => x.CourseId == CourseId);
 
-            if (CourseId != null)
-            {
-                result = result.Where(x => x.CourseId == CourseId);
-            }
-            return result;
+            return await Task.FromResult(result);
         }
 
         // PUT: api/Orders/5
@@ -108,7 +110,7 @@ namespace webapi.Controllers
                 CandidateId = courseOrder.CandidateId,
                 CourseId = courseOrder.CourseId,
                 Buyingtime = DateTime.Now,
-                Vaild = false,
+                Vaild = true,
             };
             _context.CourseOrder.Add(co);
             await _context.SaveChangesAsync();
