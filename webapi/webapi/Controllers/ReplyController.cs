@@ -31,10 +31,10 @@ namespace webapi.Controllers
         }
 
         // GET: api/Reply/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Reply>>> GetReply(int id)
+        [HttpGet("{Aritcleid}")]
+        public async Task<IEnumerable<Reply>> GetReply(int Aritcleid)
         {
-            return await _context.Reply.Where(reply => reply.ArticleId == id ).ToArrayAsync();
+            return await _context.Reply.Where(reply => reply.ArticleId == Aritcleid).ToArrayAsync();
         }
 
         // PUT: api/Reply/5
@@ -72,12 +72,16 @@ namespace webapi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         //public async Task<ActionResult<Reply>> PostReply(Reply reply)
-        public async Task<Reply> PostReply(ReplyDTO reply)
+        public async Task<Reply> PostReply(Reply reply)
         {
             Reply rp = new Reply
             {
                 ReplyMessage = reply.ReplyMessage,
+                ArticleId = reply.ArticleId,
+                Floor = reply.Floor,
+                ArticleName=reply.ArticleName,  
             };
+
             _context.Reply.Add(rp);
             await _context.SaveChangesAsync();
 

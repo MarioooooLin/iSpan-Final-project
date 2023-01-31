@@ -13,5 +13,6 @@
         public int? ArticleFloor { get; set; }
         public string? NickName { get; set; }
         public string? Message { get; set; }
+        public int? authorId { get; set; }
     }
 }
