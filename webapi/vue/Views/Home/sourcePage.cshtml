@@ -255,6 +255,7 @@
                 message: "",
                 title: "",
                 articleMessage: [], //文章留言
+                title:''
             },
             mounted: function () {
                 let _this = this;
@@ -267,8 +268,10 @@
                     let articleId = new URL(location.href).searchParams.get('id');
                     axios.get(`${webApi}/api/Articles/${articleId}`)
                         .then(response => {
+                            this.title = response.data[0].title;
                             this.datas = response.data[0];
                             console.log(this.datas);
+                            console.log(this.title)
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
@@ -290,7 +293,7 @@
                     messageContent.Title = this.datas.title;
                     messageContent.ArticleFloor = this.articleMessage.length;
                     messageContent.UpdateTime = Time;
-                    messageContent.AuthorId = this.datas.articleId;
+                    messageContent.AuthorId = 1;
 
                     console.log(messageContent) //檢查留言
 
@@ -311,11 +314,12 @@
                 },
                 getMessage() {
                     let _this = this;
-                    axios.get(`${webApi}/api/Articles`)
+                    let articleId = new URL(location.href).searchParams.get('id');
+                    axios.get(`${webApi}/api/Articles/id`)
                         .then(res => {
                             console.log(res.data)
                             for (let i = 0; i < res.data.length; i++) {
-                                if (res.data[i].title == this.datas.title && res.data[i].img == null) {
+                                if (res.data[i].title == this.title && res.data[i].img == null) {
                                     let message = {};
                                     console.log(res.data[i]);
                                     message = res.data[i];

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
@@ -82,6 +83,29 @@ namespace webapi.Controllers
 
 
             }).Where(x => x.ArticleId == id);
+
+            return result;
+        }
+
+        [HttpGet("id")] 
+        public async Task<IEnumerable<ArticleDTO>> GetArt()
+        {
+            var result = _context.Article.Join(_context.Teacher, x => x.AuthorId, y => y.TeacherId, (article, teacher) => new ArticleDTO
+            {
+                Title = article.Title,
+                ArticleContent = article.ArticleContent,
+                Img = article.Img,
+                Update = article.UpdateTime.Value.ToString("yyyy-MM-dd"),
+                Author = teacher.Name,
+                UpdateTime = article.UpdateTime,
+                ArticleId = article.ArticleId,
+                Expreience = teacher.Experience,
+                ArticleFloor = article.ArticleFloor,
+                NickName = article.nickName,
+                Message = article.message,
+
+
+            });
 
             return result;
         }
