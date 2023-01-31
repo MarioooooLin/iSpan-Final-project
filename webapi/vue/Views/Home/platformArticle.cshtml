@@ -56,7 +56,7 @@
                             <hr>
                             <div class="input-group col-12 my-4">
                                 <textarea type="text" name="userid" class="form-control mx-2" placeholder="留下你的想法..." v-model="ReplyMessage"></textarea>
-                                <button type="submit" class="btn btn-primary b2" @@click="insert">發送</button>
+                                <button type="submit" class="btn btn-primary b2" @@click="insert(datas)">發送</button>
                             </div>
                         </div>
                     </div>
@@ -80,12 +80,12 @@
             name: "appVue",
             data: {
                 datas: {},
-                //articleName: "",
+                articleName: "",
                 //contents: "",
                 updateTime: "",
                 ReplyDTOs: [],
                 ReplyMessage: null,
-                //Floor: "",
+                Floor: "",
                 replyTime: "",
             },
             mounted: function () {
@@ -126,17 +126,21 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
-                insert: function () {
+                insert: function (datas) {
                     let _this = this;
                     var request = {};
                     request.ReplyMessage = _this.ReplyMessage;
-                    axios.post(`${webApi}/api/Reply/${ArticleId}`, request)
-                    .then(response => {
-                        window.location = "/Home/platformArticle";
-                    });
-                },   
+                    request.ArticleId = datas.articleId;
+                    request.Floor = datas.Floor;
+                    request.ArticleName = datas.articleName;
+                    axios.post(`${webApi}/api/Reply`, request)
+                        .then(response => {
+                            _this.course();
+                            _this.getreply();
+                        });
+                },
             }
-    })
+        })
     </script>
 
 
