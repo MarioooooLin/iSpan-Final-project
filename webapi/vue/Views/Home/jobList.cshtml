@@ -214,7 +214,7 @@
                                                 <figure class="figure ml-2">
                                                     <img src="https://picsum.photos/250/250/?random=10"
                                                          class="figure-img img-fuild rounded-circle  w-50  ">
-                                                    <h3 class="display-6 slide-h3 mt-1" @@click="user">使用者! 你好</h3>
+                                                    <h3 class="display-6 slide-h3 mt-1">{{userdata.name}}</h3>
                                                 </figure>
                                                 <div>手機:&nbsp; {{userdata.cellphone}}</div>
                                                 <div>信箱:&nbsp; {{userdata.email}}</div>
@@ -325,11 +325,10 @@
                 page: [],
                 userdata: [],
                 arrdeposition: [],
-                interestId:0
+                interestId: 0
             },
             mounted: function () {
                 this.search();
-                this.checkdeposition()
                 this.user();
             },
             methods: {
@@ -372,7 +371,6 @@
                                     }
                                     this.datas = arr;
                                 }
-                                console.log(this.datas)
                             })
                     }
                 },
@@ -503,7 +501,7 @@
                             }
                         })
                 },
-                deposition(id) {
+                deposition(id) { // 職缺id
                     let candidateId = window.sessionStorage.getItem("Id")
                     if (!candidateId) {
                         alert('尚未登入 , 請先登入')
@@ -511,9 +509,9 @@
                     axios.get(`${webApi}/api/Interests/${candidateId}`)
                         .then(res => {
                             let bool = false
-                            console.log(res.data)
                             for (i = 0; i < res.data.length; i++) {
                                 if (id == res.data[i].vacancyId) {
+                                    this.interestId = res.data[i].id
                                     bool = true
                                     break;
                                 } else {
@@ -521,26 +519,22 @@
                                 }
                             }
                             if (bool) {
-                                let i;
-                                for (i = 0; i < this.datas.length; i++) {
-                                    if (res.data[i].vacancyId == id) {
-                                        this.interestId = res
+                                for (let i = 0; i < this.datas.length; i++) {
+                                    if (this.datas[i].vacancyId == id) {
+                                        item = i;
                                         break
                                     }
                                 }
-                                let vanid = res.data[i].id
-                                console.log(vanid)
-                                axios.delete(`${webApi}/api/Interests/${vanid}`)
+                                axios.delete(`${webApi}/api/Interests/${this.interestId}`)
                                     .then(res => {
-                                        let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[i].lastChild
+                                        let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[item].lastChild
                                         x.innerHTML = '儲存';
                                     })
                                     .catch(err => console.log(err))
-                                    .finally(console.log('刪除'))
                             } else {
                                 let i;
                                 for (i = 0; i < this.datas.length; i++) {
-                                    if(this.datas[i].vacancyId == id){
+                                    if (this.datas[i].vacancyId == id) {
                                         break
                                     }
                                 }
@@ -549,31 +543,13 @@
                                     VacancyId: this.datas[i].vacancyId,
                                     EnterpriseId: this.datas[i].enterpriseId
                                 }
-                                console.log(postdata)
                                 axios.post(`${webApi}/api/Interests`, postdata)
                                     .then(res => {
-                                        console.log(res.data)
                                         let x = document.querySelectorAll('button[class="btn btn-dark px-4 mx-1"]')[i].lastChild
                                         x.innerHTML = '已儲存';
                                     })
                             }
                         })
-                },
-                checkdeposition() {
-                    let candidateId = window.sessionStorage.getItem("Id")
-                    if (!candidateId) {
-                        return false;
-                    }
-                    axios.get(`${webApi}/api/Interests/${candidateId}`)
-                        .then(res => {
-                            for (i = 0; i < res.data.length; i++) {
-                                this.arrdeposition[i] = res.data[i].vacancyId
-                            }
-                            this.arrdeposition.sort(function (a, b) {
-                                return a - b;
-                            })
-                        })
-                    console.log(this.arrdeposition)
                 },
                 user() {
                     let userid = window.sessionStorage.getItem('Id')
@@ -582,6 +558,7 @@
                         .then(res => {
                             let x = res.data[0].cellphone;
                             res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            res.data[0].name = res.data[0].name + ' 你好'
                             this.userdata = res.data[0]
                             console.log(this.userdata)
                         })
