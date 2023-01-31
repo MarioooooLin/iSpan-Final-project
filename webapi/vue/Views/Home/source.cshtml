@@ -120,8 +120,8 @@
                             <!--The first article-->
                             <div class="col-md-6 col-lg-4 mb-5 " v-for="data in datalist">
                                 <a v-bind:href="'https://localhost:7158/Home/sourcePage?id='+data.articleId"><img :src="data.img" v-if="data.img!==null" alt="Image" class="img-fluid rounded mb-4" /></a>
-@*                                <a href=""><img :src="data.img" v-else alt="Image" class="img-fluid rounded mb-4" /></a>
-*@                                
+                                @*                                <a href=""><img :src="data.img" v-else alt="Image" class="img-fluid rounded mb-4" /></a>
+                                *@
                                 <h3>
                                     <a v-bind:href="'https://localhost:7158/Home/sourcePage?id='+data.articleId" class="text-black">{{data.title}}</a>
                                 </h3>
@@ -133,7 +133,7 @@
                             <span class="icon fa fa-search"></span>
                             <input type="text" class="form-control form-control-lg"
                                    placeholder="Type a keyword and hit enter"
-                                   v-on:keyup.enter="" />
+                                   v-model="inputValue" />
                         </div>
 
                         <div class="row pagination-wrap mt-5">
@@ -168,7 +168,8 @@
                 dataLength: 0,//資料長度
                 pagesize: 0, //頁數
                 sliced: [], //切分頁
-                currentpage: 0
+                currentpage: 0,
+                inputValue: '',
             },
             mounted: function () {
                 let _this = this;
@@ -178,35 +179,81 @@
                 Source: function () {
                     let _this = this;
                     let item = 0;
-                    axios.get(`${webApi}/api/Articles`)
+                    let name = this.inputValue.replace(/[\ !@@#$%^&*()_+|}{":?>~+\-*\/.';[\]\\]+/g, "");
+                    axios.get(`${webApi}/api/Articles?title=${name}`)
                         .then(response => {
-                            //console.log(response.data.img);
-                            //appVue.datas = response.data;
-                            this.dataLength = response.data.length;
-                            console.log(response.data); //8筆
-                            this.PageContent();
-                            let arr = [];
-
-                            // 一頁n筆資料 , n = 6為例
-                            // 第一頁 1  - 6 ,  0  < 5    第一頁 => item = 0   , item * 6   <  (item + 1) * 6 => 0 < 6
-                            // 第二頁 6  - 10,  5  < 10   第二頁 => item = 1   , item * 6   <  (item + 1) * 6 => 6 < 12　
-                            // 第三頁 11 - 15,  10 < 15   第三頁 => item = 2   , item * 6   <  (item + 1) * 6 => 12 < 18
-
-                            for (let i = item * 6; i < (item + 1) * 6; i++) {
-                                let item = {};
-                                console.log(response.data[i].img);
-                                if (response.data[i].img != null) {
-                                item = response.data[i];//6筆
-                                
-                                arr.push(item);}
-                                else{continue;}
-                                
+                            //如果欄位裡沒有資料就回傳 fasle , 這樣下面的程式碼就不會執行
+                            //inputvalue有資料的話 , 就不會執行 if 裡的程式碼
+                            if (!response.data) {
+                                this.inputValue = ''
+                                return false
                             }
-                            this.datalist = arr;
-                            console.log(this.datalist)//6筆
+                            /*
+                                1.因為網頁生成後 , mounted 就會先執行一次 source() ,
+                                這時候 datalist 會有6筆資料 , 要先清空陣列再重新將資料放進去
+                                2.用資料長度去判斷 , 根據結果去執行相對應的程式碼
+                            */
+                            this.datalist = [];
+                            this.dataLength = response.data.length;//取得長度
+                            this.PageContent();//計算頁碼
+                            console.log(response.data); //8筆
+                            let arr = [];
+                            let x;
+                            response.data.length > 6 ? x = 6 : x = response.data.length
+                            for (let i = 0; i < x; i++) {
+                                let item = {};
+                                item = response.data[i];//6筆
+                                arr.push(item);
+                            }
+
+                            //跟202到207行一樣,只是比較簡潔的寫法
+                            //if(response.data.length > 6){
+                            //    for (let i = 0; i < 6; i++) {
+                            //        let item = {};
+                            //        item = response.data[i];//6筆
+                            //        arr.push(item);
+                            //    }
+                            //}else{
+                            //    for(let i = 0; i < response.data.length;i++){
+                            //        let item = {};
+                            //        item = response.data[i];//6筆
+                            //        arr.push(item);
+                            //    }
+                            //}
+                            this.datalist = arr
+
+
+                            //原始資料 , 看一對註解部分比對就好
+                            ////console.log(response.data)
+                            ////console.log(response.data[0].img);
+                            ////appVue.datas = response.data;
+                            //this.dataLength = response.data.length;
+                            ////console.log(response.data); //8筆
+                            //this.PageContent();
+                            //let arr = [];
+
+                            //// 一頁n筆資料 , n = 6為例
+                            //// 第一頁 1  - 6 ,  0  < 5    第一頁 => item = 0   , item * 6   <  (item + 1) * 6 => 0 < 6
+                            //// 第二頁 6  - 10,  5  < 10   第二頁 => item = 1   , item * 6   <  (item + 1) * 6 => 6 < 12　
+                            //// 第三頁 11 - 15,  10 < 15   第三頁 => item = 2   , item * 6   <  (item + 1) * 6 => 12 < 18
+                            ////console.log(this.dataLength)
+                            //if (this.dataLength < 6) {
+                            //    for (i = 0; i < response.data.legth; i++) {
+                            //        let item = {};
+                            //        item = response.data[i];//6筆
+                            //        arr.push(item);
+                            //    }
+                            //    this.datalist = arr
+                            //}
+                            //for (let i = item * 6; i < (item + 1) * 6; i++) {
+                            //    console.log(response.data[i].img);
+                            //    let item = {};
+                            //    item = response.data[i];//6筆
+                            //    arr.push(item);
+                            //}
+                            //this.datalist = arr;
+                            ////console.log(this.datalist)//6筆
                         })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'))
                 },
                 PageContent: function () { // 頁數長度
                     this.pagesize = Math.ceil(this.dataLength / 6); //無條件進位
@@ -215,7 +262,7 @@
                     }//[0,1]
                 },
                 click: function (item) {
-                    let currentpage = item ;
+                    let currentpage = item;
                     this.currentpage = currentpage;
                     axios.get(`${webApi}/api/Articles`)
                         .then(response => {
@@ -240,14 +287,14 @@
                             console.log(this.datalist)//6筆
                         })
                 },
-                prev(){
-                    let currpage= this.currentpage
+                prev() {
+                    let currpage = this.currentpage
                     if (currpage != 0) {
                         currpage--;
                         this.click(currpage)
                     }
                 },
-                next(){
+                next() {
                     let currpage = this.currentpage
                     if (currpage != this.sliced.length) {
                         currpage++;
@@ -257,6 +304,14 @@
                 //Pagination: function () {
                 //    this.sliced = this.datas.slice((this.currentpage * this.pagesize) - this.pagesize, (this.currentpage * this.pagesize))
                 //}
+            },
+            watch: {
+                inputValue: {
+                    handler(newValue) {
+                        this.Source()
+                    },
+                    deep: true,
+                },
             }
         })
     </script>
