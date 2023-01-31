@@ -106,13 +106,14 @@
                     </div>
                     <div class="row justify-content-lg-start ml-lg-4 justify-content-end mr-5 mb-3">
                         <div class=" my-2">
-                            <button class="btn btn-dark mx-1 btn-JS">
-                                <i class="fa-regular fa-bookmark"></i><span class="ml-2">儲存</span>
+                            <button class="btn btn-dark mx-1 btn-JS" @@click="deposition">
+                                <i class="fa-regular fa-bookmark"></i><span class="ml-2" id="span1">儲存</span>
                             </button>
                         </div>
                         <div class="my-2">
                             <button class="btn btn-primary mx-1 btn-JS" @@click="post">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i><span class="ml-2">立即應徵</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span class="ml-2">立即應徵</span>
                             </button>
                         </div>
                     </div>
@@ -237,13 +238,17 @@
 
             </div>
             <div class="row mb-5 mt-5 justify-content-center">
-                <div class="col-6 col-lg-4">
-                    <a href="#" class="btn btn-block btn-dark btn-md"><i class="fa-regular fa-bookmark mr-3"></i></span>儲存</a>
+                <div class="col-6 col-lg-4" @@click="deposition2">
+                    <a class="btn btn-block btn-dark btn-md">
+                        <i class="fa-regular fa-bookmark mr-3"></i>xit
+                        <span id="span2">儲存</span>
+                    </a>
                 </div>
                 <div class="col-6 col-lg-4">
-                    <!--<a href="job-apply.html" class="btn btn-block btn-primary btn-md"></a>
-                        <i class="fa-solid fa-arrow-up-right-from-square mr-3"></i>立即應徵
-                    </a>-->
+                    <a class="btn btn-block btn-primary btn-md">
+                        <i class="fa-solid fa-arrow-up-right-from-square mr-3"></i>
+                        <span>立即應徵</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -291,6 +296,72 @@
                     alert(key)
                     window.location = "/Home/jobApply";
                 },
+                deposition() {
+                    let candidateId = window.sessionStorage.getItem("Id")
+                    let vanId = window.localStorage.getItem("vanId")
+                    if (!candidateId) {
+                        alert('尚未登入 , 請先登入')
+                        return false
+                    }
+                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                        .then(res => {
+                            let bool = false
+                            if (res.data.length > 0) {
+                                interestId = res.data[0].id // interest id
+                                bool = true
+                            }
+                            if (bool) {
+                                axios.delete(`${webApi}/api/Interests/${interestId}`)
+                                    .then(res => {
+                                        document.querySelector('#span1').innerHTML = '儲存'
+                                    })
+                                    .catch(err => console.log(err))
+                            } else {
+                                var postdata = {
+                                    CandidateId: parseInt(window.sessionStorage.getItem("Id")),
+                                    VacancyId: vanId,
+                                    EnterpriseId: this.datas.enterpriseId
+                                }
+                                axios.post(`${webApi}/api/Interests`, postdata)
+                                    .then(res => {
+                                        let x = document.querySelector('#span1').innerHTML = '已儲存';
+                                    })
+                            }
+                        })
+                },
+                deposition2() {
+                    let candidateId = window.sessionStorage.getItem("Id")
+                    let vanId = window.localStorage.getItem("vanId")
+                    if (!candidateId) {
+                        alert('尚未登入 , 請先登入')
+                        return false
+                    }
+                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                        .then(res => {
+                            let bool = false
+                            if (res.data.length > 0) {
+                                interestId = res.data[0].id // interest id
+                                bool = true
+                            }
+                            if (bool) {
+                                axios.delete(`${webApi}/api/Interests/${interestId}`)
+                                    .then(res => {
+                                        document.querySelector('#span2').innerHTML = '儲存'
+                                    })
+                                    .catch(err => console.log(err))
+                            } else {
+                                var postdata = {
+                                    CandidateId: parseInt(window.sessionStorage.getItem("Id")),
+                                    VacancyId: vanId,
+                                    EnterpriseId: this.datas.enterpriseId
+                                }
+                                axios.post(`${webApi}/api/Interests`, postdata)
+                                    .then(res => {
+                                        let x = document.querySelector('#span2').innerHTML = '已儲存';
+                                    })
+                            }
+                        })
+                }
             },
             computed: {
                 salary: function () {
