@@ -47,7 +47,8 @@ namespace webapi.Controllers
                 img = etp.Img,
                 UniformNumbers = etp.UniformNumbers,
                 Employee = etp.Employee,
-                EnterpriseId = etp.EnterpriseId
+                EnterpriseId = etp.EnterpriseId,
+                Updatetime =  van.Updatetime
             });
             if (!string.IsNullOrWhiteSpace(name))
             {

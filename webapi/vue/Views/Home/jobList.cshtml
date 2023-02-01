@@ -308,6 +308,7 @@
 @section Scripts{
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script>
         const webApi = "https://localhost:7240"
         const appVue = new Vue({
@@ -368,6 +369,8 @@
                                         } else {
                                             this.datas[i].seniority = this.datas[i].seniority + '年';
                                         }
+                                        //this.datas[i].updatetime = moment(this.datas[i].updatetime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                        //console.log(this.datas[i].updatetime)
                                         this.datas[i].info = this.datas[i].info + '...';
                                         item = this.datas[i];
                                         arr.push(item);
