@@ -138,7 +138,7 @@
                         <div id="little-button"></div>
 
                         <div class="pt-5">
-                            <h3 class="mb-5">{{this.articleMessage.length}} Comments</h3>
+                            <h3 class="mb-5">{{this.articleMessage.length}} 個留言</h3>
                             <ul class="comment-list">
                                 <div v-for="data in articleMessage">
                                 <li class="comment">
@@ -162,18 +162,18 @@
                         <!-- END comment-list -->
 
                         <div class="comment-form-wrap pt-5">
-                            <h3 class="mb-5">Leave a comment</h3>
+                            <h3 class="mb-5">給個回覆</h3>
                             <form action="#" class="">
                                 <div class="form-group">
-                                    <label for="name">Nick Name *</label>
+                                    <label for="name">暱稱 *</label>
                                     <input type="text" class="form-control" id="name" v-model="nickName" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="message">Message *</label>
+                                    <label for="message">訊息 *</label>
                                     <textarea name="" id="message" cols="30" rows="10" class="form-control" v-model="message"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <input value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
+                                    <input value="提交回覆" class="btn btn-primary btn-md" v-on:click="post" />
                                 </div>
                             </form>
                         </div>
