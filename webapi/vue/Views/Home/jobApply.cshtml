@@ -72,43 +72,42 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 mb-10 mb-lg-0">
                     <div class="job-context mt-3 col-xs-12 mb-4">
-                        <h3 class="slide-h3 active">{{datas.workName}}</h3>
-                        <h4 class="ml-1d-flex row mt-2 ml-1">{{datas.companyName}}</h4>
-                        <p class="h5 text-black">{{salary}}</p>
+                        <h3 class="slide-h3 active">職缺:&nbsp;{{datas.workName}}</h3>
+                        <h4 class="ml-1d-flex row mt-2 ml-1">公司:&nbsp;{{datas.companyName}}</h4>
+                        <p class="h5 text-black">薪資:&nbsp;{{salary}}</p>
                     </div>
 
                     <form action="#" class="">
-                        <div class="form-group">
-                            <div class="col-12 mt-4">
-                                <h5 class="my-3">選擇履歷</h5>
-                            </div>
-                            <div class="ml-2 d-lg-flex row">
-                                <div class="form-check col-md-4 col-12">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        履歷一:工程師
-                                    </label>
-                                </div>
-                                <div class="form-check col-md-4 col-12">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        履歷二:前端
-                                    </label>
-                                </div>
-                                <div class="form-check col-md-4 col-12">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        履歷三:行政
-                                    </label>
-                                </div>
-                            </div>
+                        @*<div class="form-group">
+                        <div class="col-12 mt-4">
+                        <h5 class="my-3">選擇履歷</h5>
                         </div>
-
+                        <div class="ml-2 d-lg-flex row">
+                        <div class="form-check col-md-4 col-12">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        履歷一:工程師
+                        </label>
+                        </div>
+                        <div class="form-check col-md-4 col-12">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        履歷二:前端
+                        </label>
+                        </div>
+                        <div class="form-check col-md-4 col-12">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        履歷三:行政
+                        </label>
+                        </div>
+                        </div>
+                        </div>*@
                         <div class="row form-group my-3">
                             <div class="col-md-12">
                                 <h5 class="my-3">求職訊息</h5>
                                 <textarea name="message" id="message" cols="30" rows="8" class="form-control"
-                                          placeholder="Write your notes or questions here..."></textarea>
+                                          placeholder="字數長度不超過200字" v-model="txtMsg"></textarea>
                             </div>
                         </div>
 
@@ -116,16 +115,15 @@
                             <div class="col-md-12">
                                 <h5 class="my-3">推薦信</h5>
                                 <textarea name="message" id="message" cols="30" rows="8" class="form-control"
-                                          placeholder="Write your notes or questions here..."></textarea>
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-center mt-5">
-                            <div class="col-md-12 text-center">
-                                <input type="submit" value="應徵" class="btn btn-primary btn-md text-white w-50" style="height: 48px;width: 150px;">
+                                          placeholder="字數長度不超過200字"></textarea>
                             </div>
                         </div>
                     </form>
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-md-12 text-center" @@click="post">
+                            <input type="submit" value="應徵" class="btn btn-primary btn-md text-white w-50" style="height: 48px;width: 150px;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,6 +142,7 @@
                 datas: [],
                 selectedCategory: "",
                 selectedArea: "",
+                txtMsg: ''
             },
             mounted: function () {
                 this.Vacancy();
@@ -161,6 +160,33 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+                post() {
+                    let bool = confirm('是否送出')
+                    console.log(this.txtMsg)
+                    let id = window.localStorage.getItem("vanId")
+                    let candidateId = window.sessionStorage.getItem("Id")
+                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                        .then(res => {
+                            let vanid;
+                            for (i = 0; i < res.data.length; i++) {
+                                vanid = res.data[0].vacancyId
+                            }
+                            vanid == id ? alert('您已經應徵該職缺') : this.postInterests()
+                        })
+                    this.txtMsg = '';
+                },
+                postInterests() {
+                    const postdata = {
+                        CandidateId: parseInt(window.sessionStorage.getItem("Id")),
+                        VacancyId: this.datas.vacancyId,
+                        EnterpriseId: this.datas.enterpriseId,
+                        InterestStatus: 1
+                    }
+                    axios.post(`${webApi}/api/Interests/filter`, postdata)
+                        .then(res => {
+                            alert('應徵成功')
+                        })
+                }
             },
             computed: {
                 salary: function () {

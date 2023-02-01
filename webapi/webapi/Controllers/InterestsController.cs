@@ -109,8 +109,9 @@ namespace webapi.Controllers
 
         // POST: api/Interests
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
-        public async Task<Interest> PostInterest([FromBody] Interest interest)
+        public async Task<Interest> Post([FromBody] Interest interest)
         {
             //_context.Interest.Add(interest);
             //await _context.SaveChangesAsync();
@@ -122,6 +123,23 @@ namespace webapi.Controllers
                 CandidateId = interest.CandidateId,
                 VacancyId = interest.VacancyId,
                 EnterpriseId = interest.EnterpriseId,
+            };
+            _context.Interest.Add(ic);
+            await _context.SaveChangesAsync();
+
+            return ic;
+        }
+
+        [HttpPost("filter")]
+        public async Task<Interest> PostInterest([FromBody] Interest interest)
+        {
+
+            Interest ic = new Interest
+            {
+                CandidateId = interest.CandidateId,
+                VacancyId = interest.VacancyId,
+                EnterpriseId = interest.EnterpriseId,
+                InterestStatus = interest.InterestStatus
             };
             _context.Interest.Add(ic);
             await _context.SaveChangesAsync();

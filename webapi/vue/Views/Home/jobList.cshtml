@@ -559,7 +559,7 @@
                 },
                 user() {
                     let userid = window.sessionStorage.getItem('Id')
-                    let url = `${webApi}/api/Candidates/6`;
+                    let url = `${webApi}/api/Candidates/${userid}`;
                     axios.get(url)
                         .then(res => {
                             let x = res.data[0].cellphone;
