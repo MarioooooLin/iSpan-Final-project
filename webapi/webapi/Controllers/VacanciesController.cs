@@ -49,6 +49,8 @@ namespace webapi.Controllers
                 Employee = etp.Employee,
                 EnterpriseId = etp.EnterpriseId
             });
+            result = result.OrderByDescending(x => x.VacancyId);
+
             if (!string.IsNullOrWhiteSpace(name))
             {
                 result = result.Where(a => a.WorkName.Contains(name) || a.CompanyName.Contains(name));
