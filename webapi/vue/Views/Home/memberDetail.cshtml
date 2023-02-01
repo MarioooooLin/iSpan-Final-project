@@ -551,12 +551,45 @@
                 photo: function () {
                     let _this = this;
                     let photo = document.getElementById("photo").value;
+                    let request ={};
+                    let split = [];
+                    let year =  new Date().getFullYear().toString();
+                    let month = (new Date().getMonth()+1).toString();
+                    if(parseInt(month)<10){
+                        month = "0"+month;
+                    }
+                    let day = (new Date().getDate()).toString();
+                    if (parseInt(day) < 10) {
+                        day = "0" + day;
+                    }
+                    let hour = new Date().getHours().toString();
+                    if (parseInt(hour) < 10) {
+                        hour = "0" + hour;
+                    }
+                    let minute = new Date().getMinutes().toString();
+                    if (parseInt(minute) < 10) {
+                        minute = "0" + minute;
+                    }
+
+                    let time = year + month + day + hour + minute ;
+                
+                    console.log(time);
+                    split.push(photo.split("\\"));
+                    console.log(split[0][2]);
+                    let image = "/photo/"+ time +split[0][2];
+                    console.log(image);
+                    request.Img = image;
+                    request.CandidateId = _this.Id;
+
                     if (photo != null) {
                         let a = confirm("是否要更改頭貼");
                         if (a == true) {
-
-                            document.getElementById("photoform").submit();
-
+                            axios.put(`${webApi}/api/Candidates/photo${this.Id}`, request).then(res => {
+                                console.log(res);
+                            }
+                        )
+                        .catch(err => console.log(err))
+                                .finally(document.getElementById("photoform").submit());                          
                         }
                         else {
                             document.getElementById("photo").value = null;
