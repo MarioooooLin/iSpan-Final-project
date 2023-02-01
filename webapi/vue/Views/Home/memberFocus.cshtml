@@ -35,11 +35,7 @@
                                             <div style="object-fit:cover;width:100px;height:100px;" class="position-relative">
                                                 <img :src="photo[0].img"
                                                      class="figure-img img-fuild rounded-circle h-100 w-100 z-1">
-                                                <form method="post" id="photoform" asp-controller="Home" asp-action="Upload" enctype="multipart/form-data" onsubmit="return cancel();">
-                                                    <input type="file" class="photo" id="photo" @@change="photo()" accept="image/*" name="files"></input>
-
-                                                    @Html.ValidationMessage("files",new{@class="text-danger"})
-                                                </form>
+                                  
                                                 @*     <input type="file" class="photo" id="photo" asp-controller="Home" accept="image/*"></input>*@
                                             </div>
                                             <h3 class="display-6 slide-h3 mt-1" v-once>{{photo[0].name}} 您好</h3>

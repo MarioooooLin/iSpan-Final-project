@@ -55,13 +55,14 @@ namespace vue.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Upload(IEnumerable<IFormFile> files)
         {
-
+            var time = DateTime.Now.ToString("yyyyMMddHHmm");
+            var sec = DateTime.Now.ToString("");
 
             if (files.Count() != 0)
             {
                 foreach (IFormFile file in files)
                 {
-                    string Targetfilename = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photo", file.FileName);
+                    string Targetfilename = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photo", time+file.FileName);
 
 
 
