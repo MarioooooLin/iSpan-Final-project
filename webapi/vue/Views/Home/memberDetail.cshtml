@@ -551,12 +551,24 @@
                 photo: function () {
                     let _this = this;
                     let photo = document.getElementById("photo").value;
+                    let request ={};
+                    let split = [];
+                    split.push(photo.split("\\"));
+                    console.log(split[0][2]);
+                    let image = "/photo/" + split[0][2];
+                    console.log(image);
+                    request.Img = image;
+                    request.CandidateId = _this.Id;
+
                     if (photo != null) {
                         let a = confirm("是否要更改頭貼");
                         if (a == true) {
-
-                            document.getElementById("photoform").submit();
-
+                            axios.put(`${webApi}/api/Candidates/photo${this.Id}`, request).then(res => {
+                                console.log(res);
+                            }
+                        )
+                        .catch(err => console.log(err))
+                                .finally(document.getElementById("photoform").submit());                          
                         }
                         else {
                             document.getElementById("photo").value = null;

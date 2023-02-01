@@ -108,6 +108,36 @@ namespace webapi.Controllers
             return "修改成功!";
         }
 
+        [HttpPut("photo{id}")]
+        public async Task<String> photo(int id,[FromBody] Candidate candidate)
+        {
+            //if (id != candidate.CandidateId)
+            //{
+            //    return "ID不正確!";
+            //}
+            Candidate c = await _context.Candidate.FindAsync(candidate.CandidateId);
+            c.Img = candidate.Img;
+            _context.Entry(c).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CandidateExists(id))
+                {
+                    return "找不到欲修改的記錄!";
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return "修改成功!";
+        }
+
         // POST: api/Candidates
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
