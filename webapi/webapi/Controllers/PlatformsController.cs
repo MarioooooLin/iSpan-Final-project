@@ -40,7 +40,8 @@ namespace webapi.Controllers
             {
                 result = result.Where(x => x.ArticleName.Contains(name));
             }
-            return result;
+            return result.OrderByDescending(id => id.ArticleId); 
+
         }
 
         // GET: api/Platforms/5
@@ -143,6 +144,7 @@ namespace webapi.Controllers
                     ArticleName = emp.ArticleName,
                     Contents = emp.Contents,
                     UpdateTime = emp.UpdateTime,
+                    ArticleId = emp.ArticleId,
                 });
         }
 

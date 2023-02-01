@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="~/favicon.ico"/>
     <title>JobBoard &mdash; Website Template by Colorlib</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -8,7 +9,6 @@
     <meta name="keywords" content="" />
     <meta name="author" content="Free-Template.co" />
     <link rel="shortcut icon" href="~/ftco-32x32.png" />
-
     <link rel="stylesheet" href="~/css/custom-bs.css" />
     <link rel="stylesheet" href="~/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="~/css/bootstrap-select.min.css" />
@@ -64,11 +64,11 @@
                             <li>
                                 <a class="h4 active" asp-area="" asp-controller="Home" asp-action="jobList">找工作</a>
                             </li>
-                            <li class="has-children">
+                            <li class="has-children" id="vue1">
                                 <a class="h4 active" asp-area="" asp-controller="Home" asp-action="sourceIndex">資源</a>
                                 <ul class="dropdown">
                                     <li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="source">文章分享</a></li>
-                                    <li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="psychologicalTest">適性分析</a></li>
+                                    <li><a class="h4 active" @@click="checkMember">適性分析</a></li>
                                     @*	<li><a class="h4 active" asp-area="" asp-controller="Home" asp-action="mockInterview">模擬面試</a></li>*@
                                 </ul>
                             </li>
@@ -306,6 +306,28 @@
                         else {
                             location.href = 'https://localhost:7158/Home/memberLogin'
                         }
+                    },
+                },
+
+            })
+            const vue1 = new Vue({
+                el: "#vue1",
+                name: "vue1",
+                data: {
+                    //EmpId: sessionStorage.getItem("EmpId"),
+                    Id: sessionStorage.getItem("Id"),
+                    //Name: sessionStorage.getItem("Name"),
+                },
+                methods: {
+                    checkMember: function () {
+                        if (this.Id!=null){
+                            location.href = 'https://localhost:7158/Home/psychologicalTest';
+
+                        }else{
+                            location.href = 'https://localhost:7158/Home/memberLogin';
+                        }
+                        //sessionStorage.clear();
+                        //window.location = "/Home/Index";
                     },
                 },
 

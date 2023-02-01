@@ -33,9 +33,15 @@
                                 <div class="mb-3 border navbar-nav box">
                                     <div class="p-3 w-100">
                                         <figure class="figure ml-2 ">
-                                            <div style="object-fit:cover;width:100px;height:100px;">
+                                            <div style="object-fit:cover;width:100px;height:100px;" class="position-relative">
                                                 <img :src="datas[0].img"
-                                                     class="figure-img img-fuild rounded-circle h-100 w-100">
+                                                     class="figure-img img-fuild rounded-circle h-100 w-100 z-1">
+                                                <form method="post" id="photoform" asp-controller="Home" asp-action="Upload" enctype="multipart/form-data" onsubmit="return cancel();">
+                                                    <input type="file" class="photo" id="photo" @@change="photo()" accept="image/*" name="files"></input>
+
+                                                    @Html.ValidationMessage("files",new{@class="text-danger"})
+                                                </form>
+                                                @*     <input type="file" class="photo" id="photo" asp-controller="Home" accept="image/*"></input>*@
                                             </div>
                                             <h3 class="display-6 slide-h3 mt-1" v-once>{{datas[0].name}} 您好</h3>
                                         </figure>
@@ -337,7 +343,7 @@
                     </div>
                     <hr>
                     <div class="item pb-0">
-                        <textarea  class="w-100" rows="7" v-model="datas[0].autobiography"></textarea>
+                        <textarea class="w-100" rows="7" v-model="datas[0].autobiography"></textarea>
                     </div>
                 </div>
             </div>
@@ -371,7 +377,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
-
+    <script>
+        function cancel() { return false; }
+    </script>
     <script>
         const webApi = "https://localhost:7240"
         const appVue = new Vue({
@@ -391,12 +399,13 @@
                 skillEdit: false,
                 skillId: [],
 
-
             },
             mounted: function () {
                 let _this = this;
                 _this.Login();
                 _this.Skill();
+
+
             },
             methods: {
                 Login: function () {
@@ -435,6 +444,8 @@
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
+
+                    console.log(document.getElementById("photo").value);
 
                 },
                 Cancel: function () {
@@ -537,6 +548,57 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
+                photo: function () {
+                    let _this = this;
+                    let photo = document.getElementById("photo").value;
+                    let request ={};
+                    let split = [];
+                    let year =  new Date().getFullYear().toString();
+                    let month = (new Date().getMonth()+1).toString();
+                    if(parseInt(month)<10){
+                        month = "0"+month;
+                    }
+                    let day = (new Date().getDate()).toString();
+                    if (parseInt(day) < 10) {
+                        day = "0" + day;
+                    }
+                    let hour = new Date().getHours().toString();
+                    if (parseInt(hour) < 10) {
+                        hour = "0" + hour;
+                    }
+                    let minute = new Date().getMinutes().toString();
+                    if (parseInt(minute) < 10) {
+                        minute = "0" + minute;
+                    }
+
+                    let time = year + month + day + hour + minute ;
+                
+                    console.log(time);
+                    split.push(photo.split("\\"));
+                    console.log(split[0][2]);
+                    let image = "/photo/"+ time +split[0][2];
+                    console.log(image);
+                    request.Img = image;
+                    request.CandidateId = _this.Id;
+
+                    if (photo != null) {
+                        let a = confirm("是否要更改頭貼");
+                        if (a == true) {
+                            axios.put(`${webApi}/api/Candidates/photo${this.Id}`, request).then(res => {
+                                console.log(res);
+                            }
+                        )
+                        .catch(err => console.log(err))
+                                .finally(document.getElementById("photoform").submit());                          
+                        }
+                        else {
+                            document.getElementById("photo").value = null;
+                        }
+                    }
+
+                },
+
+
             },
             computed: {
                 skillDropDown() {
@@ -563,8 +625,10 @@
                     //let items = this.skillSource.map(x => x.skillName).filter(x => !this.skillName.some(y => y == x));
                     //console.log(items);
                     return sd;
-                }
-            }
+                },
+
+            },
+
         })
 
 

@@ -1,4 +1,6 @@
-﻿<!-- HOME start-->
+﻿
+<div id="appVue">
+<!-- HOME start-->
 <section class="section-hero overlay inner-page bg-image " style="background-image: url('images/hero_1.jpg');"
          id="home-section">
     <div class="container">
@@ -20,17 +22,17 @@
                     <div class="item row pt-4">
                         <h3 class="display-5 fw-bolder mb-0 col-12 ml-3">回報訂單</h3>
                         <hr>
-                        <h5 class="display-5 font-weight-bold mb-0 col-12 ml-3 pt-4"> 測試商品 </h5>
+                            <h5 class="display-5 font-weight-bold mb-0 col-12 ml-3 pt-4"> {{dataList.CourseName}}</h5>
                     </div>
                     <ul class="list-unstyled block__47528 mb-0 ml-4">
                         <div class="row">
                             <p class="col-11 text-right">單位：新台幣 NT$</p>
-                            <p class="font-weight-bold col-11 text-right lead">35000</p>
+                                <p class="font-weight-bold col-11 text-right lead">{{dataList.CoursePrice}}</p>
                         </div>
                     </ul>
                     <hr style="height:2px;color: #e2e2e2;background-color: #e2e2e2; " />
                     <div class="row justify-content-center">
-                        <button onclick="confirmPayment()" class="btn btn-primary btn-lg w-75"> 確認付款</button>
+                        <button onclick="confirmPayment()" @@click="postOrder" class="btn btn-primary btn-lg w-75"> 確認付款</button>
                     </div>
                 </div>
                 <div>
@@ -42,6 +44,8 @@
     </div>
 </section>
 <!-- content end -->
+</div>
+
 
 @section Scripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
@@ -57,15 +61,17 @@
             const params = new Proxy(new URLSearchParams(window.location.search), {
                 get: (searchParams, prop) => searchParams.get(prop),
             });
-
             transactionId = params.transactionId;
             orderId = params.orderId;
         }
 
         function confirmPayment() {
+            var itemsString = localStorage.getItem('Order')
+            var items = JSON.parse(window.name);
+
             // 交易訂單假資料
             payment = {
-                amount: 3998,
+                amount: items.CoursePrice,
                 currency: "TWD",
             };
             //  送出確認交易
@@ -78,15 +84,41 @@
                     $("#paymentStatus").text("交易狀態 : 成功")
                     console.log(res);
 
-                    setTimeout(() => {
-                        window.location = "https://cccf-61-63-154-173.jp.ngrok.io/products.html";
-                    }, 2000);
+                    //setTimeout(() => {
+                    //    //window.location = "https://147f-59-125-142-166.jp.ngrok.io/Home/Course";
+                    //}, 2000);
                 },
                 error: (err) => {
                     console.log(err);
                 }
             })
         }
+    </script>
+    <script>
+        const webApi = "https://localhost:7240"
+        const appVue = new Vue({
+            el: "#appVue", // 綁定位置
+            name: "appVue",
+            data: {
+                dataList: [],
+            },
+            mounted: function () {
+            },
+            methods: {
+                postOrder:function(){
+                    this.dataList = JSON.parse(window.name);
+                    var request = {
+                        CandidateId: this.dataList.CandidateId,
+                        CourseId: this.dataList.CourseId,
+                    };
+                    console.log(request)
+                    axios.post(`${webApi}/api/Orders`, request).then(response => {
+                        console.log(response.data);
+                        location.href = 'https://localhost:7158/Home/courseManage'
+                    }).catch(err => console.log(err));
+                }
+            },
+        })
     </script>
 
 

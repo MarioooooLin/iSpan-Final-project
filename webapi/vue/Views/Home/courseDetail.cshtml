@@ -62,7 +62,8 @@
                     <h2>NT$ {{ dataList.price }}</h2>
                 </div>
                 <div class="col-lg-3 col-md-6 fw-bold buy-mess d-flex justify-content-center" style="border-left:#656565 1px solid;">
-                    <a @@click="goPaypage" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>
+                    <a v-if="isShow == true" @@click="goPaypage" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>
+                    <a v-else class="btn btn-primary w-50 my-5 mx-1 text-center">已購買課程</a>
                     <a @@click="goCollect" class="btn btn-secondary w-25 my-5 mx-1 text-center"><i class="fa-solid fa-thumbtack"></i></a>
                 </div>
 
@@ -115,6 +116,7 @@
             data: {
                 dataList: [],
                 chapterList: [],
+                isShow: true,
             },
             mounted: function () {
                 const _this = this;
@@ -125,18 +127,27 @@
             methods: {
                 course: function () {
                     const _this = this;
-                    //let getUrlString = location.href;
-                    //let url = new URL(getUrlString);
+                    const candidateId = sessionStorage.getItem('Id')
                     const courseId = new URL(location.href).searchParams.get('id');
+                    let findOrder = ""
                     axios.get(`${webApi}/api/Courses/${courseId}`)
                         .then(response => {
                             _this.dataList = response.data[0];
                             var temp = this.dataList.courseIntro.replace(/\n/g, '<br/>');
                             this.dataList.courseIntro = temp
-
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
+                    if (candidateId!=null){
+                        axios.get(`${webApi}/api/Orders/${candidateId}/${courseId}`)
+                            .then(response => {
+                            findOrder = response.data;
+                            console.log(findOrder)
+                            if(findOrder.length != 0){
+                                this.isShow = false
+                            }
+                        })
+                    }
                 },
                 chapter: function () {
                     const findChapter = new URL(location.href).searchParams.get('id');

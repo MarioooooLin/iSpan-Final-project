@@ -2468,9 +2468,9 @@ h1, h2, h3, h4 {
         background-color: #0085ff;
     }
 
-    .btn-secondary:hover i{
-        color:white !important;
-    }
+        .btn-secondary:hover i {
+            color: white !important;
+        }
 
 .cause-span1 {
     color: #fff;
@@ -2906,10 +2906,11 @@ input {
     border: #A4A4A4 solid 1px;
     border-radius: 3px;
 }
-input.useless {
-    background-color: #eee;
-    color: #898989;
-}
+
+    input.useless {
+        background-color: #eee;
+        color: #898989;
+    }
 
 /* 修改框 */
 textarea {
@@ -2919,9 +2920,9 @@ textarea {
     border-radius: 3px;
 }
 
-.btn-primary{
-    background-color:#0085ff;
-    color:#fff;
+.btn-primary {
+    background-color: #0085ff;
+    color: #fff;
 }
 
 input {
@@ -2931,10 +2932,10 @@ input {
     border-radius: 3px;
 }
 
-input.useless {
-    background-color: #eee;
-    color: #898989;
-}
+    input.useless {
+        background-color: #eee;
+        color: #898989;
+    }
 
 .ellipsis2 {
     overflow: hidden;
@@ -2976,4 +2977,22 @@ input.useless {
         opacity: .7;
         color: #0085ff;
         border: 0px solid black;
+    }
+/*檔案上傳*/
+.photo {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    display: block;
+    width: 100px;
+    height: 100px;
+    clear: both;
+    margin: auto;
+    position: absolute;
+}
+
+    .photo:hover {
+        cursor: pointer;
     }

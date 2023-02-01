@@ -77,7 +77,8 @@ namespace webapi.Controllers
             {
                 result = result.Where(x => x.category.Contains(category));
             }
-            return result;
+            return await Task.FromResult(result);
+
         }
 
         // GET: api/Courses/5
@@ -123,7 +124,8 @@ namespace webapi.Controllers
                              studentCount = g.Count()
                          };
 
-            return result;
+            return await Task.FromResult(result);
+
         }
 
         // PUT: api/Courses/5

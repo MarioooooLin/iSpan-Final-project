@@ -27,7 +27,7 @@
                 <div class="container h-100">
                     <div class="row">
                         <!-- leftslide start -->
-                        <div class="mr-auto">
+                        <div class="mr-auto ml-xl-5">
                             <div class="head"></div>
                             <div class="border p-4 box pb-0 ">
                                 <ul class="list-unstyled block__47528 mb-0">
@@ -123,7 +123,7 @@
                             <img :src="datas.img" alt="Image" class="img-fluid rounded" />
                         </p>
 
-                        <p>
+                        <p style="font-size:20px;">
                             {{datas.articleContent}}
                         </p>
                         <div class="pt-5">
@@ -131,8 +131,8 @@
                                 Categories: <a href="#">Design</a>, <a href="#">Events</a> Tags:
                                 <a href="#">#html</a>, <a href="#">#trends</a>
                             </p>
-                            <button class="rounded mx-3">Like</button>
-                            <button class="rounded">Share</button>
+                            <button class="rounded mx-3 btn-light">Like</button>
+                            <button class="rounded btn-light">Share</button>
                         </div>
 
                         <div id="little-button"></div>
@@ -147,20 +147,18 @@
                                     </div>
 
                                     <div class="comment-body">
-                                        <h3>{{data.nickName}}</h3>
-                                        <div class="meta">{{data.updateTime}}</div>
-                                        <p>
+                                        <h3 class="text-success">{{data.nickName}}</h3>
+                                        <div class="meta">{{data.update}}</div>
+                                        <p class="text-black ">
                                             {{data.message}}
                                         </p>
                                         <hr>
-                                                @*                                        <p><a href="#" class="reply">Reply</a></p>
-                                        *@
+                                        <p><button v-on:click="deleteMessage(data.articleId)" class="delete btn-sm btn-danger">Delete</button></p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
 
-                        
                         <!-- END comment-list -->
 
                         <div class="comment-form-wrap pt-5">
@@ -175,62 +173,62 @@
                                     <textarea name="" id="message" cols="30" rows="10" class="form-control" v-model="message"></textarea>
                                 </div>
                                 <div class="form-group">
-                                            @* <input type="submit" value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />*@                                        <input value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
-
+                                    <input value="Post Comment" class="btn btn-primary btn-md" v-on:click="post" />
                                 </div>
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 sidebar pl-lg-5">
-                    <div class="sidebar-box">
-                        <form action="#" class="search-form">
-                            <div class="form-group">
-                                <span class="icon fa fa-search"></span>
-                                <input type="text" class="form-control form-control-lg"
-                                       placeholder="Type a keyword and hit enter"
-                                       v-on:keyup.enter="" />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="sidebar-box">
-                        <img src="/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
-                        <h3>{{datas.author}}</h3>
-                        <p>
-                            {{datas.expreience}}
-                        </p>
-                        <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                    </div>
 
-                    <div class="sidebar-box">
-                        <div class="categories">
-                            <h3>Categories</h3>
-                            <li>
-                                <a href="#">Creatives <span>(12)</span></a>
-                            </li>
-                            <li>
-                                <a href="#">News <span>(22)</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Design <span>(37)</span></a>
-                            </li>
-                            <li>
-                                <a href="#">HTML <span>(42)</span></a>
-                            </li>
-                            <li>
-                                <a href="#">Web Development <span>(14)</span></a>
-                            </li>
+                    <div class="col-xl-4 sidebar pl-lg-5">
+                        <div class="sidebar-box">
+                            <form action="#" class="search-form">
+                                <div class="form-group">
+                                    <span class="icon fa fa-search"></span>
+                                    <input type="text" class="form-control form-control-lg"
+                                           placeholder="Type a keyword and hit enter"
+                                           v-on:keyup.enter="" />
+                                </div>
+                            </form>
                         </div>
-                    </div>
+                        <div class="sidebar-box">
+                            <img :src=datas.teacherPhoto alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
+                            <h3>{{datas.author}}</h3>
+                            <p>
+                                {{datas.expreience}}
+                            </p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
+                        </div>
 
-                    <div class="sidebar-box">
-                        <h3>Paragraph</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque,
-                            autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam
-                            vero culpa sapiente consectetur similique, inventore eos fugit cupiditate
-                            numquam!
-                        </p>
+                        <div class="sidebar-box">
+                            <div class="categories">
+                                <h3>Categories</h3>
+                                <li>
+                                    <a href="#">Creatives <span>(12)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">News <span>(22)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Design <span>(37)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">HTML <span>(42)</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">Web Development <span>(14)</span></a>
+                                </li>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-box">
+                            <h3>Paragraph</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque,
+                                autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam
+                                vero culpa sapiente consectetur similique, inventore eos fugit cupiditate
+                                numquam!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -255,11 +253,12 @@
                 message: "",
                 title: "",
                 articleMessage: [], //文章留言
+                title: ''
             },
             mounted: function () {
                 let _this = this;
                 _this.Article();
-                _this.getMessage();
+
             },
             methods: {
                 Article: function () {
@@ -267,12 +266,37 @@
                     let articleId = new URL(location.href).searchParams.get('id');
                     axios.get(`${webApi}/api/Articles/${articleId}`)
                         .then(response => {
+                            this.title = response.data[0].title;
                             this.datas = response.data[0];
                             console.log(this.datas);
+                            console.log(this.title)
+                            _this.getMessage();
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+
+                getMessage() {
+                    let _this = this;
+                    let articleId = new URL(location.href).searchParams.get('id');
+                    axios.get(`${webApi}/api/Articles/id`)
+                        .then(res => {
+                            console.log(res.data)
+                            for (let i = 0; i < res.data.length; i++) {
+                                if (res.data[i].title == this.title && res.data[i].img == null) {
+                                    let message = {};
+                                    console.log(res.data[i]);
+                                    message = res.data[i];
+                                    this.articleMessage.push(message);
+                                    console.log(this.articleMessage);
+                                }
+                            }
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'))
+
+                },
+
 
                 post() {
                     let messageContent = {};
@@ -290,16 +314,21 @@
                     messageContent.Title = this.datas.title;
                     messageContent.ArticleFloor = this.articleMessage.length;
                     messageContent.UpdateTime = Time;
-                    messageContent.AuthorId = this.datas.articleId;
+                    messageContent.AuthorId = 1;
 
                     console.log(messageContent) //檢查留言
 
                     axios.post(`${webApi}/api/Articles`, messageContent)
-                        .then(res => { console.log(res) })
+                        .then(res => {
+                            console.log(res)
+                            if (res.status < 300) {
+                                window.location.replace(location.href)
+                            }
+                        })
                         .catch(err => { console.log(err) })
 
-                    document.getElementById("name").value="";
-                    document.getElementById("message").value="";
+                    document.getElementById("name").value = "";
+                    document.getElementById("message").value = "";
 
 
                     //axios.post(`${webApi}/api/Articles`, { params: messageContent })
@@ -307,26 +336,20 @@
                     //        console.log(response)
                     //    })
                     //    .catch(err => console.log(err))
-                    //    .finally(console.log('完成'))
-                },
-                getMessage() {
-                    let _this = this;
-                    axios.get(`${webApi}/api/Articles`)
-                        .then(res => {
-                            console.log(res.data)
-                            for (let i = 0; i < res.data.length; i++) {
-                                if (res.data[i].title == this.datas.title && res.data[i].img == null) {
-                                    let message = {};
-                                    console.log(res.data[i]);
-                                    message = res.data[i];
-                                    this.articleMessage.push(message);
-                                    console.log(this.articleMessage);
-                                }
-                            }
-                        })
-                        .catch(err => console.log(err))
-                        .finally(console.log('完成'))
 
+                },
+
+                deleteMessage(articleId) {
+                    let _this = this;
+                    var reply = confirm("刪除此留言?");
+                    if (reply == true) {
+                        axios.delete(`${webApi}/api/Articles/${articleId}`)
+                            .then(res => {
+                                if (res.status < 300) {
+                                    window.location.replace(location.href)
+                                }
+                            })
+                    }
                 }
             }
         })

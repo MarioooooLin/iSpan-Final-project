@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row mt-1 job-row d-flex justify-content-center">
                 <div class="col-12 col-lg-5 col-md-6 col-sm-6 text-center">
-                    <input type="text" class="form-control" placeholder="搜尋職稱、公司或任何關鍵字" v-model="inputvalue" @@keydown.enter="search" id="input">
+                    <input type="text" class="form-control" placeholder="搜尋職稱、公司或任何關鍵字" v-model="inputvalue" @@keydown.enter="add" id="input">
                 </div>
                 <div class="col-12 col-lg-1 col-md-1 col-sm-4 mr-lg-5 d-flex">
                     <a href="#">
@@ -308,6 +308,7 @@
 @section Scripts{
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script>
         const webApi = "https://localhost:7240"
         const appVue = new Vue({
@@ -338,10 +339,13 @@
                     //let key = window.localStorage.getItem("vanId");
                     window.location = "/Home/jobSingle";
                 },
-                search() {
-                    if (!this.inputvalue) {
-                        $('input').blur();
+                add() {
+                    if (this.inputvalue) {
+                        this.search()
                     }
+                    $('input').blur()
+                },
+                search() {
                     if (this.boolean) {
                         this.companysearch();
                     } else {
@@ -365,6 +369,8 @@
                                         } else {
                                             this.datas[i].seniority = this.datas[i].seniority + '年';
                                         }
+                                        //this.datas[i].updatetime = moment(this.datas[i].updatetime).add(8, "hour").format('YYYY/MM/DD h:mm a')
+                                        //console.log(this.datas[i].updatetime)
                                         this.datas[i].info = this.datas[i].info + '...';
                                         item = this.datas[i];
                                         arr.push(item);
@@ -578,7 +584,9 @@
                 },
                 inputvalue: {
                     handler(newval) {
-                        this.search();
+                       if(!newval){
+                            this.search()
+                       }
                     },
                     deep: true,
                 },

@@ -50,6 +50,31 @@ namespace vue.Controllers
             return View();
         }
 
+        //圖片上傳
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upload(IEnumerable<IFormFile> files)
+        {
+            var time = DateTime.Now.ToString("yyyyMMddHHmm");
+            var sec = DateTime.Now.ToString("");
+
+            if (files.Count() != 0)
+            {
+                foreach (IFormFile file in files)
+                {
+                    string Targetfilename = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photo", time+file.FileName);
+
+
+
+                    using (FileStream stream = new FileStream(
+                        Targetfilename, FileMode.Create))
+                        await file.CopyToAsync(stream);
+                }
+            }
+            else { ModelState.AddModelError("files", "尚未選取上傳檔案!"); }
+            Thread.Sleep(500);
+            return View("~/Views/Home/memberDetail.cshtml");
+        }
 
 
 

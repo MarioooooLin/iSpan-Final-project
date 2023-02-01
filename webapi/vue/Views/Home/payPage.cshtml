@@ -40,9 +40,9 @@
                         <ul class="list-unstyled block__47528 mb-0 ml-4">
                             <div class="row">
                                 <p class="col-lg-4 col-sm-5 col-12 pt-4 pl-5">購買課程</p>
-                                <h5 class="font-weight-bold mb-0 col-sm-7 col-12 pt-4 text-right mb-4 pr-4">{{ courseList.courseName }}</h5>
+                                <h5 class="font-weight-bold mb-0 col-sm-7 col-12 pt-4 text-right mb-4 pr-4" id="name" :data="courseList.courseName">{{ courseList.courseName }}</h5>
                                 <p class="col-lg-4 col-sm-5 col-12 pl-5">單位：新台幣 NT$</p>
-                                <p class="font-weight-bold col-sm-7 col-12 text-right lead">{{ courseList.price }} 元</p>
+                                <p class="font-weight-bold col-sm-7 col-12 text-right lead" id="price">{{ courseList.price }}</p>
                             </div>
                         </ul>
                         <hr style="height:3px; color: #e2e2e2;background-color: #e2e2e2; " />
@@ -50,7 +50,7 @@
                             <div class="card">
                                 <div class="card-header btn-primary" id="headingTwo" style="background-color:#0085ff">
                                     <h2 class="mb-0 ">
-                                        <button class="btn btn-block text-left collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <button class="btn btn-block text-left collapsed text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" @@click="insert">
                                             確認訂單
                                         </button>
                                     </h2>
@@ -114,45 +114,53 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
-                //insert: function () {
-                //    var request = {
-                //        CandidateId: this.buyerList.candidateId,
-                //        courseId: this.courseList.courseId,
-                //    };
-                //    console.log(request)
-                //    axios.post(`${webApi}/api/Orders`, request).then(response => {
-                //        console.log(response.data);
-                //    }).catch(err => console.log(err));
-                //}, 
+                insert: function () {
+                    let candidateId = sessionStorage.getItem('Id')
+                    var items = {
+                        "CourseId": this.courseList.courseId,
+                        "CourseName": this.courseList.courseName,
+                        "CoursePrice": this.courseList.price,
+                        "CandidateId": candidateId,
+                    };
+
+                    window.name = JSON.stringify(items);
+                },
             },
         })
     </script>
     <script>
-        let baseLoginPayUrl = 'https://localhost:7240/api/LinePay/';
         function requestPayment() {
+            let baseLoginPayUrl = 'https://localhost:7240/api/LinePay/';
+            let name = document.querySelector('#name')
+            let itemName = name.getAttribute('data')
+
+            let itemPrice = document.getElementById('price').textContent
+            let courseId = new URL(location.href).searchParams.get('id');
             // 交易訂單假資料
             payment = {
-                amount: 3998,
+                amount: parseInt(itemPrice),
                 currency: "TWD",
                 orderId: Date.now().toString(), //使用 Timestamp 當作 orderId
                 packages: [
                     {
-                        id: "20191011I001",
-                        amount: 3998,
-                        name: "測試",
+                        id: "2023013112823",
+                        amount: parseInt(itemPrice),
+                        name: itemName,
+                        courseId: courseId,
                         products: [
                             {
-                                name: "測試商品",
+                                name: itemName,
                                 imageUrl: "https://static.accupass.com/org/2011051025162614811630.jpg",
-                                quantity: 2,
-                                price: 1999,
+                                quantity: 1,
+                                price: parseInt(itemPrice),
+                                courseId: courseId,
                             }
                         ]
                     },
                 ],
                 RedirectUrls: {
-                    ConfirmUrl: "https://ec2f-58-115-155-124.jp.ngrok.io/confirm.html",
-                    CancelUrl: "https://a613-58-115-155-124.jp.ngrok.io/api/LinePay/Cancel",
+                    ConfirmUrl: "https://e564-59-125-142-166.jp.ngrok.io/Home/confirm",
+                    //CancelUrl: "https://a613-58-115-155-124.jp.ngrok.io/Home/courseDetail?id=" + courseId,
                 },
             };
 

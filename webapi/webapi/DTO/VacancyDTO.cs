@@ -22,5 +22,6 @@
         public int? VacancyId { get; set; }
         public int? EnterpriseId { get; set; }
         public string WorkReqire { get; set; }
+        public DateTime? Updatetime { get; set; }
     }
 }
