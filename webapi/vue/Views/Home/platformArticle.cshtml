@@ -103,7 +103,6 @@
                         .then(response => {
                             _this.datas = response.data[0];
                             _this.datas.updateTime = moment(_this.datas.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a');
-
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
@@ -120,9 +119,11 @@
                                 item = _this.ReplyDTOs[i];
                                 item.replyTime = moment(item.replyTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
                                 ReplyList.push(item);
+                                _this.Floor = (item.floor)
                             }
                             _this.ReplyDTOs = ReplyList;
                         })
+
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
@@ -131,13 +132,16 @@
                     var request = {};
                     request.ReplyMessage = _this.ReplyMessage;
                     request.ArticleId = datas.articleId;
-                    request.Floor = datas.Floor;
+                    request.Floor = _this.Floor+1;
                     request.ArticleName = datas.articleName;
+                    console.log(request)
                     axios.post(`${webApi}/api/Reply`, request)
                         .then(response => {
                             _this.course();
                             _this.getreply();
+                            _this.ReplyMessage = null;
                         });
+                        
                 },
             }
         })
