@@ -27,7 +27,7 @@ namespace webapi.Controllers
 
         // GET: api/Articles
         [HttpGet]
-        public async Task<IEnumerable<ArticleDTO>> GetArticle(string? title)
+        public async Task<IEnumerable<ArticleDTO>> GetArticle(string? title,string? keyword)
         {
             var result = _context.Article.Join(_context.Teacher, x => x.AuthorId, y => y.TeacherId, (article, teacher) => new ArticleDTO
             {
@@ -41,13 +41,19 @@ namespace webapi.Controllers
                 ArticleFloor = article.ArticleFloor,
                 NickName = article.nickName,
                 Message = article.message,
+                Keyword = article.Keyword,
 
             });
 
             result = result.Where(x => x.Img != null);
+
             if (!string.IsNullOrWhiteSpace(title))
             {
                 result = result.Where(a => a.Title.Contains(title));
+            }
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                result = result.Where(a => a.Keyword.Contains(keyword));
             }
 
             return await Task.FromResult(result);

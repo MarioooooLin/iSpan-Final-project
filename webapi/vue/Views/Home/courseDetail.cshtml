@@ -181,15 +181,24 @@
                                     item = response.data[i].courseId
                                     arr.push(item)
                                 }
-                                //this.collectList = arr;
                                 console.log(arr);
                                 if (arr[0]){
                                     collectListCourseId = arr.find(item => item == thisPageCourseId)
                                 }
                                 if (thisPageCourseId == collectListCourseId) {
-                                    alert("此課程已收藏");
-                                    console.log('第二階段宣告已存在');
-
+                                    var yes = confirm('你確定取消此收藏課程嗎?');
+                                    if (yes) {
+                                        axios.delete(`${webApi}/api/InterestedCourses/${candidateId}/${CourseId}`)
+                                            .then(response => {
+                                                alert("此課程已取消收藏");
+                                                axios.get(`${webApi}/api/InterestedCourses?candidateId=${candidateId}`)
+                                                    .then(response => {
+                                                        this.interestList = response.data;
+                                                        console.log(this.interestList);
+                                                    })
+                                            }).catch(err => console.log(err))
+                                            .finally(console.log('刪除課程'))
+                                    }
                                 } else {
                                     var request = {
                                         CandidateId: thisPageCandidateId,
