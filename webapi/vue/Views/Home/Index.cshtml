@@ -161,24 +161,30 @@
 
     <script>
         $(document).ready(function () {
-            $("#服務").click(function () {
-                sessionStorage.setItem("Category", "服務");
-            });
+            //$("#服務").click(function () {
+            //    sessionStorage.setItem("Category", "服務");
+            //});
 
-            $("#藝文").click(function () {
-                sessionStorage.setItem("Category", "藝文");
-            });
+            //$("#藝文").click(function () {
+            //    sessionStorage.setItem("Category", "藝文");
+            //});
 
-            $("#科技").click(function () {
-                sessionStorage.setItem("Category", "科技");
-            });
+            //$("#科技").click(function () {
+            //    sessionStorage.setItem("Category", "科技");
+            //});
 
-            $("#商業").click(function () {
-                sessionStorage.setItem("Category", "商業");
-            });
+            //$("#商業").click(function () {
+            //    sessionStorage.setItem("Category", "商業");
+            //});
 
-
-
+            for(i = 0; i < 4; i++){
+                let x = document.querySelectorAll('a[class="col-12 col-md-6 col-lg-3 my-2"]')[i]
+                x.href = 'https://localhost:7158/Home/jobList';
+                x.addEventListener('click',function(){
+                    sessionStorage.setItem("Category", x.id);
+                })
+            }
+            
             // Make an API request using Axios
             axios.get('https://localhost:7240/api/Vacancies')
                 .then(response => {
