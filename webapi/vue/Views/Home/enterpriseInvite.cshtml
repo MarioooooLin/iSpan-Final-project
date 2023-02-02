@@ -32,12 +32,12 @@
                                 <div class="mb-3 border navbar-nav box">
                                     <div class="p-3 w-100">
                                         <figure class="figure ml-2">
-                                            <img src="https://picsum.photos/250/250/?random=10"
+                                            <img :src="info[0].img"
                                                  class="figure-img img-fuild rounded-circle  w-50  ">
-                                            <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                            <h3 class="display-6 slide-h3 mt-1">{{info[0].principal}} 您好</h3>
                                         </figure>
-                                        <div>手機:</div>
-                                        <div>信箱:</div>
+                                        <div>手機: {{info[0].contactPhone}}</div>
+                                        <div>信箱: {{info[0].email}}</div>
                                         <div class="item text-end align-content-end mb-0">
                                             <div class="text-right mr-3 fw-bold">
                                                 <a asp-controller="Home" asp-action="enterpriseDetail">
@@ -46,22 +46,15 @@
                                             </div>
                                         </div>
                                         <hr />
-                                        <div>職缺：</div>
+                                        <div>職缺：{{dVan.length}}/{{van.length}}</div>
                                         <div class="d-block text-right">
                                             <div class="text-right mr-3 fw-bold">
-                                                <a asp-controller="Home" asp-action="CV">
+                                                <a asp-controller="Home" asp-action="vacancyManage">
                                                     管理所有職缺<i class="fa-solid fa-chevron-right"></i>
                                                 </a>
                                             </div>
                                         </div>
                                         <hr />
-                                        <div class="d-block text-right">
-                                            <div class="text-right mr-3 fw-bold">
-                                                <a asp-controller="Home" asp-action="CV">
-                                                    查看所有通訊紀錄 <i class="fa-solid fa-chevron-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -120,10 +113,16 @@
                 datas: [],
                 Id: sessionStorage.getItem("EmpId"),
                 status: 2,
+
+
+                info: [],
+                van: [],
+                dVan: [],
             },
             mounted: function () {
                 let _this = this;
                 _this.Information();
+                  _this.Info();
             },
             methods: {
                 Information: function () {
@@ -137,6 +136,37 @@
                         _this.datas = response.data;
 
                     }).catch(err => console.log(err))
+                        .finally(console.log('完成'));
+                },
+                Info: function () {
+                    let _this = this;
+                    axios.get(`${webApi}/api/Enterprises/Id${this.Id}`)
+                        .then(res => {
+                            _this.info = res.data;
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+
+                    axios.get(`${webApi}/api/Vacancies/view`, {
+                        params: {
+                            id: _this.Id,
+                        }
+                    })
+                        .then(response => {
+                            _this.van = response.data;
+
+                            for (var i = 0; i < response.data.length; i++) {
+
+                                if (response.data[i].valid == true) {
+                                    _this.dVan.push(response.data[i]);
+
+                                }
+
+                            }
+
+                        })
+                        .catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
             },

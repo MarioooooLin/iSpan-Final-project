@@ -205,7 +205,7 @@
                                     aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == true">
                                 <ul class="navbar-nav mr-auto flex-column">
                                     <li class="nav-item px-1 mx-1">
                                         <div class="head"></div>
@@ -284,6 +284,48 @@
                                 </ul>
                             </div>
                             <!-- </div> -->
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == false">
+                                <ul class="navbar-nav mr-auto flex-column">
+                                    <li class="nav-item px-1 mx-1 mb-5">
+                                        <div class="head "></div>
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">廣告</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10"
+                                                         class="float-left mr-3">
+                                                    <figcaption>
+                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                                        Maxime, corrupti
+                                                        distinctio dolore repellat corporis nulla consequuntur nostrum
+                                                        laboriosam
+                                                        molestiae doloribus perspiciatis totam esse veritatis expedita,
+                                                        atque dicta,
+                                                        ullam necessitatibus exercitationem.
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item px-1 mx-1">
+                                        <div class="head mt-4"></div>
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">廣告</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                    <figcaption>
+                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, corrupti
+                                                        distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
+                                                        molestiae doloribus perspiciatis totam esse veritatis expedita, atque dicta,
+                                                        ullam necessitatibus exercitationem.
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </nav>
                     </div>
                 </div>
@@ -325,8 +367,10 @@
                 tempitem: 0,
                 page: [],
                 userdata: [],
+                userstatus:false,
                 arrdeposition: [],
-                interestId: 0
+                interestId: 0,
+                
             },
             mounted: function () {
                 this.search();
@@ -559,6 +603,11 @@
                 },
                 user() {
                     let userid = window.sessionStorage.getItem('Id')
+                    if(!userid){
+                        this.userstatus = false
+                        return false;
+                    }
+                    this.userstatus = true
                     let url = `${webApi}/api/Candidates/${userid}`;
                     axios.get(url)
                         .then(res => {

@@ -34,10 +34,10 @@
                                             <figure class="figure ml-2">
                                                 <img src="https://picsum.photos/250/250/?random=10"
                                                      class="figure-img img-fuild rounded-circle  w-50  ">
-                                                <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                                <h3 class="display-6 slide-h3 mt-1">{{userdata.name}}</h3>
                                             </figure>
-                                            <div>手機:</div>
-                                            <div>信箱:</div>
+                                            <div>手機:&nbsp; {{userdata.cellphone}}</div>
+                                            <div>信箱:&nbsp; {{userdata.email}}</div>
                                             <div class="item text-end align-content-end mb-0">
                                                 <div class="text-right mr-3 fw-bold">
                                                     <a asp-controller="Home" asp-action="memberDetail">
@@ -170,10 +170,12 @@
                 sliced: [], //切分頁
                 currentpage: 0,
                 inputValue: '',
+                userdata:[],
             },
             mounted: function () {
                 let _this = this;
                 _this.Source();
+                _this.user();
             },
             methods: {
                 Source: function () {
@@ -300,7 +302,21 @@
                         currpage++;
                         this.click(currpage)
                     }
+                },
+                user() {
+                    let userid = window.sessionStorage.getItem('Id')
+                    let url = `${webApi}/api/Candidates/${userid}`;
+                    axios.get(url)
+                        .then(res => {
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            res.data[0].name = res.data[0].name + ' 你好'
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
+                        })
                 }
+
+
                 //Pagination: function () {
                 //    this.sliced = this.datas.slice((this.currentpage * this.pagesize) - this.pagesize, (this.currentpage * this.pagesize))
                 //}
