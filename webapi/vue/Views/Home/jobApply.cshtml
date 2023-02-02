@@ -155,10 +155,9 @@
                         .then(res => {
                             this.datas = res.data;
                             this.enterprise = res.data.enterpriseId;
-                            console.log(this.datas)
                         })
                         .catch(err => console.log(err))
-                        .finally(console.log('完成'))
+                        //.finally(console.log('完成'))
                 },
                 post() {
                     let bool = confirm('是否送出')
@@ -188,6 +187,7 @@
                         .then(res => {
                             alert('應徵成功')
                             this.txtMsg = ''
+                            window.location.replace('https://localhost:7158/Home/jobList')
                         })
                 }
             },
