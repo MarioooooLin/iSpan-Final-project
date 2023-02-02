@@ -23,8 +23,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <section class="site-section pt-4 d-flex col-sm-12 col-md-3 col-lg-4 col-xl-3" id="next-section">
-                <div class="container h-100">
+            <section class="site-section pt-4 d-flex col-sm-12 col-md-3 col-lg-4 col-xl-3 mr-lg-3" id="next-section">
+                <div class="container h-100 mt-lg-5">
                     <div class="row">
                         <!-- leftslide start -->
                         <div class="mr-auto ml-xl-5">
@@ -131,8 +131,8 @@
                                 Categories: <a href="#">Design</a>, <a href="#">Events</a> Tags:
                                 <a href="#">#html</a>, <a href="#">#trends</a>
                             </p>
-                            <button class="rounded mx-3 btn-light">Like</button>
-                            <button class="rounded btn-light">Share</button>
+                            <button class="rounded mx-3 btn-light" v-on:click="likeArti">Like</button>
+                            <button class="rounded btn-light" v-on:click="copyUrl">Share</button>
                         </div>
 
                         <div id="little-button"></div>
@@ -192,14 +192,18 @@
                         </div>
                         <div class="sidebar-box">
                             <img :src=datas.teacherPhoto alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
-                            <h3>{{datas.author}}</h3>
-                            <p>
+                            <h2>{{datas.author}}</h2>
+                            <p style="font-size:18px;text-decoration: underline;">
                                 {{datas.expreience}}
                             </p>
+                            <p style="font-size:16px">
+                                {{datas.teacherIntro}}
+                            </p>
+
                             <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
                         </div>
 
-                        <div class="sidebar-box">
+@*                        <div class="sidebar-box">
                             <div class="categories">
                                 <h3>Categories</h3>
                                 <li>
@@ -229,7 +233,7 @@
                                 numquam!
                             </p>
                         </div>
-                    </div>
+*@                    </div>
                 </div>
             </div>
     </div>
@@ -350,6 +354,28 @@
                                 }
                             })
                     }
+                },
+
+                copyUrl(){
+                    var urlInput=document.createElement("input"); <input value="window.location.href">
+
+                    urlInput.value=window.location.href;
+                    console.log(urlInput.value); //測試網址
+                    document.body.appendChild(urlInput)
+                    urlInput.select();
+                    console.log(urlInput.value);
+                    document.execCommand("Copy");
+                    urlInput.remove();
+                    console.log(urlInput.value);
+
+                    alert("成功複製網址")
+                    //this.$Message.success("成功");
+
+                },
+
+                likeArti(){
+
+
                 }
             }
         })
