@@ -130,22 +130,7 @@ namespace webapi.Controllers
             return ic;
         }
 
-        [HttpPost("filter")]
-        public async Task<Interest> PostInterest([FromBody] Interest interest)
-        {
-
-            Interest ic = new Interest
-            {
-                CandidateId = interest.CandidateId,
-                VacancyId = interest.VacancyId,
-                EnterpriseId = interest.EnterpriseId,
-                InterestStatus = interest.InterestStatus
-            };
-            _context.Interest.Add(ic);
-            await _context.SaveChangesAsync();
-
-            return ic;
-        }
+        
 
         // DELETE: api/Interests/5
         [HttpDelete("{id}")]

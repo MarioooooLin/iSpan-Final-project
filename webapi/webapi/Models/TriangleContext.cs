@@ -64,9 +64,9 @@ namespace webapi.Models
 
                 entity.Property(e => e.Keyword).HasMaxLength(200);
 
-                entity.Property(e => e.message).HasMaxLength(500);
+                entity.Property(e => e.Message).HasMaxLength(500);
 
-                entity.Property(e => e.nickName).HasMaxLength(50);
+                entity.Property(e => e.NickName).HasMaxLength(50);
 
                 entity.Property(e => e.Title).HasMaxLength(50);
 
@@ -221,6 +221,10 @@ namespace webapi.Models
             {
                 entity.Property(e => e.CandidateId).HasColumnName("candidateId");
 
+                entity.Property(e => e.Cv)
+                    .HasMaxLength(200)
+                    .HasColumnName("CV");
+
                 entity.Property(e => e.EnterpriseId).HasColumnName("enterpriseId");
 
                 entity.Property(e => e.Status).HasColumnName("status");
@@ -299,7 +303,9 @@ namespace webapi.Models
             {
                 entity.HasKey(e => e.ArticleId);
 
-                entity.Property(e => e.ArticleName).HasMaxLength(25);
+                entity.Property(e => e.ArticleName)
+                    .IsRequired()
+                    .HasMaxLength(25);
 
                 entity.Property(e => e.UpdateTime)
                     .HasColumnType("datetime")
@@ -313,7 +319,7 @@ namespace webapi.Models
                     .HasMaxLength(25);
 
                 entity.Property(e => e.ReplyTime)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
             });
 

@@ -12,8 +12,8 @@ namespace webapi.Models
         public int? Score { get; set; }
         public DateTime? AnswerTime { get; set; }
         public int? Result1 { get; set; }
-        public string? Type { get; set; }
-        public string? Analysis { get; set; }
-        public string? SuggestJob { get; set; }
+        public string Type { get; set; }
+        public string Analysis { get; set; }
+        public string SuggestJob { get; set; }
     }
 }
