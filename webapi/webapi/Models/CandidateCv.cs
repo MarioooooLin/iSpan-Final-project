@@ -11,5 +11,6 @@ namespace webapi.Models
         public string Cvsource { get; set; }
         public int? CandidateId { get; set; }
         public int? Cvid { get; set; }
+        public int? Status { get; set; }
     }
 }

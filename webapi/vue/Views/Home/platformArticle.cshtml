@@ -130,6 +130,10 @@
                         .finally(console.log('完成'))
                 },
                 insert: function (datas) {
+                    if(!window.sessionStorage.getItem("Id")){
+                        alert('請登入後再留言')
+                        return false
+                    }
                     let _this = this;
                     var request = {};
                     request.ReplyMessage = _this.ReplyMessage;
@@ -146,6 +150,10 @@
                         
                 },
                 deleteplatform: function (articleId) {
+                    if (!window.sessionStorage.getItem("Id")) {
+                        alert('請登入後再刪除')
+                        return false
+                    }
                     let _this = this;
                     var reply = confirm("確定要刪除貼文嗎?");
                     console.log(this.articleid)

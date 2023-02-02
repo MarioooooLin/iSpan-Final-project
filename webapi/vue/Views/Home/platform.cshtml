@@ -126,7 +126,7 @@
                                         @*<button type="button" class="btn btn-primary" @@click="filterPlatformDTOes"><i class="fa-solid fa-magnifying-glass ml-4 mr-4"></i></button>*@
 
                                     </div>
-                                    <a asp-controller="Home" asp-action="platformPost" class="btn btn-primary">發文分享<i class="fa-solid fa-pen mx-2"></i></a>
+                                    <a @@click="goPage" class="btn btn-primary">發文分享<i class="fa-solid fa-pen mx-2"></i></a>
                                 </li>
                             </div>
                             <div class="col-12 py-5" style="height:35px" v-for="data in PostDTOs">
@@ -346,6 +346,15 @@
                         }
                     );
 
+                },
+                goPage:function (){
+                    let candidateId = sessionStorage.getItem('Id')
+                    if (candidateId != null) {
+                        location.href = 'https://localhost:7158/Home/platformPost'
+                    }
+                    else {
+                        location.href = 'https://localhost:7158/Home/memberLogin'
+                    }
                 },
             }
         })
