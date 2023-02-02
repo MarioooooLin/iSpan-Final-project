@@ -291,10 +291,10 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
-                //post: function () { 這是用來跳轉頁面用
-                //    let key = window.localStorage.getItem("vanId");
-                //    window.location = "/Home/jobApply";
-                //},
+                post: function () {
+                    let key = window.localStorage.getItem("vanId");
+                    window.location = "/Home/jobApply";
+                },
                 deposition() {
                     let candidateId = window.sessionStorage.getItem("Id")
                     let vanId = window.localStorage.getItem("vanId")
@@ -332,33 +332,33 @@
                             }
                         })
                 },
-                post() {
-                    let bool = confirm('是否送出')
-                    let id = window.localStorage.getItem("vanId")
-                    let candidateId = window.sessionStorage.getItem("Id")
-                    axios.get(`${webApi}/api/Interests/${candidateId}`)
-                        .then(res => {
-                            let vanid;
-                            for (i = 0; i < res.data.length; i++) {
-                                vanid = res.data[0].vacancyId
-                            }
-                            vanid == id ? alert('您已經應徵該職缺') : this.postInterests()
-                        })
-                    //console.log(this.txtMsg)方法裡第二行
-                    //this.txtMsg = '';
-                },
-                postInterests() {
-                    const postdata = {
-                        CandidateId: parseInt(window.sessionStorage.getItem("Id")),
-                        VacancyId: this.datas.vacancyId,
-                        EnterpriseId: this.datas.enterpriseId,
-                        InterestStatus: 1
-                    }
-                    axios.post(`${webApi}/api/Interests/filter`, postdata)
-                        .then(res => {
-                            alert('應徵成功')
-                        })
-                }
+                //post() {
+                //    let bool = confirm('是否送出')
+                //    let id = window.localStorage.getItem("vanId")
+                //    let candidateId = window.sessionStorage.getItem("Id")
+                //    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                //        .then(res => {
+                //            let vanid;
+                //            for (i = 0; i < res.data.length; i++) {
+                //                vanid = res.data[0].vacancyId
+                //            }
+                //            vanid == id ? alert('您已經應徵該職缺') : this.postInterests()
+                //        })
+                //    //console.log(this.txtMsg)方法裡第二行
+                //    //this.txtMsg = '';
+                //},
+                //postInterests() {
+                //    const postdata = {
+                //        CandidateId: parseInt(window.sessionStorage.getItem("Id")),
+                //        VacancyId: this.datas.vacancyId,
+                //        EnterpriseId: this.datas.enterpriseId,
+                //        InterestStatus: 1
+                //    }
+                //    axios.post(`${webApi}/api/Interests/filter`, postdata)
+                //        .then(res => {
+                //            alert('應徵成功')
+                //        })
+                //}
             },
             computed: {
                 salary: function () {

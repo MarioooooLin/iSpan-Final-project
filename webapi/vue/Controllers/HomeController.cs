@@ -83,6 +83,10 @@ namespace vue.Controllers
         {
             return View();
         }
+        public IActionResult forgetPassword()
+        {
+            return View();
+        }
 
         public IActionResult memberSignup()
         {
