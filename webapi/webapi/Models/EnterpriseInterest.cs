@@ -12,5 +12,6 @@ namespace webapi.Models
         public int? VacancyId { get; set; }
         public int? Status { get; set; }
         public int? EnterpriseId { get; set; }
+        public string Cv { get; set; }
     }
 }

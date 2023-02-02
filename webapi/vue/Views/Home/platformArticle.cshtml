@@ -29,8 +29,8 @@
                                     </script>*@
                                     {{datas.updateTime}}
                                 </div>
-                                <div class="col-6 text-end mr-md-3">
-                                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-pen"></i></a>
+                                <div class="col-6 text-end mr-md-3" @@click="deleteplatform">
+                                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-pen" ></i></a>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +81,7 @@
             data: {
                 datas: {},
                 articleName: "",
+                articleid:'',
                 //contents: "",
                 updateTime: "",
                 ReplyDTOs: [],
@@ -99,6 +100,7 @@
                     //let getUrlString = location.href;
                     //let url = new URL(getUrlString);
                     let ArticleId = new URL(location.href).searchParams.get('id');
+                    this.articleid = ArticleId
                     axios.get(`${webApi}/api/Platforms/${ArticleId}`)
                         .then(response => {
                             _this.datas = response.data[0];
@@ -128,6 +130,10 @@
                         .finally(console.log('完成'))
                 },
                 insert: function (datas) {
+                    if(!window.sessionStorage.getItem("Id")){
+                        alert('請登入後再留言')
+                        return false
+                    }
                     let _this = this;
                     var request = {};
                     request.ReplyMessage = _this.ReplyMessage;
@@ -143,6 +149,23 @@
                         });
                         
                 },
+                deleteplatform: function (articleId) {
+                    if (!window.sessionStorage.getItem("Id")) {
+                        alert('請登入後再刪除')
+                        return false
+                    }
+                    let _this = this;
+                    var reply = confirm("確定要刪除貼文嗎?");
+                    console.log(this.articleid)
+                    if (reply == true) {
+                        axios.delete(`${webApi}/api/Platforms/${this.articleid}`)
+                            .then(res => {
+                                if (res.status < 300) {
+                                    window.location.replace('https://localhost:7158/Home/platform')
+                                }
+                            })
+                    }
+                }
             }
         })
     </script>

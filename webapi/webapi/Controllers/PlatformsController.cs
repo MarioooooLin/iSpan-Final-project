@@ -130,18 +130,18 @@ namespace webapi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         //public async Task<IEnumerable<PlatformsDTO>> PostPlatform(Platform platform)
-        public async Task<Platform> PostPlatform(PlatformsDTO platform)
+        public async Task<Platform> PostPlatform([FromBody]PlatformsDTO platform)
         {
             Platform pf = new Platform
             {
                 ArticleName = platform.ArticleName,
                 Contents = platform.Contents,
+                AuthorId = platform.AuthorId
             };
             _context.Platform.Add(pf);
             await _context.SaveChangesAsync();
 
             return pf;
-
             //return CreatedAtAction("GetPlatform", new { id = platform.ArticleId }, platform);
         }
 

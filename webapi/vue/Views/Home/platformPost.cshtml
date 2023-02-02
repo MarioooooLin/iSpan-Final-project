@@ -69,8 +69,8 @@
             name: "appVue",
             data: {
                 //datas: [],
-                ArticleName: null,
-                Contents: null,
+                ArticleName: "",
+                Contents: "",
                 inputvalue: "",
             },
             mounted: function () {
@@ -78,13 +78,21 @@
             },
             methods: {
                 insert: function () {
-                    let _this = this;
-                    var request = {};
-                    request.ArticleName = _this.ArticleName;
-                    request.Contents = _this.Contents;
-                    axios.post(`${webApi}/api/Platforms`, request).then(response => {
-                        window.location = "/Home/platform";
-                    });
+                    let candidateId = sessionStorage.getItem('Id')
+                    if (!this.ArticleName || !this.Contents){
+                        alert("請填寫完整資訊")
+                    }else{
+                        var request = {
+                            AuthorId: candidateId,
+                            ArticleName : this.ArticleName,
+                            Contents : this.Contents,
+                        };
+                        console.log(request)
+                        axios.post(`${webApi}/api/Platforms`, request).then(response => {
+                            location.href = 'https://localhost:7158/Home/platform'
+                        });
+                    }
+
                 },
                 clean: function () {
                     let _this = this;

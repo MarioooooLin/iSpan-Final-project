@@ -86,14 +86,15 @@ namespace webapi.Controllers
                 ArticleFloor = article.ArticleFloor,
                 NickName = article.nickName,
                 Message = article.message,
-                TeacherPhoto= teacher.Img,
+                TeacherPhoto = teacher.Img,
+                TeacherIntro=teacher.Intro,
 
             }).Where(x => x.ArticleId == id);
 
             return result;
         }
 
-        [HttpGet("id")] 
+        [HttpGet("id")]
         public async Task<IEnumerable<ArticleDTO>> GetArt()
         {
             var result = _context.Article.Join(_context.Teacher, x => x.AuthorId, y => y.TeacherId, (article, teacher) => new ArticleDTO

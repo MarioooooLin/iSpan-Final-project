@@ -109,8 +109,9 @@ namespace webapi.Controllers
 
         // POST: api/Interests
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
-        public async Task<Interest> PostInterest([FromBody] Interest interest)
+        public async Task<Interest> Post([FromBody] Interest interest)
         {
             //_context.Interest.Add(interest);
             //await _context.SaveChangesAsync();
@@ -128,6 +129,8 @@ namespace webapi.Controllers
 
             return ic;
         }
+
+        
 
         // DELETE: api/Interests/5
         [HttpDelete("{id}")]

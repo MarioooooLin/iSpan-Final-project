@@ -7,5 +7,6 @@
         public int? Authorld { get; set; }
         public string? Contents { get; set; }
         public DateTime? UpdateTime { get; set; }
+        public int? AuthorId { get;  set; }
     }
 }
