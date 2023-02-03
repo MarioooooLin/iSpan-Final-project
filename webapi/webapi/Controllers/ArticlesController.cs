@@ -27,7 +27,7 @@ namespace webapi.Controllers
 
         // GET: api/Articles
         [HttpGet]
-        public async Task<IEnumerable<ArticleDTO>> GetArticle(string? title)
+        public async Task<IEnumerable<ArticleDTO>> GetArticle(string? title,string? keyword)
         {
             var result = _context.Article.Join(_context.Teacher, x => x.AuthorId, y => y.TeacherId, (article, teacher) => new ArticleDTO
             {
@@ -39,15 +39,21 @@ namespace webapi.Controllers
                 UpdateTime = article.UpdateTime,
                 ArticleId = article.ArticleId,
                 ArticleFloor = article.ArticleFloor,
-                NickName = article.nickName,
-                Message = article.message,
+                NickName = article.NickName,
+                Message = article.Message,
+                Keyword = article.Keyword,
 
             });
 
             result = result.Where(x => x.Img != null);
+
             if (!string.IsNullOrWhiteSpace(title))
             {
                 result = result.Where(a => a.Title.Contains(title));
+            }
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                result = result.Where(a => a.Keyword.Contains(keyword));
             }
 
             return await Task.FromResult(result);
@@ -78,8 +84,8 @@ namespace webapi.Controllers
                 ArticleId = article.ArticleId,
                 Expreience = teacher.Experience,
                 ArticleFloor = article.ArticleFloor,
-                NickName = article.nickName,
-                Message = article.message,
+                NickName = article.NickName,
+                Message = article.Message,
                 TeacherPhoto = teacher.Img,
                 TeacherIntro=teacher.Intro,
 
@@ -102,8 +108,8 @@ namespace webapi.Controllers
                 ArticleId = article.ArticleId,
                 Expreience = teacher.Experience,
                 ArticleFloor = article.ArticleFloor,
-                NickName = article.nickName,
-                Message = article.message,
+                NickName = article.NickName,
+                Message = article.Message,
                 TeacherPhoto = teacher.Img,
 
             });
@@ -170,8 +176,8 @@ namespace webapi.Controllers
         {
             Article arti = new Article
             {
-                nickName = test.nickName,
-                message = test.message,
+                NickName = test.NickName,
+                Message = test.Message,
                 Title = test.Title,
                 UpdateTime = test.UpdateTime,
                 ArticleFloor = test.ArticleFloor,

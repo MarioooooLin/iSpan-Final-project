@@ -23,7 +23,7 @@
                                 aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == true">
                             <ul class="navbar-nav mr-auto flex-column">
                                 <li class="nav-item px-1 mx-1">
                                     <div class="head"></div>
@@ -34,10 +34,10 @@
                                             <figure class="figure ml-2">
                                                 <img src="https://picsum.photos/250/250/?random=10"
                                                      class="figure-img img-fuild rounded-circle  w-50  ">
-                                                <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                                <h3 class="display-6 slide-h3 mt-1">{{userdata.name}}</h3>
                                             </figure>
-                                            <div>手機:</div>
-                                            <div>信箱:</div>
+                                            <div>手機:&nbsp; {{userdata.cellphone}}</div>
+                                            <div>信箱:&nbsp; {{userdata.email}}</div>
                                             <div class="item text-end align-content-end mb-0">
                                                 <div class="text-right mr-3 fw-bold">
                                                     <a asp-controller="Home" asp-action="memberDetail">
@@ -109,6 +109,49 @@
                             </ul>
                         </div>
                         <!-- </div> -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == false">
+                            <ul class="navbar-nav mr-auto flex-column">
+                                <li class="nav-item px-1 mx-1 mb-5">
+                                    <div class="head "></div>
+                                    <div class="border p-4 box mb-6 h-auto">
+                                        <ul class="list-unstyled block__47528 ">
+                                            <li><span class="active h2">廣告</span></li>
+                                            <figure class="w-100">
+                                                <img src="https://picsum.photos/100/100/?random=10"
+                                                     class="float-left mr-3">
+                                                <figcaption>
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                                    Maxime, corrupti
+                                                    distinctio dolore repellat corporis nulla consequuntur nostrum
+                                                    laboriosam
+                                                    molestiae doloribus perspiciatis totam esse veritatis expedita,
+                                                    atque dicta,
+                                                    ullam necessitatibus exercitationem.
+                                                </figcaption>
+                                            </figure>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item px-1 mx-1">
+                                    <div class="head mt-4"></div>
+                                    <div class="border p-4 box mb-6 h-auto">
+                                        <ul class="list-unstyled block__47528 ">
+                                            <li><span class="active h2">廣告</span></li>
+                                            <figure class="w-100">
+                                                <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                <figcaption>
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, corrupti
+                                                    distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
+                                                    molestiae doloribus perspiciatis totam esse veritatis expedita, atque dicta,
+                                                    ullam necessitatibus exercitationem.
+                                                </figcaption>
+                                            </figure>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
                     </nav>
                     <!-- Above is sidebar -->
 
@@ -170,10 +213,14 @@
                 sliced: [], //切分頁
                 currentpage: 0,
                 inputValue: '',
+                userdata:[],
+                userstatus: false,
+
             },
             mounted: function () {
                 let _this = this;
                 _this.Source();
+                _this.user();
             },
             methods: {
                 Source: function () {
@@ -300,7 +347,28 @@
                         currpage++;
                         this.click(currpage)
                     }
+                },
+                user() {
+                    let userid = window.sessionStorage.getItem('Id')
+                    if (!userid) {
+                        this.userstatus = false
+                        return false;
+                    }
+                    this.userstatus = true
+                    let url = `${webApi}/api/Candidates/${userid}`;
+        
+                    axios.get(url)
+                        .then(res => {
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            res.data[0].name = res.data[0].name + ' 你好'
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
+                            console.log(res.data)
+                        })
                 }
+
+
                 //Pagination: function () {
                 //    this.sliced = this.datas.slice((this.currentpage * this.pagesize) - this.pagesize, (this.currentpage * this.pagesize))
                 //}

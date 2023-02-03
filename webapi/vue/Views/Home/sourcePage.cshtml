@@ -23,7 +23,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <section class="site-section pt-4 d-flex col-sm-12 col-md-3 col-lg-4 col-xl-3" id="next-section">
+            <section class="site-section pt-4 d-flex col-sm-12 col-md-3 col-lg-4 col-xl-3 mr-lg-3" id="next-section">
                 <div class="container h-100 mt-lg-5">
                     <div class="row">
                         <!-- leftslide start -->
@@ -35,14 +35,14 @@
                                         <img src="https://picsum.photos/250/250/?random=10"
                                              class="figure-img img-fuild rounded-circle w-50" />
                                         <figcaption>
-                                            <h3 class="display-6 slide-h3">使用者 您好</h3>
+                                            <h3 class="display-6 slide-h3">{{userdata.name}}</h3>
                                         </figcaption>
                                     </figure>
-                                    <li>0987987940</li>
-                                    <li>a123@gmail.com</li>
+                                    <li>手機:&nbsp; {{userdata.cellphone}}</li>
+                                    <li>信箱:&nbsp; {{userdata.email}}</li>
                                     <div class="item text-end align-content-end mb-0">
                                     <li class="text-right mr-3 fw-bold">
-                                        <a href="#">修改會員資料 <i class="fa-solid fa-chevron-right"></i></a>
+                                        <a href="/Home/memberDetail" >修改會員資料 <i class="fa-solid fa-chevron-right"></i></a>
                                     </li>
                             </div>
                             <hr />
@@ -131,8 +131,8 @@
                                 Categories: <a href="#">Design</a>, <a href="#">Events</a> Tags:
                                 <a href="#">#html</a>, <a href="#">#trends</a>
                             </p>
-                            <button class="rounded mx-3 btn-light">Like</button>
-                            <button class="rounded btn-light">Share</button>
+                            <button class="rounded mx-3 btn-light" v-on:click="likeArti">Like</button>
+                            <button class="rounded btn-light" v-on:click="copyUrl">Share</button>
                         </div>
 
                         <div id="little-button"></div>
@@ -191,49 +191,51 @@
                             </form>
                         </div>
                         <div class="sidebar-box">
+                            <h2 style="font-weight:bold">作者資訊</h2>
                             <img :src=datas.teacherPhoto alt="Image placeholder" class="img-fluid mb-4 w-50 rounded-circle" />
                             <h2>{{datas.author}}</h2>
-                            <p style="font-size:20px;">
+                            <p style="font-size:18px;text-decoration: underline;">
                                 {{datas.expreience}}
                             </p>
-                            <p style="font-size:18px;">
-                                {{datas.teacherIntro}}  
+                            <p style="font-size:16px">
+                                {{datas.teacherIntro}}
                             </p>
 
-@*                            <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-*@                        </div>
+                            <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
+                        </div>
 
-@*                        <div class="sidebar-box">
-                            <div class="categories">
-                                <h3>Categories</h3>
-                                <li>
-                                    <a href="#">Creatives <span>(12)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">News <span>(22)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Design <span>(37)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">HTML <span>(42)</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Web Development <span>(14)</span></a>
-                                </li>
-                            </div>
+                            @*                        <div class="sidebar-box">
+                        <div class="categories">
+                        <h3>Categories</h3>
+                        <li>
+                        <a href="#">Creatives <span>(12)</span></a>
+                        </li>
+                        <li>
+                        <a href="#">News <span>(22)</span></a>
+                        </li>
+                        <li>
+                        <a href="#">Design <span>(37)</span></a>
+                        </li>
+                        <li>
+                        <a href="#">HTML <span>(42)</span></a>
+                        </li>
+                        <li>
+                        <a href="#">Web Development <span>(14)</span></a>
+                        </li>
                         </div>
-*@
-@*                        <div class="sidebar-box">
-                            <h3>Paragraph</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque,
-                                autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam
-                                vero culpa sapiente consectetur similique, inventore eos fugit cupiditate
-                                numquam!
-                            </p>
                         </div>
-*@                    </div>
+
+                        <div class="sidebar-box">
+                        <h3>Paragraph</h3>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque,
+                        autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam
+                        vero culpa sapiente consectetur similique, inventore eos fugit cupiditate
+                        numquam!
+                        </p>
+                        </div>
+                        *@
+                    </div>
                 </div>
             </div>
     </div>
@@ -257,12 +259,14 @@
                 message: "",
                 title: "",
                 articleMessage: [], //文章留言
-                title: ''
+                title: '',
+                userdata: [],
+                memberInfo: "",
             },
             mounted: function () {
                 let _this = this;
                 _this.Article();
-
+                _this.user();
             },
             methods: {
                 Article: function () {
@@ -303,9 +307,58 @@
 
 
                 post() {
-                    let messageContent = {};
-                    let Time = new Date();
-                    this.articleMessage.length += 1;
+                    const candidateId = sessionStorage.getItem('Id')
+                    if (candidateId != null) {
+                        if (this.nickName != '' && this.message != '') {
+                            let messageContent = {};
+                            let Time = new Date();
+                            this.articleMessage.length += 1;
+
+                            //messageContent.ArticleId=0;
+                            //messageContent.nickName = this.nickName;
+                            //messageContent.message = this.message;
+                            //console.log(messageContent.nickName)
+                            //console.log(messageContent.message)
+
+                            messageContent.NickName = this.nickName;
+                            messageContent.Message = this.message;
+                            messageContent.Title = this.datas.title;
+                            messageContent.ArticleFloor = this.articleMessage.length;
+                            messageContent.UpdateTime = Time;
+                            messageContent.AuthorId = 1;
+
+                            console.log(messageContent) //檢查留言
+
+                            axios.post(`${webApi}/api/Articles`, messageContent)
+                                .then(res => {
+                                    console.log(res)
+                                    if (res.status < 300) {
+                                        window.location.replace(location.href)
+                                    }
+                                })
+                                .catch(err => { console.log(err) })
+
+                            document.getElementById("name").value = "";
+                            document.getElementById("message").value = "";
+                        }
+                        else {
+                            alert('請輸入暱稱與訊息~')
+                        }
+                    }
+
+
+                    //axios.post(`${webApi}/api/Articles`, { params: messageContent })
+                    //    .then(response => {
+                    //        console.log(response)
+                    //    })
+                    //    .catch(err => console.log(err))                    }
+                    else {
+                        //location.href = 'https://localhost:7158/Home/memberLogin'
+                        alert('請先登入~');
+                    }
+                    //let messageContent = {};
+                    //let Time = new Date();
+                    //this.articleMessage.length += 1;
 
                     //messageContent.ArticleId=0;
                     //messageContent.nickName = this.nickName;
@@ -313,26 +366,26 @@
                     //console.log(messageContent.nickName)
                     //console.log(messageContent.message)
 
-                    messageContent.NickName = this.nickName;
-                    messageContent.Message = this.message;
-                    messageContent.Title = this.datas.title;
-                    messageContent.ArticleFloor = this.articleMessage.length;
-                    messageContent.UpdateTime = Time;
-                    messageContent.AuthorId = 1;
+                    //messageContent.NickName = this.nickName;
+                    //messageContent.Message = this.message;
+                    //messageContent.Title = this.datas.title;
+                    //messageContent.ArticleFloor = this.articleMessage.length;
+                    //messageContent.UpdateTime = Time;
+                    //messageContent.AuthorId = 1;
 
-                    console.log(messageContent) //檢查留言
+                    //console.log(messageContent) //檢查留言
 
-                    axios.post(`${webApi}/api/Articles`, messageContent)
-                        .then(res => {
-                            console.log(res)
-                            if (res.status < 300) {
-                                window.location.replace(location.href)
-                            }
-                        })
-                        .catch(err => { console.log(err) })
+                    //axios.post(`${webApi}/api/Articles`, messageContent)
+                    //    .then(res => {
+                    //        console.log(res)
+                    //        if (res.status < 300) {
+                    //            window.location.replace(location.href)
+                    //        }
+                    //    })
+                    //    .catch(err => { console.log(err) })
 
-                    document.getElementById("name").value = "";
-                    document.getElementById("message").value = "";
+                    //document.getElementById("name").value = "";
+                    //document.getElementById("message").value = "";
 
 
                     //axios.post(`${webApi}/api/Articles`, { params: messageContent })
@@ -354,7 +407,42 @@
                                 }
                             })
                     }
-                }
+                },
+
+                copyUrl() {
+                    var urlInput = document.createElement("input");
+
+                    urlInput.value = window.location.href;
+                    console.log(urlInput.value); //測試網址
+                    document.body.appendChild(urlInput)
+                    urlInput.select();
+                    console.log(urlInput.value);
+                    document.execCommand("Copy");
+                    urlInput.remove();
+                    console.log(urlInput.value);
+
+                    alert("成功複製網址")
+                    //this.$Message.success("成功");
+
+                },
+
+                likeArti() {
+                    console.log('aaa')
+
+                },
+                user() {
+                    let userid = window.sessionStorage.getItem('Id')
+                    let url = `${webApi}/api/Candidates/${userid}`;
+                    axios.get(url)
+                        .then(res => {
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            res.data[0].name = res.data[0].name + ' 你好'
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
+                        });
+                },
+
             }
         })
     </script>

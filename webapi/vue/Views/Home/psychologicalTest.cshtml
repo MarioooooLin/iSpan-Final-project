@@ -1,4 +1,5 @@
 ﻿<!-- HOME start-->
+<div id="appVue">
 <section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg')"
          id="home-section">
     <div class="container">
@@ -32,10 +33,10 @@
                                         <figure class="figure ml-2">
                                             <img src="https://picsum.photos/250/250/?random=10"
                                                  class="figure-img img-fuild rounded-circle  w-50  ">
-                                            <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                            <h3 class="display-6 slide-h3 mt-1">{{userdata.name}}</h3>
                                         </figure>
-                                        <div>手機:</div>
-                                        <div>信箱:</div>
+                                        <div>手機:&nbsp; {{userdata.cellphone}}</div>
+                                        <div>信箱:&nbsp; {{userdata.email}}</div>
                                         <div class="item text-end align-content-end mb-0">
                                             <div class="text-right mr-3 fw-bold">
                                                 <a asp-controller="Home" asp-action="memberDetail">
@@ -107,11 +108,12 @@
                         </ul>
                     </div>
                     <!-- </div> -->
+
                 </nav>
             </div>
             <!-- Above is sidebar -->
 
-            <div class="col-lg-8 content mt-3 pt-lg-0 mt-lg-5 pb-2" id="appVue">
+            <div class="col-lg-8 content mt-3 pt-lg-0 mt-lg-5 pb-2" >
                 <div class="context  w-100 p-3 mb-4">
                     <div class="item row pt-4">
                         <h5 class="display-5 fw-bolder mb-0 col-6 ml-3">適性測驗</h5>
@@ -131,7 +133,7 @@
                     </div>
                     <div class="text-right">
                         <a v-bind:href="'https://localhost:7158/Home/testResult?id='+ resultPoint" v-on:click="checkResult" v-if="showResult">查看結果</a>
-                        <a v-on:click="checkResult" v-if="showResult">查看結果</a>
+                        @*<a v-on:click="checkResult" v-if="showResult">查看結果</a>*@
 
                     </div>
                 </div>
@@ -140,6 +142,7 @@
     </div>
 
 </section>
+</div>
 <!-- content end -->
 @section Scripts{
 
@@ -158,11 +161,15 @@
                 answerList: [],
                 showResult: false,
                 showButton: true,
-                resultPoint:0,
+                resultPoint: 0,
+                userdata: [],
+                userstatus: false,
+
             },
             mounted: function () {
                 let _this = this;
                 _this.GetQuestion();
+                _this.user();
             },
             methods: {
                 GetQuestion: function () {
@@ -181,7 +188,7 @@
                     //this.point += 1;
                     //console.log(this.point);
                     console.log(this.index);
-                    this.answerList[this.index]=1;
+                    this.answerList[this.index] = 1;
                     console.log(this.answerList);
                     if (this.answerList.length == 5) {
                         this.showResult = true
@@ -195,7 +202,7 @@
                 no: function () {
                     this.point += 0;
                     console.log(this.point);
-                    this.answerList[this.index]=0;
+                    this.answerList[this.index] = 0;
                     if (this.answerList.length == 5) {
                         this.showResult = true
                     }
@@ -207,7 +214,26 @@
                     }
                     this.resultPoint = resultPoint
                     console.log(this.resultPoint);
+                },
+                user() {
+                    let userid = window.sessionStorage.getItem('Id')
+                    if (!userid) {
+                        this.userstatus = false
+                        return false;
+                    }
+                    this.userstatus = true
+                    let url = `${webApi}/api/Candidates/${userid}`;
+                                       //let url = `https://localhost:7240/api/Candidates/4`;
+                    axios.get(url)
+                        .then(res => {
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            res.data[0].name = res.data[0].name + ' 你好'
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
+                        })
                 }
+
             }
         })
     </script>

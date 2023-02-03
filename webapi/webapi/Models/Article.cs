@@ -15,7 +15,7 @@ namespace webapi.Models
         public string Img { get; set; }
         public string ArticleContent { get; set; }
         public int? ArticleFloor { get; set; }
-        public string nickName { get;  set; }
-        public string message { get;  set; }
+        public string NickName { get; set; }
+        public string Message { get; set; }
     }
 }

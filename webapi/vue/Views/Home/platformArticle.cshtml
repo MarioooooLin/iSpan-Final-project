@@ -29,14 +29,14 @@
                                     </script>*@
                                     {{datas.updateTime}}
                                 </div>
-                                <div class="col-6 text-end mr-md-3">
-                                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-pen"></i></a>
+                                <div class="col-6 text-end mr-md-3" @@click="deleteplatform">
+                                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-pen" ></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="item row px-5">
                             <div class="col-12">
-                                <p>{{datas.contents}}</p>
+                                <p style="word-break:break-all;white-space:pre-line;">{{datas.contents}}</p>
                                 <div class="heart"></div>
                             </div>
                         </div>
@@ -44,13 +44,16 @@
                         <div id="replyVue">
                             <div class="col-12" v-for="data in ReplyDTOs">
                                 <span>
-                                    <p>
+                                    <p style="word-break:break-all;white-space:pre-line;">
                                         @*此公司的特色就是:年年虧損, 離職率高, 什麼都想做甚麼都不奇怪*@
                                         {{data.replyMessage}}
                                     </p>
                                     <p>{{data.replyTime}}</p>
                                 </span>
                                 <div>{{data.floor}}樓</div>
+                                <div class="col-6 text-end mr-md-3" @@click="deletereply(data)">
+                                    <a href="#" class="btn btn-primary">刪除</a>
+                                </div>
                                 <hr>
                             </div>
                             <hr>
@@ -81,6 +84,7 @@
             data: {
                 datas: {},
                 articleName: "",
+                articleid:'',
                 //contents: "",
                 updateTime: "",
                 ReplyDTOs: [],
@@ -99,6 +103,7 @@
                     //let getUrlString = location.href;
                     //let url = new URL(getUrlString);
                     let ArticleId = new URL(location.href).searchParams.get('id');
+                    this.articleid = ArticleId
                     axios.get(`${webApi}/api/Platforms/${ArticleId}`)
                         .then(response => {
                             _this.datas = response.data[0];
@@ -128,6 +133,10 @@
                         .finally(console.log('完成'))
                 },
                 insert: function (datas) {
+                    if(!window.sessionStorage.getItem("Id")){
+                        alert('請登入後再留言')
+                        return false
+                    }
                     let _this = this;
                     var request = {};
                     request.ReplyMessage = _this.ReplyMessage;
@@ -143,6 +152,41 @@
                         });
                         
                 },
+                deleteplatform: function (articleId) {
+                    if (!window.sessionStorage.getItem("Id")) {
+                        alert('請登入後再刪除')
+                        return false
+                    }
+                    let _this = this;
+                    var ret = confirm("確定要刪除貼文嗎?");
+                    console.log(this.articleid)
+                    if (ret == true) {
+                        axios.delete(`${webApi}/api/Platforms/${this.articleid}`)
+                            .then(res => {
+                                if (res.status < 300) {
+                                    window.location.replace('https://localhost:7158/Home/platform')
+                                }
+                            })
+                    }
+                },
+                deletereply: function (ReplyMessage) {
+                    if (!window.sessionStorage.getItem("Id")) {
+                        alert('請登入後再刪除')
+                        return false
+                    }
+                    let _this = this;
+                    var ret = confirm("確定要刪除留言嗎?");
+                    console.log(this.ReplyMessage)
+                    if (ret == true) {
+                        axios.delete(`${webApi}/api/Reply/${ReplyMessage.replyId}`)
+                            .then(res => {
+                                _this.getreply();
+                                //if (res.status < 300) {
+                                //    window.location.replace('https://localhost:7158/Home/platformArticle')
+                                //}
+                            })
+                    }
+                }
             }
         })
     </script>

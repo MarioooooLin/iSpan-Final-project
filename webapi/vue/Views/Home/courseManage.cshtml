@@ -206,7 +206,6 @@
                 deleteInterestCourse :function (e) {
                     let candidateId = sessionStorage.getItem('Id')
                     let CourseId = e.target.id;
-                    console.log(CourseId)
                     var yes = confirm('你確定取消此收藏課程嗎?');
                     if(yes){
                         axios.delete(`${webApi}/api/InterestedCourses/${candidateId}/${CourseId}`)

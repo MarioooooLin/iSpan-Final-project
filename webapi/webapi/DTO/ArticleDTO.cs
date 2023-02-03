@@ -15,6 +15,7 @@
         public string? Message { get; set; }
         public int? authorId { get; set; }
         public string? TeacherPhoto { get; set; }
+        public string Keyword { get;  set; }
         public string TeacherIntro { get;  set; }
     }
 }

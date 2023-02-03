@@ -50,6 +50,8 @@ namespace webapi.Controllers
                 EnterpriseId = etp.EnterpriseId,
                 Updatetime =  van.Updatetime
             });
+            result = result.OrderByDescending(x => x.VacancyId);
+
             if (!string.IsNullOrWhiteSpace(name))
             {
                 result = result.Where(a => a.WorkName.Contains(name) || a.CompanyName.Contains(name));

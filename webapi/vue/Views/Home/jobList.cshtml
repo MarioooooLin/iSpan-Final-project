@@ -1,4 +1,11 @@
 ﻿<!-- HOME start-->
+@section Styles{
+    <style>
+        .change:hover {
+            color: black;
+        }
+    </style>
+}
 <div id="appVue">
     <section class="section-hero overlay inner-page bg-image " style="background-image: url('/images/hero_1.jpg');"
              id="home-section">
@@ -33,6 +40,7 @@
                             <option value="服務">服務</option>
                             <option value="科技">科技</option>
                             <option value="藝文">藝文</option>
+                            <option value="商業">商業</option>
                         </select>
                     </div>
                 </div>
@@ -205,7 +213,7 @@
                                     aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == true">
                                 <ul class="navbar-nav mr-auto flex-column">
                                     <li class="nav-item px-1 mx-1">
                                         <div class="head"></div>
@@ -266,24 +274,46 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="nav-item px-1 mx-1">
+                                    <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                         <div class="head mt-4"></div>
-                                        <div class="border p-4 box mb-6 h-auto">
-                                            <ul class="list-unstyled block__47528 ">
-                                                <li><span class="active h2">廣告</span></li>
-                                                <figure class="w-100">
-                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
-                                                    <figcaption>
-                                                        內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                                                        內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                                                    </figcaption>
-                                                </figure>
-                                            </ul>
-                                        </div>
+                                        <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                            <div class="border p-4 box mb-6 h-auto">
+                                                <ul class="list-unstyled block__47528 ">
+                                                    <li><span class="active h2">{{item.courseName}}</span></li>
+                                                    <figure class="w-100">
+                                                        <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                        <figcaption>
+                                                            {{item.courseIntro}}
+                                                        </figcaption>
+                                                    </figure>
+                                                </ul>
+                                            </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- </div> -->
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == false">
+                                <ul class="navbar-nav mr-auto flex-column">
+                                    <li class="nav-item px-1 mx-1 mb-5" v-for="item in advertiseArray">
+                                        <div class="head"></div>
+                                        <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                            <div class="border p-4 box mb-6 h-auto">
+                                                <ul class="list-unstyled block__47528 ">
+                                                    <li><span class="active h2">{{item.courseName}}</span></li>
+                                                    <figure class="w-100">
+                                                        <img src="https://picsum.photos/100/100/?random=10"
+                                                             class="float-left mr-3">
+                                                        <figcaption>
+                                                            {{item.courseIntro}}
+                                                        </figcaption>
+                                                    </figure>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </nav>
                     </div>
                 </div>
@@ -325,14 +355,36 @@
                 tempitem: 0,
                 page: [],
                 userdata: [],
+                userstatus: false,
                 arrdeposition: [],
-                interestId: 0
+                interestId: 0,
+                advertiseArray: []
             },
             mounted: function () {
                 this.search();
                 this.user();
+                this.advertise();
             },
             methods: {
+                advertise() {
+                    let j;
+                    let arr = []
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            this.advertiseArray = arr
+                            console.log(this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
+                },
                 jobsingle: function (vacancyId) {
                     window.localStorage.removeItem("vanId");
                     window.localStorage.setItem("vanId", vacancyId);
@@ -559,6 +611,11 @@
                 },
                 user() {
                     let userid = window.sessionStorage.getItem('Id')
+                    if (!userid) {
+                        this.userstatus = false
+                        return false;
+                    }
+                    this.userstatus = true
                     let url = `${webApi}/api/Candidates/${userid}`;
                     axios.get(url)
                         .then(res => {
@@ -568,6 +625,15 @@
                             this.userdata = res.data[0]
                             console.log(this.userdata)
                         })
+                },
+                controller() {
+                    if (sessionStorage.getItem("Category")) {
+                        this.selectedCategory = sessionStorage.getItem("Category")
+                        this.search()
+                        sessionStorage.removeItem("Category")
+                    } else {
+                        this.search()
+                    }
                 }
             },
             watch: {
@@ -584,17 +650,20 @@
                 },
                 inputvalue: {
                     handler(newval) {
-                       if(!newval){
+                        if (!newval) {
                             this.search()
-                       }
+                        }
                     },
                     deep: true,
                 },
                 selectedCategory: {
                     handler(newval) {
-                        this.search();
+                        if (true) {
+                            this.controller()
+                        }
                     },
-                    deep: true
+                    deep: true,
+                    immediate: true
                 },
                 selectedArea: {
                     handler(newval) {
