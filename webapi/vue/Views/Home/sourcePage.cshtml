@@ -432,6 +432,11 @@
                 },
                 user() {
                     let userid = window.sessionStorage.getItem('Id')
+                    if (!userid) {
+                        this.userstatus = false
+                        return false;
+                    }
+                    this.userstatus = true
                     let url = `${webApi}/api/Candidates/${userid}`;
                     axios.get(url)
                         .then(res => {
@@ -440,7 +445,7 @@
                             res.data[0].name = res.data[0].name + ' 你好'
                             this.userdata = res.data[0]
                             console.log(this.userdata)
-                        });
+                        })
                 },
 
             }
