@@ -183,7 +183,7 @@
                                                     <i class="un">{{data.updateTime}}</i>
                                                 </span>
                                                 <span class="fly-list-hint">
-                                                    @*<i class="un" title="回答">💬3</i>*@
+                                                    <i class="un" title="回答">💬{{data.replyCount}}</i>
                                                 </span>
                                             </p>
                                         </div>
@@ -257,6 +257,7 @@
                     axios.get(`${webApi}/api/Platforms`)
                         .then(response => {
                             //------------------------------------
+                            this.PostDTOs = [];
                             _this.dataLength = response.data.length;
                             console.log(response.data); //8筆
                             _this.PageContent();

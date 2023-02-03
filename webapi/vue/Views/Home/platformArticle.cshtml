@@ -36,7 +36,7 @@
                         </div>
                         <div class="item row px-5">
                             <div class="col-12">
-                                <p>{{datas.contents}}</p>
+                                <p style="word-break:break-all;white-space:pre-line;">{{datas.contents}}</p>
                                 <div class="heart"></div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                         <div id="replyVue">
                             <div class="col-12" v-for="data in ReplyDTOs">
                                 <span>
-                                    <p>
+                                    <p style="word-break:break-all;white-space:pre-line;">
                                         @*此公司的特色就是:年年虧損, 離職率高, 什麼都想做甚麼都不奇怪*@
                                         {{data.replyMessage}}
                                     </p>
