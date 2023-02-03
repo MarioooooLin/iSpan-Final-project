@@ -618,6 +618,15 @@
                             this.userdata = res.data[0]
                             console.log(this.userdata)
                         })
+                },
+                controller(){
+                    if(sessionStorage.getItem("Category")){
+                        this.selectedCategory = sessionStorage.getItem("Category")
+                        this.search()
+                        sessionStorage.removeItem("Category")
+                    }else{
+                        this.search()
+                    }
                 }
             },
             watch: {
@@ -642,9 +651,12 @@
                 },
                 selectedCategory: {
                     handler(newval) {
-                        this.search();
+                        if(true){
+                            this.controller()
+                        }
                     },
-                    deep: true
+                    deep: true,
+                    immediate: true
                 },
                 selectedArea: {
                     handler(newval) {
