@@ -25,7 +25,7 @@
         <div class="row">
             <section class="site-section pt-4 d-flex col-sm-12 col-md-3 col-lg-4 col-xl-3 mr-lg-3" id="next-section">
                 <div class="container h-100 mt-lg-5">
-                    <div class="row">
+                    <div class="row" v-if="userstatus==true">
                         <!-- leftslide start -->
                         <div class="mr-auto ml-xl-5">
                             <div class="head"></div>
@@ -262,6 +262,7 @@
                 title: '',
                 userdata: [],
                 memberInfo: "",
+                userstatus:false,
             },
             mounted: function () {
                 let _this = this;
@@ -431,7 +432,8 @@
 
                 },
                 user() {
-                    let userid = window.sessionStorage.getItem('Id')
+                    let userid = window.sessionStorage.getItem('Id');
+                    if(!userid){return false}else{this.userstatus=true};
                     let url = `${webApi}/api/Candidates/${userid}`;
                     axios.get(url)
                         .then(res => {

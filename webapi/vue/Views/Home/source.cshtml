@@ -194,6 +194,8 @@
                         </div>
                     </div>
                 </section>
+            </div>
+        </div>
     </section>
 </div>
 @section Scripts{
@@ -213,7 +215,7 @@
                 sliced: [], //切分頁
                 currentpage: 0,
                 inputValue: '',
-                userdata:[],
+                userdata: [],
                 userstatus: false,
 
             },
@@ -356,7 +358,7 @@
                     }
                     this.userstatus = true
                     let url = `${webApi}/api/Candidates/${userid}`;
-        
+
                     axios.get(url)
                         .then(res => {
                             let x = res.data[0].cellphone;
