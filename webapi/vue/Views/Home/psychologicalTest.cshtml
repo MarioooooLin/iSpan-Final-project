@@ -181,7 +181,7 @@
                     //this.point += 1;
                     //console.log(this.point);
                     console.log(this.index);
-                    this.answerList.push(1);
+                    this.answerList[this.index]=1;
                     console.log(this.answerList);
                     if (this.answerList.length == 5) {
                         this.showResult = true
@@ -195,7 +195,7 @@
                 no: function () {
                     this.point += 0;
                     console.log(this.point);
-                    this.answerList.push(0);
+                    this.answerList[this.index]=0;
                     if (this.answerList.length == 5) {
                         this.showResult = true
                     }
