@@ -621,7 +621,7 @@
                 },
                 controller(){
                     if(sessionStorage.getItem("Category")){
-                        this.inputvalue = sessionStorage.getItem("Category")
+                        this.selectedCategory = sessionStorage.getItem("Category")
                         this.search()
                         sessionStorage.removeItem("Category")
                     }else{
@@ -655,7 +655,7 @@
                             this.controller()
                         }
                     },
-                    deep: true
+                    deep: true,
                     immediate: true
                 },
                 selectedArea: {
