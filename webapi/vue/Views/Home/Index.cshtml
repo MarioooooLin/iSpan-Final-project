@@ -40,19 +40,34 @@
     </div>
     <!-- 輪播器 -->
 
-    <div class="container mt-5">
-        <div class="row mb-5 justify-content-center">
+    <div class="container" style="margin-top:70px">
+        <div class="row mb-4 justify-content-center">
             <div class="col-md-7 text-center">
-                <h2 class="section-title mb-2">行業別</h2>
+                <h2 class="section-title">行業別</h2>
             </div>
         </div>
-        <div class="row d-flex text-center" id="Vue1">
-            <a href="" id="服務" class="col-12 col-md-6 col-lg-3 my-2"><img src="~/images/Triangle_LOGO.jpeg" alt="" srcset="" class="w-50" /></a>
-            <a href="" id="科技" class="col-12 col-md-6 col-lg-3 my-2"><img src="~/images/Triangle_LOGO.jpeg" alt="" srcset="" class="w-50" /></a>
-            <a href="" id="藝文" class="col-12 col-md-6 col-lg-3 my-2"><img src="~/images/Triangle_LOGO.jpeg" alt="" srcset="" class="w-50" /></a>
-            <a href="" id="商業" class="col-12 col-md-6 col-lg-3 my-2"><img src="~/images/Triangle_LOGO.jpeg" alt="" srcset="" class="w-50" /></a>
+        <div class="row text-center mb-3">
+            <a href="" id="服務" class="col-12 col-md-6 col-lg-3 mb-2" >
+                <div class="index_button d-flex justify-content-center" style="background-image: url('/images/index_category02.jpg');">
+                    <h2 class="text-white font-weight-bold align-self-center">服 務 業</h2>
+                </div>    
+            </a>
+            <a href="" id="科技" class="col-12 col-md-6 col-lg-3 mb-2">
+                <div class="index_button d-flex justify-content-center" style="background-image: url('/images/index_category03.jpg');">
+                    <h2 class="text-white font-weight-bold align-self-center">科  技</h2>
+                </div>
+            </a>
+            <a href="" id="藝文" class="col-12 col-md-6 col-lg-3 mb-2">
+                <div class="index_button d-flex justify-content-center" style="background-image: url('/images/index_category01.jpg');">
+                    <h2 class="text-white font-weight-bold align-self-center">藝  文</h2>
+                </div>
+            </a>
+            <a href="" id="商業" class="col-12 col-md-6 col-lg-3 mb-2"/>
+                <div class="index_button d-flex justify-content-center" style="background-image: url('/images/index_category04.jpg');">
+                    <h2 class="text-white font-weight-bold align-self-center">商業金融</h2>
+                </div>
+            </a>
         </div>
-
 
         <hr class="mt-5"/>
 
@@ -161,23 +176,6 @@
 
     <script>
         $(document).ready(function () {
-            $("#服務").click(function () {
-                sessionStorage.setItem("Category", "服務");
-            });
-
-            $("#藝文").click(function () {
-                sessionStorage.setItem("Category", "藝文");
-            });
-
-            $("#科技").click(function () {
-                sessionStorage.setItem("Category", "科技");
-            });
-
-            $("#商業").click(function () {
-                sessionStorage.setItem("Category", "商業");
-            });
-
-
 
             // Make an API request using Axios
             axios.get('https://localhost:7240/api/Vacancies')
@@ -317,7 +315,7 @@
 
                     let topHTML = `
                         <img src = "/images/WordisBIG.png" class="mb-2 img-fluid" style ="border-radius:15px"/>
-                        <h3 class="font-weight-bold"> ${topItems.articleName} </h3>
+                        <h3 class="font-weight-bold"><a href="${topItems.href}">${topItems.articleName} </a></h3>
                         <div>
                             <p class="text-black" style="text-overflow: ellipsis">
                                 ${topItems.contents}

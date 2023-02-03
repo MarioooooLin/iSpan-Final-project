@@ -117,6 +117,7 @@
                     };
                     axios.post(`${webApi}/api/Orders`, request).then(response => {
                         location.href = 'https://localhost:7158/Home/courseManage'
+
                     }).catch(err => console.log(err));
                 }
             },

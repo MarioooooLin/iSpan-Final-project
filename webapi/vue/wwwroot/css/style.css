@@ -2521,6 +2521,9 @@ h1, h2, h3, h4 {
     vertical-align: middle;
 }
 
+.card-body{
+    padding:0.5rem 0.75rem;
+}
 .card-contentstyle {
     margin-top: 10px;
 }
@@ -3322,4 +3325,11 @@ input {
         .modal-fullscreen-xxl-down .modal-footer {
             border-radius: 0;
         }
+}
+
+.index_button {
+    background-size: cover;
+    height: 120px;
+    width: 107%;
+    border-radius:10px !important;
 }
