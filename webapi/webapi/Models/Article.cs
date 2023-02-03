@@ -16,8 +16,6 @@ namespace webapi.Models
         public string ArticleContent { get; set; }
         public int? ArticleFloor { get; set; }
         public string NickName { get; set; }
-        public string nickName { get; internal set; }
         public string Message { get; set; }
-        public string message { get; internal set; }
     }
 }

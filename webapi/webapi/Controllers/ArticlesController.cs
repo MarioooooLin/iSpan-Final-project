@@ -39,8 +39,8 @@ namespace webapi.Controllers
                 UpdateTime = article.UpdateTime,
                 ArticleId = article.ArticleId,
                 ArticleFloor = article.ArticleFloor,
-                NickName = article.nickName,
-                Message = article.message,
+                NickName = article.NickName,
+                Message = article.Message,
                 Keyword = article.Keyword,
 
             });
@@ -84,8 +84,8 @@ namespace webapi.Controllers
                 ArticleId = article.ArticleId,
                 Expreience = teacher.Experience,
                 ArticleFloor = article.ArticleFloor,
-                NickName = article.nickName,
-                Message = article.message,
+                NickName = article.NickName,
+                Message = article.Message,
                 TeacherPhoto = teacher.Img,
                 TeacherIntro=teacher.Intro,
 
@@ -108,8 +108,8 @@ namespace webapi.Controllers
                 ArticleId = article.ArticleId,
                 Expreience = teacher.Experience,
                 ArticleFloor = article.ArticleFloor,
-                NickName = article.nickName,
-                Message = article.message,
+                NickName = article.NickName,
+                Message = article.Message,
                 TeacherPhoto = teacher.Img,
 
             });
@@ -176,8 +176,8 @@ namespace webapi.Controllers
         {
             Article arti = new Article
             {
-                nickName = test.nickName,
-                message = test.message,
+                NickName = test.NickName,
+                Message = test.Message,
                 Title = test.Title,
                 UpdateTime = test.UpdateTime,
                 ArticleFloor = test.ArticleFloor,
