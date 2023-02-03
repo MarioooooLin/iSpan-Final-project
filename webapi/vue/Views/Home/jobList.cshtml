@@ -362,7 +362,7 @@
                 inputvalue: "",
                 picked: "職缺",
                 boolean: false,
-                selectedCategory: sessionStorage.getItem("Category"),
+                selectedCategory: "",
                 selectedArea: "",
                 temp: 0,
                 tempitem: 0,
@@ -618,6 +618,15 @@
                             this.userdata = res.data[0]
                             console.log(this.userdata)
                         })
+                },
+                controller(){
+                    if(sessionStorage.getItem("Category")){
+                        this.inputvalue = sessionStorage.getItem("Category")
+                        this.search()
+                        sessionStorage.removeItem("Category")
+                    }else{
+                        this.search()
+                    }
                 }
             },
             watch: {
@@ -642,9 +651,12 @@
                 },
                 selectedCategory: {
                     handler(newval) {
-                        this.search();
+                        if(true){
+                            this.controller()
+                        }
                     },
                     deep: true
+                    immediate: true
                 },
                 selectedArea: {
                     handler(newval) {
