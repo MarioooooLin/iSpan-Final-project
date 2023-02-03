@@ -87,69 +87,43 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="nav-item px-1 mx-1">
+                                <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                     <div class="head mt-4"></div>
-                                    <div class="border p-4 box mb-6 h-auto">
-                                        <ul class="list-unstyled block__47528 ">
-                                            <li><span class="active h2">廣告</span></li>
-                                            <figure class="w-100">
-                                                <img src="https://picsum.photos/100/100/?random=10"
-                                                     class="float-left mr-3">
-                                                <figcaption>
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                    Maxime, corrupti
-                                                    distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                    laboriosam
-                                                    molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                    atque dicta,
-                                                    ullam necessitatibus exercitationem.
-                                                </figcaption>
-                                            </figure>
-                                        </ul>
-                                    </div>
+                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">{{item.courseName}}</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10"
+                                                         class="float-left mr-3">
+                                                    <figcaption>
+                                                        {{item.courseIntro}}
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                         <!-- </div> -->
                         <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == false">
                             <ul class="navbar-nav mr-auto flex-column">
-                                <li class="nav-item px-1 mx-1 mb-5">
-                                    <div class="head "></div>
-                                    <div class="border p-4 box mb-6 h-auto">
-                                        <ul class="list-unstyled block__47528 ">
-                                            <li><span class="active h2">廣告</span></li>
-                                            <figure class="w-100">
-                                                <img src="https://picsum.photos/100/100/?random=10"
-                                                     class="float-left mr-3">
-                                                <figcaption>
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                    Maxime, corrupti
-                                                    distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                    laboriosam
-                                                    molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                    atque dicta,
-                                                    ullam necessitatibus exercitationem.
-                                                </figcaption>
-                                            </figure>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item px-1 mx-1">
+                                <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                     <div class="head mt-4"></div>
-                                    <div class="border p-4 box mb-6 h-auto">
-                                        <ul class="list-unstyled block__47528 ">
-                                            <li><span class="active h2">廣告</span></li>
-                                            <figure class="w-100">
-                                                <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
-                                                <figcaption>
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, corrupti
-                                                    distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
-                                                    molestiae doloribus perspiciatis totam esse veritatis expedita, atque dicta,
-                                                    ullam necessitatibus exercitationem.
-                                                </figcaption>
-                                            </figure>
-                                        </ul>
-                                    </div>
+                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">{{item.courseName}}</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                    <figcaption>
+                                                        {{item.courseIntro}}
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -238,7 +212,8 @@
                 dataLength: 0,//資料長度
                 pagesize: 0, //頁數
                 sliced: [], //切分頁
-                currentpage: 0
+                currentpage: 0,
+                advertiseArray: []
                 //selectedArticleName: "",
                 //selectedKeyword: "",
                 //PlatformDTOes:[],
@@ -248,9 +223,28 @@
                 let _this = this;
                 _this.Platforms();
                 _this.user();
-
+                this.advertise();
             },
             methods: {
+                advertise() {
+                    let j;
+                    let arr = []
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            this.advertiseArray = arr
+                            console.log(this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
+                },
                 Platforms: function () {
                     let _this = this;
                     let item = 0;
@@ -332,13 +326,13 @@
                 },
                 next() {
                     let currpage = this.currentpage;
-                        currpage++;
+                    currpage++;
                     if (currpage != this.sliced.length) {
                         this.click(currpage)
                         item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
                     }
                 },
-                
+
                 //------------------------------------
                 //    search: function () {
                 //        //alert('你好繼宣');
@@ -395,7 +389,7 @@
                     );
 
                 },
-                goPage:function (){
+                goPage: function () {
                     let candidateId = sessionStorage.getItem('Id')
                     if (candidateId != null) {
                         location.href = 'https://localhost:7158/Home/platformPost'
