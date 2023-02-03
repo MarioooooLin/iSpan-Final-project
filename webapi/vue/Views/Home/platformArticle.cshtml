@@ -51,6 +51,9 @@
                                     <p>{{data.replyTime}}</p>
                                 </span>
                                 <div>{{data.floor}}樓</div>
+                                <div class="col-6 text-end mr-md-3" @@click="deletereply(data)">
+                                    <a href="#" class="btn btn-primary">刪除</a>
+                                </div>
                                 <hr>
                             </div>
                             <hr>
@@ -155,14 +158,32 @@
                         return false
                     }
                     let _this = this;
-                    var reply = confirm("確定要刪除貼文嗎?");
+                    var ret = confirm("確定要刪除貼文嗎?");
                     console.log(this.articleid)
-                    if (reply == true) {
+                    if (ret == true) {
                         axios.delete(`${webApi}/api/Platforms/${this.articleid}`)
                             .then(res => {
                                 if (res.status < 300) {
                                     window.location.replace('https://localhost:7158/Home/platform')
                                 }
+                            })
+                    }
+                },
+                deletereply: function (ReplyMessage) {
+                    if (!window.sessionStorage.getItem("Id")) {
+                        alert('請登入後再刪除')
+                        return false
+                    }
+                    let _this = this;
+                    var ret = confirm("確定要刪除留言嗎?");
+                    console.log(this.ReplyMessage)
+                    if (ret == true) {
+                        axios.delete(`${webApi}/api/Reply/${ReplyMessage.replyId}`)
+                            .then(res => {
+                                _this.getreply();
+                                //if (res.status < 300) {
+                                //    window.location.replace('https://localhost:7158/Home/platformArticle')
+                                //}
                             })
                     }
                 }
