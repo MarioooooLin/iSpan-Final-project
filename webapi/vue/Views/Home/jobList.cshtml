@@ -1,4 +1,11 @@
 ﻿<!-- HOME start-->
+@section Styles{
+    <style>
+        .change:hover {
+            color: black;
+        }
+    </style>
+}
 <div id="appVue">
     <section class="section-hero overlay inner-page bg-image " style="background-image: url('/images/hero_1.jpg');"
              id="home-section">
@@ -267,63 +274,43 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="nav-item px-1 mx-1">
+                                    <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                         <div class="head mt-4"></div>
-                                        <div class="border p-4 box mb-6 h-auto">
-                                            <ul class="list-unstyled block__47528 ">
-                                                <li><span class="active h2">廣告</span></li>
-                                                <figure class="w-100">
-                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
-                                                    <figcaption>
-                                                        內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                                                        內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文
-                                                    </figcaption>
-                                                </figure>
-                                            </ul>
-                                        </div>
+                                        <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                            <div class="border p-4 box mb-6 h-auto">
+                                                <ul class="list-unstyled block__47528 ">
+                                                    <li><span class="active h2">{{item.courseName}}</span></li>
+                                                    <figure class="w-100">
+                                                        <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                        <figcaption>
+                                                            {{item.courseIntro}}
+                                                        </figcaption>
+                                                    </figure>
+                                                </ul>
+                                            </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- </div> -->
                             <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == false">
                                 <ul class="navbar-nav mr-auto flex-column">
-                                    <li class="nav-item px-1 mx-1 mb-5">
-                                        <div class="head "></div>
-                                        <div class="border p-4 box mb-6 h-auto">
-                                            <ul class="list-unstyled block__47528 ">
-                                                <li><span class="active h2">廣告</span></li>
-                                                <figure class="w-100">
-                                                    <img src="https://picsum.photos/100/100/?random=10"
-                                                         class="float-left mr-3">
-                                                    <figcaption>
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                        Maxime, corrupti
-                                                        distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                        laboriosam
-                                                        molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                        atque dicta,
-                                                        ullam necessitatibus exercitationem.
-                                                    </figcaption>
-                                                </figure>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item px-1 mx-1">
-                                        <div class="head mt-4"></div>
-                                        <div class="border p-4 box mb-6 h-auto">
-                                            <ul class="list-unstyled block__47528 ">
-                                                <li><span class="active h2">廣告</span></li>
-                                                <figure class="w-100">
-                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
-                                                    <figcaption>
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, corrupti
-                                                        distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
-                                                        molestiae doloribus perspiciatis totam esse veritatis expedita, atque dicta,
-                                                        ullam necessitatibus exercitationem.
-                                                    </figcaption>
-                                                </figure>
-                                            </ul>
-                                        </div>
+                                    <li class="nav-item px-1 mx-1 mb-5" v-for="item in advertiseArray">
+                                        <div class="head"></div>
+                                        <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                            <div class="border p-4 box mb-6 h-auto">
+                                                <ul class="list-unstyled block__47528 ">
+                                                    <li><span class="active h2">{{item.courseName}}</span></li>
+                                                    <figure class="w-100">
+                                                        <img src="https://picsum.photos/100/100/?random=10"
+                                                             class="float-left mr-3">
+                                                        <figcaption>
+                                                            {{item.courseIntro}}
+                                                        </figcaption>
+                                                    </figure>
+                                                </ul>
+                                            </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -368,16 +355,36 @@
                 tempitem: 0,
                 page: [],
                 userdata: [],
-                userstatus:false,
+                userstatus: false,
                 arrdeposition: [],
                 interestId: 0,
-                
+                advertiseArray: []
             },
             mounted: function () {
                 this.search();
                 this.user();
+                this.advertise();
             },
             methods: {
+                advertise() {
+                    let j;
+                    let arr = []
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[this.random(res.data.length)]
+                                item.intro = item.intro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            this.advertiseArray = arr
+                            console.log(this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
+                },
                 jobsingle: function (vacancyId) {
                     window.localStorage.removeItem("vanId");
                     window.localStorage.setItem("vanId", vacancyId);
@@ -604,7 +611,7 @@
                 },
                 user() {
                     let userid = window.sessionStorage.getItem('Id')
-                    if(!userid){
+                    if (!userid) {
                         this.userstatus = false
                         return false;
                     }
@@ -619,12 +626,12 @@
                             console.log(this.userdata)
                         })
                 },
-                controller(){
-                    if(sessionStorage.getItem("Category")){
+                controller() {
+                    if (sessionStorage.getItem("Category")) {
                         this.selectedCategory = sessionStorage.getItem("Category")
                         this.search()
                         sessionStorage.removeItem("Category")
-                    }else{
+                    } else {
                         this.search()
                     }
                 }
@@ -643,15 +650,15 @@
                 },
                 inputvalue: {
                     handler(newval) {
-                       if(!newval){
+                        if (!newval) {
                             this.search()
-                       }
+                        }
                     },
                     deep: true,
                 },
                 selectedCategory: {
                     handler(newval) {
-                        if(true){
+                        if (true) {
                             this.controller()
                         }
                     },
