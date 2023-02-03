@@ -292,6 +292,7 @@
                         .finally(console.log('完成'))
                 },
                 post: function () {
+                    let candidateId = window.sessionStorage.getItem("Id")
                     if (!candidateId) {
                         alert('尚未登入 , 請先登入')
                         return false
