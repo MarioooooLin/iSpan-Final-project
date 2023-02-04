@@ -18,5 +18,6 @@
         public int? studentCount { get; set; }
         public int? TeacherId { get; set; }
         public DateTime? Addedtime { get; set; }
+        public int? Chapter { get;  set; }
     }
 }

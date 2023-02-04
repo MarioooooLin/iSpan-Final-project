@@ -48,6 +48,7 @@ namespace webapi.Controllers
                              c.Keyword,
                              c.Category,
                              c.Addedtime,
+                             c.Chapter,
                          } into g
                          select new CourseDetailDTO()
                          {
@@ -104,7 +105,8 @@ namespace webapi.Controllers
                              c.CourseLength,
                              c.CourseImg,
                              c.Keyword,
-                             c.Category
+                             c.Category,
+                             c.Chapter,
                          } into g
                          select new CourseDetailDTO()
                          {
@@ -121,6 +123,7 @@ namespace webapi.Controllers
                              CourseImg = g.Key.CourseImg,
                              keyword = g.Key.Keyword,
                              category = g.Key.Category,
+                             Chapter = g.Key.Chapter,
                              studentCount = g.Count()
                          };
 
