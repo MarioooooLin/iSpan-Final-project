@@ -65,7 +65,7 @@
                     <!-- 求職端 -->
 
                     <div class="tab-pane fade show active" id="candidate" role="tabpanel">
-                        <form action="#">
+         
                             <h2 class="font-weight-bolder py-3">加入會員</h2>
                             <div class="row form-group">
 
@@ -111,13 +111,13 @@
 
                                 </div>
                             </div>
-                        </form>
+         
                     </div>
 
                     <!-- 徵才端-->
 
                     <div class="tab-pane fade" id="enterprise" role="tabpanel">
-                        <form action="#">
+               
                             <h2 class="font-weight-bolder py-3">加入會員</h2>
                             <div class="row form-group">
                                 <div class="col-md-12 mb-3 mb-md-0">
@@ -180,13 +180,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 d-flex justify-content-end">
-                                    <button class="btn px-4 slide-button m-2 w-25" @@click="Set()">清除</button>
+                                    <button class="btn px-4 slide-button m-2 w-25" >清除</button>
 
                                     <button class="btn px-4 slide-button m-2 w-25" @@click="EmpSignup">註冊 </button>
 
                                 </div>
                             </div>
-                        </form>
+              
 
                     </div>
                 </div>
@@ -324,30 +324,7 @@
                 }
             }
         })
-        const app = new Vue({
-            el: "#app",
-            name: "app",
-            data: {
-                Id: sessionStorage.getItem("Id"),
-                Name: sessionStorage.getItem("Name"),
-            },
 
-        })
-        const vue = new Vue({
-            el: "#vue",
-            name: "vue",
-            data: {
-                Id: sessionStorage.getItem("Id"),
-                Name: sessionStorage.getItem("Name"),
-            },
-            methods: {
-                signOut: function () {
-                    sessionStorage.clear();
-                    window.location = "/Home/Index";
-                },
-            },
-
-        })
     </script>
     }
 
