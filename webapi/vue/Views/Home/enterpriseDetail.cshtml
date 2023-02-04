@@ -56,7 +56,7 @@
                                             </div>
                                         </div>
                                         <hr />
-                                       
+
                                     </div>
                                 </div>
                             </li>
@@ -149,18 +149,18 @@
                                 {{datas[0].companyName+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].category+""}} 
+                                {{datas[0].category+""}}
                             </div>
                             <div class="item pb-0 ml-2">
                                 {{datas[0].address+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].telephone+""}} 
+                                {{datas[0].telephone+""}}
                             </div>
                             <div class="item pb-0 ml-2">
                                 {{datas[0].uniformNumbers+""}}
                             </div>
-                            <div class="item pb-0 ml-2"> 
+                            <div class="item pb-0 ml-2">
                                 {{datas[0].fax+""}}
                             </div>
                             <div class="item pb-0 ml-2">
@@ -170,13 +170,13 @@
                                 {{datas[0].openingHours+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].principal+""}} 
+                                {{datas[0].principal+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].contactPhone+""}} 
+                                {{datas[0].contactPhone+""}}
                             </div>
                             <div class="item pb-0 ml-2">
-                                {{datas[0].email+""}} 
+                                {{datas[0].email+""}}
                             </div>
                             <div class="item pb-0 ml-2">
                                 {{datas[0].contactTime+""}}
@@ -356,9 +356,9 @@
                 datas: [],
                 oldDatas: [],
 
-                info:[],
-                van:[],
-                dVan:[],
+                info: [],
+                van: [],
+                dVan: [],
                 advertiseArray: [],
 
             },
@@ -376,7 +376,7 @@
                             _this.datas = res.data;
                             _this.datas.Edit = false;
                             _this.oldDatas = _this.datas;
-                            console.log(_this.datas);
+
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
@@ -416,13 +416,14 @@
                     request.ContactTime = _this.datas[0].contactTime;
                     request.Info = _this.datas[0].info;
                     request.Welfare = _this.datas[0].welfare;
-                    axios.put(`${webApi}/api/Enterprises/${this.Id}`,request)
+                    axios.put(`${webApi}/api/Enterprises/${this.Id}`, request)
                         .then(res => {
                             console.log(res.data);
 
                         })
                         .catch(err => console.log(err))
-                        .finally(location.reload());
+                        .finally(_this.Login());
+                    location.reload();
 
                 },
                 Info: function () {
@@ -444,12 +445,12 @@
                             _this.van = response.data;
 
                             for (var i = 0; i < response.data.length; i++) {
-                            
-                                 if (response.data[i].valid == true) {
-                                        _this.dVan.push(response.data[i]);
-                                      
-                                 }
-                                
+
+                                if (response.data[i].valid == true) {
+                                    _this.dVan.push(response.data[i]);
+
+                                }
+
                             }
 
                         })
