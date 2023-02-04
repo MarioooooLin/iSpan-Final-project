@@ -37,6 +37,8 @@ namespace webapi.Controllers
                 Vaild = co.Vaild,
             }).Where(x=>x.CandidateId== CandidateId);
 
+            result = result.OrderByDescending(x=>x.Buyingtime);
+
             if(vaild == true)
             {
                 result= result.Where(x=>x.Vaild == true);

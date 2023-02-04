@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.VisualBasic;
 using webapi.DTO;
 using webapi.Models;
@@ -26,21 +28,45 @@ namespace webapi.Controllers
 
         // GET: api/Platforms
         [HttpGet]
-        public async Task<IEnumerable<PlatformsDTO>> Get(string? name)
+        public async Task<IEnumerable<PlatformRePlyDTO>> Get(string? name,string? order)
         {
-            var result = _context.Platform.Select(x => new PlatformsDTO
-            {
-                ArticleId = x.ArticleId,
-                ArticleName = x.ArticleName,
-                Contents = x.Contents,
-                UpdateTime = x.UpdateTime,
-                //Authorld = x.Authorld,
-            });
+            //var result = _context.Platform.Select(x => new PlatformsDTO
+            //{
+            //    ArticleId = x.ArticleId,
+            //    ArticleName = x.ArticleName,
+            //    Contents = x.Contents,
+            //    UpdateTime = x.UpdateTime,
+            //    //Authorld = x.Authorld,
+            //});
+
+            var result = from p in _context.Platform
+                         join r in _context.Reply
+                         on p.ArticleId equals r.ArticleId into pr
+                         from r in pr.DefaultIfEmpty()
+                         group new { p, r } by new { p.ArticleId, p.ArticleName, p.AuthorId, p.Contents, p.UpdateTime } into g
+                         select new PlatformRePlyDTO
+                         {
+                             ArticleId = g.Key.ArticleId,
+                             ArticleName = g.Key.ArticleName,
+                             AuthorId = g.Key.AuthorId,
+                             Contents = g.Key.Contents,
+                             UpdateTime = g.Key.UpdateTime,
+                             ReplyCount = g.Count(r => r.r != null)
+                         };
+            result = result.OrderByDescending(x => x.UpdateTime);
+
             if (!string.IsNullOrEmpty(name))
             {
                 result = result.Where(x => x.ArticleName.Contains(name));
             }
-            return result.OrderByDescending(id => id.ArticleId); 
+
+            if (!string.IsNullOrEmpty(order))
+            {
+                result = result.OrderByDescending(x => x.ReplyCount);
+            }
+            
+
+            return result;
 
         }
 
@@ -103,18 +129,18 @@ namespace webapi.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         //public async Task<IEnumerable<PlatformsDTO>> PostPlatform(Platform platform)
-        public async Task<Platform> PostPlatform(PlatformsDTO platform)
+        public async Task<Platform> PostPlatform([FromBody]PlatformsDTO platform)
         {
             Platform pf = new Platform
             {
                 ArticleName = platform.ArticleName,
                 Contents = platform.Contents,
+                AuthorId = platform.AuthorId
             };
             _context.Platform.Add(pf);
             await _context.SaveChangesAsync();
 
             return pf;
-
             //return CreatedAtAction("GetPlatform", new { id = platform.ArticleId }, platform);
         }
 

@@ -33,18 +33,13 @@
                                 <div class="head"></div>
                                 <div class="mb-3 border navbar-nav box">
                                     <div class="p-3 w-100">
-                                        <figure class="figure ml-2 ">
-                                            <div style="object-fit:cover;width:100px;height:100px;">
-                                                <img :src="datas.img"
-                                                     class="figure-img img-fuild rounded-circle h-100 w-100">
-                                            </div>
-                                            <h3 class="display-6 slide-h3 mt-1" v-once>{{datas.principal}} 您好</h3>
+                                        <figure class="figure ml-2">
+                                            <img :src="info[0].img"
+                                                 class="figure-img img-fuild rounded-circle  w-50  ">
+                                            <h3 class="display-6 slide-h3 mt-1">{{info[0].principal}} 您好</h3>
                                         </figure>
-                                        <div>
-                                            手機:<br>{{datas.contactPhone }}
-                                        </div>
-                                        <div>信箱: {{datas.email}}</div>
-                                        <hr>
+                                        <div>手機: {{info[0].contactPhone}}</div>
+                                        <div>信箱: {{info[0].email}}</div>
                                         <div class="item text-end align-content-end mb-0">
                                             <div class="text-right mr-3 fw-bold">
                                                 <a asp-controller="Home" asp-action="enterpriseDetail">
@@ -53,14 +48,15 @@
                                             </div>
                                         </div>
                                         <hr />
-                                        <div>履歷總數：</div>
+                                        <div>職缺：{{dVan.length}}/{{van.length}}</div>
                                         <div class="d-block text-right">
                                             <div class="text-right mr-3 fw-bold">
-                                                <a asp-controller="Home" asp-action="CV">
-                                                    瀏覽所有履歷 <i class="fa-solid fa-chevron-right"></i>
+                                                <a asp-controller="Home" asp-action="vacancyManage">
+                                                    管理所有職缺<i class="fa-solid fa-chevron-right"></i>
                                                 </a>
                                             </div>
                                         </div>
+                                        <hr />
                                     </div>
                                 </div>
                             </li>
@@ -160,8 +156,8 @@
                                 <input type="text" v-model="datas.salary" />
                             </div>
                             <div class="item pb-1 ml-2 mb-4 d-flex wrap" id="fpTime">
-                                <input type="radio" name="fpTime"  id="part" value="false"  checked/>兼職&ensp;
-                                <input type="radio" name="fpTime"  id="full" value="true"/>全職
+                                <input type="radio" name="fpTime" id="part" value="false" checked />兼職&ensp;
+                                <input type="radio" name="fpTime" id="full" value="true" />全職
                             </div>
                             <div class="item pb-1 ml-2 mb-4">
                                 <input type="text" v-model="datas.workShift" />
@@ -202,8 +198,8 @@
         </div>
 
         <div class="d-flex justify-content-end mb-4">
-            <button class="btn px-4 slide-button m-2 w-25" @@click="Cancel">取消</button>
-            <button class="btn px-4 slide-button m-2 w-25" @@click="Save">發布職缺</button>
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Set()">取消</button>
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Save()">發布職缺</button>
         </div>
 
 
@@ -238,11 +234,15 @@
                 empDatas: [],
                 part: null,
                 full: null,
+
+                info: [],
+                van: [],
+                dVan: [],
             },
             mounted: function () {
                 let _this = this;
-
-
+                _this.Info();
+                _this.Set();
             },
             methods: {
 
@@ -252,7 +252,7 @@
                 Save: function () {
                     _this = this;
                     var request = {};
-                    let day = new Date().toISOString();                  
+                    let day = new Date().toISOString();
                     day = day.split("T");
                     request.VacancyId = 0;
                     request.WorkName = _this.datas.workName;
@@ -280,6 +280,54 @@
                         .finally(window.location = "/Home/vacancyManage");
 
                 },
+                Info: function () {
+                    let _this = this;
+                    axios.get(`${webApi}/api/Enterprises/Id${this.Id}`)
+                        .then(res => {
+                            _this.info = res.data;
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+
+                    axios.get(`${webApi}/api/Vacancies/view`, {
+                        params: {
+                            id: _this.Id,
+                        }
+                    })
+                        .then(response => {
+                            _this.van = response.data;
+
+                            for (var i = 0; i < response.data.length; i++) {
+
+                                if (response.data[i].valid == true) {
+                                    _this.dVan.push(response.data[i]);
+
+                                }
+
+                            }
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+                },
+                Set: function () {
+                    let _this = this;
+                    _this.datas.workName = "全端工程師";
+                    _this.datas.category = "科技";
+                    _this.datas.workPlace = "高雄市前鎮區";
+                    _this.datas.workTime = "平日";
+                    _this.datas.salary = "38000";
+                    _this.datas.workShift = "白班";
+                    _this.datas.seniority = "2";
+                    _this.datas.workContent = "1. 編寫並維護網路爬蟲\n" + "2. 搜集、串接使用者行為資料\n" + " 3. 協助業務和廣告優化師整合數據";
+
+
+
+                    _this.datas.workReqire = "1. 擅長 Github、Python、JavaScript、jQuery\n" + "2. 熟稔 JavaScript, jQuery, Python\n" + "3. 曾撰寫過網路爬蟲";
+                    _this.datas.number = 5;
+
+                }
             },
 
 

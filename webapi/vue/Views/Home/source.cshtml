@@ -15,7 +15,6 @@
         <div class="container h-100">
             <div class="row">
                 <!-- Below is sidebar -->
-
                 <div class="col-xs-12 col-md-10 col-lg-4 mt-lg-5">
                     <nav class="navbar navbar-expand-lg navbar-light pl-lg-5 py-0">
                         <!-- <a class="navbar-brand" href="#">Liya rescue</a> -->
@@ -24,7 +23,7 @@
                                 aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus==true">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == true">
                             <ul class="navbar-nav mr-auto flex-column">
                                 <li class="nav-item px-1 mx-1">
                                     <div class="head"></div>
@@ -152,6 +151,7 @@
                                 </li>
                             </ul>
                         </div>
+
                     </nav>
                     <!-- Above is sidebar -->
 
@@ -217,6 +217,7 @@
                 inputValue: '',
                 userdata: [],
                 userstatus: false,
+
             },
             mounted: function () {
                 let _this = this;
@@ -357,6 +358,7 @@
                     }
                     this.userstatus = true
                     let url = `${webApi}/api/Candidates/${userid}`;
+
                     axios.get(url)
                         .then(res => {
                             let x = res.data[0].cellphone;
@@ -364,6 +366,7 @@
                             res.data[0].name = res.data[0].name + ' 你好'
                             this.userdata = res.data[0]
                             console.log(this.userdata)
+                            console.log(res.data)
                         })
                 }
 

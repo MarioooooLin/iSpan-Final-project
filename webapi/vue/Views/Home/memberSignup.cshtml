@@ -14,7 +14,7 @@
 
 <section class="site-section block__18514 " id="next-section">
     <div class="container h-100">
-        <div class="row">
+        <div class="row" id="appVue">
             <!-- Below is sidebar -->
             <div class="col-xs-12 col-md-10 col-lg-4">
                 <nav class="navbar navbar-expand-lg navbar-light pl-lg-5 py-0">
@@ -26,48 +26,21 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto flex-column">
-                            <li class="nav-item px-1 mx-1 mb-5">
-                                <div class="head "></div>
-                                <div class="border p-4 box mb-6 h-auto">
-                                    <ul class="list-unstyled block__47528 ">
-                                        <li><span class="active h2">廣告</span></li>
-                                        <figure class="w-100">
-                                            <img src="https://picsum.photos/100/100/?random=10"
-                                                 class="float-left mr-3">
-                                            <figcaption>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                Maxime, corrupti
-                                                distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                laboriosam
-                                                molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                atque dicta,
-                                                ullam necessitatibus exercitationem.
-                                            </figcaption>
-                                        </figure>
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li class="nav-item px-1 mx-1 mb-5">
+                            <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                 <div class="head mt-4"></div>
-                                <div class="border p-4 box mb-6 h-auto">
-                                    <ul class="list-unstyled block__47528 ">
-                                        <li><span class="active h2">廣告</span></li>
-                                        <figure class="w-100">
-                                            <img src="https://picsum.photos/100/100/?random=10"
-                                                 class="float-left mr-3">
-                                            <figcaption>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                Maxime, corrupti
-                                                distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                laboriosam
-                                                molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                atque dicta,
-                                                ullam necessitatibus exercitationem.
-                                            </figcaption>
-                                        </figure>
-                                    </ul>
-                                </div>
+                                <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                    <div class="border p-4 box mb-6 h-auto">
+                                        <ul class="list-unstyled block__47528 ">
+                                            <li><span class="active h2">{{item.courseName}}</span></li>
+                                            <figure class="w-100">
+                                                <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                <figcaption>
+                                                    {{item.courseIntro}}
+                                                </figcaption>
+                                            </figure>
+                                        </ul>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -87,7 +60,7 @@
                 </ul>
 
 
-                <div class="tab-content" id="appVue">
+                <div class="tab-content">
                     <!-- Above is sidebar -->
                     <!-- 求職端 -->
 
@@ -111,28 +84,28 @@
                                 </div>
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
                                     <label class="text-body h5" for="fname">密碼</label>
-                                    <input type="Password" class="form-control col-md-7 col-12"
+                                    <input type="text" class="form-control col-md-7 col-12"
                                            placeholder="密碼需由6-20個英文字母或數字組成" v-model="Password" autocomplete="off">
                                 </div>
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
                                     <label class="text-body h5" for="fname">確認密碼</label>
-                                    <input type="password" class="form-control col-md-7 col-12" placeholder="請確認密碼" autocomplete="off">
+                                    <input type="password" class="form-control col-md-7 col-12" v-model="CheckPassword" placeholder="請確認密碼" autocomplete="off">
 
                                 </div>
 
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
                                     <label class="text-body h5" for="fname">聯絡信箱</label>
-                                    <input type="password" class="form-control col-md-7 col-12"
+                                    <input type="text" class="form-control col-md-7 col-12"
                                            placeholder="例:example@member.com" v-model="Email" autocomplete="off">
                                 </div>
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
                                     <label class="text-body h5" for="fname">聯絡電話</label>
-                                    <input type="password" class="form-control col-md-7 col-12" placeholder="例:0988123456" v-model="Phone" autocomplete="off">
+                                    <input type="text" class="form-control col-md-7 col-12" placeholder="例:0988123456" v-model="Phone" autocomplete="off">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 d-flex justify-content-end">
-                                    <button class="btn px-4 slide-button m-2 w-25">清除</button>
+                                    <button class="btn px-4 slide-button m-2 w-25" @@click="Set()">清除</button>
 
                                     <button class="btn px-4 slide-button m-2 w-25" @@click="Signup">註冊 </button>
 
@@ -184,7 +157,7 @@
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
                                     <label class="text-body h5" for="fname">聯絡人信箱</label>
                                     <input type="email" class="form-control col-md-7 col-12"
-                                           placeholder="例:example@member.com" v-model="EnpEmail" autocomplete="off">
+                                           placeholder="例:example@member.com" v-model="EnpEmail" >
                                 </div>
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
                                     <label class="text-body h5" for="fname">聯絡人電話</label>
@@ -196,7 +169,7 @@
                                 </div>
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
                                     <label class="text-body h5" for="fname">密碼</label>
-                                    <input type="password" class="form-control col-md-7 col-12"
+                                    <input type="text" class="form-control col-md-7 col-12"
                                            placeholder="密碼需由6-20個英文字母或數字組成" v-model="EnpPassword" autocomplete="off">
                                 </div>
                                 <div class="col-md-12 mb-3 mb-md-0 mt-3">
@@ -207,7 +180,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 d-flex justify-content-end">
-                                    <button class="btn px-4 slide-button m-2 w-25">清除</button>
+                                    <button class="btn px-4 slide-button m-2 w-25" @@click="Set()">清除</button>
 
                                     <button class="btn px-4 slide-button m-2 w-25" @@click="EmpSignup">註冊 </button>
 
@@ -245,6 +218,7 @@
                 Password: null,
                 Email: null,
                 Phone: null,
+                CheckPassword: null,
 
                 //徵才端
                 EnpId: null,
@@ -258,10 +232,11 @@
                 EnpEmail: null,
                 EnpPhone: null,
 
+                advertiseArray: [],
             },
             mounted: function () {
                 let _this = this;
-
+                _this.advertise();
             },
             methods: {
                 Signup: function () {
@@ -276,14 +251,11 @@
                     inf.Cellphone = _this.Phone;
                     axios.post(`${webApi}/api/Candidates`, inf)
                         .then(response => {
-
-                            if (response.data == "此帳號已登入") {
+                            if (response.data == "此帳號已註冊") {
                                 alert(response.data);
                             }
                             else {
-
                                 window.location = "/Home/memberLogin";
-
                             }
 
                         })
@@ -312,15 +284,44 @@
                                 alert(response.data);
                             }
                             else {
-
                                 window.location = "/Home/memberLogin";
-
                             }
 
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
                 },
+                advertise: function () {
+                    let _this = this;
+                    let j;
+                    let arr = [];
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[_this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            _this.advertiseArray = arr
+                            console.log(_this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
+                },
+                Set: function () {
+                    let _this = this;
+
+                    _this.IdCard =" S104326216";
+                    _this.Name = "蔡億霖";
+                    _this.Account = "594310";
+                    _this.Password = "Zxc123";
+                    _this.Email = "zxc1545414453@gmail.com";
+                    _this.Phone = "0988123456";
+                    _this.CheckPassword = "Zxc123";
+                }
             }
         })
         const app = new Vue({

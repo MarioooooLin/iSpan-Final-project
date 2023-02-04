@@ -32,12 +32,12 @@
                                 <div class="mb-3 border navbar-nav box">
                                     <div class="p-3 w-100">
                                         <figure class="figure ml-2">
-                                            <img src="https://picsum.photos/250/250/?random=10"
+                                            <img :src="info[0].img"
                                                  class="figure-img img-fuild rounded-circle  w-50  ">
-                                            <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                            <h3 class="display-6 slide-h3 mt-1">{{info[0].principal}} 您好</h3>
                                         </figure>
-                                        <div>手機:</div>
-                                        <div>信箱:</div>
+                                        <div>手機: {{info[0].contactPhone}}</div>
+                                        <div>信箱: {{info[0].email}}</div>
                                         <div class="item text-end align-content-end mb-0">
                                             <div class="text-right mr-3 fw-bold">
                                                 <a asp-controller="Home" asp-action="enterpriseDetail">
@@ -46,44 +46,33 @@
                                             </div>
                                         </div>
                                         <hr />
-                                        <div>職缺：</div>
+                                        <div>職缺：{{dVan.length}}/{{van.length}}</div>
                                         <div class="d-block text-right">
                                             <div class="text-right mr-3 fw-bold">
-                                                <a asp-controller="Home" asp-action="CV">
+                                                <a asp-controller="Home" asp-action="vacancyManage">
                                                     管理所有職缺<i class="fa-solid fa-chevron-right"></i>
                                                 </a>
                                             </div>
                                         </div>
                                         <hr />
-                                        <div class="d-block text-right">
-                                            <div class="text-right mr-3 fw-bold">
-                                                <a asp-controller="Home" asp-action="CV">
-                                                    查看所有通訊紀錄 <i class="fa-solid fa-chevron-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item px-1 mx-1 mb-5">
+                            <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                 <div class="head mt-4"></div>
-                                <div class="border p-4 box mb-6 h-auto">
-                                    <ul class="list-unstyled block__47528 ">
-                                        <li><span class="active h2">廣告</span></li>
-                                        <figure class="w-100">
-                                            <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
-                                            <figcaption>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                Maxime, corrupti
-                                                distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                laboriosam
-                                                molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                atque dicta,
-                                                ullam necessitatibus exercitationem.
-                                            </figcaption>
-                                        </figure>
-                                    </ul>
-                                </div>
+                                <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                    <div class="border p-4 box mb-6 h-auto">
+                                        <ul class="list-unstyled block__47528 ">
+                                            <li><span class="active h2">{{item.courseName}}</span></li>
+                                            <figure class="w-100">
+                                                <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                <figcaption>
+                                                    {{item.courseIntro}}
+                                                </figcaption>
+                                            </figure>
+                                        </ul>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -99,7 +88,7 @@
                     <hr>
                     <div v-for="item in datas">
                         <div class="h3">{{item.workName}}</div>
-                        <div>{{item.number}}</div>
+                        <div>{{item.number}} 人</div>
                         <hr>
                     </div>
                 </div>
@@ -119,10 +108,18 @@
             data: {
                 datas: [],
                 Id: sessionStorage.getItem("EmpId"),
+
+
+                info: [],
+                van: [],
+                dVan: [],
+                advertiseArray: [],
             },
             mounted: function () {
                 let _this = this;
                 _this.Information();
+                _this.Info();
+                _this.advertise();
             },
             methods: {
                 Information: function () {
@@ -132,10 +129,65 @@
                             id: _this.Id,                          
                         }
                     }).then(response => {
-                        _this.datas = response.data;
+                        for (var i = 0; i < response.data.length; i++) {
+                            if (response.data[i].valid == true) {
+                                _this.datas.push(response.data[i]);
+                            }
+                        }
 
                     }).catch(err => console.log(err))
                         .finally(console.log('完成'));
+                },
+                Info: function () {
+                    let _this = this;
+                    axios.get(`${webApi}/api/Enterprises/Id${this.Id}`)
+                        .then(res => {
+                            _this.info = res.data;
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+
+                    axios.get(`${webApi}/api/Vacancies/view`, {
+                        params: {
+                            id: _this.Id,
+                        }
+                    })
+                        .then(response => {
+                            _this.van = response.data;
+
+                            for (var i = 0; i < response.data.length; i++) {
+
+                                if (response.data[i].valid == true) {
+                                    _this.dVan.push(response.data[i]);
+
+                                }
+
+                            }
+
+                        })
+                        .catch(err => console.log(err))
+                        .finally(console.log('完成'));
+                },
+                advertise: function () {
+                    let _this = this;
+                    let j;
+                    let arr = []
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[_this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            _this.advertiseArray = arr
+                            console.log(_this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
                 },
             },
         });

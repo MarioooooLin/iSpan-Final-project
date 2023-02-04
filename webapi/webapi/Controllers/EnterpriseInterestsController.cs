@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -63,16 +64,20 @@ namespace webapi.Controllers
 
         // GET: api/EnterpriseInterests/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<EnterpriseInterest>> GetEnterpriseInterest(int id)
+        public async Task<IEnumerable<EnterpriseInterest>> GetEnterpriseInterest(int id)
         {
-            var enterpriseInterest = await _context.EnterpriseInterest.FindAsync(id);
-
-            if (enterpriseInterest == null)
+            var result = _context.EnterpriseInterest.Select(x => new EnterpriseInterest
             {
-                return NotFound();
+                CandidateId = x.CandidateId,
+                VacancyId = x.VacancyId,
+                EnterpriseId = x.EnterpriseId,
+                Id = x.Id
+            });
+            if (id is int)
+            {
+                result = result.Where(x => x.CandidateId == id);
             }
-
-            return enterpriseInterest;
+            return result;
         }
 
         // PUT: api/EnterpriseInterests/5
@@ -115,6 +120,24 @@ namespace webapi.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetEnterpriseInterest", new { id = enterpriseInterest.Id }, enterpriseInterest);
+        }
+
+        [HttpPost("filter")]
+        public async Task<EnterpriseInterest> PostInterest([FromBody] EnterpriseInterest enterpriseInterest)
+        {
+
+            EnterpriseInterest ic = new EnterpriseInterest
+            {
+                CandidateId = enterpriseInterest.CandidateId,
+                VacancyId = enterpriseInterest.VacancyId,
+                EnterpriseId = enterpriseInterest.EnterpriseId,
+                Status = enterpriseInterest.Status,
+                Cv = enterpriseInterest.Cv
+            };
+            _context.EnterpriseInterest.Add(ic);
+            await _context.SaveChangesAsync();
+
+            return ic;
         }
 
         // DELETE: api/EnterpriseInterests/5

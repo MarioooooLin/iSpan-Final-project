@@ -155,36 +155,39 @@
                         .then(res => {
                             this.datas = res.data;
                             this.enterprise = res.data.enterpriseId;
-                            console.log(this.datas)
                         })
                         .catch(err => console.log(err))
-                        .finally(console.log('完成'))
+                        //.finally(console.log('完成'))
                 },
                 post() {
                     let bool = confirm('是否送出')
-                    console.log(this.txtMsg)
                     let id = window.localStorage.getItem("vanId")
                     let candidateId = window.sessionStorage.getItem("Id")
-                    axios.get(`${webApi}/api/Interests/${candidateId}`)
+                    axios.get(`${webApi}/api/EnterpriseInterests/${candidateId}`)
                         .then(res => {
                             let vanid;
                             for (i = 0; i < res.data.length; i++) {
-                                vanid = res.data[0].vacancyId
+                               if (res.data[i].vacancyId == id) {
+                                    vanid = id
+                                    break
+                               }
                             }
                             vanid == id ? alert('您已經應徵該職缺') : this.postInterests()
                         })
-                    this.txtMsg = '';
                 },
                 postInterests() {
                     const postdata = {
                         CandidateId: parseInt(window.sessionStorage.getItem("Id")),
                         VacancyId: this.datas.vacancyId,
                         EnterpriseId: this.datas.enterpriseId,
-                        InterestStatus: 1
+                        Status: 1,
+                        Cv: this.txtMsg
                     }
-                    axios.post(`${webApi}/api/Interests/filter`, postdata)
+                    axios.post(`${webApi}/api/EnterpriseInterests/filter`, postdata)
                         .then(res => {
                             alert('應徵成功')
+                            this.txtMsg = ''
+                            window.location.replace('https://localhost:7158/Home/jobList')
                         })
                 }
             },

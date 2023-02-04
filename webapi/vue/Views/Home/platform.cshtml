@@ -27,7 +27,7 @@
                                 aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == true">
                             <ul class="navbar-nav mr-auto flex-column">
                                 <li class="nav-item px-1 mx-1">
                                     <div class="head"></div>
@@ -36,10 +36,10 @@
                                             <figure class="figure ml-2">
                                                 <img src="https://picsum.photos/250/250/?random=10"
                                                      class="figure-img img-fuild rounded-circle  w-50  ">
-                                                <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                                <h3 class="display-6 slide-h3 mt-1">{{userdata.name}}</h3>
                                             </figure>
-                                            <div>手機:</div>
-                                            <div>信箱:</div>
+                                            <div>手機:&nbsp; {{userdata.cellphone}}</div>
+                                            <div>信箱:&nbsp; {{userdata.email}}</div>
                                             <div class="item text-end align-content-end mb-0">
                                                 <div class="text-right mr-3 fw-bold">
                                                     <a asp-controller="Home" asp-action="memberDetail">
@@ -48,28 +48,6 @@
                                                 </div>
                                             </div>
                                             <hr />
-                                            <div>履歷總數：</div>
-                                            <div>預設履歷：</div>
-                                            <div class="item input-group">
-                                                <div class="d-flex">
-                                                    <p class="mr-1"> 開放設定：</p>
-                                                    <div>
-                                                        <div class="input-group-prepend ">
-                                                            <input type="radio" name="CV" id="CVON"><span class="font-weight-normal text-body">開放履歷</span>
-                                                        </div>
-                                                        <div class="input-group-prepend ">
-                                                            <input type="radio" name="CV" id="CVOFF"><span class="font-weight-normal text-body">關閉履歷</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-block text-right">
-                                                <div class="text-right mr-3 fw-bold">
-                                                    <a asp-controller="Home" asp-action="CV">
-                                                        瀏覽所有履歷 <i class="fa-solid fa-chevron-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -87,30 +65,46 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="nav-item px-1 mx-1">
+                                <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                     <div class="head mt-4"></div>
-                                    <div class="border p-4 box mb-6 h-auto">
-                                        <ul class="list-unstyled block__47528 ">
-                                            <li><span class="active h2">廣告</span></li>
-                                            <figure class="w-100">
-                                                <img src="https://picsum.photos/100/100/?random=10"
-                                                     class="float-left mr-3">
-                                                <figcaption>
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                    Maxime, corrupti
-                                                    distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                    laboriosam
-                                                    molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                    atque dicta,
-                                                    ullam necessitatibus exercitationem.
-                                                </figcaption>
-                                            </figure>
-                                        </ul>
-                                    </div>
+                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">{{item.courseName}}</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10"
+                                                         class="float-left mr-3">
+                                                    <figcaption>
+                                                        {{item.courseIntro}}
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                         <!-- </div> -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == false">
+                            <ul class="navbar-nav mr-auto flex-column">
+                                <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
+                                    <div class="head mt-4"></div>
+                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">{{item.courseName}}</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                    <figcaption>
+                                                        {{item.courseIntro}}
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
                 <!-- Above is sidebar -->
@@ -126,7 +120,7 @@
                                         @*<button type="button" class="btn btn-primary" @@click="filterPlatformDTOes"><i class="fa-solid fa-magnifying-glass ml-4 mr-4"></i></button>*@
 
                                     </div>
-                                    <a asp-controller="Home" asp-action="platformPost" class="btn btn-primary">發文分享<i class="fa-solid fa-pen mx-2"></i></a>
+                                    <a @@click="goPage" class="btn btn-primary">發文分享<i class="fa-solid fa-pen mx-2"></i></a>
                                 </li>
                             </div>
                             <div class="col-12 py-5" style="height:35px" v-for="data in PostDTOs">
@@ -141,7 +135,7 @@
                                                     <i class="un">{{data.updateTime}}</i>
                                                 </span>
                                                 <span class="fly-list-hint">
-                                                    @*<i class="un" title="回答">💬3</i>*@
+                                                    <i class="un" title="回答">💬{{data.replyCount}}</i>
                                                 </span>
                                             </p>
                                         </div>
@@ -190,11 +184,14 @@
                 updateTime: "",
                 //---
                 //datalist: [],
+                userdata: [],
+                userstatus: false,
                 pageData: [],
                 dataLength: 0,//資料長度
                 pagesize: 0, //頁數
                 sliced: [], //切分頁
-                currentpage: 0
+                currentpage: 0,
+                advertiseArray: []
                 //selectedArticleName: "",
                 //selectedKeyword: "",
                 //PlatformDTOes:[],
@@ -203,14 +200,36 @@
             mounted: function () {
                 let _this = this;
                 _this.Platforms();
+                _this.user();
+                this.advertise();
             },
             methods: {
+                advertise() {
+                    let j;
+                    let arr = []
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            this.advertiseArray = arr
+                            console.log(this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
+                },
                 Platforms: function () {
                     let _this = this;
                     let item = 0;
                     axios.get(`${webApi}/api/Platforms`)
                         .then(response => {
                             //------------------------------------
+                            this.PostDTOs = [];
                             _this.dataLength = response.data.length;
                             console.log(response.data); //8筆
                             _this.PageContent();
@@ -285,12 +304,13 @@
                 },
                 next() {
                     let currpage = this.currentpage;
-                        currpage++;
+                    currpage++;
                     if (currpage != this.sliced.length) {
                         this.click(currpage)
                         item.updateTime = moment(item.updateTime).add(8, "hour").format('YYYY/MM/DD h:mm a')
                     }
                 },
+
                 //------------------------------------
                 //    search: function () {
                 //        //alert('你好繼宣');
@@ -346,6 +366,32 @@
                         }
                     );
 
+                },
+                goPage: function () {
+                    let candidateId = sessionStorage.getItem('Id')
+                    if (candidateId != null) {
+                        location.href = 'https://localhost:7158/Home/platformPost'
+                    }
+                    else {
+                        location.href = 'https://localhost:7158/Home/memberLogin'
+                    }
+                },
+                user() {
+                    let userid = window.sessionStorage.getItem('Id')
+                    if (!userid) {
+                        this.userstatus = false
+                        return false;
+                    }
+                    this.userstatus = true
+                    let url = `${webApi}/api/Candidates/${userid}`;
+                    axios.get(url)
+                        .then(res => {
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            res.data[0].name = res.data[0].name + ' 你好'
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
+                        })
                 },
             }
         })

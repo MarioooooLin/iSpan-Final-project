@@ -62,7 +62,7 @@
                     <h2>NT$ {{ dataList.price }}</h2>
                 </div>
                 <div class="col-lg-3 col-md-6 fw-bold buy-mess d-flex justify-content-center" style="border-left:#656565 1px solid;">
-                    <a v-if="isShow == true" @@click="goPaypage" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>
+                    <a v-if="isShow==true" @@click="goPaypage" class="btn btn-primary w-50 my-5 mx-1 text-center">立即購買</a>
                     <a v-else class="btn btn-primary w-50 my-5 mx-1 text-center">已購買課程</a>
                     <a @@click="goCollect" class="btn btn-secondary w-25 my-5 mx-1 text-center"><i class="fa-solid fa-thumbtack"></i></a>
                 </div>
@@ -82,6 +82,10 @@
                                 <h5>第{{chapter.coursechapter}}章 &emsp; &emsp;{{ chapter.chapterName }}</h5>
                                 <hr>
                             </div>
+                        </div>
+                        <div class="cause-need" style="width: 95%;">
+                            <div class="title">上課需求</div>
+                            <p class="lead ml-4">{{ dataList.courseReqire }}</p>
                         </div>
                         <div class="cause-need" style="width: 95%;">
                             <div class="title">上課需求</div>
@@ -181,15 +185,19 @@
                                     item = response.data[i].courseId
                                     arr.push(item)
                                 }
-                                //this.collectList = arr;
                                 console.log(arr);
                                 if (arr[0]){
                                     collectListCourseId = arr.find(item => item == thisPageCourseId)
                                 }
                                 if (thisPageCourseId == collectListCourseId) {
-                                    alert("此課程已收藏");
-                                    console.log('第二階段宣告已存在');
-
+                                    var yes = confirm('你確定取消此收藏課程嗎?');
+                                    if (yes) {
+                                        axios.delete(`${webApi}/api/InterestedCourses/${thisPageCandidateId}/${thisPageCourseId}`)
+                                            .then(response => {
+                                                alert("此課程已取消收藏");
+                                            }).catch(err => console.log(err))
+                                            .finally(console.log('刪除課程'))
+                                    }
                                 } else {
                                     var request = {
                                         CandidateId: thisPageCandidateId,
