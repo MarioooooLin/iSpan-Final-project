@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
@@ -52,6 +53,7 @@ namespace webapi.Controllers
                              UpdateTime = g.Key.UpdateTime,
                              ReplyCount = g.Count(r => r.r != null)
                          };
+            result = result.OrderByDescending(x => x.UpdateTime);
 
             if (!string.IsNullOrEmpty(name))
             {
@@ -62,10 +64,7 @@ namespace webapi.Controllers
             {
                 result = result.OrderByDescending(x => x.ReplyCount);
             }
-            else
-            {
-                result = result.OrderBy(x => x.ArticleId);
-            }
+            
 
             return result;
 
