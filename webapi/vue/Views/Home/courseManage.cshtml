@@ -63,22 +63,21 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="nav-item px-1 mx-1">
+                                <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                     <div class="head mt-4"></div>
-                                    <div class="border p-4 box mb-6 h-auto">
-                                        <ul class="list-unstyled block__47528 ">
-                                            <li><span class="active h2">廣告</span></li>
-                                            <figure class="w-100">
-                                                <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
-                                                <figcaption>
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, corrupti
-                                                    distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
-                                                    molestiae doloribus perspiciatis totam esse veritatis expedita, atque dicta,
-                                                    ullam necessitatibus exercitationem.
-                                                </figcaption>
-                                            </figure>
-                                        </ul>
-                                    </div>
+                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">{{item.courseName}}</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                    <figcaption>
+                                                        {{item.courseIntro}}
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -156,7 +155,7 @@
                 const _this = this;
                 _this.candidateBuy();
                 _this.candidateInterest();
-                
+                _this.advertise();
             },
             methods: {
                 candidateBuy: function () {
@@ -197,6 +196,26 @@
                             }).catch(err => console.log(err))
                             .finally(console.log('完成'))
                     }
+                },
+                advertise: function () {
+                    let _this = this;
+                    let j;
+                    let arr = [];
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[_this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            _this.advertiseArray = arr
+                            console.log(_this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
                 },
             },
         })
