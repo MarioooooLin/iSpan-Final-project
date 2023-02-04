@@ -261,6 +261,7 @@
                 },
                 //------------------------------------
                 PageContent: function () { // 頁數長度
+                    this.sliced = [];
                     this.pagesize = Math.ceil(this.dataLength / 15); //無條件進位
                     for (let i = 0; i < this.pagesize; i++) {
                         this.sliced[i] = i;
@@ -351,9 +352,12 @@
                     let _this = this;
                     var request = {};
                     request.ArticleName = _this.inputvalue;
+                    this.currentpage = 0
                     axios.post(`${webApi}/api/Platforms/Filter`, request).then(
                         response => {
                             _this.PostDTOs = response.data;
+                            _this.dataLength = response.data.length;
+                            _this.PageContent();
                             var searchList = [];
                             for (var i = 0; i < _this.PostDTOs.length; i++) {
                                 var item = {};
@@ -392,6 +396,16 @@
                             this.userdata = res.data[0]
                             console.log(this.userdata)
                         })
+                },
+            },
+            watch: {
+                inputvalue: {
+                    handler(newval) {
+                        if (!this.inputvalue) {
+                            this.Platforms();
+                        }
+                    },
+                    deep: true
                 },
             }
         })
