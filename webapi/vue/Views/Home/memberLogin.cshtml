@@ -12,7 +12,7 @@
 <!-- home end -->
 
 <section class="site-section block__18514 pt-4" id="next-section">
-    <div class="container h-100 pt-3">
+    <div class="container h-100 pt-3" id="appVue">
         <div class="row">
             <!-- Below is sidebar -->
             <div class="col-xs-12 col-md-10 col-lg-4">
@@ -25,43 +25,21 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto flex-column">
-                            <li class="nav-item px-1 mx-1 mb-5">
-                                <div class="head "></div>
-                                <div class="border p-4 box mb-6 h-auto">
-                                    <ul class="list-unstyled block__47528 ">
-                                        <li><span class="active h2">廣告</span></li>
-                                        <figure class="w-100">
-                                            <img src="https://picsum.photos/100/100/?random=10"
-                                                 class="float-left mr-3">
-                                            <figcaption>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                Maxime, corrupti
-                                                distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                laboriosam
-                                                molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                atque dicta,
-                                                ullam necessitatibus exercitationem.
-                                            </figcaption>
-                                        </figure>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item px-1 mx-1">
+                            <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                 <div class="head mt-4"></div>
-                                <div class="border p-4 box mb-6 h-auto">
-                                    <ul class="list-unstyled block__47528 ">
-                                        <li><span class="active h2">廣告</span></li>
-                                        <figure class="w-100">
-                                            <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
-                                            <figcaption>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, corrupti
-                                                distinctio dolore repellat corporis nulla consequuntur nostrum laboriosam
-                                                molestiae doloribus perspiciatis totam esse veritatis expedita, atque dicta,
-                                                ullam necessitatibus exercitationem.
-                                            </figcaption>
-                                        </figure>
-                                    </ul>
-                                </div>
+                                <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                    <div class="border p-4 box mb-6 h-auto">
+                                        <ul class="list-unstyled block__47528 ">
+                                            <li><span class="active h2">{{item.courseName}}</span></li>
+                                            <figure class="w-100">
+                                                <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                <figcaption>
+                                                    {{item.courseIntro}}
+                                                </figcaption>
+                                            </figure>
+                                        </ul>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -81,7 +59,7 @@
                 </ul>
 
 
-                <div class="tab-content" id="appVue">
+                <div class="tab-content">
                     <!-- Above is sidebar -->
                     <!-- 求職端 -->
 
@@ -107,7 +85,7 @@
                                 <a asp-controller="Home" asp-action="memberSignup" class="">註冊會員</a>
                             </span>
                             <div class="col-12 w-100">
-                                <input type="submit" value="清除" class="btn px-4 slide-button m-2">
+                                <input type="submit" value="清除" @@click="mset()" class="btn px-4 slide-button m-2">
 
                                 <button class="btn btn-primary px-4 m-2 " @@click="Signin">登入</button>
                             </div>
@@ -126,7 +104,7 @@
                                                 <input type="email" placeholder="請輸入認證信箱" class="w-100" v-model="email"></input>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                                <button type="button" class="btn btn-secondary" @@click="emailSet()">取消</button>
                                                 <a class="btn btn-primary" data-dismiss="modal" @@click="sendEmail(); ">送出</a>
                                             </div>
                                         </div>
@@ -160,7 +138,7 @@
                                 <a asp-controller="Home" asp-action="memberSignup" class="">註冊會員</a>
                             </span>
                             <div class="col-12">
-                                <input type="submit" value="清除" class="btn px-4 slide-button m-2 ">
+                                <input type="submit" value="清除" @@click="eset()" class="btn px-4 slide-button m-2 ">
 
                                 <button class="btn btn-primary px-4 m-2" @@click="EnpSignin">登入</button>
                             </div>
@@ -202,13 +180,29 @@
                 EnpPassword: null,
 
                 email: null,
+                advertiseArray: [],
 
             },
             mounted: function () {
                 let _this = this;
-
+                _this.advertise();
             },
             methods: {
+                emailSet: function () {
+                    let _this = this;
+                    _this.email = "zxc1545414453@gmail.com"
+                },
+                mset: function () {
+                    let _this = this;
+                    _this.Account = "123";
+                    _this.Password = "123";
+                },
+                eset: function () {
+                    let _this = this;
+                    _this.EnpAccount = "a123";
+                    _this.EnpPassword = "b456";
+
+                },
                 Signin: function () {
                     let _this = this;
                     let login = {};
@@ -262,28 +256,56 @@
                     })
                         .then(res => {
                             _this.datas = res.data;
-                            console.log(_this.datas);
-                            emailjs.send("service_7koyopb", "template_7ww4l0j", {
-                        to_name: _this.datas[0].name,
-                        to_email: email,
-                        message: `https://localhost:7158/Home/forgetPassword/${_this.datas[0].id}`,
-                    })
-                        .then(function (response) {
-                            console.log("SUCCESS!", response.status, response.text);
-                        }, function (error) {
-                            console.log("FAILED...", error);
-                        });
+                            if (_this.datas.length>0) {
+                                console.log(_this.datas);
+                                emailjs.send("service_7koyopb", "template_7ww4l0j", {
+                                    to_name: _this.datas[0].name,
+                                    to_email: email,
+                                    message: `https://localhost:7158/Home/forgetPassword/${_this.datas[0].id}`,
+                                })
+                                    .then(function (response) {
+                                        alert("已送出密碼更新信件，請至驗證信箱查看")
+                                        console.log("SUCCESS!", response.status, response.text);
+
+                                    }, function (error) {
+                                        console.log("FAILED...", error);
+                                    });
+                            }
+                            else {
+                                alert("此信箱未被註冊");
+                            }
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
 
 
+
                     return false;
+                },
+                advertise: function () {
+                    let _this = this;
+                    let j;
+                    let arr = [];
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[_this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            _this.advertiseArray = arr
+                            console.log(_this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
                 },
 
             },
         })
-                                           
+
 
     </script>
 

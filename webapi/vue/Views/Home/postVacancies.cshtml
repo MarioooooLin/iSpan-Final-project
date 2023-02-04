@@ -198,8 +198,8 @@
         </div>
 
         <div class="d-flex justify-content-end mb-4">
-            <button class="btn px-4 slide-button m-2 w-25" @@click="Cancel">取消</button>
-            <button class="btn px-4 slide-button m-2 w-25" @@click="Save">發布職缺</button>
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Set()">取消</button>
+            <button class="btn px-4 slide-button m-2 w-25" @@click="Save()">發布職缺</button>
         </div>
 
 
@@ -242,7 +242,7 @@
             mounted: function () {
                 let _this = this;
                 _this.Info();
-
+                _this.Set();
             },
             methods: {
 
@@ -311,6 +311,23 @@
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
                 },
+                Set: function () {
+                    let _this = this;
+                    _this.datas.workName = "全端工程師";
+                    _this.datas.category = "科技";
+                    _this.datas.workPlace = "高雄市前鎮區";
+                    _this.datas.workTime = "平日";
+                    _this.datas.salary = "38000";
+                    _this.datas.workShift = "白班";
+                    _this.datas.seniority = "2";
+                    _this.datas.workContent = "1. 編寫並維護網路爬蟲\n" + "2. 搜集、串接使用者行為資料\n" + " 3. 協助業務和廣告優化師整合數據";
+
+
+
+                    _this.datas.workReqire = "1. 擅長 Github、Python、JavaScript、jQuery\n" + "2. 熟稔 JavaScript, jQuery, Python\n" + "3. 曾撰寫過網路爬蟲";
+                    _this.datas.number = 5;
+
+                }
             },
 
 

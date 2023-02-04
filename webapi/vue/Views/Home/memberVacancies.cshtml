@@ -35,7 +35,7 @@
                                             <div style="object-fit:cover;width:100px;height:100px;" class="position-relative">
                                                 <img :src="photo[0].img"
                                                      class="figure-img img-fuild rounded-circle h-100 w-100 z-1">
-                                    
+
                                                 @*     <input type="file" class="photo" id="photo" asp-controller="Home" accept="image/*"></input>*@
                                             </div>
                                             <h3 class="display-6 slide-h3 mt-1" v-once>{{photo[0].name}} 您好</h3>
@@ -50,27 +50,27 @@
                                             </div>
                                         </div>
                                         <hr />
-                                       @* <div>履歷總數：</div>
+                                        @* <div>履歷總數：</div>
                                         <div>預設履歷：</div>
                                         <div class="item input-group">
-                                            <div class="d-flex">
-                                                <p class="mr-1"> 開放設定：</p>
-                                                <div>
-                                                    <div class="input-group-prepend ">
-                                                        <input type="radio" name="CV" id="CVON"><span class="font-weight-normal text-body">開放履歷</span>
-                                                    </div>
-                                                    <div class="input-group-prepend ">
-                                                        <input type="radio" name="CV" id="CVOFF"><span class="font-weight-normal text-body">關閉履歷</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="d-flex">
+                                        <p class="mr-1"> 開放設定：</p>
+                                        <div>
+                                        <div class="input-group-prepend ">
+                                        <input type="radio" name="CV" id="CVON"><span class="font-weight-normal text-body">開放履歷</span>
+                                        </div>
+                                        <div class="input-group-prepend ">
+                                        <input type="radio" name="CV" id="CVOFF"><span class="font-weight-normal text-body">關閉履歷</span>
+                                        </div>
+                                        </div>
+                                        </div>
                                         </div>
                                         <div class="d-block text-right">
-                                            <div class="text-right mr-3 fw-bold">
-                                                <a asp-controller="Home" asp-action="CV">
-                                                    瀏覽所有履歷 <i class="fa-solid fa-chevron-right"></i>
-                                                </a>
-                                            </div>
+                                        <div class="text-right mr-3 fw-bold">
+                                        <a asp-controller="Home" asp-action="CV">
+                                        瀏覽所有履歷 <i class="fa-solid fa-chevron-right"></i>
+                                        </a>
+                                        </div>
                                         </div>*@
                                     </div>
                                 </div>
@@ -89,26 +89,21 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-item px-1 mx-1 mb-5">
+                            <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                 <div class="head mt-4"></div>
-                                <div class="border p-4 box mb-6 h-auto">
-                                    <ul class="list-unstyled block__47528 ">
-                                        <li><span class="active h2">廣告</span></li>
-                                        <figure class="w-100">
-                                            <img src="https://picsum.photos/100/100/?random=10"
-                                                 class="float-left mr-3">
-                                            <figcaption>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                                Maxime, corrupti
-                                                distinctio dolore repellat corporis nulla consequuntur nostrum
-                                                laboriosam
-                                                molestiae doloribus perspiciatis totam esse veritatis expedita,
-                                                atque dicta,
-                                                ullam necessitatibus exercitationem.
-                                            </figcaption>
-                                        </figure>
-                                    </ul>
-                                </div>
+                                <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                    <div class="border p-4 box mb-6 h-auto">
+                                        <ul class="list-unstyled block__47528 ">
+                                            <li><span class="active h2">{{item.courseName}}</span></li>
+                                            <figure class="w-100">
+                                                <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                <figcaption>
+                                                    {{item.courseIntro}}
+                                                </figcaption>
+                                            </figure>
+                                        </ul>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -147,11 +142,13 @@
                 datas: [],
                 photo: [],
                 Id: sessionStorage.getItem("Id"),
+                advertiseArray: [],
             },
             mounted: function () {
                 let _this = this;
                 _this.Information();
                 _this.Login();
+                _this.advertise();
             },
             methods: {
                 Information: function () {
@@ -175,6 +172,26 @@
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'));
+                },
+                advertise: function () {
+                    let _this = this;
+                    let j;
+                    let arr = [];
+                    sessionStorage.getItem("Id") ? j = 1 : j = 2;
+                    axios.get(`${webApi}/api/Courses`)
+                        .then(res => {
+                            for (i = 0; i < j; i++) {
+                                let item = {}
+                                item = res.data[_this.random(res.data.length)]
+                                item.courseIntro = item.courseIntro.substr(0, 80) + "..."
+                                arr.push(item)
+                            }
+                            _this.advertiseArray = arr
+                            console.log(_this.advertiseArray)
+                        })
+                },
+                random(max) {
+                    return Math.floor(Math.random() * max);
                 },
             },
         });
