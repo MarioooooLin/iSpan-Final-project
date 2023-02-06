@@ -13,8 +13,8 @@
                     <h1 class="text-white">{{datas.title}}</h1>
                 </div>
                 <div class="d-flex mx-5">
-                    <div class="text-light">300</div>
-                    <div class="text-light">Like</div>
+                    <div class="text-light">{{like}}</div>
+                    <div class="text-light" >Like</div>
                 </div>
             </div>
         </div>
@@ -262,7 +262,9 @@
                 title: '',
                 userdata: [],
                 memberInfo: "",
-                userstatus:false,
+                userstatus:false,  
+                like:0,
+
             },
             mounted: function () {
                 let _this = this;
@@ -444,6 +446,11 @@
                             console.log(this.userdata)
                         })
                 },
+
+                likeArti(){
+                    this.like++;
+
+                }
 
             }
         })
