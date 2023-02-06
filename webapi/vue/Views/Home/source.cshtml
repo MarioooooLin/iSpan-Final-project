@@ -162,11 +162,11 @@
                         <div class="row mb-5  ">
                             <!--The first article-->
                             <div class="col-md-6 col-lg-4 mb-5 " v-for="data in datalist">
-                                <a v-bind:href="'https://localhost:7158/Home/sourcePage?id='+data.articleId"><img :src="data.img" v-if="data.img!==null" alt="Image" class="img-fluid rounded mb-4" /></a>
+                                <a v-bind:href="'http://triangle:7158/Home/sourcePage?id='+data.articleId"><img :src="data.img" v-if="data.img!==null" alt="Image" class="img-fluid rounded mb-4" /></a>
                                 @*                                <a href=""><img :src="data.img" v-else alt="Image" class="img-fluid rounded mb-4" /></a>
                                 *@
                                 <h3>
-                                    <a v-bind:href="'https://localhost:7158/Home/sourcePage?id='+data.articleId" class="text-black">{{data.title}}</a>
+                                    <a v-bind:href="'http://triangle:7158/Home/sourcePage?id='+data.articleId" class="text-black">{{data.title}}</a>
                                 </h3>
                                 <div>{{data.update}} <span class="mx-2">|</span> <a href="#">{{data.author}}</a></div>
                             </div>
@@ -203,7 +203,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const appVue = new Vue({
             el: "#appVue",
             name: "appVue",

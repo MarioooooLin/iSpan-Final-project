@@ -132,7 +132,7 @@
                             <button class="mx-lg-5 rounded-circle h4 p-3 slide-button" v-on:click="no" v-if="this.answerList[this.index]==null">No</button>
                         </div>
                         <div class="text-right">
-                            <a v-bind:href="'https://localhost:7158/Home/testResult?id='+ resultPoint" v-on:click="checkResult" v-if="showResult">查看結果</a>
+                            <a v-bind:href="'http://triangle:7158/Home/testResult?id='+ resultPoint" v-on:click="checkResult" v-if="showResult">查看結果</a>
                             @*<a v-on:click="checkResult" v-if="showResult">查看結果</a>*@
 
                         </div>
@@ -149,7 +149,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
     <script>
-        const webApi = "https://localhost:7240";
+        const webApi = "https://triangle:7240";
         const appVue = new Vue({
             el: "#appVue",
             name: "appVue",
@@ -230,7 +230,7 @@
                     }
                     this.userstatus = true
                     let url = `${webApi}/api/Candidates/${userid}`;
-                    //let url = `https://localhost:7240/api/Candidates/4`;
+                    //let url = `https://triangle:7240/api/Candidates/4`;
                     axios.get(url)
                         .then(res => {
                             let x = res.data[0].cellphone;

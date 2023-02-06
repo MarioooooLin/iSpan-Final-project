@@ -65,7 +65,7 @@
                                 </li>
                                 <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                     <div class="head mt-4"></div>
-                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                    <a class="change" :href="'http://triangle:7158/Home/courseDetail?id=' + item.courseId">
                                         <div class="border p-4 box mb-6 h-auto">
                                             <ul class="list-unstyled block__47528 ">
                                                 <li><span class="active h2">{{item.courseName}}</span></li>
@@ -110,7 +110,7 @@
                     <ul class="list-unstyled block__47528 mb-0">
                         <div v-for="item in interestList">
                             <hr />
-                            <a v-bind:href="'https://localhost:7158/Home/courseDetail?id='+ item.courseId" class="ml-3 font-weight-bold active text-URL">
+                            <a v-bind:href="'http://triangle:7158/Home/courseDetail?id='+ item.courseId" class="ml-3 font-weight-bold active text-URL">
                                 {{item.courseName}}
                             </a>
                             <div class="row">
@@ -120,7 +120,7 @@
                                 </div>
                                 <div class="col pl-3 d-flex pb-1 justify-content-end">
                                     <a v-bind:id="item.courseId" @@click="deleteInterestCourse" class="btn btn-dark mr-2">取消收藏</a>
-                                    <a v-bind:href="'https://localhost:7158/Home/payPage?id='+ item.courseId" class="btn btn-primary mr-5">立即購買</a>
+                                    <a v-bind:href="'http://triangle:7158/Home/payPage?id='+ item.courseId" class="btn btn-primary mr-5">立即購買</a>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const appVue = new Vue({
             el: "#appVue", // 綁定位置
             name: "appVue",

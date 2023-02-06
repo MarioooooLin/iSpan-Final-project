@@ -194,20 +194,20 @@
 
             for(i = 0; i < 4; i++){
                 let x = document.querySelectorAll('a[class="col-12 col-md-6 col-lg-3 mb-2"]')[i]
-                x.href = 'https://localhost:7158/Home/jobList';
+                x.href = 'http://triangle:7158/Home/jobList';
                 x.addEventListener('click',function(){
                     sessionStorage.setItem("Category", x.id);
                 })
             }
             
             // Make an API request using Axios
-            axios.get('https://localhost:7240/api/Vacancies')
+            axios.get('https://triangle:7240/api/Vacancies')
                 .then(response => {
                     let items=[]
                     // Handle the success response
                     for (let i = 0 ; i < 12  ; i ++){
                         let item = {};
-                        response.data[i].workContent = "https://localhost:7158/Home/jobSingle?id=" + response.data[i].vacancyId
+                        response.data[i].workContent = "http://triangle:7158/Home/jobSingle?id=" + response.data[i].vacancyId
                         item = response.data[i];
                         items.push(item)
                     }
@@ -267,13 +267,13 @@
                     console.error(error);
                 });
 
-            axios.get('https://localhost:7240/api/Courses')
+            axios.get('https://triangle:7240/api/Courses')
                 .then(response=>{
                     let items = []
                     // Handle the success response
                     for (let i = 0; i < 9; i++) {
                         let item = {};
-                        response.data[i].courseIntro = "https://localhost:7158/Home/courseDetail?id=" + response.data[i].courseId
+                        response.data[i].courseIntro = "http://triangle:7158/Home/courseDetail?id=" + response.data[i].courseId
                         item = response.data[i];
                         items.push(item)
                     }
@@ -326,10 +326,10 @@
                     console.error(error);
                 });
 
-            axios.get('https://localhost:7240/api/Platforms?order=count')
+            axios.get('https://triangle:7240/api/Platforms?order=count')
                 .then(response => {
                     let topItems = response.data[0]
-                    topItems.href = "https://localhost:7158/Home/platformArticle?id=" + response.data[0].articleId;
+                    topItems.href = "http://triangle:7158/Home/platformArticle?id=" + response.data[0].articleId;
                     if (topItems.contents.length>162){
                         topItems.contents = topItems.contents.substr(0, 162) + "...";
                     }
@@ -360,7 +360,7 @@
                         if (item.contents.length > 88) {
                             item.contents = item.contents.substr(0, 88) + "...";
                         }
-                        item.href = "https://localhost:7158/Home/platformArticle?id=" + response.data[i].articleId;
+                        item.href = "http://triangle:7158/Home/platformArticle?id=" + response.data[i].articleId;
                         secondaryItems.push(item)
                     }
                     
@@ -391,13 +391,13 @@
                     console.error(error);
                 });
 
-            axios.get('https://localhost:7240/api/Articles?keyword='+'轉職')
+            axios.get('https://triangle:7240/api/Articles?keyword='+'轉職')
                 .then(response => {
                     let items = []
                     // Handle the success response
                     for (let i = 0; i < 2; i++) {
                         let item = {};
-                        response.data[i].message = "https://localhost:7158/Home/sourcePage?id=" + response.data[i].articleId
+                        response.data[i].message = "http://triangle:7158/Home/sourcePage?id=" + response.data[i].articleId
                         item = response.data[i];
                         if (item.articleContent.length>75){
                             item.articleContent = item.articleContent.substr(0, 75)
@@ -424,13 +424,13 @@
 
                 });
 
-            axios.get('https://localhost:7240/api/Articles?keyword=' + '中高齡就業')
+            axios.get('https://triangle:7240/api/Articles?keyword=' + '中高齡就業')
                 .then(response => {
                     let items = []
                     // Handle the success response
                     for (let i = 0; i < 2; i++) {
                         let item = {};
-                        response.data[i].message = "https://localhost:7158/Home/sourcePage?id=" + response.data[i].articleId
+                        response.data[i].message = "http://triangle:7158/Home/sourcePage?id=" + response.data[i].articleId
                         item = response.data[i];
                         if (item.articleContent.length > 40) {
                             item.articleContent = item.articleContent.substr(0, 40)

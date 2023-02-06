@@ -95,7 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const appVue = new Vue({
             el: "#appVue", // 綁定位置
             name: "appVue",
@@ -182,7 +182,7 @@
                         axios.delete(`${webApi}/api/Platforms/${this.articleid}`)
                             .then(res => {
                                 if (res.status < 300) {
-                                    window.location.replace('https://localhost:7158/Home/platform')
+                                    window.location.replace('http://triangle:7158/Home/platform')
                                 }
                             })
                     }
@@ -200,7 +200,7 @@
                             .then(res => {
                                 _this.getreply();
                                 //if (res.status < 300) {
-                                //    window.location.replace('https://localhost:7158/Home/platformArticle')
+                                //    window.location.replace('http://triangle:7158/Home/platformArticle')
                                 //}
                             })
                     }
@@ -211,7 +211,7 @@
 
 
     @*<script>
-        const localhost = "https://localhost:7240"
+        const triangle = "https://triangle:7240"
         const replyVue = new Vue({
             el: "#replyVue", // 綁定位置
             name: "replyVue",

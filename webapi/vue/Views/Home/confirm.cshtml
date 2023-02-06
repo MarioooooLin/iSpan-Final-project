@@ -52,7 +52,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=Ab4yDn4BMS6wkUCy-BZqqV0fw_NM9UPmGc1IeZsn5N51HjT98IzI5Ha4bXbzX_n4qVPcbsVwJyENYyk3"></script>
     <script>
-        let baseLoginPayUrl = 'https://localhost:7240/api/LinePay/';
+        let baseLoginPayUrl = 'https://triangle:7240/api/LinePay/';
         let transactionId = "";
         let orderId = "";
 
@@ -94,7 +94,7 @@
         }
     </script>
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const appVue = new Vue({
             el: "#appVue", // 綁定位置
             name: "appVue",
@@ -116,7 +116,7 @@
                         CourseId: this.dataList.CourseId,
                     };
                     axios.post(`${webApi}/api/Orders`, request).then(response => {
-                        location.href = 'https://localhost:7158/Home/courseManage'
+                        location.href = 'http://triangle:7158/Home/courseManage'
 
                     }).catch(err => console.log(err));
                 }

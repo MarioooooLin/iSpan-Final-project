@@ -82,7 +82,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=Ab4yDn4BMS6wkUCy-BZqqV0fw_NM9UPmGc1IeZsn5N51HjT98IzI5Ha4bXbzX_n4qVPcbsVwJyENYyk3"></script>
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const printVue = new Vue({
             el: "#printVue", // 綁定位置
             name: "printVue",
@@ -152,7 +152,7 @@
     </script>
     <script>
         function requestPayment() {
-            let baseLoginPayUrl = 'https://localhost:7240/api/LinePay/';
+            let baseLoginPayUrl = 'https://triangle:7240/api/LinePay/';
             let name = document.querySelector('#name')
             let itemName = name.getAttribute('data')
 

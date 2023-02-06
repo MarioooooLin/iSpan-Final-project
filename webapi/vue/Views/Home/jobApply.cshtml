@@ -134,7 +134,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const appVue = new Vue({
             el: "#appVue",
             name: "appVue",
@@ -187,7 +187,7 @@
                         .then(res => {
                             alert('應徵成功')
                             this.txtMsg = ''
-                            window.location.replace('https://localhost:7158/Home/jobList')
+                            window.location.replace('http://triangle:7158/Home/jobList')
                         })
                 }
             },

@@ -67,7 +67,7 @@
                                 </li>
                                 <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                     <div class="head mt-4"></div>
-                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                    <a class="change" :href="'http://triangle:7158/Home/courseDetail?id=' + item.courseId">
                                         <div class="border p-4 box mb-6 h-auto">
                                             <ul class="list-unstyled block__47528 ">
                                                 <li><span class="active h2">{{item.courseName}}</span></li>
@@ -89,7 +89,7 @@
                             <ul class="navbar-nav mr-auto flex-column">
                                 <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
                                     <div class="head mt-4"></div>
-                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                    <a class="change" :href="'http://triangle:7158/Home/courseDetail?id=' + item.courseId">
                                         <div class="border p-4 box mb-6 h-auto">
                                             <ul class="list-unstyled block__47528 ">
                                                 <li><span class="active h2">{{item.courseName}}</span></li>
@@ -127,7 +127,7 @@
                                 <ul class="fly-list">
                                     <li id="posttitle" class="d-flex justify-content-between">
                                         <div>
-                                            <a class="h4 fly-tip a1" v-bind:href="'https://localhost:7158/Home/platformArticle?id='+data.articleId">{{data.articleName}}</a>
+                                            <a class="h4 fly-tip a1" v-bind:href="'http://triangle:7158/Home/platformArticle?id='+data.articleId">{{data.articleName}}</a>
                                         </div>
                                         <div>
                                             <p>
@@ -173,7 +173,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const appVue = new Vue({
             el: "#appVue",
             name: "appVue",
@@ -374,10 +374,10 @@
                 goPage: function () {
                     let candidateId = sessionStorage.getItem('Id')
                     if (candidateId != null) {
-                        location.href = 'https://localhost:7158/Home/platformPost'
+                        location.href = 'http://triangle:7158/Home/platformPost'
                     }
                     else {
-                        location.href = 'https://localhost:7158/Home/memberLogin'
+                        location.href = 'http://triangle:7158/Home/memberLogin'
                     }
                 },
                 user() {

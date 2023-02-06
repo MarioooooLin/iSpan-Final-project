@@ -122,7 +122,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script>
-        const webApi = "https://localhost:7240"
+        const webApi = "https://triangle:7240"
         const appVue = new Vue({
             el: "#appVue", // 綁定位置
             name: "appVue",
@@ -214,10 +214,10 @@
                     const candidateId = sessionStorage.getItem('Id')
                     const courseId = this.dataList.courseId
                     if (candidateId != null) {
-                        location.href = 'https://localhost:7158/Home/payPage?id=' + courseId
+                        location.href = 'http://triangle:7158/Home/payPage?id=' + courseId
                     }
                     else {
-                        location.href = 'https://localhost:7158/Home/memberLogin'
+                        location.href = 'http://triangle:7158/Home/memberLogin'
                     }
                 },
                 goCollect : function (){
@@ -262,13 +262,13 @@
                             .catch(err => console.log(err))
                             .finally(console.log('第一階段'));
                     }else{
-                        location.href = 'https://localhost:7158/Home/memberLogin'
+                        location.href = 'http://triangle:7158/Home/memberLogin'
                     };
 
                 },
                 toShop(name){
                     sessionStorage.setItem("KeywordSkill",name)
-                    location.href = 'https://localhost:7158/Home/courseShop'
+                    location.href = 'http://triangle:7158/Home/courseShop'
                 }
 
             },
