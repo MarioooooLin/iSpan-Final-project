@@ -43,6 +43,15 @@
                                 <h5 class="font-weight-bold mb-0 col-sm-7 col-12 pt-4 text-right mb-4 pr-4" id="name" :data="courseList.courseName">{{ courseList.courseName }}</h5>
                                 <p class="col-lg-4 col-sm-5 col-12 pl-5">單位：新台幣 NT$</p>
                                 <p class="font-weight-bold col-sm-7 col-12 text-right lead" id="price">{{ courseList.price }}</p>
+                                <div class="justify-content-end d-flex col-11">
+                                    <p id="information" class=""></p>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <p class="col-lg-4 col-sm-5 col-12 pl-5">優惠代碼</p>
+                                <input type="text" class="useless col-sm-7 col-12" v-model="couponText" @@keydown.enter="coupon" />
+
                             </div>
                         </ul>
                         <hr style="height:3px; color: #e2e2e2;background-color: #e2e2e2; " />
@@ -90,7 +99,7 @@
                 courseList: [],
                 buyerList:[],
                 yetBuy:true,
-
+                couponText: "",
             },
             mounted: function () {
                 this.course();
@@ -103,6 +112,7 @@
                     axios.get(`${webApi}/api/Courses/${courseId}`)
                         .then(response => {
                             this.courseList = response.data[0];
+                            sessionStorage.setItem("price",this.courseList.price)
                         })
                         .catch(err => console.log(err))
                         .finally(console.log('完成'))
@@ -146,6 +156,30 @@
                         window.name = JSON.stringify(items);
 
 
+                },
+                coupon:function(){
+                    let couponNums = this.couponText
+                    let temp = sessionStorage.getItem("price")
+                    console.log(temp)
+                    if (couponNums == "ispan095"){
+                        this.courseList.price = parseInt(temp * 0.95)
+                        console.log(this.courseList.price)
+                        document.getElementById('price').textContent = this.courseList.price
+                        document.getElementById('information').textContent = "95折優惠"
+                        
+                    } else if (couponNums == "ispan100"){
+                        this.courseList.price = parseInt(temp - 100)
+                        document.getElementById('price').textContent = this.courseList.price
+                        document.getElementById('information').textContent = " -100 元 "
+                    } else if (couponNums == "") {
+                        this.courseList.price = temp
+                        document.getElementById('price').textContent = temp
+                        document.getElementById('information').textContent = ""
+                    }else{
+                        this.courseList.price = temp
+                        document.getElementById('price').textContent = temp
+                        document.getElementById('information').textContent = "輸入錯誤，請重新填寫"
+                    }
                 },
             },
         })

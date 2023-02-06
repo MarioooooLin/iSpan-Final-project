@@ -97,9 +97,9 @@
                             <li class="ml-3 font-weight-bold active">
                                 {{item.courseName}}
                             </li>
-                            <li class="ml-3 d-flex row mt-2 mb-2">
-                                Google Taiwan
-                            </li>
+@*                            <li class="ml-3 d-flex row mt-2 mb-2">
+                                {{item.teacherName}}
+                            </li>*@
                             </div>
                         </ul>
                     </div>
@@ -149,7 +149,8 @@
             name: "appVue",
             data: {
                 buyList: [],
-                interestList: []
+                interestList: [],
+                advertiseArray:[],
             },
             mounted: function () {
                 const _this = this;
