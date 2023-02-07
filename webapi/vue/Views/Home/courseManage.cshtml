@@ -21,11 +21,11 @@
                     <nav class="navbar navbar-expand-lg navbar-light pl-lg-5 py-0">
                         <!-- <a class="navbar-brand" href="#">Liya rescue</a> -->
                         <button class="navbar-toggler mb-2" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                                aria-label="Toggle navigation">
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == true">
                             <ul class="navbar-nav mr-auto flex-column">
                                 <li class="nav-item px-1 mx-1">
                                     <div class="head"></div>
@@ -34,10 +34,10 @@
                                             <figure class="figure ml-2">
                                                 <img src="https://picsum.photos/250/250/?random=10"
                                                      class="figure-img img-fuild rounded-circle  w-50  ">
-                                                <h3 class="display-6 slide-h3 mt-1">使用者 您好</h3>
+                                                <h3 class="display-6 slide-h3 mt-1">{{userdata.name}}</h3>
                                             </figure>
-                                            <div>手機:</div>
-                                            <div>信箱:</div>
+                                            <div>手機:&nbsp; {{userdata.cellphone}}</div>
+                                            <div>信箱:&nbsp; {{userdata.email}}</div>
                                             <div class="item text-end align-content-end mb-0">
                                                 <div class="text-right mr-3 fw-bold">
                                                     <a asp-controller="Home" asp-action="memberDetail">
@@ -70,7 +70,8 @@
                                             <ul class="list-unstyled block__47528 ">
                                                 <li><span class="active h2">{{item.courseName}}</span></li>
                                                 <figure class="w-100">
-                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                    <img src="https://picsum.photos/100/100/?random=10"
+                                                         class="float-left mr-3">
                                                     <figcaption>
                                                         {{item.courseIntro}}
                                                     </figcaption>
@@ -82,6 +83,26 @@
                             </ul>
                         </div>
                         <!-- </div> -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="userstatus == false">
+                            <ul class="navbar-nav mr-auto flex-column">
+                                <li class="nav-item px-1 mx-1" v-for="item in advertiseArray">
+                                    <div class="head mt-4"></div>
+                                    <a class="change" :href="'https://localhost:7158/Home/courseDetail?id=' + item.courseId">
+                                        <div class="border p-4 box mb-6 h-auto">
+                                            <ul class="list-unstyled block__47528 ">
+                                                <li><span class="active h2">{{item.courseName}}</span></li>
+                                                <figure class="w-100">
+                                                    <img src="https://picsum.photos/100/100/?random=10" class="float-left mr-3">
+                                                    <figcaption>
+                                                        {{item.courseIntro}}
+                                                    </figcaption>
+                                                </figure>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
                 <!-- Above is sidebar -->
@@ -151,12 +172,16 @@
                 buyList: [],
                 interestList: [],
                 advertiseArray:[],
+                userdata: [],
+                userstatus: false,
+
             },
             mounted: function () {
                 const _this = this;
                 _this.candidateBuy();
                 _this.candidateInterest();
                 _this.advertise();
+                _this.user();
             },
             methods: {
                 candidateBuy: function () {
@@ -217,6 +242,23 @@
                 },
                 random(max) {
                     return Math.floor(Math.random() * max);
+                },
+                user() {
+                    let userid = window.sessionStorage.getItem('Id')
+                    if (!userid) {
+                        this.userstatus = false
+                        return false;
+                    }
+                    this.userstatus = true
+                    let url = `${webApi}/api/Candidates/${userid}`;
+                    axios.get(url)
+                        .then(res => {
+                            let x = res.data[0].cellphone;
+                            res.data[0].cellphone = x.replace(x.slice(4, 7), '-xxx-')
+                            res.data[0].name = res.data[0].name + ' 你好'
+                            this.userdata = res.data[0]
+                            console.log(this.userdata)
+                        })
                 },
             },
         })
